@@ -1,0 +1,10 @@
+data/
+models/
+runtime/
+vendor/
+__pycache__/
+*.pyc
+*.log
+results/server*
+results/*stdout*
+results/q4_k_m_60s/

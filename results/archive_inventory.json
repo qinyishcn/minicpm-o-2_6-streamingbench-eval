@@ -1,0 +1,1997 @@
+[
+  {
+    "name": "sample_1/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 0
+  },
+  {
+    "name": "sample_1/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "697333e9",
+    "offset": 71
+  },
+  {
+    "name": "__MACOSX/sample_1/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 427
+  },
+  {
+    "name": "sample_1/video.mp4",
+    "size": 95813537,
+    "compressed": 95647528,
+    "crc32": "ff541db2",
+    "offset": 587
+  },
+  {
+    "name": "__MACOSX/sample_1/._video.mp4",
+    "size": 588,
+    "compressed": 430,
+    "crc32": "05e22197",
+    "offset": 95648211
+  },
+  {
+    "name": "sample_2/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 95648748
+  },
+  {
+    "name": "sample_2/.DS_Store",
+    "size": 6148,
+    "compressed": 262,
+    "crc32": "fcaf1cb6",
+    "offset": 95648819
+  },
+  {
+    "name": "__MACOSX/sample_2/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 95649177
+  },
+  {
+    "name": "sample_2/video.mp4",
+    "size": 168099735,
+    "compressed": 167808157,
+    "crc32": "a2336759",
+    "offset": 95649337
+  },
+  {
+    "name": "__MACOSX/sample_2/._video.mp4",
+    "size": 275,
+    "compressed": 168,
+    "crc32": "eb6d232d",
+    "offset": 263457590
+  },
+  {
+    "name": "sample_3/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 263457865
+  },
+  {
+    "name": "__MACOSX/._sample_3",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "3c71f2dd",
+    "offset": 263457936
+  },
+  {
+    "name": "sample_3/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "b892a33c",
+    "offset": 263458119
+  },
+  {
+    "name": "__MACOSX/sample_3/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 263458474
+  },
+  {
+    "name": "sample_3/video.mp4",
+    "size": 73763382,
+    "compressed": 73621079,
+    "crc32": "69f4b711",
+    "offset": 263458634
+  },
+  {
+    "name": "__MACOSX/sample_3/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "82fe18bd",
+    "offset": 337079809
+  },
+  {
+    "name": "sample_4/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 337080085
+  },
+  {
+    "name": "sample_4/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "a8b7d0d3",
+    "offset": 337080156
+  },
+  {
+    "name": "__MACOSX/sample_4/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 337080510
+  },
+  {
+    "name": "sample_4/video.mp4",
+    "size": 92169097,
+    "compressed": 92016910,
+    "crc32": "d44c8847",
+    "offset": 337080670
+  },
+  {
+    "name": "__MACOSX/sample_4/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "7e49d94d",
+    "offset": 429097676
+  },
+  {
+    "name": "sample_5/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 429097952
+  },
+  {
+    "name": "sample_5/.DS_Store",
+    "size": 6148,
+    "compressed": 262,
+    "crc32": "779870bd",
+    "offset": 429098023
+  },
+  {
+    "name": "__MACOSX/sample_5/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 429098381
+  },
+  {
+    "name": "sample_5/video.mp4",
+    "size": 268738834,
+    "compressed": 268487340,
+    "crc32": "4cf8e57c",
+    "offset": 429098541
+  },
+  {
+    "name": "__MACOSX/sample_5/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "d4901b3f",
+    "offset": 697585977
+  },
+  {
+    "name": "sample_6/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 697586253
+  },
+  {
+    "name": "sample_6/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "72bef51d",
+    "offset": 697586324
+  },
+  {
+    "name": "__MACOSX/sample_6/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 697586677
+  },
+  {
+    "name": "sample_6/video.mp4",
+    "size": 282885460,
+    "compressed": 282563991,
+    "crc32": "6681f00a",
+    "offset": 697586837
+  },
+  {
+    "name": "__MACOSX/sample_6/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "684e7352",
+    "offset": 980150924
+  },
+  {
+    "name": "sample_7/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 980151200
+  },
+  {
+    "name": "sample_7/.DS_Store",
+    "size": 6148,
+    "compressed": 264,
+    "crc32": "bb12bdd8",
+    "offset": 980151271
+  },
+  {
+    "name": "__MACOSX/sample_7/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 980151631
+  },
+  {
+    "name": "sample_7/video.mp4",
+    "size": 221859067,
+    "compressed": 221564347,
+    "crc32": "3b57a100",
+    "offset": 980151791
+  },
+  {
+    "name": "__MACOSX/sample_7/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "0cf8530f",
+    "offset": 1201716234
+  },
+  {
+    "name": "sample_8/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1201716510
+  },
+  {
+    "name": "sample_8/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "828b1b8f",
+    "offset": 1201716581
+  },
+  {
+    "name": "__MACOSX/sample_8/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1201716936
+  },
+  {
+    "name": "sample_8/video.mp4",
+    "size": 140815877,
+    "compressed": 140407978,
+    "crc32": "77f5b2dc",
+    "offset": 1201717096
+  },
+  {
+    "name": "__MACOSX/sample_8/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "0329e840",
+    "offset": 1342125170
+  },
+  {
+    "name": "sample_9/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1342125446
+  },
+  {
+    "name": "sample_9/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "a00a6488",
+    "offset": 1342125517
+  },
+  {
+    "name": "__MACOSX/sample_9/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1342125871
+  },
+  {
+    "name": "sample_9/video.mp4",
+    "size": 24395641,
+    "compressed": 22604464,
+    "crc32": "66cd5eb0",
+    "offset": 1342126031
+  },
+  {
+    "name": "__MACOSX/sample_9/._video.mp4",
+    "size": 232,
+    "compressed": 139,
+    "crc32": "dff91eae",
+    "offset": 1364730591
+  },
+  {
+    "name": "sample_10/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1364730837
+  },
+  {
+    "name": "sample_10/.DS_Store",
+    "size": 6148,
+    "compressed": 261,
+    "crc32": "c816590d",
+    "offset": 1364730909
+  },
+  {
+    "name": "__MACOSX/sample_10/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1364731267
+  },
+  {
+    "name": "sample_10/video.mp4",
+    "size": 188432617,
+    "compressed": 188305246,
+    "crc32": "9bc9a09e",
+    "offset": 1364731428
+  },
+  {
+    "name": "__MACOSX/sample_10/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "5087a1dc",
+    "offset": 1553036771
+  },
+  {
+    "name": "sample_11/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1553037048
+  },
+  {
+    "name": "sample_11/.DS_Store",
+    "size": 6148,
+    "compressed": 261,
+    "crc32": "94192f29",
+    "offset": 1553037120
+  },
+  {
+    "name": "__MACOSX/sample_11/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1553037478
+  },
+  {
+    "name": "sample_11/video.mp4",
+    "size": 161541002,
+    "compressed": 161292768,
+    "crc32": "15f4d347",
+    "offset": 1553037639
+  },
+  {
+    "name": "__MACOSX/sample_11/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "6687f85c",
+    "offset": 1714330504
+  },
+  {
+    "name": "sample_12/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1714330781
+  },
+  {
+    "name": "sample_12/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "fecdd984",
+    "offset": 1714330853
+  },
+  {
+    "name": "__MACOSX/sample_12/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1714331208
+  },
+  {
+    "name": "sample_12/video.mp4",
+    "size": 172870048,
+    "compressed": 172630428,
+    "crc32": "0d10e7dd",
+    "offset": 1714331369
+  },
+  {
+    "name": "__MACOSX/sample_12/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "bb15c80c",
+    "offset": 1886961894
+  },
+  {
+    "name": "sample_13/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 1886962171
+  },
+  {
+    "name": "sample_13/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "83c74dc2",
+    "offset": 1886962243
+  },
+  {
+    "name": "__MACOSX/sample_13/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 1886962600
+  },
+  {
+    "name": "sample_13/video.mp4",
+    "size": 185636696,
+    "compressed": 185365877,
+    "crc32": "6b4533f4",
+    "offset": 1886962761
+  },
+  {
+    "name": "__MACOSX/sample_13/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "5105bb24",
+    "offset": 2072328735
+  },
+  {
+    "name": "sample_14/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2072329012
+  },
+  {
+    "name": "sample_14/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "1537692f",
+    "offset": 2072329084
+  },
+  {
+    "name": "__MACOSX/sample_14/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2072329438
+  },
+  {
+    "name": "sample_14/video.mp4",
+    "size": 169092948,
+    "compressed": 168837788,
+    "crc32": "8b28121d",
+    "offset": 2072329599
+  },
+  {
+    "name": "__MACOSX/sample_14/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "eb1dc948",
+    "offset": 2241167484
+  },
+  {
+    "name": "sample_15/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2241167761
+  },
+  {
+    "name": "sample_15/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "6171fd06",
+    "offset": 2241167833
+  },
+  {
+    "name": "__MACOSX/sample_15/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2241168187
+  },
+  {
+    "name": "sample_15/video.mp4",
+    "size": 142428824,
+    "compressed": 142206424,
+    "crc32": "98902f55",
+    "offset": 2241168348
+  },
+  {
+    "name": "__MACOSX/sample_15/._video.mp4",
+    "size": 275,
+    "compressed": 168,
+    "crc32": "a2a838db",
+    "offset": 2383374869
+  },
+  {
+    "name": "sample_16/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2383375145
+  },
+  {
+    "name": "__MACOSX/._sample_16",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 2383375217
+  },
+  {
+    "name": "sample_16/.DS_Store",
+    "size": 6148,
+    "compressed": 312,
+    "crc32": "3659a11f",
+    "offset": 2383375401
+  },
+  {
+    "name": "__MACOSX/sample_16/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2383375810
+  },
+  {
+    "name": "sample_16/video.mp4",
+    "size": 41053470,
+    "compressed": 40797889,
+    "crc32": "aaa39554",
+    "offset": 2383375971
+  },
+  {
+    "name": "__MACOSX/sample_16/._video.mp4",
+    "size": 1525,
+    "compressed": 1079,
+    "crc32": "6c10b9ca",
+    "offset": 2424173957
+  },
+  {
+    "name": "sample_17/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2424175144
+  },
+  {
+    "name": "__MACOSX/._sample_17",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 2424175216
+  },
+  {
+    "name": "sample_17/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "56219fd6",
+    "offset": 2424175400
+  },
+  {
+    "name": "__MACOSX/sample_17/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2424175756
+  },
+  {
+    "name": "sample_17/video.mp4",
+    "size": 192227765,
+    "compressed": 191966370,
+    "crc32": "af816d98",
+    "offset": 2424175917
+  },
+  {
+    "name": "__MACOSX/sample_17/._video.mp4",
+    "size": 275,
+    "compressed": 168,
+    "crc32": "521482c5",
+    "offset": 2616142384
+  },
+  {
+    "name": "sample_18/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2616142660
+  },
+  {
+    "name": "__MACOSX/._sample_18",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 2616142732
+  },
+  {
+    "name": "sample_18/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "75b83c0e",
+    "offset": 2616142916
+  },
+  {
+    "name": "__MACOSX/sample_18/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2616143273
+  },
+  {
+    "name": "sample_18/video.mp4",
+    "size": 173773171,
+    "compressed": 173550610,
+    "crc32": "40edd0ee",
+    "offset": 2616143434
+  },
+  {
+    "name": "__MACOSX/sample_18/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "d941bd6b",
+    "offset": 2789694141
+  },
+  {
+    "name": "sample_19/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 2789694418
+  },
+  {
+    "name": "__MACOSX/._sample_19",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 2789694490
+  },
+  {
+    "name": "sample_19/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "c403df1d",
+    "offset": 2789694674
+  },
+  {
+    "name": "__MACOSX/sample_19/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 2789695031
+  },
+  {
+    "name": "sample_19/video.mp4",
+    "size": 381301607,
+    "compressed": 380830721,
+    "crc32": "4d73ff88",
+    "offset": 2789695192
+  },
+  {
+    "name": "__MACOSX/sample_19/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "82f3a2f5",
+    "offset": 3170526010
+  },
+  {
+    "name": "sample_20/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3170526287
+  },
+  {
+    "name": "__MACOSX/._sample_20",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3170526359
+  },
+  {
+    "name": "sample_20/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "3480c29c",
+    "offset": 3170526543
+  },
+  {
+    "name": "__MACOSX/sample_20/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3170526897
+  },
+  {
+    "name": "sample_20/video.mp4",
+    "size": 62013840,
+    "compressed": 61892673,
+    "crc32": "9f5bb53c",
+    "offset": 3170527058
+  },
+  {
+    "name": "__MACOSX/sample_20/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "0373b53b",
+    "offset": 3232419828
+  },
+  {
+    "name": "sample_21/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3232420105
+  },
+  {
+    "name": "__MACOSX/._sample_21",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3232420177
+  },
+  {
+    "name": "sample_21/.DS_Store",
+    "size": 6148,
+    "compressed": 261,
+    "crc32": "5505447f",
+    "offset": 3232420361
+  },
+  {
+    "name": "__MACOSX/sample_21/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3232420719
+  },
+  {
+    "name": "sample_21/video.mp4",
+    "size": 64270887,
+    "compressed": 64149701,
+    "crc32": "665d5108",
+    "offset": 3232420880
+  },
+  {
+    "name": "__MACOSX/sample_21/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "0959a548",
+    "offset": 3296570678
+  },
+  {
+    "name": "sample_22/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3296570955
+  },
+  {
+    "name": "__MACOSX/._sample_22",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3296571027
+  },
+  {
+    "name": "sample_22/.DS_Store",
+    "size": 6148,
+    "compressed": 256,
+    "crc32": "55942d32",
+    "offset": 3296571211
+  },
+  {
+    "name": "__MACOSX/sample_22/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3296571564
+  },
+  {
+    "name": "sample_22/video.mp4",
+    "size": 105220849,
+    "compressed": 105121074,
+    "crc32": "a7946752",
+    "offset": 3296571725
+  },
+  {
+    "name": "__MACOSX/sample_22/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "05e4e72a",
+    "offset": 3401692896
+  },
+  {
+    "name": "sample_23/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3401693173
+  },
+  {
+    "name": "__MACOSX/._sample_23",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3401693245
+  },
+  {
+    "name": "sample_23/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "570aae88",
+    "offset": 3401693429
+  },
+  {
+    "name": "__MACOSX/sample_23/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3401693786
+  },
+  {
+    "name": "sample_23/video.mp4",
+    "size": 57670049,
+    "compressed": 57555113,
+    "crc32": "62499f4c",
+    "offset": 3401693947
+  },
+  {
+    "name": "__MACOSX/sample_23/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "eb7c8aee",
+    "offset": 3459249157
+  },
+  {
+    "name": "sample_24/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3459249434
+  },
+  {
+    "name": "__MACOSX/._sample_24",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3459249506
+  },
+  {
+    "name": "sample_24/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "22fe01b1",
+    "offset": 3459249690
+  },
+  {
+    "name": "__MACOSX/sample_24/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3459250044
+  },
+  {
+    "name": "sample_24/video.mp4",
+    "size": 66438750,
+    "compressed": 66296727,
+    "crc32": "562098aa",
+    "offset": 3459250205
+  },
+  {
+    "name": "__MACOSX/sample_24/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "eb3e10f7",
+    "offset": 3525547029
+  },
+  {
+    "name": "sample_25/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3525547306
+  },
+  {
+    "name": "__MACOSX/._sample_25",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3525547378
+  },
+  {
+    "name": "sample_25/.DS_Store",
+    "size": 6148,
+    "compressed": 262,
+    "crc32": "c019bfef",
+    "offset": 3525547562
+  },
+  {
+    "name": "__MACOSX/sample_25/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3525547921
+  },
+  {
+    "name": "sample_25/video.mp4",
+    "size": 273699821,
+    "compressed": 273424957,
+    "crc32": "5a849aa7",
+    "offset": 3525548082
+  },
+  {
+    "name": "__MACOSX/sample_25/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "d4c7db6f",
+    "offset": 3798973136
+  },
+  {
+    "name": "sample_26/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3798973413
+  },
+  {
+    "name": "__MACOSX/._sample_26",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3798973485
+  },
+  {
+    "name": "sample_26/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "3aaca2ab",
+    "offset": 3798973669
+  },
+  {
+    "name": "__MACOSX/sample_26/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3798974025
+  },
+  {
+    "name": "sample_26/video.mp4",
+    "size": 144544115,
+    "compressed": 144318793,
+    "crc32": "9e9eeb30",
+    "offset": 3798974186
+  },
+  {
+    "name": "__MACOSX/sample_26/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "590bb135",
+    "offset": 3943293076
+  },
+  {
+    "name": "sample_27/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 3943293353
+  },
+  {
+    "name": "__MACOSX/._sample_27",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 3943293425
+  },
+  {
+    "name": "sample_27/.DS_Store",
+    "size": 6148,
+    "compressed": 255,
+    "crc32": "2495b802",
+    "offset": 3943293609
+  },
+  {
+    "name": "__MACOSX/sample_27/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 3943293961
+  },
+  {
+    "name": "sample_27/video.mp4",
+    "size": 119656254,
+    "compressed": 119440532,
+    "crc32": "c0006880",
+    "offset": 3943294122
+  },
+  {
+    "name": "__MACOSX/sample_27/._video.mp4",
+    "size": 275,
+    "compressed": 168,
+    "crc32": "1209600f",
+    "offset": 4062734751
+  },
+  {
+    "name": "sample_28/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 4062735027
+  },
+  {
+    "name": "__MACOSX/._sample_28",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 4062735099
+  },
+  {
+    "name": "sample_28/.DS_Store",
+    "size": 6148,
+    "compressed": 262,
+    "crc32": "faefcbdf",
+    "offset": 4062735283
+  },
+  {
+    "name": "__MACOSX/sample_28/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 4062735642
+  },
+  {
+    "name": "sample_28/video.mp4",
+    "size": 318032084,
+    "compressed": 317606661,
+    "crc32": "7fd7496f",
+    "offset": 4062735803
+  },
+  {
+    "name": "__MACOSX/sample_28/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "f4e312f7",
+    "offset": 4380342561
+  },
+  {
+    "name": "sample_29/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 4380342838
+  },
+  {
+    "name": "__MACOSX/._sample_29",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 4380342910
+  },
+  {
+    "name": "sample_29/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "686db40a",
+    "offset": 4380343094
+  },
+  {
+    "name": "__MACOSX/sample_29/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 4380343450
+  },
+  {
+    "name": "sample_29/video.mp4",
+    "size": 172870048,
+    "compressed": 172630428,
+    "crc32": "0d10e7dd",
+    "offset": 4380343611
+  },
+  {
+    "name": "__MACOSX/sample_29/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "6d723a9f",
+    "offset": 4552974136
+  },
+  {
+    "name": "sample_30/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 4552974413
+  },
+  {
+    "name": "__MACOSX/._sample_30",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 4552974485
+  },
+  {
+    "name": "sample_30/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "1e21e688",
+    "offset": 4552974669
+  },
+  {
+    "name": "__MACOSX/sample_30/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 4552975026
+  },
+  {
+    "name": "sample_30/video.mp4",
+    "size": 391965431,
+    "compressed": 391502467,
+    "crc32": "9511c748",
+    "offset": 4552975187
+  },
+  {
+    "name": "__MACOSX/sample_30/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "20f6dee7",
+    "offset": 4944477751
+  },
+  {
+    "name": "sample_31/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 4944478028
+  },
+  {
+    "name": "__MACOSX/._sample_31",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 4944478100
+  },
+  {
+    "name": "sample_31/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "a3ff1a63",
+    "offset": 4944478284
+  },
+  {
+    "name": "__MACOSX/sample_31/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 4944478640
+  },
+  {
+    "name": "sample_31/video.mp4",
+    "size": 182010517,
+    "compressed": 181748542,
+    "crc32": "a96b99d4",
+    "offset": 4944478801
+  },
+  {
+    "name": "__MACOSX/sample_31/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "3177a473",
+    "offset": 5126227440
+  },
+  {
+    "name": "sample_32/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 5126227717
+  },
+  {
+    "name": "__MACOSX/._sample_32",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 5126227789
+  },
+  {
+    "name": "sample_32/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "2ca7e342",
+    "offset": 5126227973
+  },
+  {
+    "name": "__MACOSX/sample_32/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 5126228328
+  },
+  {
+    "name": "sample_32/video.mp4",
+    "size": 164102232,
+    "compressed": 163877889,
+    "crc32": "e93d43e1",
+    "offset": 5126228489
+  },
+  {
+    "name": "__MACOSX/sample_32/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "f32af3a8",
+    "offset": 5290106475
+  },
+  {
+    "name": "sample_33/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 5290106752
+  },
+  {
+    "name": "__MACOSX/._sample_33",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 5290106824
+  },
+  {
+    "name": "sample_33/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "a374acec",
+    "offset": 5290107008
+  },
+  {
+    "name": "__MACOSX/sample_33/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 5290107363
+  },
+  {
+    "name": "sample_33/video.mp4",
+    "size": 185636696,
+    "compressed": 185365877,
+    "crc32": "6b4533f4",
+    "offset": 5290107524
+  },
+  {
+    "name": "__MACOSX/sample_33/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "c8f17110",
+    "offset": 5475473498
+  },
+  {
+    "name": "sample_34/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 5475473775
+  },
+  {
+    "name": "__MACOSX/._sample_34",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 5475473847
+  },
+  {
+    "name": "sample_34/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "afeb640d",
+    "offset": 5475474031
+  },
+  {
+    "name": "__MACOSX/sample_34/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 5475474388
+  },
+  {
+    "name": "sample_34/video.mp4",
+    "size": 177444529,
+    "compressed": 177173999,
+    "crc32": "35c29e05",
+    "offset": 5475474549
+  },
+  {
+    "name": "__MACOSX/sample_34/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "1c9760be",
+    "offset": 5652648645
+  },
+  {
+    "name": "sample_35/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 5652648922
+  },
+  {
+    "name": "__MACOSX/._sample_35",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 5652648994
+  },
+  {
+    "name": "sample_35/.DS_Store",
+    "size": 6148,
+    "compressed": 307,
+    "crc32": "40bf53df",
+    "offset": 5652649178
+  },
+  {
+    "name": "__MACOSX/sample_35/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 5652649582
+  },
+  {
+    "name": "sample_35/video.mp4",
+    "size": 417662310,
+    "compressed": 417380961,
+    "crc32": "21f38c11",
+    "offset": 5652649743
+  },
+  {
+    "name": "__MACOSX/sample_35/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "9501cf06",
+    "offset": 6070030801
+  },
+  {
+    "name": "sample_36/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 6070031078
+  },
+  {
+    "name": "__MACOSX/._sample_36",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 6070031150
+  },
+  {
+    "name": "sample_36/.DS_Store",
+    "size": 6148,
+    "compressed": 261,
+    "crc32": "77bb41a9",
+    "offset": 6070031334
+  },
+  {
+    "name": "__MACOSX/sample_36/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 6070031692
+  },
+  {
+    "name": "sample_36/video.mp4",
+    "size": 378382976,
+    "compressed": 378064894,
+    "crc32": "471c81a8",
+    "offset": 6070031853
+  },
+  {
+    "name": "__MACOSX/sample_36/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "851e2b70",
+    "offset": 6448096844
+  },
+  {
+    "name": "sample_37/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 6448097121
+  },
+  {
+    "name": "__MACOSX/._sample_37",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 6448097193
+  },
+  {
+    "name": "sample_37/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "f430b50e",
+    "offset": 6448097377
+  },
+  {
+    "name": "__MACOSX/sample_37/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 6448097731
+  },
+  {
+    "name": "sample_37/video.mp4",
+    "size": 312369197,
+    "compressed": 312115664,
+    "crc32": "9697e8df",
+    "offset": 6448097892
+  },
+  {
+    "name": "__MACOSX/sample_37/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "5096fc7a",
+    "offset": 6760213653
+  },
+  {
+    "name": "sample_38/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 6760213930
+  },
+  {
+    "name": "__MACOSX/._sample_38",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 6760214002
+  },
+  {
+    "name": "sample_38/.DS_Store",
+    "size": 6148,
+    "compressed": 262,
+    "crc32": "016ab97c",
+    "offset": 6760214186
+  },
+  {
+    "name": "__MACOSX/sample_38/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 6760214545
+  },
+  {
+    "name": "sample_38/video.mp4",
+    "size": 161541002,
+    "compressed": 161292768,
+    "crc32": "15f4d347",
+    "offset": 6760214706
+  },
+  {
+    "name": "__MACOSX/sample_38/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "622d950e",
+    "offset": 6921507571
+  },
+  {
+    "name": "sample_39/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 6921507848
+  },
+  {
+    "name": "__MACOSX/._sample_39",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 6921507920
+  },
+  {
+    "name": "sample_39/.DS_Store",
+    "size": 6148,
+    "compressed": 260,
+    "crc32": "9dab7d39",
+    "offset": 6921508104
+  },
+  {
+    "name": "__MACOSX/sample_39/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 6921508461
+  },
+  {
+    "name": "sample_39/video.mp4",
+    "size": 158611536,
+    "compressed": 158413639,
+    "crc32": "a67364bd",
+    "offset": 6921508622
+  },
+  {
+    "name": "__MACOSX/sample_39/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "30550bc2",
+    "offset": 7079922358
+  },
+  {
+    "name": "sample_40/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7079922635
+  },
+  {
+    "name": "__MACOSX/._sample_40",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7079922707
+  },
+  {
+    "name": "sample_40/.DS_Store",
+    "size": 6148,
+    "compressed": 305,
+    "crc32": "1c093119",
+    "offset": 7079922891
+  },
+  {
+    "name": "__MACOSX/sample_40/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7079923293
+  },
+  {
+    "name": "sample_40/video.mp4",
+    "size": 169092948,
+    "compressed": 168837788,
+    "crc32": "8b28121d",
+    "offset": 7079923454
+  },
+  {
+    "name": "__MACOSX/sample_40/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "8520e182",
+    "offset": 7248761339
+  },
+  {
+    "name": "sample_41/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7248761616
+  },
+  {
+    "name": "__MACOSX/._sample_41",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7248761688
+  },
+  {
+    "name": "sample_41/.DS_Store",
+    "size": 6148,
+    "compressed": 258,
+    "crc32": "3bd1b1b6",
+    "offset": 7248761872
+  },
+  {
+    "name": "__MACOSX/sample_41/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7248762227
+  },
+  {
+    "name": "sample_41/video.mp4",
+    "size": 64772041,
+    "compressed": 64639230,
+    "crc32": "af85d7eb",
+    "offset": 7248762388
+  },
+  {
+    "name": "__MACOSX/sample_41/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "2e6f86b0",
+    "offset": 7313401715
+  },
+  {
+    "name": "sample_42/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7313401992
+  },
+  {
+    "name": "__MACOSX/._sample_42",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7313402064
+  },
+  {
+    "name": "sample_42/.DS_Store",
+    "size": 6148,
+    "compressed": 304,
+    "crc32": "3fab19cb",
+    "offset": 7313402248
+  },
+  {
+    "name": "__MACOSX/sample_42/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7313402649
+  },
+  {
+    "name": "sample_42/video.mp4",
+    "size": 177744912,
+    "compressed": 177512295,
+    "crc32": "f721e18e",
+    "offset": 7313402810
+  },
+  {
+    "name": "__MACOSX/sample_42/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "5c059eac",
+    "offset": 7490915202
+  },
+  {
+    "name": "sample_43/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7490915479
+  },
+  {
+    "name": "__MACOSX/._sample_43",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7490915551
+  },
+  {
+    "name": "sample_43/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "1c77bd04",
+    "offset": 7490915735
+  },
+  {
+    "name": "__MACOSX/sample_43/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7490916091
+  },
+  {
+    "name": "sample_43/video.mp4",
+    "size": 273720222,
+    "compressed": 273469514,
+    "crc32": "e8e4231d",
+    "offset": 7490916252
+  },
+  {
+    "name": "__MACOSX/sample_43/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "fe38d893",
+    "offset": 7764385863
+  },
+  {
+    "name": "sample_44/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7764386140
+  },
+  {
+    "name": "__MACOSX/._sample_44",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7764386212
+  },
+  {
+    "name": "sample_44/.DS_Store",
+    "size": 6148,
+    "compressed": 301,
+    "crc32": "cb5bf75c",
+    "offset": 7764386396
+  },
+  {
+    "name": "__MACOSX/sample_44/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7764386794
+  },
+  {
+    "name": "sample_44/video.mp4",
+    "size": 184632840,
+    "compressed": 184461408,
+    "crc32": "00437ddf",
+    "offset": 7764386955
+  },
+  {
+    "name": "__MACOSX/sample_44/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "87f8e67f",
+    "offset": 7948848460
+  },
+  {
+    "name": "sample_45/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 7948848737
+  },
+  {
+    "name": "__MACOSX/._sample_45",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 7948848809
+  },
+  {
+    "name": "sample_45/.DS_Store",
+    "size": 6148,
+    "compressed": 259,
+    "crc32": "09cee891",
+    "offset": 7948848993
+  },
+  {
+    "name": "__MACOSX/sample_45/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 7948849349
+  },
+  {
+    "name": "sample_45/video.mp4",
+    "size": 142428824,
+    "compressed": 142206424,
+    "crc32": "98902f55",
+    "offset": 7948849510
+  },
+  {
+    "name": "__MACOSX/sample_45/._video.mp4",
+    "size": 275,
+    "compressed": 168,
+    "crc32": "02c84518",
+    "offset": 8091056031
+  },
+  {
+    "name": "sample_46/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 8091056307
+  },
+  {
+    "name": "__MACOSX/._sample_46",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 8091056379
+  },
+  {
+    "name": "sample_46/.DS_Store",
+    "size": 6148,
+    "compressed": 256,
+    "crc32": "ce75f5da",
+    "offset": 8091056563
+  },
+  {
+    "name": "__MACOSX/sample_46/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 8091056916
+  },
+  {
+    "name": "sample_46/video.mp4",
+    "size": 133452430,
+    "compressed": 133255482,
+    "crc32": "e121b05f",
+    "offset": 8091057077
+  },
+  {
+    "name": "__MACOSX/sample_46/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "d88d5096",
+    "offset": 8224312656
+  },
+  {
+    "name": "sample_47/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 8224312933
+  },
+  {
+    "name": "__MACOSX/._sample_47",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 8224313005
+  },
+  {
+    "name": "sample_47/.DS_Store",
+    "size": 6148,
+    "compressed": 261,
+    "crc32": "b85325d8",
+    "offset": 8224313189
+  },
+  {
+    "name": "__MACOSX/sample_47/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 8224313547
+  },
+  {
+    "name": "sample_47/video.mp4",
+    "size": 164689843,
+    "compressed": 164433583,
+    "crc32": "b91e76ac",
+    "offset": 8224313708
+  },
+  {
+    "name": "__MACOSX/sample_47/._video.mp4",
+    "size": 275,
+    "compressed": 169,
+    "crc32": "48541f2a",
+    "offset": 8388747388
+  },
+  {
+    "name": "sample_48/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 8388747665
+  },
+  {
+    "name": "sample_48/.DS_Store",
+    "size": 6148,
+    "compressed": 257,
+    "crc32": "e182954f",
+    "offset": 8388747737
+  },
+  {
+    "name": "__MACOSX/sample_48/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 8388748091
+  },
+  {
+    "name": "sample_48/video.mp4",
+    "size": 231374640,
+    "compressed": 231024021,
+    "crc32": "3cec8dfa",
+    "offset": 8388748252
+  },
+  {
+    "name": "__MACOSX/sample_48/._video.mp4",
+    "size": 245,
+    "compressed": 152,
+    "crc32": "e181fec5",
+    "offset": 8619772370
+  },
+  {
+    "name": "sample_49/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 8619772630
+  },
+  {
+    "name": "__MACOSX/._sample_49",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "9125bc1c",
+    "offset": 8619772702
+  },
+  {
+    "name": "sample_49/.DS_Store",
+    "size": 6148,
+    "compressed": 302,
+    "crc32": "e5007d8b",
+    "offset": 8619772886
+  },
+  {
+    "name": "__MACOSX/sample_49/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 8619773285
+  },
+  {
+    "name": "sample_49/video.mp4",
+    "size": 133132781,
+    "compressed": 132189083,
+    "crc32": "4f216801",
+    "offset": 8619773446
+  },
+  {
+    "name": "__MACOSX/sample_49/._video.mp4",
+    "size": 288,
+    "compressed": 182,
+    "crc32": "3a6109ab",
+    "offset": 8751962626
+  },
+  {
+    "name": "sample_50/",
+    "size": 0,
+    "compressed": 0,
+    "crc32": "00000000",
+    "offset": 8751962916
+  },
+  {
+    "name": "__MACOSX/._sample_50",
+    "size": 163,
+    "compressed": 86,
+    "crc32": "799e7807",
+    "offset": 8751962988
+  },
+  {
+    "name": "sample_50/.DS_Store",
+    "size": 6148,
+    "compressed": 300,
+    "crc32": "49999fa9",
+    "offset": 8751963172
+  },
+  {
+    "name": "__MACOSX/sample_50/._.DS_Store",
+    "size": 120,
+    "compressed": 53,
+    "crc32": "38c0880b",
+    "offset": 8751963569
+  },
+  {
+    "name": "sample_50/video.mp4",
+    "size": 329689455,
+    "compressed": 328557713,
+    "crc32": "facfe6f4",
+    "offset": 8751963730
+  },
+  {
+    "name": "__MACOSX/sample_50/._video.mp4",
+    "size": 288,
+    "compressed": 182,
+    "crc32": "6e219e74",
+    "offset": 9080521540
+  }
+]

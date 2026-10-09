@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "mode": "single",
+      "questions": 125,
+      "correct": 98,
+      "accuracy": 0.784,
+      "mean_seconds": 0.5295251511912793,
+      "cached_tokens": 0,
+      "finish_reasons": {
+        "stop": 125
+      }
+    },
+    {
+      "mode": "four",
+      "questions": 125,
+      "correct": 100,
+      "accuracy": 0.8,
+      "mean_seconds": 1.6719608888048678,
+      "cached_tokens": 0,
+      "finish_reasons": {
+        "stop": 125
+      }
+    }
+  ],
+  "method": "Direct CSV label join and raw single-letter comparison independent of evaluation/score helper imports"
+}

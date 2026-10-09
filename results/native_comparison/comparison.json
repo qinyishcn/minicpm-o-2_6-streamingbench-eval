@@ -1,0 +1,408 @@
+{
+  "status": "complete",
+  "questions_per_mode": 125,
+  "single": {
+    "status": "complete",
+    "expected": 125,
+    "evaluated": 125,
+    "correct": 98,
+    "incorrect": 27,
+    "invalid_responses": 0,
+    "accuracy": 0.784,
+    "accuracy_percent": 78.4,
+    "per_task": {
+      "Action Perception": {
+        "correct": 14,
+        "total": 18,
+        "accuracy": 0.7777777777777778
+      },
+      "Attribute Perception": {
+        "correct": 21,
+        "total": 24,
+        "accuracy": 0.875
+      },
+      "Causal Reasoning": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "Clips Summarize": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "Event Understanding": {
+        "correct": 7,
+        "total": 14,
+        "accuracy": 0.5
+      },
+      "Object Perception": {
+        "correct": 39,
+        "total": 47,
+        "accuracy": 0.8297872340425532
+      },
+      "Prospective Reasoning": {
+        "correct": 0,
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "Spatial Understanding": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "Text-Rich Understanding": {
+        "correct": 11,
+        "total": 13,
+        "accuracy": 0.8461538461538461
+      }
+    },
+    "per_video": {
+      "1": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "2": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "3": {
+        "correct": 3,
+        "total": 5,
+        "accuracy": 0.6
+      },
+      "4": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "5": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "6": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "7": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "8": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "9": {
+        "correct": 3,
+        "total": 5,
+        "accuracy": 0.6
+      },
+      "10": {
+        "correct": 3,
+        "total": 5,
+        "accuracy": 0.6
+      },
+      "11": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "12": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "13": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "14": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "15": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "16": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "17": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "18": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "19": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "20": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "21": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "22": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "23": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "24": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "25": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      }
+    },
+    "mean_request_to_response_s": 0.5295251511912793,
+    "median_request_to_response_s": 0.5282330000773072,
+    "total_request_to_response_s": 66.19064389890991,
+    "latency_scope": "Includes local HTTP, image encoding, prefill and generation; excludes frame extraction and model loading. Offline per-question processing, not streaming latency.",
+    "limitations": [
+      "25 fixed videos, not a random or representative full benchmark sample",
+      "Q4_K_M GGUF with F16 visual projector, not full precision",
+      "vision-only, independent per-question inputs, no persistent streaming state",
+      "runtime preprocessing and JPEG frame transport differ from reference Transformers adapter"
+    ]
+  },
+  "four_consecutive": {
+    "status": "complete",
+    "expected": 125,
+    "evaluated": 125,
+    "correct": 100,
+    "incorrect": 25,
+    "invalid_responses": 0,
+    "accuracy": 0.8,
+    "accuracy_percent": 80.0,
+    "per_task": {
+      "Action Perception": {
+        "correct": 15,
+        "total": 18,
+        "accuracy": 0.8333333333333334
+      },
+      "Attribute Perception": {
+        "correct": 21,
+        "total": 24,
+        "accuracy": 0.875
+      },
+      "Causal Reasoning": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "Clips Summarize": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "Event Understanding": {
+        "correct": 8,
+        "total": 14,
+        "accuracy": 0.5714285714285714
+      },
+      "Object Perception": {
+        "correct": 39,
+        "total": 47,
+        "accuracy": 0.8297872340425532
+      },
+      "Prospective Reasoning": {
+        "correct": 0,
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "Spatial Understanding": {
+        "correct": 0,
+        "total": 2,
+        "accuracy": 0.0
+      },
+      "Text-Rich Understanding": {
+        "correct": 11,
+        "total": 13,
+        "accuracy": 0.8461538461538461
+      }
+    },
+    "per_video": {
+      "1": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "2": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "3": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "4": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "5": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "6": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "7": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "8": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "9": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "10": {
+        "correct": 3,
+        "total": 5,
+        "accuracy": 0.6
+      },
+      "11": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "12": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "13": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "14": {
+        "correct": 4,
+        "total": 5,
+        "accuracy": 0.8
+      },
+      "15": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "16": {
+        "correct": 1,
+        "total": 5,
+        "accuracy": 0.2
+      },
+      "17": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "18": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "19": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "20": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "21": {
+        "correct": 2,
+        "total": 5,
+        "accuracy": 0.4
+      },
+      "22": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "23": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      },
+      "24": {
+        "correct": 3,
+        "total": 5,
+        "accuracy": 0.6
+      },
+      "25": {
+        "correct": 5,
+        "total": 5,
+        "accuracy": 1.0
+      }
+    },
+    "mean_request_to_response_s": 1.6719608888048678,
+    "median_request_to_response_s": 1.671541100135073,
+    "total_request_to_response_s": 208.99511110060848,
+    "latency_scope": "Includes local HTTP, image encoding, prefill and generation; excludes frame extraction and model loading. Offline per-question processing, not streaming latency.",
+    "limitations": [
+      "25 fixed videos, not a random or representative full benchmark sample",
+      "Q4_K_M GGUF with F16 visual projector, not full precision",
+      "vision-only, independent per-question inputs, no persistent streaming state",
+      "runtime preprocessing and JPEG frame transport differ from reference Transformers adapter"
+    ]
+  },
+  "accuracy_delta_percentage_points": 1.6,
+  "four_only_correct": 4,
+  "single_only_correct": 2,
+  "both_correct": 96,
+  "both_wrong": 23,
+  "four_frame_span_seconds_min": 0.05004999999999882,
+  "four_frame_span_seconds_max": 0.12512500000002547,
+  "source_fps": [
+    23.976023976023978,
+    24.0,
+    25.0,
+    30.0,
+    50.0,
+    59.94005994005994
+  ],
+  "frame_audit_passed": true
+}

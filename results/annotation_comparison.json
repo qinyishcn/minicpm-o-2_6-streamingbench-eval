@@ -1,0 +1,172 @@
+[
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_1",
+    "dataset_csv": {
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "task_type": "Object Perception",
+      "question": "What logos are visible in the background as players and referees walk towards the center of the football field?",
+      "time_stamp": "00:00:04",
+      "answer": "D",
+      "options": [
+        "A. FIFA and La Liga.",
+        "B. UEFA and La Liga.",
+        "C. Bundesliga and La Liga.",
+        "D. Aeromexico and La Liga."
+      ],
+      "frames_required": "single",
+      "temporal_clue_type": "Prior",
+      "video_id": 1,
+      "question_number": 1,
+      "timestamp_seconds": 4
+    },
+    "reference_json": {
+      "task_type": "Object Recognition",
+      "question": "What logos are visible in the background as players and officials walk towards the camera?",
+      "time_stamp": "00:00:04",
+      "answer": "D",
+      "options": [
+        "A. FIFA and Premier League.",
+        "B. UEFA and Champions League.",
+        "C. Bundesliga and MLS.",
+        "D. Aeromexico and La Liga."
+      ],
+      "required_ability": "working memory"
+    }
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_3",
+    "dataset_csv": {
+      "question_id": "Real-Time Visual Understanding_sample_2_3",
+      "task_type": "Action Perception",
+      "question": "What is the goalkeeper doing as the player takes the penalty shot?",
+      "time_stamp": "00:01:52",
+      "answer": "B",
+      "options": [
+        "A. Standing still.",
+        "B. Diving to his right.",
+        "C. Running towards the ball.",
+        "D. Waving his hands."
+      ],
+      "frames_required": "multiple",
+      "temporal_clue_type": "Concurrent",
+      "video_id": 2,
+      "question_number": 3,
+      "timestamp_seconds": 112
+    },
+    "reference_json": {
+      "task_type": "Action Recognition",
+      "question": "What is the goalkeeper doing as the player takes the penalty shot?",
+      "time_stamp": "0:01:52",
+      "answer": "B",
+      "options": [
+        "A. Standing still.",
+        "B. Diving to his left.",
+        "C. Running towards the ball.",
+        "D. Waving his hands."
+      ],
+      "required_ability": "working memory"
+    }
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_4",
+    "dataset_csv": {
+      "question_id": "Real-Time Visual Understanding_sample_5_4",
+      "task_type": "Action Perception",
+      "question": "What did the goalkeeper do during the penalty kick?",
+      "time_stamp": "00:04:33",
+      "answer": "B",
+      "options": [
+        "A. Stood still.",
+        "B. Dived to his left.",
+        "C. Dived to his right.",
+        "D. Ran towards the ball."
+      ],
+      "frames_required": "multiple",
+      "temporal_clue_type": "Prior",
+      "video_id": 5,
+      "question_number": 4,
+      "timestamp_seconds": 273
+    },
+    "reference_json": {
+      "task_type": "Action Recognition",
+      "question": "What did the goalkeeper do during the penalty kick?",
+      "time_stamp": "00:04:33",
+      "answer": "B",
+      "options": [
+        "A. Stood still.",
+        "B. Dived to his right.",
+        "C. Dived to his left.",
+        "D. Ran towards the ball."
+      ],
+      "required_ability": "episodic memory"
+    }
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_4",
+    "dataset_csv": {
+      "question_id": "Real-Time Visual Understanding_sample_17_4",
+      "task_type": "Object Perception",
+      "question": "What is simmering in a pan on the right side of the kitchen counter right now?",
+      "time_stamp": "00:08:01",
+      "answer": "A",
+      "options": [
+        "A. Tomatoes slices.",
+        "B. Cooked food.",
+        "C. Vegetables.",
+        "D. Leafy greens."
+      ],
+      "frames_required": "single",
+      "temporal_clue_type": "Concurrent",
+      "video_id": 17,
+      "question_number": 4,
+      "timestamp_seconds": 481
+    },
+    "reference_json": {
+      "task_type": "Object Recognition",
+      "question": "What is simmering in a pan on the right side of the kitchen counter right now?",
+      "time_stamp": "00:08:01",
+      "answer": "C",
+      "options": [
+        "A. Cooked food.",
+        "B. Vegetables.",
+        "C. Sausage slices.",
+        "D. Leafy greens."
+      ],
+      "required_ability": "working memory"
+    }
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_1",
+    "dataset_csv": {
+      "question_id": "Real-Time Visual Understanding_sample_25_1",
+      "task_type": "Attribute Perception",
+      "question": "What color is the coat worn by the man standing in front of the blue background with the text __AMSAY in 10_?",
+      "time_stamp": "00:00:03",
+      "answer": "D",
+      "options": [
+        "A. Black.",
+        "B. Dark blue.",
+        "C. Light grey.",
+        "D. White."
+      ],
+      "frames_required": "single",
+      "temporal_clue_type": "Prior",
+      "video_id": 25,
+      "question_number": 1,
+      "timestamp_seconds": 3
+    },
+    "reference_json": {
+      "task_type": "Attribute Recognition",
+      "question": "What color is the coat worn by the man standing in front of the blue background with the text \u201cRAMSAY in 10\u201d?",
+      "time_stamp": "00:00:03",
+      "answer": "D",
+      "options": [
+        "A. Black.",
+        "B. Dark blue.",
+        "C. Light grey.",
+        "D. White."
+      ],
+      "required_ability": "working memory"
+    }
+  }
+]

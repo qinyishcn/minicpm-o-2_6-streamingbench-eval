@@ -1,0 +1,2252 @@
+[
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_1",
+    "task_type": "Object Perception",
+    "question": "What logos are visible in the background as players and referees walk towards the center of the football field?",
+    "time_stamp": "00:00:04",
+    "answer": "D",
+    "options": [
+      "A. FIFA and La Liga.",
+      "B. UEFA and La Liga.",
+      "C. Bundesliga and La Liga.",
+      "D. Aeromexico and La Liga."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 1,
+    "question_number": 1,
+    "timestamp_seconds": 4
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_2",
+    "task_type": "Causal Reasoning",
+    "question": "Why does the player wearing the number nine red and blue jersey celebrate?",
+    "time_stamp": "00:00:53",
+    "answer": "C",
+    "options": [
+      "A. He saved a goal.",
+      "B. He received a pass.",
+      "C. He scored a goal.",
+      "D. He won a free kick."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 1,
+    "question_number": 2,
+    "timestamp_seconds": 53
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_3",
+    "task_type": "Text-Rich Understanding",
+    "question": "What logo is seen on the jersey of the player covering his mouth?",
+    "time_stamp": "00:01:22",
+    "answer": "D",
+    "options": [
+      "A. Apple.",
+      "B. Google.",
+      "C. Adidas.",
+      "D. Spotify."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 1,
+    "question_number": 3,
+    "timestamp_seconds": 82
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_4",
+    "task_type": "Attribute Perception",
+    "question": "What color is the goalie's uniform?",
+    "time_stamp": "00:01:20",
+    "answer": "D",
+    "options": [
+      "A. Blue.",
+      "B. Red.",
+      "C. White.",
+      "D. Yellow."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 1,
+    "question_number": 4,
+    "timestamp_seconds": 80
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_1_5",
+    "task_type": "Attribute Perception",
+    "question": "What is the color of the cooler labeled \"PRIME\" near the team bench?",
+    "time_stamp": "00:02:08",
+    "answer": "D",
+    "options": [
+      "A. Blue.",
+      "B. Yellow.",
+      "C. Green.",
+      "D. Red."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 1,
+    "question_number": 5,
+    "timestamp_seconds": 128
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_1",
+    "task_type": "Object Perception",
+    "question": "What is the number on the back of MAJER's jersey?",
+    "time_stamp": "00:00:10",
+    "answer": "A",
+    "options": [
+      "A. 7.",
+      "B. 10.",
+      "C. 13.",
+      "D. 16."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 2,
+    "question_number": 1,
+    "timestamp_seconds": 10
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_2",
+    "task_type": "Event Understanding",
+    "question": "What event occurred just now?",
+    "time_stamp": "00:00:19",
+    "answer": "A",
+    "options": [
+      "A. A penalty kick.",
+      "B. A free kick.",
+      "C. A goal celebration.",
+      "D. A corner kick."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 2,
+    "question_number": 2,
+    "timestamp_seconds": 19
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_3",
+    "task_type": "Action Perception",
+    "question": "What is the goalkeeper doing as the player takes the penalty shot?",
+    "time_stamp": "00:01:52",
+    "answer": "B",
+    "options": [
+      "A. Standing still.",
+      "B. Diving to his right.",
+      "C. Running towards the ball.",
+      "D. Waving his hands."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 2,
+    "question_number": 3,
+    "timestamp_seconds": 112
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_4",
+    "task_type": "Causal Reasoning",
+    "question": "Why did the player celebrate by clenching his fists and bending his head forward?",
+    "time_stamp": "00:03:31",
+    "answer": "A",
+    "options": [
+      "A. He just scored a penalty kick.",
+      "B. He blocked a shot.",
+      "C. He made a successful pass.",
+      "D. He received a yellow card."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 2,
+    "question_number": 4,
+    "timestamp_seconds": 211
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_2_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "What is the current score shown on the scoreboard?",
+    "time_stamp": "00:05:15",
+    "answer": "B",
+    "options": [
+      "A. Croatia 3 - 2 Brazil.",
+      "B. Croatia 4 - 2 Brazil.",
+      "C. Croatia 4 - 3 Brazil.",
+      "D. Croatia 5 - 2 Brazil."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 2,
+    "question_number": 5,
+    "timestamp_seconds": 315
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_3_1",
+    "task_type": "Object Perception",
+    "question": "What appears at the very beginning of the video?",
+    "time_stamp": "00:00:08",
+    "answer": "B",
+    "options": [
+      "A. A football match.",
+      "B. A logo of FC Barcelona.",
+      "C. A silver trophy.",
+      "D. A live concert."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 3,
+    "question_number": 1,
+    "timestamp_seconds": 8
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_3_2",
+    "task_type": "Spatial Understanding",
+    "question": "What is the position relationship between the woman in a black dress and the woman in a white outfit?",
+    "time_stamp": "00:00:20",
+    "answer": "A",
+    "options": [
+      "A. They are standing side by side.",
+      "B. They are standing back to back.",
+      "C. The woman in black is in front of the woman in white.",
+      "D. The woman in white is holding the trophy."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 3,
+    "question_number": 2,
+    "timestamp_seconds": 20
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_3_3",
+    "task_type": "Attribute Perception",
+    "question": "What color is the goalkeeper's kit when standing in front of the goalposts?",
+    "time_stamp": "00:01:09",
+    "answer": "C",
+    "options": [
+      "A. Red.",
+      "B. Green.",
+      "C. Yellow.",
+      "D. Blue."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 3,
+    "question_number": 3,
+    "timestamp_seconds": 69
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_3_4",
+    "task_type": "Object Perception",
+    "question": "What advertisement is displayed on the red boards behind the goal?",
+    "time_stamp": "00:02:03",
+    "answer": "C",
+    "options": [
+      "A. AMBILIGHT TV.",
+      "B. NIKE.",
+      "C. ESTRELLA DAMM.",
+      "D. ADIDAS."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 3,
+    "question_number": 4,
+    "timestamp_seconds": 123
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_3_5",
+    "task_type": "Action Perception",
+    "question": "What are the two people in the video frame doing now?",
+    "time_stamp": "00:02:51",
+    "answer": "A",
+    "options": [
+      "A. handshaking.",
+      "B. Hugging.",
+      "C. High-fiving.",
+      "D. Fist bumping."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 3,
+    "question_number": 5,
+    "timestamp_seconds": 171
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_4_1",
+    "task_type": "Object Perception",
+    "question": "What emblem appears at the beginning of the video?",
+    "time_stamp": "00:00:20",
+    "answer": "B",
+    "options": [
+      "A. An animal symbol.",
+      "B. A football club shield.",
+      "C. A national flag.",
+      "D. A corporate logo."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 4,
+    "question_number": 1,
+    "timestamp_seconds": 20
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_4_2",
+    "task_type": "Causal Reasoning",
+    "question": "Why are the players in green and white striving to intercept the ball?",
+    "time_stamp": "00:00:19",
+    "answer": "C",
+    "options": [
+      "A. They are warming up for the game.",
+      "B. They are practicing their defensive moves.",
+      "C. They are reacting to an offensive move toward the goal.",
+      "D. They are performing a choreographed play."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 4,
+    "question_number": 2,
+    "timestamp_seconds": 19
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_4_3",
+    "task_type": "Text-Rich Understanding",
+    "question": "What was the score and the position of the teams right now?",
+    "time_stamp": "00:01:04",
+    "answer": "C",
+    "options": [
+      "A. 1-0, the team in blue and red is leading.",
+      "B. 2-0, the team in white is leading.",
+      "C. 2-0, the team in blue and red is leading.",
+      "D. 1-1, the teams are tied."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 4,
+    "question_number": 3,
+    "timestamp_seconds": 64
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_4_4",
+    "task_type": "Event Understanding",
+    "question": "What is the updated score after the player in number 11 scored a goal?",
+    "time_stamp": "00:02:11",
+    "answer": "D",
+    "options": [
+      "A. 2-0.",
+      "B. 3-0.",
+      "C. 5-0.",
+      "D. 4-0."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 4,
+    "question_number": 4,
+    "timestamp_seconds": 131
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_4_5",
+    "task_type": "Attribute Perception",
+    "question": "What uniform does the player named \"JOAO CANCELO\" wear?",
+    "time_stamp": "00:03:40",
+    "answer": "B",
+    "options": [
+      "A. Purple and white.",
+      "B. Red and blue striped.",
+      "C. Blue and yellow.",
+      "D. Green and black."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 4,
+    "question_number": 5,
+    "timestamp_seconds": 220
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_1",
+    "task_type": "Text-Rich Understanding",
+    "question": "What name is written on the goalkeeper's bright green jersey?",
+    "time_stamp": "00:00:14",
+    "answer": "B",
+    "options": [
+      "A. NEUER.",
+      "B. PICKFORD.",
+      "C. DE GEA.",
+      "D. COURTOIS."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 5,
+    "question_number": 1,
+    "timestamp_seconds": 14
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_2",
+    "task_type": "Object Perception",
+    "question": "What brand is visible on the player's white cleats?",
+    "time_stamp": "00:00:18",
+    "answer": "C",
+    "options": [
+      "A. Nike.",
+      "B. Puma.",
+      "C. Adidas.",
+      "D. Under Armour."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 5,
+    "question_number": 2,
+    "timestamp_seconds": 18
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_3",
+    "task_type": "Event Understanding",
+    "question": "What is the outcome of the penalty kick just now?",
+    "time_stamp": "00:02:27",
+    "answer": "C",
+    "options": [
+      "A. The goalkeeper saves the ball.",
+      "B. The ball hits the post.",
+      "C. The ball goes over the crossbar.",
+      "D. The ball goes into the net."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 5,
+    "question_number": 3,
+    "timestamp_seconds": 147
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_4",
+    "task_type": "Action Perception",
+    "question": "What did the goalkeeper do during the penalty kick?",
+    "time_stamp": "00:04:33",
+    "answer": "B",
+    "options": [
+      "A. Stood still.",
+      "B. Dived to his left.",
+      "C. Dived to his right.",
+      "D. Ran towards the ball."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 5,
+    "question_number": 4,
+    "timestamp_seconds": 273
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_5_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "What number is on the back of the goalkeeper's kit who is preparing to dive for the penalty kick?",
+    "time_stamp": "00:07:23",
+    "answer": "D",
+    "options": [
+      "A. 10.",
+      "B. 7.",
+      "C. 5.",
+      "D. 1."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 5,
+    "question_number": 5,
+    "timestamp_seconds": 443
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_6_1",
+    "task_type": "Action Perception",
+    "question": "What action is the player in the white shirt with number 20 doing?",
+    "time_stamp": "00:00:14",
+    "answer": "D",
+    "options": [
+      "A. Walking on the field.",
+      "B. Preparing for a penalty kick.",
+      "C. Waving to the crowd.",
+      "D. Kneeling on the ground."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 6,
+    "question_number": 1,
+    "timestamp_seconds": 14
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_6_2",
+    "task_type": "Object Perception",
+    "question": "What brand is advertised on the boards behind the goal?",
+    "time_stamp": "00:02:25",
+    "answer": "D",
+    "options": [
+      "A. Adidas.",
+      "B. Nike.",
+      "C. Pepsi.",
+      "D. Kia Motors."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 6,
+    "question_number": 2,
+    "timestamp_seconds": 145
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_6_3",
+    "task_type": "Event Understanding",
+    "question": "What is the crowd's reaction during the player's preparation for the penalty kick?",
+    "time_stamp": "00:02:31",
+    "answer": "D",
+    "options": [
+      "A. Celebrating wildly.",
+      "B. Leaving the stadium.",
+      "C. Booing the player.",
+      "D. Seemingly in prayer or anticipation."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 6,
+    "question_number": 3,
+    "timestamp_seconds": 151
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_6_4",
+    "task_type": "Action Perception",
+    "question": "What is the player in the black jersey doing just now?",
+    "time_stamp": "00:04:53",
+    "answer": "D",
+    "options": [
+      "A. Raising both arms.",
+      "B. Moving away from the ball.",
+      "C. Running toward the crowd.",
+      "D. Bending down to adjust the football."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 6,
+    "question_number": 4,
+    "timestamp_seconds": 293
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_6_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "What is written on the back of the goalkeeper's jersey?",
+    "time_stamp": "00:07:05",
+    "answer": "C",
+    "options": [
+      "A. SMITH 10.",
+      "B. JONES 15.",
+      "C. SCHEMEICHEL 1.",
+      "D. MARTIN 8."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 6,
+    "question_number": 5,
+    "timestamp_seconds": 425
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_7_1",
+    "task_type": "Event Understanding",
+    "question": "What is happening in the penalty area of the football field?",
+    "time_stamp": "00:00:16",
+    "answer": "A",
+    "options": [
+      "A. A player is preparing to take a penalty kick.",
+      "B. A player is scoring a goal.",
+      "C. A fight is breaking out.",
+      "D. The referee is ending the game."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 7,
+    "question_number": 1,
+    "timestamp_seconds": 16
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_7_2",
+    "task_type": "Event Understanding",
+    "question": "What happens after the penalty kick is taken?",
+    "time_stamp": "00:02:15",
+    "answer": "A",
+    "options": [
+      "A. The penalty kick was saved by the goalkeeper.",
+      "B. The goalkeeper catches the ball.",
+      "C. The ball goes into the bottom left of the net.",
+      "D. The ball is deflected by a defender."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 7,
+    "question_number": 2,
+    "timestamp_seconds": 135
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_7_3",
+    "task_type": "Action Perception",
+    "question": "What does the player in the white and light blue striped jersey do after running forward?",
+    "time_stamp": "00:04:20",
+    "answer": "D",
+    "options": [
+      "A. Passes the ball.",
+      "B. Stops running.",
+      "C. Celebrates.",
+      "D. Kicks the ball towards the goal."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 7,
+    "question_number": 3,
+    "timestamp_seconds": 260
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_7_4",
+    "task_type": "Event Understanding",
+    "question": "What happens after the goalkeeper dives to his right?",
+    "time_stamp": "00:04:18",
+    "answer": "A",
+    "options": [
+      "A. The ball goes past the goalkeeper.",
+      "B. The goalkeeper catches the ball.",
+      "C. The player misses the goal.",
+      "D. The ball hits the post."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 7,
+    "question_number": 4,
+    "timestamp_seconds": 258
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_7_5",
+    "task_type": "Event Understanding",
+    "question": "What event is taking place right now?",
+    "time_stamp": "00:06:36",
+    "answer": "A",
+    "options": [
+      "A. A soccer match celebration.",
+      "B. A concert.",
+      "C. A protest.",
+      "D. A graduation ceremony."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 7,
+    "question_number": 5,
+    "timestamp_seconds": 396
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_8_1",
+    "task_type": "Attribute Perception",
+    "question": "What is the color and number of the football player's jersey who is preparing for a penalty kick?",
+    "time_stamp": "00:00:05",
+    "answer": "D",
+    "options": [
+      "A. Red, 10.",
+      "B. Blue, 14.",
+      "C. Black, 22.",
+      "D. White, 26."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 8,
+    "question_number": 1,
+    "timestamp_seconds": 5
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_8_2",
+    "task_type": "Attribute Perception",
+    "question": "What name and number are on the goalkeeper's jersey righ now?",
+    "time_stamp": "00:00:14",
+    "answer": "D",
+    "options": [
+      "A. COSTA, 26.",
+      "B. RONALDO, 7.",
+      "C. MESSI, 10.",
+      "D. DIOGO COSTA, 22."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 8,
+    "question_number": 2,
+    "timestamp_seconds": 14
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_8_3",
+    "task_type": "Text-Rich Understanding",
+    "question": "What advertisement is visible around the perimeter of the field right now?",
+    "time_stamp": "00:01:25",
+    "answer": "C",
+    "options": [
+      "A. \"Airbnb\".",
+      "B. \"Expedia\".",
+      "C. \"Booking.com\".",
+      "D. \"TripAdvisor\"."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 8,
+    "question_number": 3,
+    "timestamp_seconds": 85
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_8_4",
+    "task_type": "Attribute Perception",
+    "question": "What colors are present on the shirt of the fan holding the scarf?",
+    "time_stamp": "00:02:43",
+    "answer": "D",
+    "options": [
+      "A. Red with white trimming.",
+      "B. Green with red trimming.",
+      "C. Yellow with red trimming.",
+      "D. Red with green trimming."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 8,
+    "question_number": 4,
+    "timestamp_seconds": 163
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_8_5",
+    "task_type": "Event Understanding",
+    "question": "What is the outcome of Bernardo's penalty kick?",
+    "time_stamp": "00:04:16",
+    "answer": "D",
+    "options": [
+      "A. The ball hits the post.",
+      "B. The ball goes out of bounds.",
+      "C. The goalkeeper saves the ball.",
+      "D. The ball hits the back of the net."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 8,
+    "question_number": 5,
+    "timestamp_seconds": 256
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_9_1",
+    "task_type": "Text-Rich Understanding",
+    "question": "What card is this person playing now?",
+    "time_stamp": "00:00:11",
+    "answer": "A",
+    "options": [
+      "A. Nine of Spades.",
+      "B. Six of Spades.",
+      "C. Nine of Hearts.",
+      "D. Seven of Diamonds."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 9,
+    "question_number": 1,
+    "timestamp_seconds": 11
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_9_2",
+    "task_type": "Clips Summarize",
+    "question": "What does the video primarily capture?",
+    "time_stamp": "00:00:19",
+    "answer": "A",
+    "options": [
+      "A. A card game in progress between two individuals.",
+      "B. A cooking tutorial.",
+      "C. A conversation between two people.",
+      "D. A travel vlog."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 9,
+    "question_number": 2,
+    "timestamp_seconds": 19
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_9_3",
+    "task_type": "Object Perception",
+    "question": "What else is on the table besides the playing cards and a black object?",
+    "time_stamp": "00:00:54",
+    "answer": "A",
+    "options": [
+      "A. A pair of glasses.",
+      "B. A computer.",
+      "C. A pile of books.",
+      "D. A stack of notebooks."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 9,
+    "question_number": 3,
+    "timestamp_seconds": 54
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_9_4",
+    "task_type": "Attribute Perception",
+    "question": "What type of shirt is the opponent wearing?",
+    "time_stamp": "00:01:11",
+    "answer": "A",
+    "options": [
+      "A. A blue and white patterned shirt.",
+      "B. A plain white shir.",
+      "C. A yellow patterned shirt.",
+      "D. A red checkered shirt."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 9,
+    "question_number": 4,
+    "timestamp_seconds": 71
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_9_5",
+    "task_type": "Prospective Reasoning",
+    "question": "What will the camera holder most likely do next?",
+    "time_stamp": "00:01:15",
+    "answer": "A",
+    "options": [
+      "A. Place Four of hearts onto the central pile.",
+      "B. Place the Ace of Spades onto the discard pile.",
+      "C. Put the Seven of Diamonds onto the foundation stack.",
+      "D. Move the King of Clubs to the empty tableau column."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 9,
+    "question_number": 5,
+    "timestamp_seconds": 75
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_10_1",
+    "task_type": "Attribute Perception",
+    "question": "What is the color of the sky right now?",
+    "time_stamp": "00:00:31",
+    "answer": "B",
+    "options": [
+      "A. Clear with sunshine.",
+      "B. Overcast with heavy clouds.",
+      "C. Dark and stormy.",
+      "D. Clear with scattered clouds."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 10,
+    "question_number": 1,
+    "timestamp_seconds": 31
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_10_2",
+    "task_type": "Event Understanding",
+    "question": "What happens after the person stops mashing and places the bowl to one side?",
+    "time_stamp": "00:02:08",
+    "answer": "A",
+    "options": [
+      "A. He pick up pineapple from the table.",
+      "B. He begin slicing a yellow fruit.",
+      "C. He start grilling pineapple and meat.",
+      "D. He pour sauce into a small white bowl."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 10,
+    "question_number": 2,
+    "timestamp_seconds": 128
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_10_3",
+    "task_type": "Spatial Understanding",
+    "question": "How are the food items arranged on the grill?",
+    "time_stamp": "00:04:42",
+    "answer": "C",
+    "options": [
+      "A. The buns are on the right side, and the vegetables and meat are on the left side.",
+      "B. The buns are on the top, and the vegetables and meat are on the bottom.",
+      "C. The buns are on the left side, and the vegetables and meat are on the right side.",
+      "D. The buns are at the center, and the vegetables and meat are on both sides."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 10,
+    "question_number": 3,
+    "timestamp_seconds": 282
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_10_4",
+    "task_type": "Attribute Perception",
+    "question": "Which item placed on the grill has a yellow color?",
+    "time_stamp": "00:05:04",
+    "answer": "C",
+    "options": [
+      "A. Meat slices.",
+      "B. Bell pepper.",
+      "C. Pineapple.",
+      "D. Hamburger buns."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 10,
+    "question_number": 4,
+    "timestamp_seconds": 304
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_10_5",
+    "task_type": "Attribute Perception",
+    "question": "What item is the person holding right now?",
+    "time_stamp": "00:07:37",
+    "answer": "A",
+    "options": [
+      "A. A white rectangular plate with hamburgers.",
+      "B. A white circular plate with a fish.",
+      "C. A blue rectangular plate with a salad.",
+      "D. A green square plate with a pie."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 10,
+    "question_number": 5,
+    "timestamp_seconds": 457
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_11_1",
+    "task_type": "Object Perception",
+    "question": "What is prominently displayed in red letters on the top shelf in the kitchen?",
+    "time_stamp": "00:00:22",
+    "answer": "B",
+    "options": [
+      "A. EAT.",
+      "B. COOK.",
+      "C. CHEF.",
+      "D. BAKE."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 11,
+    "question_number": 1,
+    "timestamp_seconds": 22
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_11_2",
+    "task_type": "Action Perception",
+    "question": "What action does the person take with the cauliflower?",
+    "time_stamp": "00:01:20",
+    "answer": "C",
+    "options": [
+      "A. He put it back on the counter.",
+      "B. He wash it under the sink.",
+      "C. He position it on a cutting board and cut it.",
+      "D. He place it in a bowl."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 11,
+    "question_number": 2,
+    "timestamp_seconds": 80
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_11_3",
+    "task_type": "Action Perception",
+    "question": "What is the person doing with the cauliflower right now?",
+    "time_stamp": "00:02:08",
+    "answer": "C",
+    "options": [
+      "A. Cutting it.",
+      "B. Seasoning it.",
+      "C. Placing it in the frying pan.",
+      "D. Washing it."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 11,
+    "question_number": 3,
+    "timestamp_seconds": 128
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_11_4",
+    "task_type": "Event Understanding",
+    "question": "What action does the person perform after adding the golden liquid to the bowl?",
+    "time_stamp": "00:07:11",
+    "answer": "A",
+    "options": [
+      "A. Begins stirring the mixture.",
+      "B. Starts cutting vegetables.",
+      "C. Places the bowl on the counter.",
+      "D. Prepares another ingredient."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 11,
+    "question_number": 4,
+    "timestamp_seconds": 431
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_11_5",
+    "task_type": "Object Perception",
+    "question": "What is the person holding right now?",
+    "time_stamp": "00:08:22",
+    "answer": "C",
+    "options": [
+      "A. A knife and a bowl.",
+      "B. A spoon and a knife.",
+      "C. A spoon and a towel.",
+      "D. A frying pan and a spatula."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 11,
+    "question_number": 5,
+    "timestamp_seconds": 502
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_12_1",
+    "task_type": "Attribute Perception",
+    "question": "What color shirt is the man wearing when he holds the white plate with a piece of raw steak?",
+    "time_stamp": "00:00:57",
+    "answer": "A",
+    "options": [
+      "A. Dark gray.",
+      "B. Green.",
+      "C. Blue.",
+      "D. White."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 12,
+    "question_number": 1,
+    "timestamp_seconds": 57
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_12_2",
+    "task_type": "Object Perception",
+    "question": "What object is the person holding and gesturing towards right now?",
+    "time_stamp": "00:01:25",
+    "answer": "D",
+    "options": [
+      "A. A frying pan.",
+      "B. A bowl of radishes.",
+      "C. A jar of chili flakes.",
+      "D. A plate with raw meat."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 12,
+    "question_number": 2,
+    "timestamp_seconds": 85
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_12_3",
+    "task_type": "Object Perception",
+    "question": "What is the person holding in their hand?",
+    "time_stamp": "00:03:05",
+    "answer": "D",
+    "options": [
+      "A. A spatula.",
+      "B. A wooden spoon.",
+      "C. A fork.",
+      "D. Red tongs."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 12,
+    "question_number": 3,
+    "timestamp_seconds": 185
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_12_4",
+    "task_type": "Object Perception",
+    "question": "What is the man holding in his right hand while preparing food on the cutting board?",
+    "time_stamp": "00:09:04",
+    "answer": "D",
+    "options": [
+      "A. A jar of salt.",
+      "B. Half a lemon.",
+      "C. A red vegetable.",
+      "D. A small white bowl."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 12,
+    "question_number": 4,
+    "timestamp_seconds": 544
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_12_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "What is the title of the cookbook prominently featured?",
+    "time_stamp": "00:11:04",
+    "answer": "A",
+    "options": [
+      "A. \"Gordon Ramsay in 10: Delicious Recipes Made in a Flash\".",
+      "B. \"Jamie Oliver's 30-Minute Meals\".",
+      "C. \"Gordon Ramsay's Ultimate Cookery Course\".",
+      "D. \"Nigella Express: Good Food Fast\"."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 12,
+    "question_number": 5,
+    "timestamp_seconds": 664
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_13_1",
+    "task_type": "Attribute Perception",
+    "question": "What shirt color is the individual wearing right now?",
+    "time_stamp": "00:00:21",
+    "answer": "D",
+    "options": [
+      "A. Dark blue.",
+      "B. Grey.",
+      "C. White.",
+      "D. Dark green."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 13,
+    "question_number": 1,
+    "timestamp_seconds": 21
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_13_2",
+    "task_type": "Action Perception",
+    "question": "What was the person doing while holding the grater over the bowl?",
+    "time_stamp": "00:07:06",
+    "answer": "D",
+    "options": [
+      "A. Slicing the orange.",
+      "B. Mixing ingredients.",
+      "C. Washing the orange.",
+      "D. Grating the orange peel."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 13,
+    "question_number": 2,
+    "timestamp_seconds": 426
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_13_3",
+    "task_type": "Causal Reasoning",
+    "question": "Why does the man bend over the counter?",
+    "time_stamp": "00:08:17",
+    "answer": "B",
+    "options": [
+      "A. To pick up a dropped item.",
+      "B. To peel an orange.",
+      "C. To check the stove.",
+      "D. To clean the counter."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 13,
+    "question_number": 3,
+    "timestamp_seconds": 497
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_13_4",
+    "task_type": "Object Perception",
+    "question": "What tool is the person using to grate the orange?",
+    "time_stamp": "00:09:35",
+    "answer": "D",
+    "options": [
+      "A. Cheese grater.",
+      "B. Knife.",
+      "C. Peeler.",
+      "D. Microplane."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 13,
+    "question_number": 4,
+    "timestamp_seconds": 575
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_13_5",
+    "task_type": "Object Perception",
+    "question": "What is the man sprinkling onto the dish in the kitchen?",
+    "time_stamp": "00:11:26",
+    "answer": "D",
+    "options": [
+      "A. Sugar.",
+      "B. Flour.",
+      "C. Cocoa powder.",
+      "D. Sliced nut."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 13,
+    "question_number": 5,
+    "timestamp_seconds": 686
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_14_1",
+    "task_type": "Object Perception",
+    "question": "What is displayed prominently in the center at the very beginning of the video?",
+    "time_stamp": "00:00:20",
+    "answer": "D",
+    "options": [
+      "A. A clock with hands.",
+      "B. A knife and fork.",
+      "C. A kitchen setting.",
+      "D. A large number \"10\"."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 14,
+    "question_number": 1,
+    "timestamp_seconds": 20
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_14_2",
+    "task_type": "Object Perception",
+    "question": "What item is the man holding while adding seasoning to the bowl?",
+    "time_stamp": "00:01:14",
+    "answer": "D",
+    "options": [
+      "A. A small jar.",
+      "B. A wooden spoon.",
+      "C. A bottle of oil.",
+      "D. A thin, red, rectangular can."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 14,
+    "question_number": 2,
+    "timestamp_seconds": 74
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_14_3",
+    "task_type": "Event Understanding",
+    "question": "What does the person do immediately after transferring the seasoned chicken to the grill pan?",
+    "time_stamp": "00:02:12",
+    "answer": "B",
+    "options": [
+      "A. Adds oil to the pan.",
+      "B. Sprinkles additional seasoning onto the meat.",
+      "C. Places the glass bowl in the sink.",
+      "D. Turns up the heat on the stove."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 14,
+    "question_number": 3,
+    "timestamp_seconds": 132
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_14_4",
+    "task_type": "Action Perception",
+    "question": "What does the person do with the avocado after cutting it?",
+    "time_stamp": "00:04:34",
+    "answer": "C",
+    "options": [
+      "A. Adds it whole to the blender.",
+      "B. Mashes it with a spoon.",
+      "C. Scoops out the flesh and places it into the blending container.",
+      "D. Peels off the skin and discards it."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 14,
+    "question_number": 4,
+    "timestamp_seconds": 274
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_14_5",
+    "task_type": "Object Perception",
+    "question": "What are some of the components of the salad on the cutting board?",
+    "time_stamp": "00:10:21",
+    "answer": "D",
+    "options": [
+      "A. Spinach, red cabbage, tomato, feta cheese, and olives.",
+      "B. Lettuce, red cabbage, tomato, feta cheese, and croutons.",
+      "C. Spinach, red cabbage, avocado, feta cheese, and croutons.",
+      "D. Lettuce, red cabbage, avocado, feta cheese, and croutons, chicken."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 14,
+    "question_number": 5,
+    "timestamp_seconds": 621
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_15_1",
+    "task_type": "Action Perception",
+    "question": "What does the person do right after zesting the lime over the bowl?",
+    "time_stamp": "00:01:32",
+    "answer": "D",
+    "options": [
+      "A. Mixes the ingredients with a spoon.",
+      "B. Adds another ingredient from a bottle.",
+      "C. Places the lime on the countertop.",
+      "D. Mixes the ingredients by his hand."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 15,
+    "question_number": 1,
+    "timestamp_seconds": 92
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_15_2",
+    "task_type": "Object Perception",
+    "question": "What item is the man holding in his left hand right now?",
+    "time_stamp": "00:02:40",
+    "answer": "D",
+    "options": [
+      "A. A spatula.",
+      "B. A red pepper mill.",
+      "C. A glass bowl.",
+      "D. A bottle of olive oil."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 15,
+    "question_number": 2,
+    "timestamp_seconds": 160
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_15_3",
+    "task_type": "Attribute Perception",
+    "question": "What colors are visible in the dish of rice on the stovetop?",
+    "time_stamp": "00:04:39",
+    "answer": "A",
+    "options": [
+      "A. White, red, and green.",
+      "B. White and green.",
+      "C. Brown and green.",
+      "D. Brown, red, and green."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 15,
+    "question_number": 3,
+    "timestamp_seconds": 279
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_15_4",
+    "task_type": "Attribute Perception",
+    "question": "What color are the walls in the kitchen?",
+    "time_stamp": "00:05:05",
+    "answer": "A",
+    "options": [
+      "A. White.",
+      "B. Black.",
+      "C. Green.",
+      "D. Blue."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 15,
+    "question_number": 4,
+    "timestamp_seconds": 305
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_15_5",
+    "task_type": "Event Understanding",
+    "question": "What sequence of actions was the person follow after tilting the pan?",
+    "time_stamp": "00:08:41",
+    "answer": "A",
+    "options": [
+      "A. Pouring food into a bowl, setting the pan aside, and wiping the countertop.",
+      "B. Chopping vegetables, stirring the pan, and explaining the recipe.",
+      "C. Pouring food into a bowl, adding more ingredients, and tasting the dish.",
+      "D. Stirring the food, plating the dish, and washing utensils."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 15,
+    "question_number": 5,
+    "timestamp_seconds": 521
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_16_1",
+    "task_type": "Object Perception",
+    "question": "What is the man from the introduction holding in his hand right now?",
+    "time_stamp": "00:00:09",
+    "answer": "C",
+    "options": [
+      "A. A cookbook.",
+      "B. A knife.",
+      "C. A towel.",
+      "D. A spatula."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 16,
+    "question_number": 1,
+    "timestamp_seconds": 9
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_16_2",
+    "task_type": "Object Perception",
+    "question": "What is placed on the ridged grill pan right now?",
+    "time_stamp": "00:05:27",
+    "answer": "A",
+    "options": [
+      "A. A large piece of raw ground meat.",
+      "B. A piece of chicken.",
+      "C. A slice of bread.",
+      "D. A fish fillet."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 16,
+    "question_number": 2,
+    "timestamp_seconds": 327
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_16_3",
+    "task_type": "Object Perception",
+    "question": "What items are present on the grill pan right now?",
+    "time_stamp": "00:08:01",
+    "answer": "B",
+    "options": [
+      "A. Chicken breast, tomato slices, and mushrooms.",
+      "B. Grilled onions, beef patty, and bacon strips.",
+      "C. Fish fillets, asparagus, and lemon slices.",
+      "D. Sausage links, green peppers, and onions."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 16,
+    "question_number": 3,
+    "timestamp_seconds": 481
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_16_4",
+    "task_type": "Object Perception",
+    "question": "What item is displayed on the phone screen right now?",
+    "time_stamp": "00:10:42",
+    "answer": "C",
+    "options": [
+      "A. A recipe.",
+      "B. A cooking video.",
+      "C. The time.",
+      "D. A shopping list."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 16,
+    "question_number": 4,
+    "timestamp_seconds": 642
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_16_5",
+    "task_type": "Action Perception",
+    "question": "What does the person with long blonde hair do in the video?",
+    "time_stamp": "00:10:59",
+    "answer": "C",
+    "options": [
+      "A. Cooks a meal.",
+      "B. Washes dishes.",
+      "C. Record a video about this food.",
+      "D. Sets the table."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 16,
+    "question_number": 5,
+    "timestamp_seconds": 659
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_1",
+    "task_type": "Action Perception",
+    "question": "What action is the person taking with the meat?",
+    "time_stamp": "00:02:04",
+    "answer": "B",
+    "options": [
+      "A. He seasons the meat.",
+      "B. He lowers the meat into the frying pan.",
+      "C. He cuts the meat into pieces.",
+      "D. He removes the meat from the frying pan."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 17,
+    "question_number": 1,
+    "timestamp_seconds": 124
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_2",
+    "task_type": "Object Perception",
+    "question": "What type of fruit is being squeezed right now?",
+    "time_stamp": "00:04:03",
+    "answer": "C",
+    "options": [
+      "A. Blueberry.",
+      "B. Orange.",
+      "C. Yellow Plum.",
+      "D. Apple."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 17,
+    "question_number": 2,
+    "timestamp_seconds": 243
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_3",
+    "task_type": "Object Perception",
+    "question": "What is the man using to cook food in the pan?",
+    "time_stamp": "00:06:03",
+    "answer": "C",
+    "options": [
+      "A. A wooden spoon.",
+      "B. A metal spatula.",
+      "C. Red kitchen tongs.",
+      "D. A fork."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 17,
+    "question_number": 3,
+    "timestamp_seconds": 363
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_4",
+    "task_type": "Object Perception",
+    "question": "What is simmering in a pan on the right side of the kitchen counter right now?",
+    "time_stamp": "00:08:01",
+    "answer": "A",
+    "options": [
+      "A. Tomatoes slices.",
+      "B. Cooked food.",
+      "C. Vegetables.",
+      "D. Leafy greens."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 17,
+    "question_number": 4,
+    "timestamp_seconds": 481
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_17_5",
+    "task_type": "Action Perception",
+    "question": "What is this person doing now right now?",
+    "time_stamp": "00:09:12",
+    "answer": "B",
+    "options": [
+      "A. Dice the green onions finely.",
+      "B. Chop the cilantro finely.",
+      "C. Climbing ropes and carabiners.",
+      "D. First aid kits and maps."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 17,
+    "question_number": 5,
+    "timestamp_seconds": 552
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_18_1",
+    "task_type": "Object Perception",
+    "question": "What sign is decorating the upper left portion of the wall behind the man?",
+    "time_stamp": "00:00:40",
+    "answer": "C",
+    "options": [
+      "A. A blue \"CHEF\" sign.",
+      "B. A yellow \"COOK\" sign.",
+      "C. A red \"COOK\" sign.",
+      "D. A green \"CHEF\" sign."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 18,
+    "question_number": 1,
+    "timestamp_seconds": 40
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_18_2",
+    "task_type": "Object Perception",
+    "question": "What is the man at the stove wearing?",
+    "time_stamp": "00:01:57",
+    "answer": "C",
+    "options": [
+      "A. A green T-shirt.",
+      "B. A striped shirt.",
+      "C. A dark T-shirt.",
+      "D. A chef's hat."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 18,
+    "question_number": 2,
+    "timestamp_seconds": 117
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_18_3",
+    "task_type": "Object Perception",
+    "question": "What is the chef holding while stirring the leafy greens in the pan?",
+    "time_stamp": "00:03:20",
+    "answer": "C",
+    "options": [
+      "A. A metal spoon.",
+      "B. A plastic spatula.",
+      "C. A wooden spoon.",
+      "D. A whisk."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 18,
+    "question_number": 3,
+    "timestamp_seconds": 200
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_18_4",
+    "task_type": "Action Perception",
+    "question": "What is the man doing right now?",
+    "time_stamp": "00:06:46",
+    "answer": "B",
+    "options": [
+      "A. He chops vegetables.",
+      "B. He uses spoon to lift yellow pasta from the pot.",
+      "C. He pours sauce into the pot.",
+      "D. He sets the table."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 18,
+    "question_number": 4,
+    "timestamp_seconds": 406
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_18_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "How much time does this person have left now??",
+    "time_stamp": "00:09:05",
+    "answer": "B",
+    "options": [
+      "A. 01:53.",
+      "B. 01:52.",
+      "C. 01:51.",
+      "D. 01:54."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 18,
+    "question_number": 5,
+    "timestamp_seconds": 545
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_19_1",
+    "task_type": "Attribute Perception",
+    "question": "What is the color of the baking dish filled with flour?",
+    "time_stamp": "00:03:01",
+    "answer": "B",
+    "options": [
+      "A. Blue.",
+      "B. Grey.",
+      "C. White.",
+      "D. Black."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 19,
+    "question_number": 1,
+    "timestamp_seconds": 181
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_19_2",
+    "task_type": "Object Perception",
+    "question": "What item does the person use to mix the contents of the bowl?",
+    "time_stamp": "00:06:03",
+    "answer": "C",
+    "options": [
+      "A. A spoon.",
+      "B. A fork.",
+      "C. A whisk.",
+      "D. A spatula."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 19,
+    "question_number": 2,
+    "timestamp_seconds": 363
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_19_3",
+    "task_type": "Object Perception",
+    "question": "What is the person wearing while standing in the kitchen?",
+    "time_stamp": "00:06:01",
+    "answer": "B",
+    "options": [
+      "A. A blue apron.",
+      "B. A white t-shirt.",
+      "C. A black jacket.",
+      "D. A red sweater."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 19,
+    "question_number": 3,
+    "timestamp_seconds": 361
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_19_4",
+    "task_type": "Object Perception",
+    "question": "What is on the countertop in front of the man right now?",
+    "time_stamp": "00:09:02",
+    "answer": "C",
+    "options": [
+      "A. A loaf of bread and a bottle of wine.",
+      "B. A bowl of fruit and a bottle of juice.",
+      "C. A cutting board with sliced potatoes.",
+      "D. A plate of vegetables and a bottle of water."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 19,
+    "question_number": 4,
+    "timestamp_seconds": 542
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_19_5",
+    "task_type": "Object Perception",
+    "question": "What is the countertop made of in the kitchen scene?",
+    "time_stamp": "00:12:06",
+    "answer": "C",
+    "options": [
+      "A. Granite.",
+      "B. Wood.",
+      "C. Marble.",
+      "D. Stainless steel."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 19,
+    "question_number": 5,
+    "timestamp_seconds": 726
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_20_1",
+    "task_type": "Attribute Perception",
+    "question": "What is the color of the man's t-shirt in the initial video?",
+    "time_stamp": "00:00:51",
+    "answer": "B",
+    "options": [
+      "A. Light blue.",
+      "B. Dark navy blue.",
+      "C. White.",
+      "D. Green."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 20,
+    "question_number": 1,
+    "timestamp_seconds": 51
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_20_2",
+    "task_type": "Object Perception",
+    "question": "What item is the woman initially holding in her left hand right now?",
+    "time_stamp": "00:01:00",
+    "answer": "D",
+    "options": [
+      "A. A green container.",
+      "B. A small saucepan.",
+      "C. A white bowl.",
+      "D. A can."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 20,
+    "question_number": 2,
+    "timestamp_seconds": 60
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_20_3",
+    "task_type": "Object Perception",
+    "question": "What item is the woman holding in her left hand right now?",
+    "time_stamp": "00:02:01",
+    "answer": "B",
+    "options": [
+      "A. A carton of eggs.",
+      "B. A white mixing bowl.",
+      "C. A whisk.",
+      "D. A small white bowl."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 20,
+    "question_number": 3,
+    "timestamp_seconds": 121
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_20_4",
+    "task_type": "Attribute Perception",
+    "question": "What color is the fluid being poured onto the griddle?",
+    "time_stamp": "00:03:01",
+    "answer": "B",
+    "options": [
+      "A. White.",
+      "B. Yellow.",
+      "C. Brown.",
+      "D. Red."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 20,
+    "question_number": 4,
+    "timestamp_seconds": 181
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_20_5",
+    "task_type": "Event Understanding",
+    "question": "What has this woman just done?",
+    "time_stamp": "00:05:22",
+    "answer": "B",
+    "options": [
+      "A. Pour the cooked seasonings from the pot onto the chicken wings on the grill.",
+      "B. Pour the seasonings from the pot onto the panca.",
+      "C. Pour the prepared sauce from the pot onto the roasted fish.",
+      "D. Pour the mixed spices from the pot onto the steak being seared."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 20,
+    "question_number": 5,
+    "timestamp_seconds": 322
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_21_1",
+    "task_type": "Object Perception",
+    "question": "What is the person holding right now?",
+    "time_stamp": "00:01:06",
+    "answer": "C",
+    "options": [
+      "A. A spatula.",
+      "B. A spoon.",
+      "C. An olive oil bottle.",
+      "D. A whisk."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 21,
+    "question_number": 1,
+    "timestamp_seconds": 66
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_21_2",
+    "task_type": "Object Perception",
+    "question": "What is the woman holding over the black frying pan?",
+    "time_stamp": "00:02:45",
+    "answer": "C",
+    "options": [
+      "A. A wooden spoon.",
+      "B. A salt shaker.",
+      "C. noodles.",
+      "D. A spatula."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 21,
+    "question_number": 2,
+    "timestamp_seconds": 165
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_21_3",
+    "task_type": "Object Perception",
+    "question": "What is the woman holding while she is stirring the pot on the stove?",
+    "time_stamp": "00:03:05",
+    "answer": "C",
+    "options": [
+      "A. A ladle.",
+      "B. A whisk.",
+      "C. A tongs.",
+      "D. A spatula."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Prior",
+    "video_id": 21,
+    "question_number": 3,
+    "timestamp_seconds": 185
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_21_4",
+    "task_type": "Attribute Perception",
+    "question": "What color is the pot being used by the person in the kitchen?",
+    "time_stamp": "00:04:01",
+    "answer": "B",
+    "options": [
+      "A. Black.",
+      "B. Silver.",
+      "C. Red.",
+      "D. White."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 21,
+    "question_number": 4,
+    "timestamp_seconds": 241
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_21_5",
+    "task_type": "Object Perception",
+    "question": "What item is the woman holding in her hand right now?",
+    "time_stamp": "00:05:15",
+    "answer": "B",
+    "options": [
+      "A. A red book.",
+      "B. A salt grinder.",
+      "C. A cup of coffee.",
+      "D. A newspaper."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 21,
+    "question_number": 5,
+    "timestamp_seconds": 315
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_22_1",
+    "task_type": "Object Perception",
+    "question": "What is the woman holding in her right hand right now?",
+    "time_stamp": "00:01:02",
+    "answer": "D",
+    "options": [
+      "A. A silver pot.",
+      "B. A green-bottled container.",
+      "C. A glass bowl.",
+      "D. A silver spoon."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 22,
+    "question_number": 1,
+    "timestamp_seconds": 62
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_22_2",
+    "task_type": "Action Perception",
+    "question": "What does the woman do after pouring a small amount of a white substance into the pot?",
+    "time_stamp": "00:01:15",
+    "answer": "D",
+    "options": [
+      "A. Places the bowl on the counter.",
+      "B. Looks out the window.",
+      "C. Shakes the spoon.",
+      "D. Stirs the contents of the pot with a spoon."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 22,
+    "question_number": 2,
+    "timestamp_seconds": 75
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_22_3",
+    "task_type": "Attribute Perception",
+    "question": "What color is the woman's nail polish?",
+    "time_stamp": "00:03:03",
+    "answer": "D",
+    "options": [
+      "A. Red.",
+      "B. Pink.",
+      "C. Blue.",
+      "D. Pale."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 22,
+    "question_number": 3,
+    "timestamp_seconds": 183
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_22_4",
+    "task_type": "Attribute Perception",
+    "question": "What is one of the items visible on the kitchen counter along with the condiments?",
+    "time_stamp": "00:04:10",
+    "answer": "D",
+    "options": [
+      "A. A red mug.",
+      "B. A blue cup.",
+      "C. A yellow bowl.",
+      "D. A green mug."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 22,
+    "question_number": 4,
+    "timestamp_seconds": 250
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_22_5",
+    "task_type": "Action Perception",
+    "question": "What has this woman just done?",
+    "time_stamp": "00:04:36",
+    "answer": "D",
+    "options": [
+      "A. She starts cleaning the pan.",
+      "B. She begins to wash the plate.",
+      "C. She opens the refrigerator.",
+      "D. She chop the green onions on the cutting board."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 22,
+    "question_number": 5,
+    "timestamp_seconds": 276
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_23_1",
+    "task_type": "Text-Rich Understanding",
+    "question": "What text appears on the screen right now?",
+    "time_stamp": "00:00:18",
+    "answer": "A",
+    "options": [
+      "A. \"RAMSAY in 10\".",
+      "B. \"RAMSAY in 5\".",
+      "C. \"COOKING in 10\".",
+      "D. \"CHEF in 10\"."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 23,
+    "question_number": 1,
+    "timestamp_seconds": 18
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_23_2",
+    "task_type": "Object Perception",
+    "question": "What item is the woman holding while stirring the pot?",
+    "time_stamp": "00:01:02",
+    "answer": "D",
+    "options": [
+      "A. A wooden spoon.",
+      "B. A glass bottle of oil.",
+      "C. A pepper grinder.",
+      "D. A small bowl."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 23,
+    "question_number": 2,
+    "timestamp_seconds": 62
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_23_3",
+    "task_type": "Attribute Perception",
+    "question": "What is the woman wearing while she is cooking?",
+    "time_stamp": "00:02:12",
+    "answer": "A",
+    "options": [
+      "A. A black off-the-shoulder top.",
+      "B. A white apron.",
+      "C. A red shirt.",
+      "D. A blue dress."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 23,
+    "question_number": 3,
+    "timestamp_seconds": 132
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_23_4",
+    "task_type": "Object Perception",
+    "question": "What is being saut\u00e9ed in the black frying pan?",
+    "time_stamp": "00:03:51",
+    "answer": "D",
+    "options": [
+      "A. Diced onions and green vegetables.",
+      "B. Sliced potatoes and pieces of meat.",
+      "C. Diced onions and mushrooms.",
+      "D. Diced onions and pieces of meat."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 23,
+    "question_number": 4,
+    "timestamp_seconds": 231
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_23_5",
+    "task_type": "Causal Reasoning",
+    "question": "Why does the woman lift the frying pan at a slight angle and shake it?",
+    "time_stamp": "00:04:18",
+    "answer": "C",
+    "options": [
+      "A. To add more oil to the pan.",
+      "B. To check if the contents are cooked.",
+      "C. To ensure the ingredients are moved around for even cooking.",
+      "D. To cool down the pan."
+    ],
+    "frames_required": "multiple",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 23,
+    "question_number": 5,
+    "timestamp_seconds": 258
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_24_1",
+    "task_type": "Object Perception",
+    "question": "What is the woman wearing?",
+    "time_stamp": "00:01:00",
+    "answer": "D",
+    "options": [
+      "A. A red dress with white dots.",
+      "B. A blue blouse with yellow stripes.",
+      "C. A green apron with floral patterns.",
+      "D. A white sleeveless top with black polka dots."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 24,
+    "question_number": 1,
+    "timestamp_seconds": 60
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_24_2",
+    "task_type": "Action Perception",
+    "question": "What action is the woman performing with the spice jar?",
+    "time_stamp": "00:01:24",
+    "answer": "C",
+    "options": [
+      "A. She is shaking the spice jar over the ingredients.",
+      "B. She is pouring the spice directly into the bowl.",
+      "C. She is spooning the spice into the bowl.",
+      "D. She is closing the lid of the spice jar."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 24,
+    "question_number": 2,
+    "timestamp_seconds": 84
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_24_3",
+    "task_type": "Text-Rich Understanding",
+    "question": "What text appeared on the just now?",
+    "time_stamp": "00:02:57",
+    "answer": "D",
+    "options": [
+      "A. \"Cooking Time: 10 minutes\".",
+      "B. \"Season to Taste\".",
+      "C. \"Ingredients: Beef, Salt, Pepper\".",
+      "D. \"Recipe is in the description below\"."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 24,
+    "question_number": 3,
+    "timestamp_seconds": 177
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_24_4",
+    "task_type": "Object Perception",
+    "question": "What is the woman holding right now?",
+    "time_stamp": "00:04:06",
+    "answer": "D",
+    "options": [
+      "A. A spoon.",
+      "B. A white bowl.",
+      "C. A pepper mill.",
+      "D. A green bottle of olive oil."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 24,
+    "question_number": 4,
+    "timestamp_seconds": 246
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_24_5",
+    "task_type": "Text-Rich Understanding",
+    "question": "How much time does this person have left now??",
+    "time_stamp": "00:05:49",
+    "answer": "D",
+    "options": [
+      "A. 10s.",
+      "B. More than ten seconds.",
+      "C. 20s.",
+      "D. Less than ten seconds."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 24,
+    "question_number": 5,
+    "timestamp_seconds": 349
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_1",
+    "task_type": "Attribute Perception",
+    "question": "What color is the coat worn by the man standing in front of the blue background with the text __AMSAY in 10_?",
+    "time_stamp": "00:00:03",
+    "answer": "D",
+    "options": [
+      "A. Black.",
+      "B. Dark blue.",
+      "C. Light grey.",
+      "D. White."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Prior",
+    "video_id": 25,
+    "question_number": 1,
+    "timestamp_seconds": 3
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_2",
+    "task_type": "Attribute Perception",
+    "question": "What color shirt is the person wearing right now?",
+    "time_stamp": "00:02:10",
+    "answer": "D",
+    "options": [
+      "A. Light blue.",
+      "B. White.",
+      "C. Green.",
+      "D. Dark navy blue."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 25,
+    "question_number": 2,
+    "timestamp_seconds": 130
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_3",
+    "task_type": "Object Perception",
+    "question": "What is the person holding with his left hand right now?",
+    "time_stamp": "00:02:44",
+    "answer": "D",
+    "options": [
+      "A. A pot lid.",
+      "B. A wooden spoon.",
+      "C. A bowl of peas.",
+      "D. A frying pan handle."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 25,
+    "question_number": 3,
+    "timestamp_seconds": 164
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_4",
+    "task_type": "Object Perception",
+    "question": "What is the man adding to the pan with oil?",
+    "time_stamp": "00:05:29",
+    "answer": "D",
+    "options": [
+      "A. Diced vegetables.",
+      "B. Pasta.",
+      "C. Herbs.",
+      "D. Diced meat."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 25,
+    "question_number": 4,
+    "timestamp_seconds": 329
+  },
+  {
+    "question_id": "Real-Time Visual Understanding_sample_25_5",
+    "task_type": "Object Perception",
+    "question": "What ingredients are being cooked in the frying pan?",
+    "time_stamp": "00:08:04",
+    "answer": "D",
+    "options": [
+      "A. Chunks of beef, onion slices, and bits of pepper.",
+      "B. Slices of chicken, garlic cloves, and bits of zucchini.",
+      "C. Pieces of fish, broccoli florets, and bits of carrot.",
+      "D. Chunks of ham, mushroom slices, and bits of pepper."
+    ],
+    "frames_required": "single",
+    "temporal_clue_type": "Concurrent",
+    "video_id": 25,
+    "question_number": 5,
+    "timestamp_seconds": 484
+  }
+]

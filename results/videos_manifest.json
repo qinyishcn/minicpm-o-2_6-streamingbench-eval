@@ -1,0 +1,202 @@
+[
+  {
+    "video_id": 1,
+    "path": "data\\videos\\001.mp4",
+    "archive_member": "sample_1/video.mp4",
+    "bytes": 95813537,
+    "sha256": "ba1aa1242318beef20e56dd3b19e5cf15503a121fe1a348a6366926fb86a4146",
+    "crc32": "ff541db2"
+  },
+  {
+    "video_id": 2,
+    "path": "data\\videos\\002.mp4",
+    "archive_member": "sample_2/video.mp4",
+    "bytes": 168099735,
+    "sha256": "a2f5cf0b867ca86ac0b559fff604abefea91503bc0298e1eb491a87ec144b0f6",
+    "crc32": "a2336759"
+  },
+  {
+    "video_id": 3,
+    "path": "data\\videos\\003.mp4",
+    "archive_member": "sample_3/video.mp4",
+    "bytes": 73763382,
+    "sha256": "c0956fe6948cd129cca5726ca5db4dbbdd34b902a3d6b8680ccb621bfd5603bf",
+    "crc32": "69f4b711"
+  },
+  {
+    "video_id": 4,
+    "path": "data\\videos\\004.mp4",
+    "archive_member": "sample_4/video.mp4",
+    "bytes": 92169097,
+    "sha256": "28880d8358869fe8b550d437b61d7e93ec1df92799253e480644729da7568ed1",
+    "crc32": "d44c8847"
+  },
+  {
+    "video_id": 5,
+    "path": "data\\videos\\005.mp4",
+    "archive_member": "sample_5/video.mp4",
+    "bytes": 268738834,
+    "sha256": "9704d90748d396738fba8c950708aca1b5897a4331229b752166caa7cbadaa2c",
+    "crc32": "4cf8e57c"
+  },
+  {
+    "video_id": 6,
+    "path": "data\\videos\\006.mp4",
+    "archive_member": "sample_6/video.mp4",
+    "bytes": 282885460,
+    "sha256": "c3a25fe16ad42b18097fc4380b2895053980f0ded9cf66c15f9c1c90097f9757",
+    "crc32": "6681f00a"
+  },
+  {
+    "video_id": 7,
+    "path": "data\\videos\\007.mp4",
+    "archive_member": "sample_7/video.mp4",
+    "bytes": 221859067,
+    "sha256": "d43490ac29f25a85b36a52bb9f47354dc9542bbeabfdf12dd5f784a3fb5e6818",
+    "crc32": "3b57a100"
+  },
+  {
+    "video_id": 8,
+    "path": "data\\videos\\008.mp4",
+    "archive_member": "sample_8/video.mp4",
+    "bytes": 140815877,
+    "sha256": "0a5f0348d1a9aab3914b0150d58ba72e14018eaae3b152b8f2cc1dca88fdcac5",
+    "crc32": "77f5b2dc"
+  },
+  {
+    "video_id": 9,
+    "path": "data\\videos\\009.mp4",
+    "archive_member": "sample_9/video.mp4",
+    "bytes": 24395641,
+    "sha256": "3a50e5b745fe254578e39ca900820a9aa6f9059ead4853164543f6ccb6fb8e02",
+    "crc32": "66cd5eb0"
+  },
+  {
+    "video_id": 10,
+    "path": "data\\videos\\010.mp4",
+    "archive_member": "sample_10/video.mp4",
+    "bytes": 188432617,
+    "sha256": "b9930cfae9cb9d11ac57d85efb21aafe6f17e7d21c3ff10e15e77a659862ad0d",
+    "crc32": "9bc9a09e"
+  },
+  {
+    "video_id": 11,
+    "path": "data\\videos\\011.mp4",
+    "archive_member": "sample_11/video.mp4",
+    "bytes": 161541002,
+    "sha256": "183a44d5e957b402d4162d68143228ac30cec6498c608ccc2ca5e320c34d98a4",
+    "crc32": "15f4d347"
+  },
+  {
+    "video_id": 12,
+    "path": "data\\videos\\012.mp4",
+    "archive_member": "sample_12/video.mp4",
+    "bytes": 172870048,
+    "sha256": "b76bd46e783d09babe67565f51da48bcbc3f6fd09ee555953fc93df824001e21",
+    "crc32": "0d10e7dd"
+  },
+  {
+    "video_id": 13,
+    "path": "data\\videos\\013.mp4",
+    "archive_member": "sample_13/video.mp4",
+    "bytes": 185636696,
+    "sha256": "ab276c677e982bbae993b103a628c56e0850768f3db8b673e06388fc93279c6a",
+    "crc32": "6b4533f4"
+  },
+  {
+    "video_id": 14,
+    "path": "data\\videos\\014.mp4",
+    "archive_member": "sample_14/video.mp4",
+    "bytes": 169092948,
+    "sha256": "bfa211156f43af266894ac0ef25999dd32d588750800355ce5912805209de4e6",
+    "crc32": "8b28121d"
+  },
+  {
+    "video_id": 15,
+    "path": "data\\videos\\015.mp4",
+    "archive_member": "sample_15/video.mp4",
+    "bytes": 142428824,
+    "sha256": "0611377f68d439495714414a291e698e67c6c10d1fe7adbbe321963ae5ff0808",
+    "crc32": "98902f55"
+  },
+  {
+    "video_id": 16,
+    "path": "data\\videos\\016.mp4",
+    "archive_member": "sample_16/video.mp4",
+    "bytes": 41053470,
+    "sha256": "71df5cca221085ce3811582e950ded0ce3d0cf897ed9f14a077a3f28356036b2",
+    "crc32": "aaa39554"
+  },
+  {
+    "video_id": 17,
+    "path": "data\\videos\\017.mp4",
+    "archive_member": "sample_17/video.mp4",
+    "bytes": 192227765,
+    "sha256": "d90d61d835357fb317b8deb9049d693ab957e883bef919da20a3de0fe9897100",
+    "crc32": "af816d98"
+  },
+  {
+    "video_id": 18,
+    "path": "data\\videos\\018.mp4",
+    "archive_member": "sample_18/video.mp4",
+    "bytes": 173773171,
+    "sha256": "25707f84f534b127313241b64d85fcff322621eb4501763f56effc24930723c9",
+    "crc32": "40edd0ee"
+  },
+  {
+    "video_id": 19,
+    "path": "data\\videos\\019.mp4",
+    "archive_member": "sample_19/video.mp4",
+    "bytes": 381301607,
+    "sha256": "203110344e46fc7c354cc9a39b45d1d4a29124289d152a3b9669d4de709be1e0",
+    "crc32": "4d73ff88"
+  },
+  {
+    "video_id": 20,
+    "path": "data\\videos\\020.mp4",
+    "archive_member": "sample_20/video.mp4",
+    "bytes": 62013840,
+    "sha256": "a0aa76732b35d3e93b1c6d8fa25d027f7c787bc4796e1e488b315804a2a9b4bc",
+    "crc32": "9f5bb53c"
+  },
+  {
+    "video_id": 21,
+    "path": "data\\videos\\021.mp4",
+    "archive_member": "sample_21/video.mp4",
+    "bytes": 64270887,
+    "sha256": "f5fcb4b70d1891cbeca0fe9eafaf1cf8728c1a12d1300ca3a871bda1391c819a",
+    "crc32": "665d5108"
+  },
+  {
+    "video_id": 22,
+    "path": "data\\videos\\022.mp4",
+    "archive_member": "sample_22/video.mp4",
+    "bytes": 105220849,
+    "sha256": "8be76f340654e1edd016e43b6f65b7f65ce2d408956437d82e482908cc1f9d3f",
+    "crc32": "a7946752"
+  },
+  {
+    "video_id": 23,
+    "path": "data\\videos\\023.mp4",
+    "archive_member": "sample_23/video.mp4",
+    "bytes": 57670049,
+    "sha256": "5cf967efe3a07fa8a6f84e70d24c49428ff44ac49cf2f93069e8a9e954aa40df",
+    "crc32": "62499f4c"
+  },
+  {
+    "video_id": 24,
+    "path": "data\\videos\\024.mp4",
+    "archive_member": "sample_24/video.mp4",
+    "bytes": 66438750,
+    "sha256": "0e4d35eeb76251cabe3a1a355c403f606d90b8cf1c55da2a0c1edee901425786",
+    "crc32": "562098aa"
+  },
+  {
+    "video_id": 25,
+    "path": "data\\videos\\025.mp4",
+    "archive_member": "sample_25/video.mp4",
+    "bytes": 273699821,
+    "sha256": "901e250eb3a791d6510db13c565c7cb66b01923f453f93ca236f5da9311cf6a6",
+    "crc32": "5a849aa7"
+  }
+]

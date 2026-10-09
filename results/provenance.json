@@ -1,0 +1,53 @@
+{
+  "dataset_revision": "48872fa707124474ce4c5172ddc58efb8bc88058",
+  "archive": [
+    {
+      "rfilename": "Real-Time Visual Understanding_1-50.zip",
+      "blobId": "23048a600703da57d7ef5330a556986c6868e237",
+      "size": 9080551796,
+      "lfs": {
+        "sha256": "39f8e42130424bddfa8c298be882b21fa3e818318e9782e28ef705851c0c82c5",
+        "size": 9080551796,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "model_revision": "565cac3bb01ac51e985fff9f5d7a52322b826c23",
+  "model_files": [
+    {
+      "rfilename": "Model-7.6B-Q4_K_M.gguf",
+      "blobId": "eaebfb772a3103732cc86959572e1a89507ebdd7",
+      "size": 4681260960,
+      "lfs": {
+        "sha256": "4f635fc0c0bb88d50ccd9cf1f1e5892b5cb085ff88fe0d8e1148fd9a8a836bc2",
+        "size": 4681260960,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "mmproj-model-f16.gguf",
+      "blobId": "5a83d330e28be96d5c46abef3e3cdfc40acedc01",
+      "size": 1044425152,
+      "lfs": {
+        "sha256": "efa4f7d96aa0f838f2023fc8d28e519179b16f1106777fa9280b32628191aa3e",
+        "size": 1044425152,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "benchmark_revision": "89299232c4cc1cc3721951173c5f107b48cf6877",
+  "labels_sha256": "0121417a71e1dcf367222ae97e9512e3e99725d72e60d50760a050816ccd58da",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "gpu": "NVIDIA GeForce RTX 3070, 8192 MiB, driver 610.60",
+  "runtime": "llama.cpp b11516 Vulkan",
+  "sources": [
+    "https://github.com/THUNLP-MT/StreamingBench",
+    "https://huggingface.co/datasets/mjuicem/StreamingBench",
+    "https://huggingface.co/openbmb/MiniCPM-o-2_6-gguf",
+    "https://modelscope.cn/models/OpenBMB/MiniCPM-o-2_6-gguf",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11516"
+  ],
+  "runtime_sha256": "01dff69c02650624d401be0b170348ea38f4bcdca24cb97a7415cddb7315414b",
+  "annotation_policy": "Use dataset Real_Time_Visual_Understanding.csv unchanged; reference GitHub JSON differences are recorded separately."
+}
