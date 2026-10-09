@@ -52,3 +52,25 @@ python -m minicpm_split.packet_loss_report --results results/feature_packet_loss
 这会独立重评分 1750 条保存的回答，重建每个丢包掩码并核对接收哈希，
 同时核对 250 个无丢包样例的特征、答案和首步完整 logits 哈希。
 该操作会重新生成报告及图表；图表和 PDF 的文件哈希可能受本地绘图版本与生成时间影响。
+
+## 2026-10-10：补测 20%–50% 区间
+
+新增 25%、30%、35%、40%、45%、50% 六个点，继续使用同一模型、运行时、
+125 道固定问题、原生帧和种子。每个新增条件均完整推理；没有按期望曲线筛选题目或重跑种子。
+主图固定展示 0%–50%，另有完整范围图保留 100% 全零对照；标记为实测值，连线不代表拟合。
+
+```powershell
+# 仍需按上述流程启动语言模型服务器。输出目录可用于相同配置的断点续跑。
+python -m minicpm_split.packet_loss --runtime runtime/vulkan --projector models/mmproj-model-f16.gguf --questions results/q4_k_m_single_native/questions_manifest.json --frames data/native_frames --output results/feature_packet_loss_midrange_rerun --loss-rates 0.25 0.30 0.35 0.40 0.45 0.50
+
+# 合并旧实验、补测与全零对照，逐题重评分及核验后画图。
+python -m minicpm_split.packet_loss_curve --sources results/feature_packet_loss_rerun results/feature_packet_loss_midrange_rerun results/feature_packet_loss_allzero_rerun --questions results/q4_k_m_single_native/questions_manifest.json --text-control results/zero_feature_controls/summary.json --output results/feature_packet_loss_curve_rerun
+
+# 仅复核仓库中已发布的 3250 条回答，无需模型或视频。
+python -m minicpm_split.packet_loss_curve --sources results/feature_packet_loss results/feature_packet_loss_midrange results/feature_packet_loss_allzero --questions results/q4_k_m_single_native/questions_manifest.json --text-control results/zero_feature_controls/summary.json --output results/feature_packet_loss_curve_reaudit
+```
+
+合并脚本拒绝重复条件、不同模型/提示词/种子/输入设定以及不完整问题集合，
+并核对新增运行与原运行每题的原始特征哈希、帧元数据完全一致。
+各条件只使用一组随机掩码，准确率仍以 125 题为分母；纯文本控制不计入 3250 条丢包实验回答。
+报告及 PNG/PDF/SVG 见 `results/feature_packet_loss_curve/`。
