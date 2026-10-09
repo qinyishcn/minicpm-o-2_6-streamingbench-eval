@@ -1,0 +1,2001 @@
+{
+  "status": "passed",
+  "conditions": 14,
+  "real_model_answers": 1750,
+  "fixed_manifest_questions": 125,
+  "mask_reproduction": "all packet masks and erased byte counts match",
+  "server_feature_hashes": "all damaged-feature hashes match server receipt",
+  "frame_selection": "all frames are past-only; four-frame indices consecutive",
+  "zero_loss_split_parity": [
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_2_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_2_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_2_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_2_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_2_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_3_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_3_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_3_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_3_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_3_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_4_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_4_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_4_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_4_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_4_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_5_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_5_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_5_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_5_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_5_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_6_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_6_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_6_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_6_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_6_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_7_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_7_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_7_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_7_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_7_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_8_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_8_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_8_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_8_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_8_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_9_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_9_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_9_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_9_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_9_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_10_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_10_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_10_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_10_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_10_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_11_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_11_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_11_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_11_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_11_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_12_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_12_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_12_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_12_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_12_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_13_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_13_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_13_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_13_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_13_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_14_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_14_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_14_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_14_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_14_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_15_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_15_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_15_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_15_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_15_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_16_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_16_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_16_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_16_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_16_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_17_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_17_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_17_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_17_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_17_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_18_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_18_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_18_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_18_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_18_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_19_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_19_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_19_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_19_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_19_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_20_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_20_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_20_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_20_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_20_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_21_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_21_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_21_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_21_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_21_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_22_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_22_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_22_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_22_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_22_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_23_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_23_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_23_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_23_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_23_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_24_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_24_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_24_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_24_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_24_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_25_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_25_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_25_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_25_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "single",
+      "question_id": "Real-Time Visual Understanding_sample_25_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_2_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_2_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_2_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_2_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_2_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_3_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_3_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_3_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_3_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_3_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_4_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_4_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_4_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_4_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_4_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_5_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_5_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_5_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_5_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_5_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_6_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_6_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_6_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_6_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_6_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_7_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_7_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_7_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_7_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_7_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_8_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_8_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_8_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_8_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_8_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_9_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_9_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_9_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_9_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_9_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_10_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_10_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_10_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_10_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_10_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_11_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_11_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_11_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_11_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_11_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_12_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_12_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_12_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_12_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_12_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_13_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_13_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_13_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_13_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_13_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_14_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_14_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_14_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_14_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_14_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_15_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_15_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_15_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_15_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_15_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_16_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_16_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_16_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_16_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_16_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_17_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_17_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_17_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_17_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_17_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_18_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_18_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_18_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_18_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_18_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_19_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_19_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_19_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_19_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_19_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_20_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_20_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_20_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_20_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_20_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_21_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_21_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_21_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_21_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_21_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_22_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_22_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_22_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_22_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_22_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_23_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_23_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_23_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_23_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_23_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_24_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_24_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_24_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_24_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_24_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_25_1",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_25_2",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_25_3",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_25_4",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    },
+    {
+      "mode": "native4",
+      "question_id": "Real-Time Visual Understanding_sample_25_5",
+      "answer_equal": true,
+      "feature_bytes_equal": true,
+      "first_logits_bitwise_equal": true
+    }
+  ],
+  "summary": [
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 0,
+      "observed_packet_loss_percent": 0.0,
+      "zeroed_feature_percent": 0.0,
+      "mean_server_inference_seconds": 0.3199111280217767,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 0
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0.001,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 247,
+      "observed_packet_loss_percent": 0.10275611024440978,
+      "zeroed_feature_percent": 0.1028018043154762,
+      "mean_server_inference_seconds": 0.3196366327945143,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 107
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0.01,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 2412,
+      "observed_packet_loss_percent": 1.0034321372854915,
+      "zeroed_feature_percent": 1.0035226004464286,
+      "mean_server_inference_seconds": 0.3206546015832573,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0.05,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 11936,
+      "observed_packet_loss_percent": 4.96557462298492,
+      "zeroed_feature_percent": 4.965648251488095,
+      "mean_server_inference_seconds": 0.32028925920277834,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0.1,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 23909,
+      "observed_packet_loss_percent": 9.946541861674467,
+      "zeroed_feature_percent": 9.945628720238096,
+      "mean_server_inference_seconds": 0.31999120400473474,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 0.2,
+      "evaluated": 125,
+      "correct": 96,
+      "accuracy_percent": 76.8,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 47995,
+      "observed_packet_loss_percent": 19.96671866874675,
+      "zeroed_feature_percent": 19.965636625744047,
+      "mean_server_inference_seconds": 0.32033825279958544,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 2,
+      "changed_answers": 3,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0,
+      "evaluated": 125,
+      "correct": 100,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 0,
+      "observed_packet_loss_percent": 0.0,
+      "zeroed_feature_percent": 0.0,
+      "mean_server_inference_seconds": 0.8669467895887792,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 0
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0.001,
+      "evaluated": 125,
+      "correct": 100,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 960,
+      "observed_packet_loss_percent": 0.0998829496683574,
+      "zeroed_feature_percent": 0.09988839285714286,
+      "mean_server_inference_seconds": 0.8665945919882506,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "changed_answers": 0,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0.01,
+      "evaluated": 125,
+      "correct": 99,
+      "accuracy_percent": 79.2,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 9630,
+      "observed_packet_loss_percent": 1.0019508388607101,
+      "zeroed_feature_percent": 1.0020054408482142,
+      "mean_server_inference_seconds": 0.8667290831860155,
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 1,
+      "changed_answers": 1,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0.05,
+      "evaluated": 125,
+      "correct": 100,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 48024,
+      "observed_packet_loss_percent": 4.996644557159579,
+      "zeroed_feature_percent": 4.996829659598214,
+      "mean_server_inference_seconds": 0.866514340788126,
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 1,
+      "changed_answers": 2,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0.1,
+      "evaluated": 125,
+      "correct": 99,
+      "accuracy_percent": 79.2,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 96322,
+      "observed_packet_loss_percent": 10.021797372870335,
+      "zeroed_feature_percent": 10.021863955543155,
+      "mean_server_inference_seconds": 0.8665721792075783,
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 2,
+      "changed_answers": 3,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 0.2,
+      "evaluated": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 192618,
+      "observed_packet_loss_percent": 20.040889582520485,
+      "zeroed_feature_percent": 20.04102260044643,
+      "mean_server_inference_seconds": 0.8662722960095852,
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 5,
+      "changed_answers": 9,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "single",
+      "nominal_loss_rate": 1.0,
+      "evaluated": 125,
+      "correct": 73,
+      "accuracy_percent": 58.4,
+      "invalid_responses": 0,
+      "total_packets": 240375,
+      "lost_packets": 240375,
+      "observed_packet_loss_percent": 100.0,
+      "zeroed_feature_percent": 100.0,
+      "mean_server_inference_seconds": 0.3205045208167285,
+      "wrong_to_correct": 10,
+      "correct_to_wrong": 35,
+      "changed_answers": 50,
+      "changed_first_logits": 125
+    },
+    {
+      "mode": "native4",
+      "nominal_loss_rate": 1.0,
+      "evaluated": 125,
+      "correct": 73,
+      "accuracy_percent": 58.4,
+      "invalid_responses": 0,
+      "total_packets": 961125,
+      "lost_packets": 961125,
+      "observed_packet_loss_percent": 100.0,
+      "zeroed_feature_percent": 100.0,
+      "mean_server_inference_seconds": 0.8632043112050742,
+      "wrong_to_correct": 8,
+      "correct_to_wrong": 35,
+      "changed_answers": 47,
+      "changed_first_logits": 125
+    }
+  ]
+}

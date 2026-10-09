@@ -1,0 +1,52 @@
+{
+  "experiment": "offline Bernoulli feature packet erasure; erased bytes -> positive float32 zero",
+  "mtu": 1500,
+  "header_budget": {
+    "ipv4": 20,
+    "udp": 8,
+    "rtp": 12,
+    "feature_fragment_header": 16,
+    "srtp_auth_tag": 10
+  },
+  "feature_payload_per_full_packet": 1432,
+  "loss_rates": [
+    0,
+    0.001,
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "seed": 20261009,
+  "random_seeds": 1,
+  "mask_pairing": "same per-question uniforms at all rates; higher-rate masks contain lower-rate masks",
+  "question_seed_derivation": "first 8 bytes of SHA256(seed|mode|question_id), big endian",
+  "expected_questions_per_condition": 125,
+  "modes": [
+    "single",
+    "native4"
+  ],
+  "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd",
+  "model_sha256": "4f635fc0c0bb88d50ccd9cf1f1e5892b5cb085ff88fe0d8e1148fd9a8a836bc2",
+  "projector_sha256": "efa4f7d96aa0f838f2023fc8d28e519179b16f1106777fa9280b32628191aa3e",
+  "tokenizer_sha256": "ee2af5fc10ab7468d746c3e7e677f16e9bf56f1f3f5625f53836401d025b1ba9",
+  "runtime": "llama.cpp b11516 Windows Vulkan x64",
+  "runtime_dll_sha256": {
+    "llama.dll": "98e8747e58bf38d6888b753c0e1d7b21c5f16a2978fc8b5e0752f82d1bf4227f",
+    "mtmd.dll": "7773002ee46f8eb65fa6e73237372143cddb1a6db6886a858d447b0b0932f3a1",
+    "ggml-vulkan.dll": "639e8c7e192d4d5bec10826f68224737a7eb0a671a8da090eff315d93aa598d3"
+  },
+  "language_quantization": "Q4_K_M",
+  "vision_weights": "F16",
+  "wire_dtype": "<f4",
+  "context": 4096,
+  "max_tokens": 16,
+  "temperature": 0,
+  "prompt_template": "You are an advanced video question-answering AI assistant. You have been provided with some frames from the video and a multiple-choice question related to the video. Your task is to carefully analyze the video and provide the best answer to question, choosing from the four options provided. Respond with only the letter (A, B, C, or D) of the correct option.\n\nQuestion: {}\n\nOptions:\n{}\n{}\n{}\n{}\n\nThe best option is:",
+  "network_emulation": false,
+  "actual_transport": "local TCP; erasure happens before sending",
+  "images_transmitted": false,
+  "feature_concealment": "zero only; no retransmission/FEC/temporal reuse",
+  "scope": "first 25 videos, 5 questions each; latest past native frame or previous 3 plus current",
+  "preprocessing": "verified 588x336 JPEG cache, no temporal resampling"
+}

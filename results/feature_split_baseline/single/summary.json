@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "evaluated": 125,
+  "correct": 98,
+  "accuracy_percent": 78.4,
+  "invalid_responses": 0,
+  "mean_feature_bytes": 2752512,
+  "mean_total_seconds": 0.5814467767905444,
+  "mean_edge_encode_seconds": 0.19702099278755486,
+  "mean_server_inference_seconds": 0.36951725440472366,
+  "mean_request_to_response_seconds": 0.3813593320176005
+}
