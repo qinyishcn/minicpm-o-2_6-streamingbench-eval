@@ -103,7 +103,13 @@ def draw_curves(summaries, output, focus_max, text_accuracy):
         figure.text(.5, -.04, note, ha='center', va='top', fontsize=8, color='#555555')
         name = 'task_success_full_range' if full_range else 'task_success_0_50'
         for extension in ['png', 'pdf', 'svg']:
-            figure.savefig(output / f'{name}.{extension}', dpi=200, bbox_inches='tight')
+            path = output / f'{name}.{extension}'
+            figure.savefig(path, dpi=200, bbox_inches='tight')
+            if extension == 'svg':
+                # Matplotlib path data contain trailing spaces; normalize
+                # only line endings/whitespace for clean source publication.
+                path.write_bytes(('\n'.join(line.rstrip() for line in
+                                            path.read_text(encoding='utf-8').splitlines()) + '\n').encode('utf-8'))
         plt.close(figure)
 
 
