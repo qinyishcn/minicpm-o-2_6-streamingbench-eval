@@ -37,6 +37,8 @@
 [汇总 JSON](results/native_comparison/comparison.json) ·
 [500 帧顺序解码核验](results/q4_k_m_four_native/frame_audit.json)
 
+新增[全零特征与纯文本对照](results/zero_feature_controls/report_zh.md)：全零单帧在新进程中精确复现 58.4%，完全无视觉输入的纯文本也达到 56.0%。这些语言基线必须与丢包准确率一同解读。
+
 评测目标：用户指定 ZIP 中数值编号 1–25 的视频，每个视频 5 道题，共 125 道。
 
 当前按用户更新的要求比较 **提问时刻对应的单帧** 与 **该帧和紧邻的前三帧**。
