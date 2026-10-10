@@ -1,0 +1,252 @@
+[
+  {
+    "path": "dataset/single/sample_1/questions_results_no_emulation.json",
+    "sha256": "cab6ef20ac1898a7f4a4a06d558452a97786ec4abfb3b871d333d3e2020ef4c2",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_1/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_2/questions_results_no_emulation.json",
+    "sha256": "9888c3cad9ab2e68a566333f3bf35a5ca127022dd9777d9c4ab98e61076789ad",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_2/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_3/questions_results_no_emulation.json",
+    "sha256": "651fc0e9a99bdbea35dbb8af32f97119127a635ad07861293a8d103f719e7482",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_3/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_4/questions_results_no_emulation.json",
+    "sha256": "965e488b9da305d4c9ca9c4a25c60169edf1a6e341ef9d0f4d0a5430f0fdf9c0",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_4/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_5/questions_results_no_emulation.json",
+    "sha256": "0ecbb61076e2321be94942a9bc77e15908c497f732a7e0ea4110840bb1347ca1",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_5/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_6/questions_results_no_emulation.json",
+    "sha256": "d4764e60ebc970ee14cc4d29acffda351e04a534d84d6738255c9cde6e756efc",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_6/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_7/questions_results_no_emulation.json",
+    "sha256": "a18e28262987cce5efffb62cf463d63b00fa65e4ec94af75bdecab380520bad3",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_7/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_8/questions_results_no_emulation.json",
+    "sha256": "80bfe79187810f1e73e8918291e678a69a8e37d0299e0b9490d282808eacc606",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_8/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_9/questions_results_no_emulation.json",
+    "sha256": "c91825edacc1fabaac1af8b6784324540e1db283c2f6596045fcf99fd48de94f",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_9/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_10/questions_results_no_emulation.json",
+    "sha256": "21dc9fe804ce36771d156e8e70c624bbbbb67dfe7d5c1a6786d9f2e129e81023",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_10/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_11/questions_results_no_emulation.json",
+    "sha256": "ae6aec16f5b44e3ebbf75978e7427b9ec9ca149f760302cfe1043897a5a23e27",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_11/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_12/questions_results_no_emulation.json",
+    "sha256": "cc9de50d55febfd48e7ff18e7f0d7487461878c3615912e86970a02fd1137c78",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_12/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_13/questions_results_no_emulation.json",
+    "sha256": "02d320dcb6b60724b55a384cc8cd4b172e27a2c115e4fc768ccc7e4a2ef56321",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_13/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_14/questions_results_no_emulation.json",
+    "sha256": "d1aca5e8ab1c53986d64384c09ef76b799554d8937fe8c2644861f7d561da080",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_14/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_15/questions_results_no_emulation.json",
+    "sha256": "0b77277f4b1177af0a6868299483aebbc273b0a519845d9ff2032529f2c6080e",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_15/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_16/questions_results_no_emulation.json",
+    "sha256": "eb414ec8ccfc52df4fc756bd7fc0f8c6cd537454b8115b1b64784fc2b13d885a",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_16/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_17/questions_results_no_emulation.json",
+    "sha256": "f66de559e85909bde16d7753ab358a5d757d7c35e3b1865a67d99433b2fae4ab",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_17/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_18/questions_results_no_emulation.json",
+    "sha256": "b3c2fa986466e2462ff588fa710e176834b1627be5ddb97b463dae3ebc7d9022",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_18/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_19/questions_results_no_emulation.json",
+    "sha256": "6b0d8abe26e61b53798dd32e3b2b0336bab88e5cc7da0bb3967a12e0e6ce506f",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_19/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_20/questions_results_no_emulation.json",
+    "sha256": "0b4091d19bbe56bf088c60b494ab94ee61ca31cce78712092c5350057c0c8a7d",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_20/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_21/questions_results_no_emulation.json",
+    "sha256": "4965757a29a6f8b3cad24c87b2780a2d461030107760d0607fe1b5582a572601",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_21/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_22/questions_results_no_emulation.json",
+    "sha256": "dc850cc9e19bef65f03b34ead22793323b66ad22d9a7854ae5d640c20837ad68",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_22/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_23/questions_results_no_emulation.json",
+    "sha256": "aed79dc8d2973cc8fad0d0faa0189f1b755c99cb05b888ae6167a8968e6b91d9",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_23/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_24/questions_results_no_emulation.json",
+    "sha256": "04e686c04334e5772e37620cfe78d640af0c72580af1c9261a37ec5548e8ff21",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_24/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/single/sample_25/questions_results_no_emulation.json",
+    "sha256": "171dfeaf64dcdd00519590fd0705b28c7f5765770dc4e3e4594565d85f1d357f",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/single/sample_25/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_1/questions_results_no_emulation.json",
+    "sha256": "fccbf86e3553db02c659c43ff8c39ddb6332d9e6ef08c224edfa65b698ecc1d3",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_1/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_2/questions_results_no_emulation.json",
+    "sha256": "ef1f3d9aa868d0149281a12571eb1bf7acc1a298de5a1900d6b7f8bcfe907f63",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_2/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_3/questions_results_no_emulation.json",
+    "sha256": "42f4ea78f47b48ae916f540e92948fddb89d405e9afa5319565aa2f0ab6d8945",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_3/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_4/questions_results_no_emulation.json",
+    "sha256": "ebd1df2dbe16aa32f96bae9ffe11c011766544ce1b3101a0070bf02adf44b140",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_4/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_5/questions_results_no_emulation.json",
+    "sha256": "9ab9355fe68af35f90927fe220d7d34278ca51184445beb128d16633816d04c3",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_5/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_6/questions_results_no_emulation.json",
+    "sha256": "c1960e8fe2d43e88458749233ff4c4986e01d79d0f9acfdfc94424083165f38e",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_6/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_7/questions_results_no_emulation.json",
+    "sha256": "0f08a0c372d48f673fa929bccc1ff6e4eb009f4f000546fdc7dffa66fa273b6b",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_7/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_8/questions_results_no_emulation.json",
+    "sha256": "a0518c89fbb504c9fe63d4d4f46d2637ffc56ffa6579ea0b402e31b55a268cef",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_8/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_9/questions_results_no_emulation.json",
+    "sha256": "e54336811ff027c4a23f3b879f63b122df6f3e8c0cd3b801272cfec41b7b0c56",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_9/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_10/questions_results_no_emulation.json",
+    "sha256": "bf398965bd55ddaaf6945f0840b3c23657f30fe65e26a2dd737c5ae0d65f7bb3",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_10/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_11/questions_results_no_emulation.json",
+    "sha256": "e985041ade2f6e2cda548beab94094115ceca0fca4ce39686568e3053fcffb4b",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_11/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_12/questions_results_no_emulation.json",
+    "sha256": "72c83b451ce8810e3531c1e9b82f5496e3fbb00829fb48594064002950156980",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_12/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_13/questions_results_no_emulation.json",
+    "sha256": "510d5728aaeecb1e50d84be40a52aecb62434027228b907c9dc31435fe892f76",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_13/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_14/questions_results_no_emulation.json",
+    "sha256": "9fb8376d76ee5afb28c63852235fc97862485690350de1c51fba335358c44daf",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_14/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_15/questions_results_no_emulation.json",
+    "sha256": "e5e515b8919de57a86b449c93ff409cb3745ec35d20f241a9869655fcb8be695",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_15/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_16/questions_results_no_emulation.json",
+    "sha256": "583ab9fa87c4f0b7bd6f85de1f2e954e80bb80dbe73dcb99286eb2a8cfd2d3fa",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_16/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_17/questions_results_no_emulation.json",
+    "sha256": "41b4a7a50875e19ddf5b0cccdae7dffdbc2b7998b3eb3024e5324caf5d2a22d4",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_17/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_18/questions_results_no_emulation.json",
+    "sha256": "b102bb602638796738c4d2c576d50b881e3015461b7fa639908d738317bd64df",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_18/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_19/questions_results_no_emulation.json",
+    "sha256": "ece6bb1010fd9f5bffb596ac5bee73e229bb03a0bf9815542f9e126157c339d0",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_19/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_20/questions_results_no_emulation.json",
+    "sha256": "9de34e628f1a6501b72b28231d57520ddb1c984dd3a7761c31638d1d024e10be",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_20/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_21/questions_results_no_emulation.json",
+    "sha256": "afd132a6ab6beeab7668d6a25aca0bbf4489a276e0eef37f94dca905fde48446",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_21/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_22/questions_results_no_emulation.json",
+    "sha256": "f72398d1172f6ba536325ab2926013be919528e14209503816ed5633764bd5db",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_22/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_23/questions_results_no_emulation.json",
+    "sha256": "89178ce4a8c2c2849c4a63fc1f3a74ac32dcb425a3e4a8b507066c0badc13d23",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_23/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_24/questions_results_no_emulation.json",
+    "sha256": "8154549a7b7cdd0054cfcf4f45e586bfb218ac6b8784f0712c788619ec93f23a",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_24/questions_results_no_emulation.json"
+  },
+  {
+    "path": "dataset/native4/sample_25/questions_results_no_emulation.json",
+    "sha256": "b576c35e84ca0e92d102f083d589056c851744233e6fc12e4dd5a4d19216634b",
+    "source": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_baseline_20261010/dataset/native4/sample_25/questions_results_no_emulation.json"
+  }
+]

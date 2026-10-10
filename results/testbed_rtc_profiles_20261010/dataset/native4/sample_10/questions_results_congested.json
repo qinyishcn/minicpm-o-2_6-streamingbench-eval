@@ -1,0 +1,97 @@
+[
+    {
+        "video_id": 10,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_10_1",
+                "task_type": "Attribute Perception",
+                "question": "What is the color of the sky right now?",
+                "time_stamp": "00:00:31",
+                "answer": "B",
+                "options": [
+                    "A. Clear with sunshine.",
+                    "B. Overcast with heavy clouds.",
+                    "C. Dark and stormy.",
+                    "D. Clear with scattered clouds."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 10,
+                "question_number": 1,
+                "timestamp_seconds": 31
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_10_2",
+                "task_type": "Event Understanding",
+                "question": "What happens after the person stops mashing and places the bowl to one side?",
+                "time_stamp": "00:02:08",
+                "answer": "A",
+                "options": [
+                    "A. He pick up pineapple from the table.",
+                    "B. He begin slicing a yellow fruit.",
+                    "C. He start grilling pineapple and meat.",
+                    "D. He pour sauce into a small white bowl."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 10,
+                "question_number": 2,
+                "timestamp_seconds": 128
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_10_3",
+                "task_type": "Spatial Understanding",
+                "question": "How are the food items arranged on the grill?",
+                "time_stamp": "00:04:42",
+                "answer": "C",
+                "options": [
+                    "A. The buns are on the right side, and the vegetables and meat are on the left side.",
+                    "B. The buns are on the top, and the vegetables and meat are on the bottom.",
+                    "C. The buns are on the left side, and the vegetables and meat are on the right side.",
+                    "D. The buns are at the center, and the vegetables and meat are on both sides."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Prior",
+                "video_id": 10,
+                "question_number": 3,
+                "timestamp_seconds": 282
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_10_4",
+                "task_type": "Attribute Perception",
+                "question": "Which item placed on the grill has a yellow color?",
+                "time_stamp": "00:05:04",
+                "answer": "C",
+                "options": [
+                    "A. Meat slices.",
+                    "B. Bell pepper.",
+                    "C. Pineapple.",
+                    "D. Hamburger buns."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 10,
+                "question_number": 4,
+                "timestamp_seconds": 304
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_10_5",
+                "task_type": "Attribute Perception",
+                "question": "What item is the person holding right now?",
+                "time_stamp": "00:07:37",
+                "answer": "A",
+                "options": [
+                    "A. A white rectangular plate with hamburgers.",
+                    "B. A white circular plate with a fish.",
+                    "C. A blue rectangular plate with a salad.",
+                    "D. A green square plate with a pie."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 10,
+                "question_number": 5,
+                "timestamp_seconds": 457
+            }
+        ]
+    }
+]

@@ -1,11 +1,22 @@
 # MiniCPM-o 2.6 / StreamingBench 实测
 
 <!-- testbed-rtc-20261010 -->
-2026-10-10 原版 Testbed RTC 接入：已完成 **单帧 98/125（78.4%）、四帧 101/125（80.8%）** 无扰动基线。
-250 题接收特征字节核验通过；答案、生成 token 及首步完整 logits 与同运行时未拆分 helper 一致。
-四种网络配置另有每条件 5 题的预检；完整受扰动批次尚未完成。当前仅按提问点加速传输特征，不代表持续 FPS 流量。
+2026-10-10：完成 **单帧 / 连续四帧 × 四种原版 Testbed 网络条件**，每条件125题。本轮新增750题位测试，另复用250题无扰动基线。共保存956条服务器答案，缺失44条计错。
 
-[RTC 完整报告](results/testbed_rtc_baseline_20261010/report_zh.md) · [网络预检](results/testbed_rtc_readiness_20261010/report_zh.md) · [原版源码补丁与复现](docs/testbed_rtc.md)
+| 原版 profile | 单帧准确率 | 连续四帧准确率 |
+|---|---:|---:|
+| no_emulation | 78.4% | 80.8% |
+| lossy | 78.4% | 81.6% |
+| 5qi_7 | 78.4% | 78.4% |
+| congested | 59.2% | 52.0% |
+
+主表沿用原版服务器端任务计分；客户端接收数和视频完成率另见报告。
+
+![原版网络配置：任务准确率与实际特征缺失](results/testbed_rtc_profiles_20261010/network_profile_comparison.png)
+
+[完整网络报告与数值](results/testbed_rtc_profiles_20261010/report_zh.md) · [1000题逐题记录](results/testbed_rtc_profiles_20261010/paired_predictions.csv) · [原版源码补丁与复现](docs/testbed_rtc.md)
+
+使用真实loopback网卡、UDP/RTP/SRTP和原版netemu；956条已保存特征字节重建核验通过。配置随机丢包率与实际模型特征缺失率不同，详见报告中的网络计数与缺失位置。**当前按提问点加速传输指定帧的中间特征，不代表持续原生FPS流量或原视频时间轴回放。**
 
 以下为先前 Windows Vulkan / 离线特征擦除结果，与上述 Linux RTC 结果分开比较。
 

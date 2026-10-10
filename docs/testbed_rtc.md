@@ -11,6 +11,9 @@ TCP/18124 只做信令；可靠 DataChannel 传输问题、特征布局元数据
 
 ## 当前证据与范围
 
+- [完整四种网络条件报告与图](../results/testbed_rtc_profiles_20261010/report_zh.md)：
+  单帧、连续四帧各125题 × `no_emulation` / `lossy` / `5qi_7` / `congested`。
+  测试1000个固定题位，已保存的956条实际模型输入特征字节重建通过，44条无记录的输入未作核验声明。
 - [完整无扰动基线及逐题核验](../results/testbed_rtc_baseline_20261010/report_zh.md)：
   单帧、连续四帧各 25 视频 / 125 题。
 - [四种原版 profile 的小样本诊断](../results/testbed_rtc_readiness_20261010/report_zh.md)：
@@ -22,8 +25,8 @@ TCP/18124 只做信令；可靠 DataChannel 传输问题、特征布局元数据
 
 当前 track 仅按提问顺序传输指定的单帧 / 四帧特征，源帧来自提问前最近帧及
 紧邻的前三帧，无时间抽样；它不是持续原生 FPS 视频流量。
-原时间轴/持续模型特征流与按提问点加速的正式受扰动批次，仍需确定回放口径。
-不能把这批预检称为完整连续视频网络性能测试。
+本次正式受扰动批次沿用已经验证的按提问点加速方式，25视频/125题覆盖四种网络条件。
+每视频之间保留原版20秒间隔；没有连续原生FPS负载或原视频时间轴测试。
 
 原版 Liquid 的 RTP 载荷上限为 1100 字节。保留这一预算后，每包有 1080 字节
 F32 特征；单帧 2549 包、四帧 10195 包。分片头标识原字节位置，缺包按位置置零。
@@ -91,12 +94,15 @@ sudo -n env "PYTHONPATH=$PYTHONPATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" \
 
 # 终端二；原版 CLI 保留每视频之间 20 秒间隔。
 "$PYTHON" -m minicpm_split.rtc_batch --root results/my_rtc --mode native4 \
-  --profiles no_emulation --runs 25 --capture-root /path/to/local/captures
+  --profiles no_emulation lossy 5qi_7 congested --runs 25 --capture-root /path/to/local/captures
 
 # 停止上述服务器后核验，避免占用同一 GPU。
-"$PYTHON" -m minicpm_split.rtc_report --root results/my_rtc --modes native4 \
-  --profiles no_emulation --reencode --output results/my_rtc/audit
+"$PYTHON" /path/to/result-repo/scripts/audit_testbed_profiles.py --root results/my_rtc --modes native4 \
+  --profiles no_emulation lossy 5qi_7 congested --reencode --output results/my_rtc/audit
 ```
+
+上述终端命令示例为四帧；单帧须切换 `single_model.json`、`single_scenarios.yaml` 和
+`--mode single`，重启自己启动的服务器后运行。同一份原版profile配置用于两种输入。
 
 服务器仅给自己的 UDP socket 请求 32 MiB 接收缓冲（Linux 报告有效 64 MiB），
 因此需 sudo。没有修改全局 sysctl 或原网络 profile 的队列、丢包、带宽和时延。
@@ -107,9 +113,9 @@ sudo -n env "PYTHONPATH=$PYTHONPATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" \
 已保存的答案可在 CPU 上重评分，无需模型。进入打补丁后的 `aitestbed`：
 
 ```bash
-python -m minicpm_split.rtc_report \
-  --root /path/to/result-repo/results/testbed_rtc_baseline_20261010 \
-  --modes single native4 --profiles no_emulation \
+python /path/to/result-repo/scripts/audit_testbed_profiles.py \
+  --root /path/to/result-repo/results/testbed_rtc_profiles_20261010 \
+  --modes single native4 --profiles no_emulation lossy 5qi_7 congested \
   --questions /path/to/result-repo/results/q4_k_m_single_native/questions_manifest.json \
   --output /path/to/fresh-audit
 ```
@@ -128,3 +134,30 @@ TTFT/TTLT/stall 等字段仍保留原名，但这里的五个事件是五道独�
 原始抓包与 SQLite 可能含短期 ICE 信令，仅本机留存。
 `scripts/audit_testbed_network.py` 从它们生成不含 SDP 的包长、消息组、队列和
 全局 UDP 增量摘要；全局计数并非某个 socket 的独立计数。
+
+在完整 `--reencode` 审计后，可由公开结果目录重新生成报告和图（需matplotlib、numpy）：
+
+```bash
+python scripts/report_testbed_profiles.py \
+  --root results/testbed_rtc_profiles_20261010 \
+  --output results/testbed_rtc_profiles_20261010
+```
+
+本次执行从公开补丁对应的干净副本加载源码，31个文件的身份、精确CLI、原版profile哈希
+以及此前无扰动回答的逐文件复用哈希见完整结果目录。原始PCAP/SQLite仍留本机。
+
+完整性检查遇到缺失答案时，`rtc_batch`会在原版25个视频执行完后退出非零。
+应保留失败和原始文件，核对原版report中samples=25，再测试尚未运行的条件；
+不要重跑失败视频替换结果。本次初始监督器的退出与后续四帧执行分别记录，原版网络及模型源码未更改。
+新审计脚本按固定125题分母将缺失答案计错，仅对保存了特征记录的题目重建输入哈希。
+特征缺失率、缺失位置和推理计时只统计这些有记录的题，不能解释为所有125题的完整网络统计。
+
+审计辅助脚本另通过6项缺失答案/固定分母回归及3项抓包过滤回归。
+原版all-UDP抓包含DNS，UDP/53的DNS transaction ID可能偶合RTP前缀；
+过滤修正排除了本轮3个这类DNS包，未改变模型、RTC或netemu源码。
+在打补丁的Testbed依赖环境中可重跑：
+
+```bash
+python /path/to/result-repo/scripts/test_audit_testbed_profiles.py
+python /path/to/result-repo/scripts/test_audit_testbed_network.py
+```

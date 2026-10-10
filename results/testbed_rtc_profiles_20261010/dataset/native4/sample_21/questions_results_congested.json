@@ -1,0 +1,97 @@
+[
+    {
+        "video_id": 21,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_21_1",
+                "task_type": "Object Perception",
+                "question": "What is the person holding right now?",
+                "time_stamp": "00:01:06",
+                "answer": "C",
+                "options": [
+                    "A. A spatula.",
+                    "B. A spoon.",
+                    "C. An olive oil bottle.",
+                    "D. A whisk."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 21,
+                "question_number": 1,
+                "timestamp_seconds": 66
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_21_2",
+                "task_type": "Object Perception",
+                "question": "What is the woman holding over the black frying pan?",
+                "time_stamp": "00:02:45",
+                "answer": "C",
+                "options": [
+                    "A. A wooden spoon.",
+                    "B. A salt shaker.",
+                    "C. noodles.",
+                    "D. A spatula."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Prior",
+                "video_id": 21,
+                "question_number": 2,
+                "timestamp_seconds": 165
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_21_3",
+                "task_type": "Object Perception",
+                "question": "What is the woman holding while she is stirring the pot on the stove?",
+                "time_stamp": "00:03:05",
+                "answer": "C",
+                "options": [
+                    "A. A ladle.",
+                    "B. A whisk.",
+                    "C. A tongs.",
+                    "D. A spatula."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Prior",
+                "video_id": 21,
+                "question_number": 3,
+                "timestamp_seconds": 185
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_21_4",
+                "task_type": "Attribute Perception",
+                "question": "What color is the pot being used by the person in the kitchen?",
+                "time_stamp": "00:04:01",
+                "answer": "B",
+                "options": [
+                    "A. Black.",
+                    "B. Silver.",
+                    "C. Red.",
+                    "D. White."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 21,
+                "question_number": 4,
+                "timestamp_seconds": 241
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_21_5",
+                "task_type": "Object Perception",
+                "question": "What item is the woman holding in her hand right now?",
+                "time_stamp": "00:05:15",
+                "answer": "B",
+                "options": [
+                    "A. A red book.",
+                    "B. A salt grinder.",
+                    "C. A cup of coffee.",
+                    "D. A newspaper."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 21,
+                "question_number": 5,
+                "timestamp_seconds": 315
+            }
+        ]
+    }
+]

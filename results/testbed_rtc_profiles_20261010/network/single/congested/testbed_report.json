@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-10-10T19:17:42.285202",
+  "scenarios": {
+    "realtime_video_understanding": {
+      "congested": {
+        "scenario": "realtime_video_understanding",
+        "network_conditions": "congested",
+        "samples": 25,
+        "qoe_metrics": {
+          "time_to_first_token_ms": 10735.916168793388,
+          "time_to_first_token_p50_ms": 8337.665557861328,
+          "time_to_last_token_ms": 26959.773716719254,
+          "time_to_last_token_p50_ms": 24438.593864440918,
+          "response_latency_ms": 42550.16944885254,
+          "response_latency_p95_ms": 99123.64368438722,
+          "time_to_first_token_p95_ms": 20854.427933692932,
+          "time_to_first_token_p99_ms": 32209.2138528824,
+          "time_to_last_token_p95_ms": 37677.622652053826,
+          "time_to_last_token_p99_ms": 48751.521482467666,
+          "success_rate_pct": 76.0
+        },
+        "traffic_characteristics": {
+          "uplink_bytes_avg": 12996375.52,
+          "downlink_bytes_avg": 9.695652173913043,
+          "ul_dl_ratio": 1340433.3495964126,
+          "token_rate_per_sec": 0.21045910149528702
+        },
+        "ai_service_metrics": {
+          "agent_loop_factor": 1,
+          "tool_calls_avg": 0,
+          "tool_latency_ms": 0.0,
+          "tool_latency_p50_ms": 0,
+          "tool_latency_p95_ms": 0,
+          "tool_latency_p99_ms": 0
+        },
+        "computer_use_metrics": {
+          "actions_avg": 0.0,
+          "action_latency_ms": 0.0,
+          "action_latency_p95_ms": 0,
+          "screenshot_bytes_avg": null,
+          "steps_avg": null,
+          "action_error_rate": null
+        },
+        "streaming_metrics": {
+          "stall_gap_threshold_ms": 1000.0,
+          "stall_rate": 1.0,
+          "stall_event_count": 82,
+          "stall_duration_mean_ms": 4550.593710527188,
+          "stall_duration_p95_ms": 7460.739171504975,
+          "stall_duration_p99_ms": 11737.40095853805
+        },
+        "error_taxonomy": {
+          "timeout": 0,
+          "rate_limited": 0,
+          "server_error": 0,
+          "tool_failure": 0,
+          "other": 6
+        },
+        "burstiness": {
+          "peak_to_mean": 1.0775903148029684,
+          "coefficient_of_variation": 0.1955555604298853,
+          "gap_threshold_ms": 1000.0,
+          "on_gap_mean_ms": 0,
+          "off_gap_mean_ms": 78492.97408262889,
+          "on_gap_count": 0,
+          "off_gap_count": 24
+        },
+        "task_accuracy": {
+          "total": 0,
+          "time_correct": 0,
+          "answer_correct": 0,
+          "time_accuracy": 0.0,
+          "answer_accuracy": 0.0,
+          "real_total": 125,
+          "real_correct": 74,
+          "real_accuracy": 0.592
+        }
+      }
+    }
+  }
+}

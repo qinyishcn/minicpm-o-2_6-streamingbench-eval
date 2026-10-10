@@ -1,0 +1,12 @@
+{
+  "runtime": "/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516",
+  "model": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/Model-7.6B-Q4_K_M.gguf",
+  "projector": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/mmproj-model-f16.gguf",
+  "tokenizer": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed/models/minicpm-o-tokenizer-only.gguf",
+  "questions": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/results/q4_k_m_single_native/questions_manifest.json",
+  "frames": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/data/native_frames",
+  "mode": "native4",
+  "media_drain_seconds": 5.0,
+  "control_timeout_seconds": 60,
+  "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd"
+}

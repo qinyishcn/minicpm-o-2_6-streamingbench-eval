@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "source": "C:\\Users\\qinyi\\Documents\\ChatGPT\\mobileAI\\tmp\\minicpm_testbed_patch_validation_20261010_v2",
+  "base_commit": "8581bf4974ccb35a6cc14791caebe7fcae4a0502",
+  "patch_sha256": "4fc1443c49a41c7cb002c147fcea12a9a95a2d2a69df05d8e3bb36b8fd7d8728",
+  "validation": "Windows git apply --reverse --check; clean base + exactly the public patch",
+  "files": [
+    {
+      "path": "aiortc-main-clean/src/aiortc/codecs/__init__.py",
+      "raw_sha256": "03bcd46795c4c8fa92df5c633537eb42ff7de2e2f3616ba3cdce3c3537728409",
+      "lf_canonical_sha256": "3a4e7623b62d220cd8329973208aeba18881d70b7689dbfa82faa4f26f62da70"
+    },
+    {
+      "path": "aiortc-main-clean/src/aiortc/jitterbuffer.py",
+      "raw_sha256": "a3166e3c96f44d6d780ec57f3e6843c3f0880489b930038b11514c209d19ca27",
+      "lf_canonical_sha256": "8d9b447b7a3d49d858d86a49b281d2f4c29d18be7ac18f46693690cf9da2a392"
+    },
+    {
+      "path": "aiortc-main-clean/src/aiortc/rtcrtpreceiver.py",
+      "raw_sha256": "90c3165a397886cc9d4283984246c710de3f406ffab1364fc9d55a25ab29163d",
+      "lf_canonical_sha256": "9b64121199af014a4b9278da9bbf591b50be5feb77a93aa7da21d3c829c41670"
+    },
+    {
+      "path": "aitestbed/analysis/metrics.py",
+      "raw_sha256": "825ea568f323e3074aa4f656c84660613ba3be84642c049dede816a8af753ef2",
+      "lf_canonical_sha256": "1081113cb697397c9d54e821512534faa9b742eec30c19a8128bd7c0cabd35fe"
+    },
+    {
+      "path": "aitestbed/clients/realtime_webrtc_vlm_client.py",
+      "raw_sha256": "9e1be77732868d6846fce86118d93dfb38c6dbc31938f1fe4d97489a47445ab0",
+      "lf_canonical_sha256": "945184316468dfc3c4be66e858f34b65a95c409c664b0530a060167ca985146b"
+    },
+    {
+      "path": "aitestbed/scenarios/realtime_video.py",
+      "raw_sha256": "8e943cd4e527e650e6e00ca7fe0cb397b5e73ffda2751ad4892963fa56d81563",
+      "lf_canonical_sha256": "944049fc367866de5f1e46f90aa93c8eece3c845cc6cbd4d3bf3fb6aed0a63de"
+    },
+    {
+      "path": "aitestbed/server/realtime_vlm_server.py",
+      "raw_sha256": "1242cdba577d126456ee3ef8ec137ca9e12e34f4eb948e3c6015e81499874708",
+      "lf_canonical_sha256": "eb175ef77ff4151e40f28553949988ad36e7627d3bd0f840e86686f2ee4ac093"
+    },
+    {
+      "path": "aitestbed/minicpm_split/__init__.py",
+      "raw_sha256": "2b4b0676d25dc36a51e17f7900c3d145e21aa899b8e061769149bf6287e8a336",
+      "lf_canonical_sha256": "0e077fb2d0f2d514e3f99fc3f858df90e6bc160cbfe79f115d7d07ee350d2781"
+    },
+    {
+      "path": "aitestbed/minicpm_split/activation.py",
+      "raw_sha256": "c73ddd804fe5bb0e67a0d6e845f9c11255b1cbb5546bcf409a3e75ee81e48186",
+      "lf_canonical_sha256": "75ecd8873197b82b47b06438b77eb105db5a0ab16a89016182132efa1dde87e7"
+    },
+    {
+      "path": "aitestbed/minicpm_split/assets.py",
+      "raw_sha256": "f7dc0ccf8bb3961dc571be87938f2a610f1c5d629c2f623be6b99f81fb70d2a0",
+      "lf_canonical_sha256": "aa2fd67ebb9256b4193231afad27f8a0b9db415c67185633d05e24401e68fbd1"
+    },
+    {
+      "path": "aitestbed/minicpm_split/client.py",
+      "raw_sha256": "6c50d6c56f2a19aa9029ff46e85d3966d96e403dba0d2d4b1e2ed44a554624c9",
+      "lf_canonical_sha256": "677a88fc1591279a1021782795e099495e47fe6d4fd6afcc960e59c7e3857b60"
+    },
+    {
+      "path": "aitestbed/minicpm_split/native.py",
+      "raw_sha256": "5f7f4e763a0364034154257626c7d362ad26e4e4c6796d5496e1833cf14e4fc4",
+      "lf_canonical_sha256": "46ce3c4fba1cc955df448052395123b88b373e3047b46d44ec483a405b420464"
+    },
+    {
+      "path": "aitestbed/minicpm_split/protocol.py",
+      "raw_sha256": "ebc3aad51592d8e4a6c1b68088d91c4f252ac7b6883b96d93c25fa558836308e",
+      "lf_canonical_sha256": "88abff4cd91a50dd3a97496c212b07195b199374cf0db2c317c082cbf85b87d0"
+    },
+    {
+      "path": "aitestbed/minicpm_split/reference.py",
+      "raw_sha256": "4cc3d404f164685fe5028a8fb68821a8d1b72817a5f4b1e3a213bd254d1d7ae0",
+      "lf_canonical_sha256": "2bc73a5cec49e0079e1870eb44b5f636b2f415af8e040ce6345164b590361872"
+    },
+    {
+      "path": "aitestbed/minicpm_split/rtp_features.py",
+      "raw_sha256": "dee6cf1304e530cb9778331aec17fbf06956de6e5c7b904f1416ef7cf0d954ce",
+      "lf_canonical_sha256": "7b5bf9b28c17af7ec8471b1185bc8a3e9385b7a7a3c2f42a4d3f7f0fa9e5feb9"
+    },
+    {
+      "path": "aitestbed/minicpm_split/rtc_codec.py",
+      "raw_sha256": "9a0b00bcba956f67ebd6ec74e941dddc655852bbe9738edfe39ec894ee3cc74c",
+      "lf_canonical_sha256": "54e3b48e9dab2ddf480caddc672204b43524d70dcdcee9a9e385349b4e44adc7"
+    },
+    {
+      "path": "aitestbed/minicpm_split/rtc_track.py",
+      "raw_sha256": "c96121922793e32611568a5eeff573da9a53589d5fad0c0feb9eb28c3800968c",
+      "lf_canonical_sha256": "963b93006c87e1c00a0b13fc54518c3a35c7d4b23bac9e8c6195ffec584a9989"
+    },
+    {
+      "path": "aitestbed/minicpm_split/prepare_rtc.py",
+      "raw_sha256": "6a5b5c8e7e43b7aa452e1ba821bd078921f00db372281c25228290051c6522b9",
+      "lf_canonical_sha256": "ec2cc17a46b52b8dc8c763dcf87966563f6f3608e7784cb0027d2e292d4650ab"
+    },
+    {
+      "path": "aitestbed/minicpm_split/rtc_batch.py",
+      "raw_sha256": "58183cef13b0ee3091f65f2a2b7095ed161527446b0029482d7361ca6413fbf6",
+      "lf_canonical_sha256": "2805d00058e05fd6afc52288f43329a43debece71edb42a9145b812f6c61dbf1"
+    },
+    {
+      "path": "aitestbed/minicpm_split/rtc_report.py",
+      "raw_sha256": "58a37460e2871d9f89a4fb715075e6038fd22e79d9d52feb126f7c50046440a3",
+      "lf_canonical_sha256": "80ef2c5c6e595eeba1e6a5b06b7faa7814343022e72df1314e85ec8f597d07a4"
+    },
+    {
+      "path": "aitestbed/minicpm_split/packet_loss.py",
+      "raw_sha256": "15c5465727935cad1193d897f0765fa5d84daa9778167a86be57fae0ed989d33",
+      "lf_canonical_sha256": "ed16808b28a1da68f2fc52d84adcafdd81f244773fa9c20481b4895601a48ea1"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_codec_registration.py",
+      "raw_sha256": "ec4eee1e73cfe1966ecd20603db35f1a92d4f019eee2bd46588e0018301eef79",
+      "lf_canonical_sha256": "4fd22eb7b7fa7317fa0e562722544363ca56a37c57c1f235b78fbbeeacafe5c0"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_jitter.py",
+      "raw_sha256": "18d6768079f1bcf7a1d4cf297797d70f3100c87bb2412317e5aa679f0ada430e",
+      "lf_canonical_sha256": "5219fdc106c4204ef48c8b4d206069e92bc8e40ffe5af8990b2cdbf30559c334"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_native_track.py",
+      "raw_sha256": "dddf7821a207b16e7722e1f9699aed9168c9a73735cb4f10adf24c4f34daedf6",
+      "lf_canonical_sha256": "6a4fb540eac663bd8eae1042d83c9283bc7dc79a7616cfa2acaed37b6b961e8b"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_packet_loss.py",
+      "raw_sha256": "256fec4233830decfd1f1feee931d93a9c0e996930c0392975b45b92e9414955",
+      "lf_canonical_sha256": "7fda360aa00f00e5c96a27188b30ba7d790fa98cef456c93f611a2d123f7d2ef"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_rtc_report.py",
+      "raw_sha256": "f80bacd00e87c57d1b120bc663234b7ab64233fbcb71404d5febebec76662b4c",
+      "lf_canonical_sha256": "c2145694c87cfa1d0fb8aae8a0ba44b4a7f92d70630c3a37f220c0a290356078"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_rtp_features.py",
+      "raw_sha256": "cb28d40274e393f2668481b0cbcb84f74c8edec6964ba06655e42dea7216ef21",
+      "lf_canonical_sha256": "0f9df70bcd9867dfd316ee1e9c5abae0e13ee7d957e43199d30849427fadd5d1"
+    },
+    {
+      "path": "aitestbed/tests/test_minicpm_split.py",
+      "raw_sha256": "b6b70cc2a883034794ac3f969f3f7da7460f7ed800f301845169ae0046cc40e0",
+      "lf_canonical_sha256": "ae9aadd74e5a867fd8b86b6c43180de2d4d176ca27ba4cbdf123030772fd6d19"
+    },
+    {
+      "path": "aitestbed/tests/test_realtime_accuracy.py",
+      "raw_sha256": "f1731fb3135d0962e1229d5eee6aa1400137156a3ce62198559c5c1bee620e29",
+      "lf_canonical_sha256": "2a5b422028bd6deae86d9928967137572804a978560140a55cfe2e89ee5f0ad2"
+    },
+    {
+      "path": "aitestbed/docs/minicpm_testbed_rtc.md",
+      "raw_sha256": "78b519732aa12130f86b1321e068bc70ae18a9832feb56e36771da5eb6e84552",
+      "lf_canonical_sha256": "b60b1e5a945cfc7f39df40fb1ccbea3f4bc1bfa900537adcd9ab70e360c40e00"
+    },
+    {
+      "path": "aitestbed/orchestrator.py",
+      "raw_sha256": "bb01ae45117a1a3b2b21047aba875a015f880e011d5099875307c9052a677699",
+      "lf_canonical_sha256": "b9581dcc99c9a1403d482537b5f142fd64680d290908780b14d72e53a784813f"
+    }
+  ]
+}

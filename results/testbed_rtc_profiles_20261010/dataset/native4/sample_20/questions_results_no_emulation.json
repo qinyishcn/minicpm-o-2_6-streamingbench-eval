@@ -1,0 +1,782 @@
+[
+    {
+        "video_id": 20,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_20_1",
+                "task_type": "Attribute Perception",
+                "question": "What is the color of the man's t-shirt in the initial video?",
+                "time_stamp": "00:00:51",
+                "answer": "B",
+                "options": [
+                    "A. Light blue.",
+                    "B. Dark navy blue.",
+                    "C. White.",
+                    "D. Green."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Prior",
+                "video_id": 20,
+                "question_number": 1,
+                "timestamp_seconds": 51,
+                "minicpm": "C",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_20_1",
+                    "mode": "native4",
+                    "frames": [
+                        {
+                            "file": "000.jpg",
+                            "frame_index": 1219,
+                            "actual_seconds": 50.84245833333333,
+                            "query_seconds": 51,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "4d6882fb75f5acc9aa11a7d577e9e3f1922b618af60de07c1c3fb55006855fa7"
+                        },
+                        {
+                            "file": "001.jpg",
+                            "frame_index": 1220,
+                            "actual_seconds": 50.884166666666665,
+                            "query_seconds": 51,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "7eee994214266a782b9b41232b67b1f86817aa951ab89d9b455c5ef6c0d68241"
+                        },
+                        {
+                            "file": "002.jpg",
+                            "frame_index": 1221,
+                            "actual_seconds": 50.925875,
+                            "query_seconds": 51,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "dd918f8a339d8f63c090736701542cfd159c61c79b9badbfd00d50fe5d2959d9"
+                        },
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 1222,
+                            "actual_seconds": 50.96758333333333,
+                            "query_seconds": 51,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "5880ad56ddc6d2c12b81f4569a5793d064bb53e66f722f2b506776d34ea444e5"
+                        }
+                    ],
+                    "feature_bytes": 11010048,
+                    "feature_sha256": "3cbd5c160f2784d2a6f46e38068e1665b175d1cd99dd51d3d420d93d01adde83",
+                    "original_feature_sha256": "3cbd5c160f2784d2a6f46e38068e1665b175d1cd99dd51d3d420d93d01adde83",
+                    "loss": {
+                        "total_packets": 10195,
+                        "received_packets": 10195,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 1.220718451999801,
+                    "server_pid": 709,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "C",
+                    "result": {
+                        "text": "C",
+                        "token_ids": [
+                            34
+                        ],
+                        "first_logits_sha256": "0a189346cc0cfd55db085c835a782d58df7174191d8d2ee0a013b48f6da14cd1",
+                        "first_logits_top8": [
+                            {
+                                "token": 34,
+                                "logit": 36.259925842285156
+                            },
+                            {
+                                "token": 32,
+                                "logit": 35.44207763671875
+                            },
+                            {
+                                "token": 33,
+                                "logit": 33.7783317565918
+                            },
+                            {
+                                "token": 785,
+                                "logit": 30.139400482177734
+                            },
+                            {
+                                "token": 35,
+                                "logit": 29.62278175354004
+                            },
+                            {
+                                "token": 3862,
+                                "logit": 28.841585159301758
+                            },
+                            {
+                                "token": 4064,
+                                "logit": 26.876789093017578
+                            },
+                            {
+                                "token": 40,
+                                "logit": 26.744081497192383
+                            }
+                        ],
+                        "prompt_tokens": 940,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 1.3259846240002844,
+                    "metadata_to_result_seconds": 2.428830045000268
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_20_2",
+                "task_type": "Object Perception",
+                "question": "What item is the woman initially holding in her left hand right now?",
+                "time_stamp": "00:01:00",
+                "answer": "D",
+                "options": [
+                    "A. A green container.",
+                    "B. A small saucepan.",
+                    "C. A white bowl.",
+                    "D. A can."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 20,
+                "question_number": 2,
+                "timestamp_seconds": 60,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_20_2",
+                    "mode": "native4",
+                    "frames": [
+                        {
+                            "file": "000.jpg",
+                            "frame_index": 1435,
+                            "actual_seconds": 59.85145833333333,
+                            "query_seconds": 60,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "a2bd5fd3deb119bf3639f7fcae2e6ea314d3825eb082d1c835ab4a950e3037d7"
+                        },
+                        {
+                            "file": "001.jpg",
+                            "frame_index": 1436,
+                            "actual_seconds": 59.893166666666666,
+                            "query_seconds": 60,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "f7673996853e330693af49e418fa63743d82fdcf64a8b0c66cfd10b1c13be39c"
+                        },
+                        {
+                            "file": "002.jpg",
+                            "frame_index": 1437,
+                            "actual_seconds": 59.934875,
+                            "query_seconds": 60,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "2872fbb28fed3d37e790b80a4abed25cb733411c60ff850bdc10a6e5c28c3723"
+                        },
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 1438,
+                            "actual_seconds": 59.97658333333333,
+                            "query_seconds": 60,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "3e1c8375a63f645fee346811df6a109f3c345024c77600a943396ed8f8a20bd4"
+                        }
+                    ],
+                    "feature_bytes": 11010048,
+                    "feature_sha256": "445fc307e5387d44787cb33a878519f4ffb62cc060347251986748b3837744bd",
+                    "original_feature_sha256": "445fc307e5387d44787cb33a878519f4ffb62cc060347251986748b3837744bd",
+                    "loss": {
+                        "total_packets": 10195,
+                        "received_packets": 10195,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.9297158459999082,
+                    "server_pid": 709,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "24d2b1f7788757a56c22e00ba958acbcf9ff5d1326453c2137c682b72e0eedb2",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 33.20154571533203
+                            },
+                            {
+                                "token": 32,
+                                "logit": 26.834753036499023
+                            },
+                            {
+                                "token": 34,
+                                "logit": 26.791748046875
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.4820499420166
+                            },
+                            {
+                                "token": 785,
+                                "logit": 22.143177032470703
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 19.4964599609375
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 18.702590942382812
+                            },
+                            {
+                                "token": 40,
+                                "logit": 18.156824111938477
+                            }
+                        ],
+                        "prompt_tokens": 944,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 1.4166419439998208,
+                    "metadata_to_result_seconds": 3.2612895470001604
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_20_3",
+                "task_type": "Object Perception",
+                "question": "What item is the woman holding in her left hand right now?",
+                "time_stamp": "00:02:01",
+                "answer": "B",
+                "options": [
+                    "A. A carton of eggs.",
+                    "B. A white mixing bowl.",
+                    "C. A whisk.",
+                    "D. A small white bowl."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 20,
+                "question_number": 3,
+                "timestamp_seconds": 121,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_20_3",
+                    "mode": "native4",
+                    "frames": [
+                        {
+                            "file": "000.jpg",
+                            "frame_index": 2898,
+                            "actual_seconds": 120.87075,
+                            "query_seconds": 121,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "0d0e8a113a23ae3e17a9e3fe0e23ec5d763e5cdf1d39278f4f9fbfd45f62663e"
+                        },
+                        {
+                            "file": "001.jpg",
+                            "frame_index": 2899,
+                            "actual_seconds": 120.91245833333333,
+                            "query_seconds": 121,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "1b86c248d09e85f16f9cee5b25a93acc8f52a8b7e3f83afb9ce4da53f9b283e0"
+                        },
+                        {
+                            "file": "002.jpg",
+                            "frame_index": 2900,
+                            "actual_seconds": 120.95416666666667,
+                            "query_seconds": 121,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "7636f6f190a3cecab26756702debb88bc915d0d5d69efdf01aff710fb9c1f41c"
+                        },
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 2901,
+                            "actual_seconds": 120.995875,
+                            "query_seconds": 121,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "5775cdad8442337e15daeae980183a89956188b83fe7094a4e7a1da484f256f8"
+                        }
+                    ],
+                    "feature_bytes": 11010048,
+                    "feature_sha256": "f04ec29b6cbc398be175fcd151c2f99f1be96ba1d45e8e6bb16fc6390aca51fd",
+                    "original_feature_sha256": "f04ec29b6cbc398be175fcd151c2f99f1be96ba1d45e8e6bb16fc6390aca51fd",
+                    "loss": {
+                        "total_packets": 10195,
+                        "received_packets": 10195,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 1.6407690420001018,
+                    "server_pid": 709,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "a97619451cea96dd8947c5c136adb206ef625bcad9edfa1f7fc6b79b9f9eca30",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 31.864273071289062
+                            },
+                            {
+                                "token": 33,
+                                "logit": 29.283103942871094
+                            },
+                            {
+                                "token": 32,
+                                "logit": 26.153060913085938
+                            },
+                            {
+                                "token": 34,
+                                "logit": 24.85523223876953
+                            },
+                            {
+                                "token": 785,
+                                "logit": 20.826412200927734
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 18.040592193603516
+                            },
+                            {
+                                "token": 36,
+                                "logit": 17.698944091796875
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 17.460683822631836
+                            }
+                        ],
+                        "prompt_tokens": 946,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 1.3878195669999513,
+                    "metadata_to_result_seconds": 3.2776607099999637
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_20_4",
+                "task_type": "Attribute Perception",
+                "question": "What color is the fluid being poured onto the griddle?",
+                "time_stamp": "00:03:01",
+                "answer": "B",
+                "options": [
+                    "A. White.",
+                    "B. Yellow.",
+                    "C. Brown.",
+                    "D. Red."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 20,
+                "question_number": 4,
+                "timestamp_seconds": 181,
+                "minicpm": "B",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_20_4",
+                    "mode": "native4",
+                    "frames": [
+                        {
+                            "file": "000.jpg",
+                            "frame_index": 4336,
+                            "actual_seconds": 180.84733333333332,
+                            "query_seconds": 181,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "0244d54e631e0838771147afbb9e85f1b31dbfef37b4919f03e39467f4af4e99"
+                        },
+                        {
+                            "file": "001.jpg",
+                            "frame_index": 4337,
+                            "actual_seconds": 180.88904166666666,
+                            "query_seconds": 181,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "52d68b6f604b075857be19e537e34ff17d29c486db9654d2694c7f3e75a3eba9"
+                        },
+                        {
+                            "file": "002.jpg",
+                            "frame_index": 4338,
+                            "actual_seconds": 180.93075,
+                            "query_seconds": 181,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "eb8cbafbb8124898f8567ccd0820880f3c1dbea61d113b7f0fe57f714f8583c3"
+                        },
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 4339,
+                            "actual_seconds": 180.97245833333332,
+                            "query_seconds": 181,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "976866174842811e6c0734eeb9045bfed5b6cc8287e450fd5f02f4176621fe99"
+                        }
+                    ],
+                    "feature_bytes": 11010048,
+                    "feature_sha256": "848b63c6fe2819cdb68be50ef14b3001e822c1cf090c1e7e424f81037edcf47d",
+                    "original_feature_sha256": "848b63c6fe2819cdb68be50ef14b3001e822c1cf090c1e7e424f81037edcf47d",
+                    "loss": {
+                        "total_packets": 10195,
+                        "received_packets": 10195,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 1.7115495140001258,
+                    "server_pid": 709,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "B",
+                    "result": {
+                        "text": "B",
+                        "token_ids": [
+                            33
+                        ],
+                        "first_logits_sha256": "5c753e17b3c43b707a476c103b8b6eb5feab59eb44d636c96a1946589a26e3f0",
+                        "first_logits_top8": [
+                            {
+                                "token": 33,
+                                "logit": 32.719417572021484
+                            },
+                            {
+                                "token": 34,
+                                "logit": 28.653980255126953
+                            },
+                            {
+                                "token": 32,
+                                "logit": 25.958023071289062
+                            },
+                            {
+                                "token": 35,
+                                "logit": 21.074356079101562
+                            },
+                            {
+                                "token": 785,
+                                "logit": 19.79285430908203
+                            },
+                            {
+                                "token": 36,
+                                "logit": 17.19338607788086
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 17.054445266723633
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 16.99079704284668
+                            }
+                        ],
+                        "prompt_tokens": 934,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.632718511999883,
+                    "metadata_to_result_seconds": 2.506635610000103
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_20_5",
+                "task_type": "Event Understanding",
+                "question": "What has this woman just done?",
+                "time_stamp": "00:05:22",
+                "answer": "B",
+                "options": [
+                    "A. Pour the cooked seasonings from the pot onto the chicken wings on the grill.",
+                    "B. Pour the seasonings from the pot onto the panca.",
+                    "C. Pour the prepared sauce from the pot onto the roasted fish.",
+                    "D. Pour the mixed spices from the pot onto the steak being seared."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 20,
+                "question_number": 5,
+                "timestamp_seconds": 322,
+                "minicpm": "A",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_20_5",
+                    "mode": "native4",
+                    "frames": [
+                        {
+                            "file": "000.jpg",
+                            "frame_index": 7717,
+                            "actual_seconds": 321.8632083333333,
+                            "query_seconds": 322,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "c839b9aa03118370fb176e837e8d5d0293ccd7ed89c12fc1a93574c7be340dee"
+                        },
+                        {
+                            "file": "001.jpg",
+                            "frame_index": 7718,
+                            "actual_seconds": 321.9049166666667,
+                            "query_seconds": 322,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "ee7c9cc67d71893d8cc147ff7bb91140ea7dc77794a3bb7894a492dbe1d7f1dd"
+                        },
+                        {
+                            "file": "002.jpg",
+                            "frame_index": 7719,
+                            "actual_seconds": 321.946625,
+                            "query_seconds": 322,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "36a8d1568b0eeab8d84117677888fef706882728fff6e54c22fff1409616be83"
+                        },
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 7720,
+                            "actual_seconds": 321.98833333333334,
+                            "query_seconds": 322,
+                            "source_fps": 23.976023976023978,
+                            "source_fps_rational": "24000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "f2d8840cde793630a8f8408b6cd9522720b020145e5c6b625dd15c96bbf508a6"
+                        }
+                    ],
+                    "feature_bytes": 11010048,
+                    "feature_sha256": "89049acb952cb4ba4015fe5a11ae1720b0a56266c8e7da146e43bec05ccbf0f4",
+                    "original_feature_sha256": "89049acb952cb4ba4015fe5a11ae1720b0a56266c8e7da146e43bec05ccbf0f4",
+                    "loss": {
+                        "total_packets": 10195,
+                        "received_packets": 10195,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 1.6710351360002278,
+                    "server_pid": 709,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "A",
+                    "result": {
+                        "text": "A",
+                        "token_ids": [
+                            32
+                        ],
+                        "first_logits_sha256": "6ecd1cdec021c3d13bcb970b9e329bdbf57ea36f2698ec49329a5b2c3a883702",
+                        "first_logits_top8": [
+                            {
+                                "token": 32,
+                                "logit": 31.46316909790039
+                            },
+                            {
+                                "token": 33,
+                                "logit": 29.908615112304688
+                            },
+                            {
+                                "token": 35,
+                                "logit": 29.853137969970703
+                            },
+                            {
+                                "token": 34,
+                                "logit": 28.185028076171875
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 21.920989990234375
+                            },
+                            {
+                                "token": 785,
+                                "logit": 21.671863555908203
+                            },
+                            {
+                                "token": 40,
+                                "logit": 20.754066467285156
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 20.090713500976562
+                            }
+                        ],
+                        "prompt_tokens": 975,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.76862125200023,
+                    "metadata_to_result_seconds": 6.1256970840004215
+                }
+            }
+        ]
+    }
+]

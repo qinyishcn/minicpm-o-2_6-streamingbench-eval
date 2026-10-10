@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-10-10T20:02:24.189170",
+  "scenarios": {
+    "realtime_video_understanding": {
+      "5qi_7": {
+        "scenario": "realtime_video_understanding",
+        "network_conditions": "5qi_7",
+        "samples": 25,
+        "qoe_metrics": {
+          "time_to_first_token_ms": 5366.105966567993,
+          "time_to_first_token_p50_ms": 5334.624528884888,
+          "time_to_last_token_ms": 17472.236471176147,
+          "time_to_last_token_p50_ms": 17496.283769607544,
+          "response_latency_ms": 17492.86069869995,
+          "response_latency_p95_ms": 18096.32706642151,
+          "time_to_first_token_p95_ms": 5667.8777217865,
+          "time_to_first_token_p99_ms": 5723.548278808594,
+          "time_to_last_token_p95_ms": 18049.3426322937,
+          "time_to_last_token_p99_ms": 18468.52870941162,
+          "success_rate_pct": 100.0
+        },
+        "traffic_characteristics": {
+          "uplink_bytes_avg": 56018765,
+          "downlink_bytes_avg": 6.08,
+          "ul_dl_ratio": 9213612.664473685,
+          "token_rate_per_sec": 0.3022919543290141
+        },
+        "ai_service_metrics": {
+          "agent_loop_factor": 1,
+          "tool_calls_avg": 0,
+          "tool_latency_ms": 0.0,
+          "tool_latency_p50_ms": 0,
+          "tool_latency_p95_ms": 0,
+          "tool_latency_p99_ms": 0
+        },
+        "computer_use_metrics": {
+          "actions_avg": 0.0,
+          "action_latency_ms": 0.0,
+          "action_latency_p95_ms": 0,
+          "screenshot_bytes_avg": null,
+          "steps_avg": null,
+          "action_error_rate": null
+        },
+        "streaming_metrics": {
+          "stall_gap_threshold_ms": 1000.0,
+          "stall_rate": 1.0,
+          "stall_event_count": 100,
+          "stall_duration_mean_ms": 3026.532130241394,
+          "stall_duration_p95_ms": 5518.796050548553,
+          "stall_duration_p99_ms": 5662.077183723451
+        },
+        "error_taxonomy": {
+          "timeout": 0,
+          "rate_limited": 0,
+          "server_error": 0,
+          "tool_failure": 0,
+          "other": 0
+        },
+        "burstiness": {
+          "peak_to_mean": 1.0000004627020462,
+          "coefficient_of_variation": 9.639625960891394e-08,
+          "gap_threshold_ms": 1000.0,
+          "on_gap_mean_ms": 0,
+          "off_gap_mean_ms": 50245.60193220774,
+          "on_gap_count": 0,
+          "off_gap_count": 24
+        },
+        "task_accuracy": {
+          "total": 0,
+          "time_correct": 0,
+          "answer_correct": 0,
+          "time_accuracy": 0.0,
+          "answer_accuracy": 0.0,
+          "real_total": 125,
+          "real_correct": 98,
+          "real_accuracy": 0.784
+        }
+      }
+    }
+  }
+}

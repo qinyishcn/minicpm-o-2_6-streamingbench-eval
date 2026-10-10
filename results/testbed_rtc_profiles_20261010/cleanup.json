@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "remaining_test_processes": [],
+  "signaling_18124_listener_present": false,
+  "lo_qdisc": [
+    {
+      "kind": "noqueue",
+      "handle": "0:",
+      "root": true,
+      "refcnt": 2,
+      "options": {},
+      "bytes": 0,
+      "packets": 0,
+      "drops": 0,
+      "overlimits": 0,
+      "requeues": 0,
+      "backlog": 0,
+      "qlen": 0
+    }
+  ],
+  "cleanup": "Stopped only experiment-owned servers with SIGINT; original orchestrator removed its network emulation; no global sysctl changes."
+}

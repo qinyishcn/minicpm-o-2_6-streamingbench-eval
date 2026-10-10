@@ -1,0 +1,77 @@
+{
+  "status": "all_conditions_attempted",
+  "started_at": 1791626885.2150288,
+  "cwd": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed",
+  "pythonpath": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aiortc-main-clean/src:/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed:/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/netemu/src",
+  "profiles": [
+    "lossy",
+    "5qi_7",
+    "congested"
+  ],
+  "modes": [
+    "single",
+    "native4"
+  ],
+  "runs_per_condition": 25,
+  "questions_per_condition": 125,
+  "scope": "selected native question-frame accelerated RTC; original 20-second run gap",
+  "baseline": "Reused complete no_emulation RTC results from minicpm_rtc_baseline_20261010",
+  "profiles_file_sha256": "ebab71b26c4387ce7eee435234075ba1d92f9b3222f8ccf927e56f9ee2234853",
+  "completed": [
+    {
+      "mode": "single",
+      "profile": "lossy",
+      "started_at": 1791626915.3753662,
+      "finished_at": 1791628047.9564893
+    },
+    {
+      "mode": "single",
+      "profile": "5qi_7",
+      "started_at": 1791628047.957736,
+      "finished_at": 1791629132.755041
+    },
+    {
+      "mode": "single",
+      "profile": "congested",
+      "started_at": 1791629132.756329,
+      "finished_at": 1791631065.0682578,
+      "status": "all_25_videos_attempted_with_missing_answers",
+      "server_answers_saved": 111,
+      "missing_server_answers": 14,
+      "wrapper_validation_exit": 1
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "started_at": 1791631192.769953,
+      "finished_at": 1791632500.1031744,
+      "status": "all_25_videos_attempted",
+      "server_answers_saved": 125,
+      "missing_server_answers": 0,
+      "wrapper_validation_exit": 0
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "started_at": 1791632500.1048703,
+      "finished_at": 1791633745.657498,
+      "status": "all_25_videos_attempted",
+      "server_answers_saved": 125,
+      "missing_server_answers": 0,
+      "wrapper_validation_exit": 0
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "started_at": 1791633745.6595964,
+      "finished_at": 1791636163.6817653,
+      "status": "all_25_videos_attempted",
+      "server_answers_saved": 95,
+      "missing_server_answers": 30,
+      "wrapper_validation_exit": 1
+    }
+  ],
+  "resumed_at": 1791631163.118921,
+  "continuation": "Do not rerun completed videos or replace failed answers; continue native4 only",
+  "finished_at": 1791636164.0552423
+}

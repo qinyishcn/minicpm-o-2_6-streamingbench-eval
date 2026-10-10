@@ -1,0 +1,9 @@
+﻿mode,profile,video_sessions,client_complete_video_percent,client_complete_videos,original_video_response_latency_seconds,client_answers_received,server_answer_records,missing_server_answers
+single,no_emulation,25,100.0,25,8.086356630325318,125,125,0
+single,lossy,25,100.0,25,11.0469820022583,125,125,0
+single,5qi_7,25,100.0,25,11.025651769638062,125,125,0
+single,congested,25,76.0,19,42.550169448852536,105,111,14
+native4,no_emulation,25,100.0,25,14.117847204208374,125,125,0
+native4,lossy,25,100.0,25,19.344066829681395,125,125,0
+native4,5qi_7,25,100.0,25,17.49286069869995,125,125,0
+native4,congested,25,68.0,17,60.07867884635925,89,95,30
