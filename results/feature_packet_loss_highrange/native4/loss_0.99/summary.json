@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "evaluated": 125,
+  "correct": 75,
+  "accuracy_percent": 60.0,
+  "completed_question_accuracy_percent": 60.0,
+  "missing_questions": 0,
+  "invalid_responses": 2,
+  "total_packets": 961125,
+  "lost_packets": 951460,
+  "observed_packet_loss_rate": 0.9899440759526597,
+  "zeroed_feature_fraction": 0.9899435279482887,
+  "mean_request_to_response_seconds": 0.9116436431985349
+}

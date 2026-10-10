@@ -74,3 +74,25 @@ python -m minicpm_split.packet_loss_curve --sources results/feature_packet_loss 
 并核对新增运行与原运行每题的原始特征哈希、帧元数据完全一致。
 各条件只使用一组随机掩码，准确率仍以 125 题为分母；纯文本控制不计入 3250 条丢包实验回答。
 报告及 PNG/PDF/SVG 见 `results/feature_packet_loss_curve/`。
+
+
+## 2026-10-10：补测 50%–100% 区间
+
+新增 55%、60%、65%、70%、75%、80%、85%、90%、95%、99% 十个点，
+单帧与连续四帧各 125 题，共新增 2500 次推理。沿用同一模型、问题、原生帧、提示词及种子。
+合并既有结果后为 23 个丢包率、46 个完整条件、5750 次回答。
+图中保留该区间的所有点及 100% 全零对照，另提供 0%–100% 全范围图。
+
+```powershell
+# 先启动上文的语言模型服务器；此命令执行新增十点的实际推理。
+python -m minicpm_split.packet_loss --runtime runtime/vulkan --projector models/mmproj-model-f16.gguf --questions results/q4_k_m_single_native/questions_manifest.json --frames data/native_frames --output results/feature_packet_loss_highrange_rerun --loss-rates 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 0.99
+
+# 仅复核全部已发布的 5750 条回答并重新画图，无需权重或视频。
+python -m minicpm_split.packet_loss_highrange_curve --sources results/feature_packet_loss results/feature_packet_loss_midrange results/feature_packet_loss_highrange results/feature_packet_loss_allzero --questions results/q4_k_m_single_native/questions_manifest.json --text-control results/zero_feature_controls/summary.json --output results/feature_packet_loss_highrange_curve_reaudit
+```
+
+实际复现推理后，将上述合并命令的各源目录替换为对应 `_rerun` 目录。
+脚本逐题重评分、重建掩码并检查服务器特征哈希及跨运行输入一致性；不修改模型或筛选结果。
+相邻点变化表同时报告下降百分点和按区间宽度归一化的差商，后者不代表精确拐点。
+本轮仍是离线张量擦除；正式原版 Testbed RTC/network profile 评测另行报告。
+报告及图表见 `results/feature_packet_loss_highrange_curve/`。
