@@ -1,0 +1,19 @@
+scenarios:
+  realtime_video_understanding:
+    type: realtime_video_understanding
+    provider: vlm-local
+    model: minicpm
+    description: Original Testbed RTC with native question-frame MiniCPM features
+    target_fps: null
+    stream: true
+    signaling_host: 127.0.0.1
+    signaling_port: 18124
+    task_config:
+      task_class: real
+      po_thd: 0
+      video_paths: /mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_20261010/dataset/native4
+      results_dir: /mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_20261010/dataset/native4
+    prompts:
+    - Use the verified benchmark multiple-choice question.
+defaults:
+  retry_count: 0

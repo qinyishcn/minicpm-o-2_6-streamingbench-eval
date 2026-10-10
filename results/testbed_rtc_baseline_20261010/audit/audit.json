@@ -1,0 +1,2332 @@
+{
+  "status": "passed",
+  "scope": "fixed 125-question conditions",
+  "videos_per_condition": 25,
+  "conditions": 2,
+  "answers": 250,
+  "reencoded_feature_audit": true,
+  "frame_cache_verified": true,
+  "source_configs": {
+    "single": {
+      "runtime": "/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516",
+      "model": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/Model-7.6B-Q4_K_M.gguf",
+      "projector": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/mmproj-model-f16.gguf",
+      "tokenizer": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/models/minicpm-o-tokenizer-only.gguf",
+      "questions": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/results/q4_k_m_single_native/questions_manifest.json",
+      "frames": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/data/native_frames",
+      "mode": "single",
+      "media_drain_seconds": 5.0,
+      "control_timeout_seconds": 60,
+      "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd"
+    },
+    "native4": {
+      "runtime": "/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516",
+      "model": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/Model-7.6B-Q4_K_M.gguf",
+      "projector": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/mmproj-model-f16.gguf",
+      "tokenizer": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/models/minicpm-o-tokenizer-only.gguf",
+      "questions": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/results/q4_k_m_single_native/questions_manifest.json",
+      "frames": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/data/native_frames",
+      "mode": "native4",
+      "media_drain_seconds": 5.0,
+      "control_timeout_seconds": 60,
+      "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd"
+    }
+  },
+  "summary": [
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "questions": 125,
+      "answers_received": 125,
+      "correct": 98,
+      "accuracy_percent": 78.4,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 318625,
+      "missing_feature_packets": 0,
+      "feature_bytes": 344064000,
+      "zeroed_feature_bytes": 0,
+      "mean_edge_encode_seconds": 0.4508357168879957,
+      "mean_server_inference_seconds": 0.4356315184879677,
+      "mean_metadata_to_result_seconds": 1.853845240928007,
+      "missing_feature_percent": 0.0,
+      "zeroed_feature_percent": 0.0
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "questions": 125,
+      "answers_received": 125,
+      "correct": 101,
+      "accuracy_percent": 80.8,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 1274375,
+      "missing_feature_packets": 0,
+      "feature_bytes": 1376256000,
+      "zeroed_feature_bytes": 0,
+      "mean_edge_encode_seconds": 1.4475723928800162,
+      "mean_server_inference_seconds": 1.1350352945279865,
+      "mean_metadata_to_result_seconds": 3.562783362463997,
+      "missing_feature_percent": 0.0,
+      "zeroed_feature_percent": 0.0
+    }
+  ],
+  "question_checks": [
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c7506e16aeeb0a637c3f1dba767d5792060b70d51618eed24e4042340868f13c",
+      "feature_sha256": "c7506e16aeeb0a637c3f1dba767d5792060b70d51618eed24e4042340868f13c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "beecc87e7e5b1b124d7b08f57d7dfc80676b8ac9afcb1ef51e7aec2b071b7ca5",
+      "feature_sha256": "beecc87e7e5b1b124d7b08f57d7dfc80676b8ac9afcb1ef51e7aec2b071b7ca5",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "c914319e713e2d4e6bd59d9394d87db5bdeb0ae7b00a223c607925565cb70458",
+      "feature_sha256": "c914319e713e2d4e6bd59d9394d87db5bdeb0ae7b00a223c607925565cb70458",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "a14b01ad3b9de5cbd4a7ed9d65b2e58db2bafd635649e4e1b73546a558f60985",
+      "feature_sha256": "a14b01ad3b9de5cbd4a7ed9d65b2e58db2bafd635649e4e1b73546a558f60985",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "348e3840a420eaf3eea4580d2bbf8ea9b25a40782ca490c54303f9f430854c07",
+      "feature_sha256": "348e3840a420eaf3eea4580d2bbf8ea9b25a40782ca490c54303f9f430854c07",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_1",
+      "original_feature_sha256": "cfc91c02387e7242da6ec767587204a014578a092452d49250a946cae7dee208",
+      "feature_sha256": "cfc91c02387e7242da6ec767587204a014578a092452d49250a946cae7dee208",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_2",
+      "original_feature_sha256": "cd10a750ab021e3924423074764b789b62d92ddbfb2ce6c4dd41202bdd03f21a",
+      "feature_sha256": "cd10a750ab021e3924423074764b789b62d92ddbfb2ce6c4dd41202bdd03f21a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_3",
+      "original_feature_sha256": "6b214a9854a554c105c95d2d07031252e1f0424103b34cfb5acf81b9ce787ace",
+      "feature_sha256": "6b214a9854a554c105c95d2d07031252e1f0424103b34cfb5acf81b9ce787ace",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_4",
+      "original_feature_sha256": "0d317639ae17508de8c61aa9286d3a6ca013b8672d86a5cf76ba678f3ee6299b",
+      "feature_sha256": "0d317639ae17508de8c61aa9286d3a6ca013b8672d86a5cf76ba678f3ee6299b",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_5",
+      "original_feature_sha256": "7d6deaf0f1595b501f58e7fa61dd0d913a2bce7018a95e81cefcffd8bdeef108",
+      "feature_sha256": "7d6deaf0f1595b501f58e7fa61dd0d913a2bce7018a95e81cefcffd8bdeef108",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_1",
+      "original_feature_sha256": "9043bbfca0fc1fa3eb0ab81fac489c1baf46f1713457a7d394651c90c1f6ce28",
+      "feature_sha256": "9043bbfca0fc1fa3eb0ab81fac489c1baf46f1713457a7d394651c90c1f6ce28",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_2",
+      "original_feature_sha256": "83b06d8ec6441a97a1008b941c745c64304bf56823fd5f8485ab601967245ac7",
+      "feature_sha256": "83b06d8ec6441a97a1008b941c745c64304bf56823fd5f8485ab601967245ac7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_3",
+      "original_feature_sha256": "3a5a514ae8580b33503ec3326384fcf579621d36a3675d144745eace802f0a29",
+      "feature_sha256": "3a5a514ae8580b33503ec3326384fcf579621d36a3675d144745eace802f0a29",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_4",
+      "original_feature_sha256": "e1c9db0a21af9b8bbe0b3a2d209fc1fd80e98ec46fbd435767445284bddac57c",
+      "feature_sha256": "e1c9db0a21af9b8bbe0b3a2d209fc1fd80e98ec46fbd435767445284bddac57c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_5",
+      "original_feature_sha256": "fb6226e354503277ce013f25cbd83c9287f1397a94b712290da8d93f26a52405",
+      "feature_sha256": "fb6226e354503277ce013f25cbd83c9287f1397a94b712290da8d93f26a52405",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_1",
+      "original_feature_sha256": "99ecd0ddabda4618b7bbab77481fd1626a0a12fbd391647de59dec9748fd9237",
+      "feature_sha256": "99ecd0ddabda4618b7bbab77481fd1626a0a12fbd391647de59dec9748fd9237",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_2",
+      "original_feature_sha256": "62624707b89ca54a9c93ad4d33392f687ddb44c146f42542ec8b50abd76bb826",
+      "feature_sha256": "62624707b89ca54a9c93ad4d33392f687ddb44c146f42542ec8b50abd76bb826",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_3",
+      "original_feature_sha256": "3490a24575ac47cc0dfb8eb62e84362f4730889444e683ad0af577223f546437",
+      "feature_sha256": "3490a24575ac47cc0dfb8eb62e84362f4730889444e683ad0af577223f546437",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_4",
+      "original_feature_sha256": "5560bebd37d0d182ce1881b1a9255fdb66ec014d065bc513f5225ca4e3e3b73c",
+      "feature_sha256": "5560bebd37d0d182ce1881b1a9255fdb66ec014d065bc513f5225ca4e3e3b73c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_5",
+      "original_feature_sha256": "712fd414000767f83cb627a4c5ebd4eb2774297407cff9e4aae6b2a48a4ac8fb",
+      "feature_sha256": "712fd414000767f83cb627a4c5ebd4eb2774297407cff9e4aae6b2a48a4ac8fb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_1",
+      "original_feature_sha256": "96b3ada30f149c8f86abeae4110cd2f757678369eeedebb588ce02d7226fbf95",
+      "feature_sha256": "96b3ada30f149c8f86abeae4110cd2f757678369eeedebb588ce02d7226fbf95",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_2",
+      "original_feature_sha256": "2c630ea87e9d12f23b6191b1290709b1ea3759f5ba652833447ffa4c31a24332",
+      "feature_sha256": "2c630ea87e9d12f23b6191b1290709b1ea3759f5ba652833447ffa4c31a24332",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_3",
+      "original_feature_sha256": "5f3c271c061c2ade4fef9aeb1c2247311802bc6a3ad489a762829f62c4b08292",
+      "feature_sha256": "5f3c271c061c2ade4fef9aeb1c2247311802bc6a3ad489a762829f62c4b08292",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_4",
+      "original_feature_sha256": "02720e6e29c1345dc43a9e2693456dd22823c7ba0033eddc4f4c38c4fda74321",
+      "feature_sha256": "02720e6e29c1345dc43a9e2693456dd22823c7ba0033eddc4f4c38c4fda74321",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_5",
+      "original_feature_sha256": "807264e7e0ba212647657a31c13532fe88cbfa89a23167acd1dd37a0779da51c",
+      "feature_sha256": "807264e7e0ba212647657a31c13532fe88cbfa89a23167acd1dd37a0779da51c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_1",
+      "original_feature_sha256": "b5c03b6a69b0ce290f9ebc4c964209649e592540f06843ff3dfa65e73183c018",
+      "feature_sha256": "b5c03b6a69b0ce290f9ebc4c964209649e592540f06843ff3dfa65e73183c018",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_2",
+      "original_feature_sha256": "8b78fabb72d4e5571cb9868b704899d764619778621ade68cfa12d819d854781",
+      "feature_sha256": "8b78fabb72d4e5571cb9868b704899d764619778621ade68cfa12d819d854781",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_3",
+      "original_feature_sha256": "9cc0d627c9aca5b703ff870f0674c4ceafd7b2a04c1695490c8168ef9c43e004",
+      "feature_sha256": "9cc0d627c9aca5b703ff870f0674c4ceafd7b2a04c1695490c8168ef9c43e004",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_4",
+      "original_feature_sha256": "75dc1688260cf22e48b112bc2761658f19369c4a98dbf43a0aa88ba3b616b54d",
+      "feature_sha256": "75dc1688260cf22e48b112bc2761658f19369c4a98dbf43a0aa88ba3b616b54d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_5",
+      "original_feature_sha256": "4be8787de2cd054d757470ac873578548f956bad7c2c33ad72b2b24c62aec1a8",
+      "feature_sha256": "4be8787de2cd054d757470ac873578548f956bad7c2c33ad72b2b24c62aec1a8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_1",
+      "original_feature_sha256": "631ce4ebb8c66500b73c05027b77c48d44b311ab988fade5393cc5a697246270",
+      "feature_sha256": "631ce4ebb8c66500b73c05027b77c48d44b311ab988fade5393cc5a697246270",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_2",
+      "original_feature_sha256": "a9c054f4781615d895efcd940139d255fd2a886068d9c22f7ea1078311f3b976",
+      "feature_sha256": "a9c054f4781615d895efcd940139d255fd2a886068d9c22f7ea1078311f3b976",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_3",
+      "original_feature_sha256": "7881107cddecd9b496c68e20885db6dae497c52f58f4cb746e3a5c571a82c555",
+      "feature_sha256": "7881107cddecd9b496c68e20885db6dae497c52f58f4cb746e3a5c571a82c555",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_4",
+      "original_feature_sha256": "5eb19713ef96a28655151821ed6c16a7ccd47586352ada813d7e1e41bb97940d",
+      "feature_sha256": "5eb19713ef96a28655151821ed6c16a7ccd47586352ada813d7e1e41bb97940d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_5",
+      "original_feature_sha256": "5da5710a1e08710765686b6eb57b8db6ef5c775fe7ea1865f3f370b64c5b7baf",
+      "feature_sha256": "5da5710a1e08710765686b6eb57b8db6ef5c775fe7ea1865f3f370b64c5b7baf",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_1",
+      "original_feature_sha256": "086e091fa0ae90e050228aef0bd9814a42cee9cf4757f974c3b7a4e8282d8589",
+      "feature_sha256": "086e091fa0ae90e050228aef0bd9814a42cee9cf4757f974c3b7a4e8282d8589",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_2",
+      "original_feature_sha256": "29bed6b12b5af5b92805432de4117f10e0b5ca2258b8b7c83b3b1a564b91cb3c",
+      "feature_sha256": "29bed6b12b5af5b92805432de4117f10e0b5ca2258b8b7c83b3b1a564b91cb3c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_3",
+      "original_feature_sha256": "f5c02cf90b613b8aef9c939076375eba6a3d8cbd1052136dfcaaf9c94a127b43",
+      "feature_sha256": "f5c02cf90b613b8aef9c939076375eba6a3d8cbd1052136dfcaaf9c94a127b43",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_4",
+      "original_feature_sha256": "406276501afdfb782ba11e0cf604690370f0f02f01280f80dee6342a90cdf81e",
+      "feature_sha256": "406276501afdfb782ba11e0cf604690370f0f02f01280f80dee6342a90cdf81e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_5",
+      "original_feature_sha256": "aa134f3f3fc4bf78e9f1dfb9f1b2679b416abb27060691d5ed8d8e870dc07151",
+      "feature_sha256": "aa134f3f3fc4bf78e9f1dfb9f1b2679b416abb27060691d5ed8d8e870dc07151",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_1",
+      "original_feature_sha256": "3e38d7877c73a6cccfd6eae39a9322537496281b4026d849299602402062fb75",
+      "feature_sha256": "3e38d7877c73a6cccfd6eae39a9322537496281b4026d849299602402062fb75",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_2",
+      "original_feature_sha256": "f8580cde31cc967edd4eeb902aa45bfc12e3cee75e8ad46834ca3592a8e609dd",
+      "feature_sha256": "f8580cde31cc967edd4eeb902aa45bfc12e3cee75e8ad46834ca3592a8e609dd",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_3",
+      "original_feature_sha256": "e5fae7d272eafdcb25cf164a5c9bb3087ae3c10a84720e96aec94df744020c77",
+      "feature_sha256": "e5fae7d272eafdcb25cf164a5c9bb3087ae3c10a84720e96aec94df744020c77",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_4",
+      "original_feature_sha256": "c67f2ded2b4253a8f1d718381df884a734deb00659062494c17676d80ba79cd7",
+      "feature_sha256": "c67f2ded2b4253a8f1d718381df884a734deb00659062494c17676d80ba79cd7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_5",
+      "original_feature_sha256": "e5645562f8b2a1940e7875dbf7765ddfdd0241b98e74f112568ac73735988c73",
+      "feature_sha256": "e5645562f8b2a1940e7875dbf7765ddfdd0241b98e74f112568ac73735988c73",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_1",
+      "original_feature_sha256": "e8f5e709f92e6e2b79f76923451145e2ec0e0b741cfae18a3587804ca7b33347",
+      "feature_sha256": "e8f5e709f92e6e2b79f76923451145e2ec0e0b741cfae18a3587804ca7b33347",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_2",
+      "original_feature_sha256": "4455933f519a54ebcfd07683b0164b3fad6df0f840ddafa10687027a03995641",
+      "feature_sha256": "4455933f519a54ebcfd07683b0164b3fad6df0f840ddafa10687027a03995641",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_3",
+      "original_feature_sha256": "9743490815367843b8dd1a0e4ff0691459e1751f824c0cee4e37505d3b03f741",
+      "feature_sha256": "9743490815367843b8dd1a0e4ff0691459e1751f824c0cee4e37505d3b03f741",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_4",
+      "original_feature_sha256": "0159507a0913d28237977f02704cbab7e43a78cb050e76d53582f67cd4865bfb",
+      "feature_sha256": "0159507a0913d28237977f02704cbab7e43a78cb050e76d53582f67cd4865bfb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_5",
+      "original_feature_sha256": "784472125b6509ce911d4c351fbdf1d18eccb01db969a5230ccc080c9a13c979",
+      "feature_sha256": "784472125b6509ce911d4c351fbdf1d18eccb01db969a5230ccc080c9a13c979",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_1",
+      "original_feature_sha256": "08d881d18bc1c4ce82df1fe9084db54690e7fdf0e362fda2fdcd4002bee9b8d2",
+      "feature_sha256": "08d881d18bc1c4ce82df1fe9084db54690e7fdf0e362fda2fdcd4002bee9b8d2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_2",
+      "original_feature_sha256": "fdacb97b91dab31cea4f632114e0c18db8f1b26f9bc1406d8ea2a96fb994f5f7",
+      "feature_sha256": "fdacb97b91dab31cea4f632114e0c18db8f1b26f9bc1406d8ea2a96fb994f5f7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_3",
+      "original_feature_sha256": "be2e4995670afdca176455447d7ef803e6a4e1a9bd4d4059971468efc8389817",
+      "feature_sha256": "be2e4995670afdca176455447d7ef803e6a4e1a9bd4d4059971468efc8389817",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_4",
+      "original_feature_sha256": "f946ef3e883a5953da4fa80e74fe4c98719cb94082379a380b1fd33f22b3aefb",
+      "feature_sha256": "f946ef3e883a5953da4fa80e74fe4c98719cb94082379a380b1fd33f22b3aefb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_5",
+      "original_feature_sha256": "4012ea77c8f93a5601d48c178e5c552fe46adb64418f7030a7f25371a751e0af",
+      "feature_sha256": "4012ea77c8f93a5601d48c178e5c552fe46adb64418f7030a7f25371a751e0af",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_1",
+      "original_feature_sha256": "a553023e6e3879683f39362a5d2a2f20b852a7d0b69b962c136c6d5b10503418",
+      "feature_sha256": "a553023e6e3879683f39362a5d2a2f20b852a7d0b69b962c136c6d5b10503418",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_2",
+      "original_feature_sha256": "081d3cd53bcafba787866ba7266125327f171ce8ff60b975fe8c0c18a6061a8c",
+      "feature_sha256": "081d3cd53bcafba787866ba7266125327f171ce8ff60b975fe8c0c18a6061a8c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_3",
+      "original_feature_sha256": "6db1943fdbd6deb27dcedc740df49a4ba2d547fc6b2dce475dca18ee30471232",
+      "feature_sha256": "6db1943fdbd6deb27dcedc740df49a4ba2d547fc6b2dce475dca18ee30471232",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_4",
+      "original_feature_sha256": "150d4f49bb695d044b4d28250c842200d4b8b6eb5843d4ad2eba8259af6b84e8",
+      "feature_sha256": "150d4f49bb695d044b4d28250c842200d4b8b6eb5843d4ad2eba8259af6b84e8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_5",
+      "original_feature_sha256": "c5d2c4938c488f258b567d988206203230f8e123c420fe463f26ec3270df0f91",
+      "feature_sha256": "c5d2c4938c488f258b567d988206203230f8e123c420fe463f26ec3270df0f91",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_1",
+      "original_feature_sha256": "2f4e4f69c9da87fde1b81991c13799c51727ec278645bd946ee0d699a24b1a5d",
+      "feature_sha256": "2f4e4f69c9da87fde1b81991c13799c51727ec278645bd946ee0d699a24b1a5d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_2",
+      "original_feature_sha256": "f65e5510a187c62e4a9126815481939df44f1e0084c2806f6f062cc96a39dc44",
+      "feature_sha256": "f65e5510a187c62e4a9126815481939df44f1e0084c2806f6f062cc96a39dc44",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_3",
+      "original_feature_sha256": "4c43ffb074dd976d0abfba96ffd81c61f9355c6066f250475f7673043b339bdb",
+      "feature_sha256": "4c43ffb074dd976d0abfba96ffd81c61f9355c6066f250475f7673043b339bdb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_4",
+      "original_feature_sha256": "f98cc259359df445813844a5ca2b41cd9631a6ac8d555617c4b05795e2669ae6",
+      "feature_sha256": "f98cc259359df445813844a5ca2b41cd9631a6ac8d555617c4b05795e2669ae6",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_5",
+      "original_feature_sha256": "87f4cb6d8ade5add36cd0d53fed11be0ff811356ac6aa7723a9a560ee38500a6",
+      "feature_sha256": "87f4cb6d8ade5add36cd0d53fed11be0ff811356ac6aa7723a9a560ee38500a6",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_1",
+      "original_feature_sha256": "3e6bb60db2d1bdb0c2ac4426287267b2dde06ccd1edf57089f7b4f05637b1c50",
+      "feature_sha256": "3e6bb60db2d1bdb0c2ac4426287267b2dde06ccd1edf57089f7b4f05637b1c50",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_2",
+      "original_feature_sha256": "cfeab5f3d3fdc790f871104ff6732af8d0f9d2daf7eaf1e5eae41e191e29765c",
+      "feature_sha256": "cfeab5f3d3fdc790f871104ff6732af8d0f9d2daf7eaf1e5eae41e191e29765c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_3",
+      "original_feature_sha256": "e9f995daaed3cb81d20d928145a2ada866ca9d32b6b2cadedd6b68e1cbc22643",
+      "feature_sha256": "e9f995daaed3cb81d20d928145a2ada866ca9d32b6b2cadedd6b68e1cbc22643",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_4",
+      "original_feature_sha256": "7cef964d35f97be3ccc5cad382343107e6f5da5bd3b000772f48e67a79676b16",
+      "feature_sha256": "7cef964d35f97be3ccc5cad382343107e6f5da5bd3b000772f48e67a79676b16",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_5",
+      "original_feature_sha256": "3b29c1e589ce19dab9a60cc4d1f9403a5a31ccd17f2bb382af060e0ef6dabc00",
+      "feature_sha256": "3b29c1e589ce19dab9a60cc4d1f9403a5a31ccd17f2bb382af060e0ef6dabc00",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_1",
+      "original_feature_sha256": "87d4ef5f1e7a050fb28603dae18592a9b1740b24f94e788f47fdee266b86e5d8",
+      "feature_sha256": "87d4ef5f1e7a050fb28603dae18592a9b1740b24f94e788f47fdee266b86e5d8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_2",
+      "original_feature_sha256": "f2b64ccf4445083473b243d1e2ee84292e24d417329e0042c0b3ffb23b2e13f1",
+      "feature_sha256": "f2b64ccf4445083473b243d1e2ee84292e24d417329e0042c0b3ffb23b2e13f1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_3",
+      "original_feature_sha256": "96ef20402907e178fab93980df87960f080ed3d3353c9741fa144db066f58966",
+      "feature_sha256": "96ef20402907e178fab93980df87960f080ed3d3353c9741fa144db066f58966",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_4",
+      "original_feature_sha256": "0fc47ad98de931b45895d4a1002544dd53f2b970c7781390d94bd3b4a15a3686",
+      "feature_sha256": "0fc47ad98de931b45895d4a1002544dd53f2b970c7781390d94bd3b4a15a3686",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_5",
+      "original_feature_sha256": "4287dc2348e02113560ebd3d25a1d0cde4e6b07c848e8acb2e59b170d6df81b8",
+      "feature_sha256": "4287dc2348e02113560ebd3d25a1d0cde4e6b07c848e8acb2e59b170d6df81b8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_1",
+      "original_feature_sha256": "cf9764ed6ac982fbcf30706b63d9d54749eabed7c79cd56ca8302b06325d148e",
+      "feature_sha256": "cf9764ed6ac982fbcf30706b63d9d54749eabed7c79cd56ca8302b06325d148e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_2",
+      "original_feature_sha256": "969a23919df9d8286bc2dbc287ee0e5955af190c3e9c0eeee82e1c213da7740f",
+      "feature_sha256": "969a23919df9d8286bc2dbc287ee0e5955af190c3e9c0eeee82e1c213da7740f",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_3",
+      "original_feature_sha256": "71a3b1d4db2020f2e11460242050cff09675b8eb720dccc9147a211c4cb82ed6",
+      "feature_sha256": "71a3b1d4db2020f2e11460242050cff09675b8eb720dccc9147a211c4cb82ed6",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_4",
+      "original_feature_sha256": "d1bb2458ba206ade888b3f585f329d59de900bdbf13ff03e83e4e1fae79814fd",
+      "feature_sha256": "d1bb2458ba206ade888b3f585f329d59de900bdbf13ff03e83e4e1fae79814fd",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_5",
+      "original_feature_sha256": "231790407bcf82364e92670bdd8247de9527720e1545a9c13cf07974eb66f9f0",
+      "feature_sha256": "231790407bcf82364e92670bdd8247de9527720e1545a9c13cf07974eb66f9f0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_1",
+      "original_feature_sha256": "a87b9adea33948ce3743f0f67d189dc4436372cdaa72d93926f1d9de26e9b0e2",
+      "feature_sha256": "a87b9adea33948ce3743f0f67d189dc4436372cdaa72d93926f1d9de26e9b0e2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_2",
+      "original_feature_sha256": "13d2a9dc3db9f5be4b17d6ebe823f4a7e840dd59267a86017e9f73ed373b9a67",
+      "feature_sha256": "13d2a9dc3db9f5be4b17d6ebe823f4a7e840dd59267a86017e9f73ed373b9a67",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_3",
+      "original_feature_sha256": "4376a43ee1697ce70f3af68a9a544a37a290e4091dabe6e46cec451f7ac1d077",
+      "feature_sha256": "4376a43ee1697ce70f3af68a9a544a37a290e4091dabe6e46cec451f7ac1d077",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_4",
+      "original_feature_sha256": "dcfb3ca677c8816839c36c0f641b9b8515880def63e105e4a5a8fe6d1eab570b",
+      "feature_sha256": "dcfb3ca677c8816839c36c0f641b9b8515880def63e105e4a5a8fe6d1eab570b",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_5",
+      "original_feature_sha256": "3075640a6b24b69a1e320cd15b22792dfe2a3df8f48070959b224c79fc108d45",
+      "feature_sha256": "3075640a6b24b69a1e320cd15b22792dfe2a3df8f48070959b224c79fc108d45",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_1",
+      "original_feature_sha256": "b08dfe62876a593532d2cc47c3827b30d2f71069a2e21b4125bb1cf9845906e9",
+      "feature_sha256": "b08dfe62876a593532d2cc47c3827b30d2f71069a2e21b4125bb1cf9845906e9",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_2",
+      "original_feature_sha256": "1a852a57dfb0a513aa57b11eda3221008ad1813dc4055714f4610f8eb4b55b10",
+      "feature_sha256": "1a852a57dfb0a513aa57b11eda3221008ad1813dc4055714f4610f8eb4b55b10",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_3",
+      "original_feature_sha256": "4b4eef3f8674b4e282a8739827e483fcb4468384d3db881bd9bd0e237aa4fbc8",
+      "feature_sha256": "4b4eef3f8674b4e282a8739827e483fcb4468384d3db881bd9bd0e237aa4fbc8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_4",
+      "original_feature_sha256": "c98ddd1b1be5d69049d701bfc1b6eeded683f0ed4263472fef2f858cfa30fdf4",
+      "feature_sha256": "c98ddd1b1be5d69049d701bfc1b6eeded683f0ed4263472fef2f858cfa30fdf4",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_5",
+      "original_feature_sha256": "8d39e31df6d30becf54afa0a204f8063d0c0bed2f35219375d51f92c5070c153",
+      "feature_sha256": "8d39e31df6d30becf54afa0a204f8063d0c0bed2f35219375d51f92c5070c153",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_1",
+      "original_feature_sha256": "dce93e507115ed036848da731e8dcfd9361947b62859df5fc661f1b158d816d2",
+      "feature_sha256": "dce93e507115ed036848da731e8dcfd9361947b62859df5fc661f1b158d816d2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_2",
+      "original_feature_sha256": "596b31e4978b1365f4e19f25ea37c67fd35940800040a442e00aad30f3cec5b1",
+      "feature_sha256": "596b31e4978b1365f4e19f25ea37c67fd35940800040a442e00aad30f3cec5b1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_3",
+      "original_feature_sha256": "a6b027c16c43b4e95ad63763e9432e791ba923ec0f7a4621b357d04a3413301a",
+      "feature_sha256": "a6b027c16c43b4e95ad63763e9432e791ba923ec0f7a4621b357d04a3413301a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_4",
+      "original_feature_sha256": "5b0384d5c6a9089af2a34142e153261ec8c0992fc187f381fc0436cd99ba2bf2",
+      "feature_sha256": "5b0384d5c6a9089af2a34142e153261ec8c0992fc187f381fc0436cd99ba2bf2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_5",
+      "original_feature_sha256": "b1da97be8ab1952d416f926d2b3f2123def94ee42d856839f3c815424b1e2453",
+      "feature_sha256": "b1da97be8ab1952d416f926d2b3f2123def94ee42d856839f3c815424b1e2453",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_1",
+      "original_feature_sha256": "b5dec5ca579e1b916f5684483e63202df100f11aceac4711c92255b723ad071d",
+      "feature_sha256": "b5dec5ca579e1b916f5684483e63202df100f11aceac4711c92255b723ad071d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_2",
+      "original_feature_sha256": "0c99a2d5a6fba608d4872fa3a9bfbea2b91965e1d8e9e68eb473193924c1cefb",
+      "feature_sha256": "0c99a2d5a6fba608d4872fa3a9bfbea2b91965e1d8e9e68eb473193924c1cefb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_3",
+      "original_feature_sha256": "857c34e66bb1e571c5c9292a3d4fe7df9fb5467653dd1f0a4698367fba0cf370",
+      "feature_sha256": "857c34e66bb1e571c5c9292a3d4fe7df9fb5467653dd1f0a4698367fba0cf370",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_4",
+      "original_feature_sha256": "36848ac64cc51b59dba5d18166f379377d17ba31d444c40d40d5c2dadf068080",
+      "feature_sha256": "36848ac64cc51b59dba5d18166f379377d17ba31d444c40d40d5c2dadf068080",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_5",
+      "original_feature_sha256": "98f6c9a11cfde3a88e111b8ca62426a4403368cb1109b3b3e496b50740a0ecaa",
+      "feature_sha256": "98f6c9a11cfde3a88e111b8ca62426a4403368cb1109b3b3e496b50740a0ecaa",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_1",
+      "original_feature_sha256": "66d22cc6771476767457448ceadb47960e779627f1c691c41fa7af920c5ecb6c",
+      "feature_sha256": "66d22cc6771476767457448ceadb47960e779627f1c691c41fa7af920c5ecb6c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_2",
+      "original_feature_sha256": "dfb5bcfb35636d912caf9f09edeb83c8e23e1cf3ececa17242343c4e9ba6b593",
+      "feature_sha256": "dfb5bcfb35636d912caf9f09edeb83c8e23e1cf3ececa17242343c4e9ba6b593",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_3",
+      "original_feature_sha256": "0384254f34ac2679b1bca9e1be8235082d63b9617b997a96b8ed474e4f32fa94",
+      "feature_sha256": "0384254f34ac2679b1bca9e1be8235082d63b9617b997a96b8ed474e4f32fa94",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_4",
+      "original_feature_sha256": "86233625cd836b39db6aeec221d602e89cbba3a32ca059e13b9f91256bd61f44",
+      "feature_sha256": "86233625cd836b39db6aeec221d602e89cbba3a32ca059e13b9f91256bd61f44",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_5",
+      "original_feature_sha256": "ee0a2343e36fdf22137f954fb84c52b93bdfb11a721e52ec436f5a22b3f50200",
+      "feature_sha256": "ee0a2343e36fdf22137f954fb84c52b93bdfb11a721e52ec436f5a22b3f50200",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_1",
+      "original_feature_sha256": "8f79d7fc416ca8b6f9e0d5182f687abc177d8e28f1953d5f355028103306666d",
+      "feature_sha256": "8f79d7fc416ca8b6f9e0d5182f687abc177d8e28f1953d5f355028103306666d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_2",
+      "original_feature_sha256": "9a9a0e9e70d3e455b98afa6b51f6455cdbd0c252d9204485bf30acc59ed21636",
+      "feature_sha256": "9a9a0e9e70d3e455b98afa6b51f6455cdbd0c252d9204485bf30acc59ed21636",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_3",
+      "original_feature_sha256": "b48869af0467f17e6a5cd5743abf44a31919d92e178cfd56c6947db781510ff8",
+      "feature_sha256": "b48869af0467f17e6a5cd5743abf44a31919d92e178cfd56c6947db781510ff8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_4",
+      "original_feature_sha256": "745562bd4b2253ecc45e0b378e88f26821df366cfc7328822d5d015666763e88",
+      "feature_sha256": "745562bd4b2253ecc45e0b378e88f26821df366cfc7328822d5d015666763e88",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_5",
+      "original_feature_sha256": "23d482d98647a63d5c2728ce1a5165ba6c109bc115d734ffa520c838aa4c0cf3",
+      "feature_sha256": "23d482d98647a63d5c2728ce1a5165ba6c109bc115d734ffa520c838aa4c0cf3",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_1",
+      "original_feature_sha256": "3d5f268e5f1fd767aba73c18b1a23812ad54a4d3934b5d1b10c1d7fbc33b6849",
+      "feature_sha256": "3d5f268e5f1fd767aba73c18b1a23812ad54a4d3934b5d1b10c1d7fbc33b6849",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_2",
+      "original_feature_sha256": "c7a4b1dec23006eeb1872b02afb02ed65c984db74efc60ee2e2bac42eeff8339",
+      "feature_sha256": "c7a4b1dec23006eeb1872b02afb02ed65c984db74efc60ee2e2bac42eeff8339",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_3",
+      "original_feature_sha256": "53b136dcc8ed079d8f689ff03957ce663fa4f623a9996028b2f1e71f5f2d7f36",
+      "feature_sha256": "53b136dcc8ed079d8f689ff03957ce663fa4f623a9996028b2f1e71f5f2d7f36",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_4",
+      "original_feature_sha256": "469fdd9af236499cb10cd1c25fb3509b2e40787a0084b0250247796b41963a55",
+      "feature_sha256": "469fdd9af236499cb10cd1c25fb3509b2e40787a0084b0250247796b41963a55",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_5",
+      "original_feature_sha256": "a8883c499859d51a5ab03e61df0a407f9f5e26780715fb4ec110a69e25f5b485",
+      "feature_sha256": "a8883c499859d51a5ab03e61df0a407f9f5e26780715fb4ec110a69e25f5b485",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_1",
+      "original_feature_sha256": "1831105142e23c9200012c9d1a46d5209c962d6f4729fea57f9825abb8284930",
+      "feature_sha256": "1831105142e23c9200012c9d1a46d5209c962d6f4729fea57f9825abb8284930",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_2",
+      "original_feature_sha256": "255965b39ddb3c7232d50831d09896c52c06108b6d5cef7cef9f73b712dc643a",
+      "feature_sha256": "255965b39ddb3c7232d50831d09896c52c06108b6d5cef7cef9f73b712dc643a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_3",
+      "original_feature_sha256": "89e9226351a752a971966ece6bf61a7e10f79eed2c3a095ea5be8db0e584ec4a",
+      "feature_sha256": "89e9226351a752a971966ece6bf61a7e10f79eed2c3a095ea5be8db0e584ec4a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_4",
+      "original_feature_sha256": "fc1847a8f20ae7fff0e876ffa8e552c66c07a8e5b269fbe5f58db80442924d9d",
+      "feature_sha256": "fc1847a8f20ae7fff0e876ffa8e552c66c07a8e5b269fbe5f58db80442924d9d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_5",
+      "original_feature_sha256": "2fdc1d8dd73c322b565a2245335a1a89769db5dd3738fcb69c8272b672156800",
+      "feature_sha256": "2fdc1d8dd73c322b565a2245335a1a89769db5dd3738fcb69c8272b672156800",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_1",
+      "original_feature_sha256": "254b06c26e6fa1b000398a01616c0b9c5a23940a46b929f667c5d3728d1dae95",
+      "feature_sha256": "254b06c26e6fa1b000398a01616c0b9c5a23940a46b929f667c5d3728d1dae95",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_2",
+      "original_feature_sha256": "91d5ca209f8593405784c6addc1c21676f23998e9e2c9693775f07464aecd458",
+      "feature_sha256": "91d5ca209f8593405784c6addc1c21676f23998e9e2c9693775f07464aecd458",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_3",
+      "original_feature_sha256": "66f84c6ed7a9aeda8496307a3a0806268ff1f123609a3b0fac76de45c3746c59",
+      "feature_sha256": "66f84c6ed7a9aeda8496307a3a0806268ff1f123609a3b0fac76de45c3746c59",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_4",
+      "original_feature_sha256": "27913b63a45369f78fd566f8201e42556506f9f54061c4d33c1ff30e79432d1a",
+      "feature_sha256": "27913b63a45369f78fd566f8201e42556506f9f54061c4d33c1ff30e79432d1a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "single",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_5",
+      "original_feature_sha256": "631df8a6d3959f38d04b4f38ad4cdaa13c049efb2059573a7dc7c98ea43cb130",
+      "feature_sha256": "631df8a6d3959f38d04b4f38ad4cdaa13c049efb2059573a7dc7c98ea43cb130",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_1",
+      "original_feature_sha256": "e43377ef6cbf5276f4ce6703d623674c88f08e43913108aca92a77f5cd4b51b7",
+      "feature_sha256": "e43377ef6cbf5276f4ce6703d623674c88f08e43913108aca92a77f5cd4b51b7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_2",
+      "original_feature_sha256": "ada9ca4e01ea191df1d3593940bf44938318831115cffab36878284809d387dd",
+      "feature_sha256": "ada9ca4e01ea191df1d3593940bf44938318831115cffab36878284809d387dd",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_3",
+      "original_feature_sha256": "c972f900dc04d5e3dccb489ff0c2ef02a408c647ceece04554da80ab5131f954",
+      "feature_sha256": "c972f900dc04d5e3dccb489ff0c2ef02a408c647ceece04554da80ab5131f954",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_4",
+      "original_feature_sha256": "231be9612ba9327474c678ce974d4658f285d805c46381ecd53751eafd11f3a5",
+      "feature_sha256": "231be9612ba9327474c678ce974d4658f285d805c46381ecd53751eafd11f3a5",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_2_5",
+      "original_feature_sha256": "9a73cd272e0ed7fa299f8a16c7610cabfa971169d3fc847e8f791a9d6decdac1",
+      "feature_sha256": "9a73cd272e0ed7fa299f8a16c7610cabfa971169d3fc847e8f791a9d6decdac1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_1",
+      "original_feature_sha256": "bfe123ff36b604c6bbf284617f27d5ad5495454b3ff18101248c8b0050cfadb1",
+      "feature_sha256": "bfe123ff36b604c6bbf284617f27d5ad5495454b3ff18101248c8b0050cfadb1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_2",
+      "original_feature_sha256": "cbf77732c30c0bb37589b62294dd7fce8b37c459feca127a7776b2c802323362",
+      "feature_sha256": "cbf77732c30c0bb37589b62294dd7fce8b37c459feca127a7776b2c802323362",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_3",
+      "original_feature_sha256": "8f3ae08fe6a363a865e95ae72fdbbc7454474b596e6a3144b407570d9170c280",
+      "feature_sha256": "8f3ae08fe6a363a865e95ae72fdbbc7454474b596e6a3144b407570d9170c280",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_4",
+      "original_feature_sha256": "35b86e6a3ce4a65d248f2dbd501f16077f7c5c2a38fbb34a9bd81bacd70007cc",
+      "feature_sha256": "35b86e6a3ce4a65d248f2dbd501f16077f7c5c2a38fbb34a9bd81bacd70007cc",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_3_5",
+      "original_feature_sha256": "97afd14b85a4b3fc361741550d386453365faeb37093f76b2ec1fa8ced52f180",
+      "feature_sha256": "97afd14b85a4b3fc361741550d386453365faeb37093f76b2ec1fa8ced52f180",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_1",
+      "original_feature_sha256": "afd3ef5bd61e3445953d737a3df122534fa09243b1a4493ee0c599d12213a48a",
+      "feature_sha256": "afd3ef5bd61e3445953d737a3df122534fa09243b1a4493ee0c599d12213a48a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_2",
+      "original_feature_sha256": "626c35789b1d3a1ad286d96d7d8f03f75e4a19705edcefb5324677655d5d51a2",
+      "feature_sha256": "626c35789b1d3a1ad286d96d7d8f03f75e4a19705edcefb5324677655d5d51a2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_3",
+      "original_feature_sha256": "322def939a4246fa56f333177588df8080c84e4ea39828ae61c469b21b9b96dc",
+      "feature_sha256": "322def939a4246fa56f333177588df8080c84e4ea39828ae61c469b21b9b96dc",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_4",
+      "original_feature_sha256": "f74eed485b22e40a463cdf1820344564b3a9896da47f97d965d70c389d229381",
+      "feature_sha256": "f74eed485b22e40a463cdf1820344564b3a9896da47f97d965d70c389d229381",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_4_5",
+      "original_feature_sha256": "5e15fd38ee0a1ad0d976214618857d302f269b122b55d5ede03c8a01dcdec72a",
+      "feature_sha256": "5e15fd38ee0a1ad0d976214618857d302f269b122b55d5ede03c8a01dcdec72a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_1",
+      "original_feature_sha256": "2817c1b95ec5f9eaffee1abbafb8bb4f8197dc13b6c32756f2b56c1d2ecbaaf4",
+      "feature_sha256": "2817c1b95ec5f9eaffee1abbafb8bb4f8197dc13b6c32756f2b56c1d2ecbaaf4",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_2",
+      "original_feature_sha256": "5f86a44ccc7ba37ae584593e8eb919cb2ec7534a0d49f7d0acf476239d0e1cc4",
+      "feature_sha256": "5f86a44ccc7ba37ae584593e8eb919cb2ec7534a0d49f7d0acf476239d0e1cc4",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_3",
+      "original_feature_sha256": "a606b059c3eb2226b662a8f03f34785096167701550cf61dbae6fcfa64f9703c",
+      "feature_sha256": "a606b059c3eb2226b662a8f03f34785096167701550cf61dbae6fcfa64f9703c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_4",
+      "original_feature_sha256": "9b7bd09e26438a202c7c8fc4a08eefac9dd05d1da3e1c52a01832bd230aabd5e",
+      "feature_sha256": "9b7bd09e26438a202c7c8fc4a08eefac9dd05d1da3e1c52a01832bd230aabd5e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_5_5",
+      "original_feature_sha256": "7575ffe97d443507007fa470141c614f45eaeaa450f9fd03d4a0029840153b46",
+      "feature_sha256": "7575ffe97d443507007fa470141c614f45eaeaa450f9fd03d4a0029840153b46",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_1",
+      "original_feature_sha256": "bca527e11dda695b14ba1fd0ded58d533c3d4bdc21839932ba6f9ec87dd63996",
+      "feature_sha256": "bca527e11dda695b14ba1fd0ded58d533c3d4bdc21839932ba6f9ec87dd63996",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_2",
+      "original_feature_sha256": "debbe9375baa33243c4b8527f595a839a5342a6d79692be6b23c6983d076916b",
+      "feature_sha256": "debbe9375baa33243c4b8527f595a839a5342a6d79692be6b23c6983d076916b",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_3",
+      "original_feature_sha256": "dfc7ef619a6b4c9be99f7cd554f38bb6004fb6d3aa3130dff33c618cbd80ef02",
+      "feature_sha256": "dfc7ef619a6b4c9be99f7cd554f38bb6004fb6d3aa3130dff33c618cbd80ef02",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_4",
+      "original_feature_sha256": "086434e9dacf2f4214fc99f6fe98064bdbe4260d951ad8d522bf7510cddd8d62",
+      "feature_sha256": "086434e9dacf2f4214fc99f6fe98064bdbe4260d951ad8d522bf7510cddd8d62",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_6_5",
+      "original_feature_sha256": "ef5e00c83c4b0dcd2cc34c750c8cffd8495e87cfb95f84349a20d7eb7a50cd7c",
+      "feature_sha256": "ef5e00c83c4b0dcd2cc34c750c8cffd8495e87cfb95f84349a20d7eb7a50cd7c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_1",
+      "original_feature_sha256": "85cde087e0ac8950a1ad5f3c210174d4ae27d77fadd7ca518fc586cc4856fecf",
+      "feature_sha256": "85cde087e0ac8950a1ad5f3c210174d4ae27d77fadd7ca518fc586cc4856fecf",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_2",
+      "original_feature_sha256": "b18d575eb48c4ee47f7c944f9fe50b74db4b6b8eedd5586564b3072c945a66ee",
+      "feature_sha256": "b18d575eb48c4ee47f7c944f9fe50b74db4b6b8eedd5586564b3072c945a66ee",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_3",
+      "original_feature_sha256": "40c534e22c08788a7fa8f5df7d6998c848c5aae469c9ff6037de4253fd888d74",
+      "feature_sha256": "40c534e22c08788a7fa8f5df7d6998c848c5aae469c9ff6037de4253fd888d74",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_4",
+      "original_feature_sha256": "a8988fea066db58451b00c2a99c82ccb63be16ab60b84c8181d904a135ef20e2",
+      "feature_sha256": "a8988fea066db58451b00c2a99c82ccb63be16ab60b84c8181d904a135ef20e2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_7_5",
+      "original_feature_sha256": "4978d546268164a66f9634d2043b7faacf1e79574bd596f46299239f4bed5c1e",
+      "feature_sha256": "4978d546268164a66f9634d2043b7faacf1e79574bd596f46299239f4bed5c1e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_1",
+      "original_feature_sha256": "dcbd126782b5b530fddf6ff1b07bb5a7130e1e923175ea809b09c7df68f672be",
+      "feature_sha256": "dcbd126782b5b530fddf6ff1b07bb5a7130e1e923175ea809b09c7df68f672be",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_2",
+      "original_feature_sha256": "17715e2f1f8267f61fcb5d12f3644e84ea15027a271e37d34e541b8c108bc546",
+      "feature_sha256": "17715e2f1f8267f61fcb5d12f3644e84ea15027a271e37d34e541b8c108bc546",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_3",
+      "original_feature_sha256": "641837b4e1d8507ebf3e824b2653cfb8b06be1df4fe5ff069adfddccab1d3496",
+      "feature_sha256": "641837b4e1d8507ebf3e824b2653cfb8b06be1df4fe5ff069adfddccab1d3496",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_4",
+      "original_feature_sha256": "f47ee389070bb0005de820a7aa2704b47a1e53da218b55881d79c059006d1883",
+      "feature_sha256": "f47ee389070bb0005de820a7aa2704b47a1e53da218b55881d79c059006d1883",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_8_5",
+      "original_feature_sha256": "333328773b17afdacce2a2bee20d557ad3db28a4a4b63187d9a1926f720085de",
+      "feature_sha256": "333328773b17afdacce2a2bee20d557ad3db28a4a4b63187d9a1926f720085de",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_1",
+      "original_feature_sha256": "556b8261dcbf1f18e9904fc29811069977ec72483f4dfa5b5060bb4c6f87f565",
+      "feature_sha256": "556b8261dcbf1f18e9904fc29811069977ec72483f4dfa5b5060bb4c6f87f565",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_2",
+      "original_feature_sha256": "f144a61335b46d0677952c8b283674d9e4b4be8f9232291a22b12d8045f8d5d5",
+      "feature_sha256": "f144a61335b46d0677952c8b283674d9e4b4be8f9232291a22b12d8045f8d5d5",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_3",
+      "original_feature_sha256": "4412bb9a269edd7c51575f6608d2a49c691718d40a41be3702b5c3bb45ecd605",
+      "feature_sha256": "4412bb9a269edd7c51575f6608d2a49c691718d40a41be3702b5c3bb45ecd605",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_4",
+      "original_feature_sha256": "4e03db22540e77412a391a18701a1c3c114fde90e18365b215c75c54adaeb498",
+      "feature_sha256": "4e03db22540e77412a391a18701a1c3c114fde90e18365b215c75c54adaeb498",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_9_5",
+      "original_feature_sha256": "20dd69016c6cee0a4a299cf642228bbc5d584262312186359cf40bf2eefe8bdf",
+      "feature_sha256": "20dd69016c6cee0a4a299cf642228bbc5d584262312186359cf40bf2eefe8bdf",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_1",
+      "original_feature_sha256": "442bf8562bc38ce19168c6cc921b75d641afa0d0e8c176303c77ba25239a537e",
+      "feature_sha256": "442bf8562bc38ce19168c6cc921b75d641afa0d0e8c176303c77ba25239a537e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_2",
+      "original_feature_sha256": "f0b243617bad3bec23a9fbdf40c5f4459ba4e3a9abe2126b7a279ab881e0948e",
+      "feature_sha256": "f0b243617bad3bec23a9fbdf40c5f4459ba4e3a9abe2126b7a279ab881e0948e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_3",
+      "original_feature_sha256": "fd99080ebce38944c857a6348e0b8e29d2e2883d2b57482e865901fb1ff98d83",
+      "feature_sha256": "fd99080ebce38944c857a6348e0b8e29d2e2883d2b57482e865901fb1ff98d83",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_4",
+      "original_feature_sha256": "f658f4af65c1f0efb957769c60f9f40d4cc6abc6482da56eea4c96e011a524ef",
+      "feature_sha256": "f658f4af65c1f0efb957769c60f9f40d4cc6abc6482da56eea4c96e011a524ef",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_10_5",
+      "original_feature_sha256": "be69f41dab6486577608dacb0c3b7be81129548c051cf7593f4bae88c9d2572a",
+      "feature_sha256": "be69f41dab6486577608dacb0c3b7be81129548c051cf7593f4bae88c9d2572a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_1",
+      "original_feature_sha256": "8de2de56b811d21c5e2cc3c648b67753c9f9b9ca4d78630088015c72039b99a3",
+      "feature_sha256": "8de2de56b811d21c5e2cc3c648b67753c9f9b9ca4d78630088015c72039b99a3",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_2",
+      "original_feature_sha256": "4a1f5935242aca77f3bda73c977b05cc0e6dd56c3582f850052dc651df8eb7c0",
+      "feature_sha256": "4a1f5935242aca77f3bda73c977b05cc0e6dd56c3582f850052dc651df8eb7c0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_3",
+      "original_feature_sha256": "59c193ccd167ee0785c7fabee22914e2ec8b9e24041752532b7db4490bf7e02c",
+      "feature_sha256": "59c193ccd167ee0785c7fabee22914e2ec8b9e24041752532b7db4490bf7e02c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_4",
+      "original_feature_sha256": "5d8b392e4db8b0f3cf07f514b1aa20fb214555e25bd693ad04679466638605df",
+      "feature_sha256": "5d8b392e4db8b0f3cf07f514b1aa20fb214555e25bd693ad04679466638605df",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_11_5",
+      "original_feature_sha256": "a54acd0adc422a78c7aa08cc4f4969f959c2ed21c2f4b49edbafce1983ed4a0f",
+      "feature_sha256": "a54acd0adc422a78c7aa08cc4f4969f959c2ed21c2f4b49edbafce1983ed4a0f",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_1",
+      "original_feature_sha256": "1ebd16f1847c28d45c727e00feb95f831ff9d85022c6211f3e9986f86441341d",
+      "feature_sha256": "1ebd16f1847c28d45c727e00feb95f831ff9d85022c6211f3e9986f86441341d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_2",
+      "original_feature_sha256": "cf65fb388fedc3c8fa726e54467264161a7abcd0d5f5360b8fce94d69b43884d",
+      "feature_sha256": "cf65fb388fedc3c8fa726e54467264161a7abcd0d5f5360b8fce94d69b43884d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_3",
+      "original_feature_sha256": "4a344b612dcc624a7c47b3bd50f4e4ceed71fdb3e2532e6c48b0ee22fd4c811c",
+      "feature_sha256": "4a344b612dcc624a7c47b3bd50f4e4ceed71fdb3e2532e6c48b0ee22fd4c811c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_4",
+      "original_feature_sha256": "ef391d0f4a8909f790522a5e6f5d7e390aa3ab203352e164bf3a98cbeb37d31a",
+      "feature_sha256": "ef391d0f4a8909f790522a5e6f5d7e390aa3ab203352e164bf3a98cbeb37d31a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_12_5",
+      "original_feature_sha256": "d6a3344a902b2ddc351de42564aebd6add6ef6f39c674aeb1bde8f80c64d89e5",
+      "feature_sha256": "d6a3344a902b2ddc351de42564aebd6add6ef6f39c674aeb1bde8f80c64d89e5",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_1",
+      "original_feature_sha256": "763570cd15dd30fee4f6cfa86887cfca0a88db845bbae4a824a03a79dbbc4337",
+      "feature_sha256": "763570cd15dd30fee4f6cfa86887cfca0a88db845bbae4a824a03a79dbbc4337",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_2",
+      "original_feature_sha256": "6e02c7d344510040f4bc76260a6df213878f7130ffa5b388f80dbdd08b6deaa0",
+      "feature_sha256": "6e02c7d344510040f4bc76260a6df213878f7130ffa5b388f80dbdd08b6deaa0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_3",
+      "original_feature_sha256": "dfb22a91123147494ba295a60ff217f05306c09f49f313f2a52a481bea9dc489",
+      "feature_sha256": "dfb22a91123147494ba295a60ff217f05306c09f49f313f2a52a481bea9dc489",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_4",
+      "original_feature_sha256": "6778164e46dfff0aaab9e45933b7eb40603c80ea46a2fc29e1da90108dabd8a3",
+      "feature_sha256": "6778164e46dfff0aaab9e45933b7eb40603c80ea46a2fc29e1da90108dabd8a3",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_13_5",
+      "original_feature_sha256": "943faed9c8f997aa8f2834c728cb5b10ffd46d3e0da75f038f913f639fe6b1f7",
+      "feature_sha256": "943faed9c8f997aa8f2834c728cb5b10ffd46d3e0da75f038f913f639fe6b1f7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_1",
+      "original_feature_sha256": "02951c69a3b626673313ee8e7929fdca4fd276e9475493e03924794971303a69",
+      "feature_sha256": "02951c69a3b626673313ee8e7929fdca4fd276e9475493e03924794971303a69",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_2",
+      "original_feature_sha256": "ff1dd19be1dcac1abd25ce50afba2fdd247d76c34b3c81c8fcba2bf762f51354",
+      "feature_sha256": "ff1dd19be1dcac1abd25ce50afba2fdd247d76c34b3c81c8fcba2bf762f51354",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_3",
+      "original_feature_sha256": "b9ec575349bdabf02f6ff170a6cc4321bc1bd549d60331e5ea29e1f6d50eb142",
+      "feature_sha256": "b9ec575349bdabf02f6ff170a6cc4321bc1bd549d60331e5ea29e1f6d50eb142",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_4",
+      "original_feature_sha256": "65b5efa34a31539b8eed7ba677d1eab24190bc4cede607e8b76c011528362b88",
+      "feature_sha256": "65b5efa34a31539b8eed7ba677d1eab24190bc4cede607e8b76c011528362b88",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_14_5",
+      "original_feature_sha256": "1710048349f3abfce431b3dcf257079ccc15c8861fa46d10da6331ae645080bb",
+      "feature_sha256": "1710048349f3abfce431b3dcf257079ccc15c8861fa46d10da6331ae645080bb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_1",
+      "original_feature_sha256": "59f88b6b625f79ba374eaa741b58fc3e9fbefccbf86768204559dd73835bf8fa",
+      "feature_sha256": "59f88b6b625f79ba374eaa741b58fc3e9fbefccbf86768204559dd73835bf8fa",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_2",
+      "original_feature_sha256": "700dec53fb32d7fc1d925066fdc06350802723a0fc8fa0018a888767c4290565",
+      "feature_sha256": "700dec53fb32d7fc1d925066fdc06350802723a0fc8fa0018a888767c4290565",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_3",
+      "original_feature_sha256": "480293fb682696a59a9e16554d404fa516b58f90eca4c643f57c487296d8319a",
+      "feature_sha256": "480293fb682696a59a9e16554d404fa516b58f90eca4c643f57c487296d8319a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_4",
+      "original_feature_sha256": "84b4e4eb9073ac336c5dfa9fd9df0155877f28b5ff1c5baffe0b5f70f1af85a0",
+      "feature_sha256": "84b4e4eb9073ac336c5dfa9fd9df0155877f28b5ff1c5baffe0b5f70f1af85a0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_15_5",
+      "original_feature_sha256": "a4819ae52d4f333118b67104ce78a87ea683901422a9fefbba329f71bec89a05",
+      "feature_sha256": "a4819ae52d4f333118b67104ce78a87ea683901422a9fefbba329f71bec89a05",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_1",
+      "original_feature_sha256": "734b7c93635c695da341d3e34b283b620b8724ceb9ec204694db7c5071c6e07c",
+      "feature_sha256": "734b7c93635c695da341d3e34b283b620b8724ceb9ec204694db7c5071c6e07c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_2",
+      "original_feature_sha256": "7b47630ab13cd06cede0ad437e601e386d43fc45bee7399ce2551acf68493b3a",
+      "feature_sha256": "7b47630ab13cd06cede0ad437e601e386d43fc45bee7399ce2551acf68493b3a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_3",
+      "original_feature_sha256": "3ebd70eb44bb95ac9b25c0ea507970657e44ea78f3e6590abb3651df2cfccd7a",
+      "feature_sha256": "3ebd70eb44bb95ac9b25c0ea507970657e44ea78f3e6590abb3651df2cfccd7a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_4",
+      "original_feature_sha256": "aa2bab1a9c4991e8bc17e092ea96bd1514c743f2d637c747c3cf55ab1dc9fae6",
+      "feature_sha256": "aa2bab1a9c4991e8bc17e092ea96bd1514c743f2d637c747c3cf55ab1dc9fae6",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_16_5",
+      "original_feature_sha256": "8a80451aa2894505e9bbdcc4c402995a359938767907e4c986584ecb11233f27",
+      "feature_sha256": "8a80451aa2894505e9bbdcc4c402995a359938767907e4c986584ecb11233f27",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_1",
+      "original_feature_sha256": "eef6d8371cbd08f37d7cc478d05e1ee852b49bb2a556e922b77a4befbc28da4f",
+      "feature_sha256": "eef6d8371cbd08f37d7cc478d05e1ee852b49bb2a556e922b77a4befbc28da4f",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_2",
+      "original_feature_sha256": "9d8e8a3c4e5e91932ec7ab1ab697a19d1075cb354a333a382b62e42c62d6bb31",
+      "feature_sha256": "9d8e8a3c4e5e91932ec7ab1ab697a19d1075cb354a333a382b62e42c62d6bb31",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_3",
+      "original_feature_sha256": "a9b4e14fd23c3bb09c5e1662ae4eb54ee0487211ed5fb39852e7691052136c2a",
+      "feature_sha256": "a9b4e14fd23c3bb09c5e1662ae4eb54ee0487211ed5fb39852e7691052136c2a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_4",
+      "original_feature_sha256": "52e54836abe0a9d7cfb8d63a5c46dbbc779edcf3f300783f632b6f7dff6fa0ba",
+      "feature_sha256": "52e54836abe0a9d7cfb8d63a5c46dbbc779edcf3f300783f632b6f7dff6fa0ba",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_17_5",
+      "original_feature_sha256": "eec1932c7f2cce6acc9073fffef12b54c1280ba4a520b20b07a0b861d4a86b5b",
+      "feature_sha256": "eec1932c7f2cce6acc9073fffef12b54c1280ba4a520b20b07a0b861d4a86b5b",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_1",
+      "original_feature_sha256": "2b9ebc8eeaa1e40c53c3e00f7b10c22f3bdf844cc7a6cd2e057e2c150791b8ae",
+      "feature_sha256": "2b9ebc8eeaa1e40c53c3e00f7b10c22f3bdf844cc7a6cd2e057e2c150791b8ae",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_2",
+      "original_feature_sha256": "3a45c96f2810278d33ce1a3abf105302f92ffe7e87138b934184b7fb11de3f65",
+      "feature_sha256": "3a45c96f2810278d33ce1a3abf105302f92ffe7e87138b934184b7fb11de3f65",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_3",
+      "original_feature_sha256": "6957e13d8b796e8cc865bf040dc2ad5808e4929b9674ff75fd5af598c03e38b3",
+      "feature_sha256": "6957e13d8b796e8cc865bf040dc2ad5808e4929b9674ff75fd5af598c03e38b3",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_4",
+      "original_feature_sha256": "cf3d23efddc5eb7a8179c56fe3f13725f7e9c15220bb0d96fd29447f3a054e9e",
+      "feature_sha256": "cf3d23efddc5eb7a8179c56fe3f13725f7e9c15220bb0d96fd29447f3a054e9e",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_18_5",
+      "original_feature_sha256": "2203f59cf5b356116f51533349e5beb348ad2acbbb002ea7f51cc4264a6b6f80",
+      "feature_sha256": "2203f59cf5b356116f51533349e5beb348ad2acbbb002ea7f51cc4264a6b6f80",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_1",
+      "original_feature_sha256": "1389f61b1b61d6436af68da30c1cedb419a8bbf7a305e49e34fedf34e79901f0",
+      "feature_sha256": "1389f61b1b61d6436af68da30c1cedb419a8bbf7a305e49e34fedf34e79901f0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_2",
+      "original_feature_sha256": "4e88aebff2ad21e2d2e3a87fbffc36076231ef7fce859f0066dec851e04d5606",
+      "feature_sha256": "4e88aebff2ad21e2d2e3a87fbffc36076231ef7fce859f0066dec851e04d5606",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_3",
+      "original_feature_sha256": "349aeda3aa3890307a1a06dea0de0349a993eb5ca68d0879fd4dd01ae8708ea8",
+      "feature_sha256": "349aeda3aa3890307a1a06dea0de0349a993eb5ca68d0879fd4dd01ae8708ea8",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_4",
+      "original_feature_sha256": "0399acd7c52565d314e000b3df9a226aba5fcfe4f0e0e555467f7eb287711dd6",
+      "feature_sha256": "0399acd7c52565d314e000b3df9a226aba5fcfe4f0e0e555467f7eb287711dd6",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_19_5",
+      "original_feature_sha256": "a0d26fa6608a0f8c079916f1352c7f0deeaf86cdef56c344ae1a1dde99f3ffeb",
+      "feature_sha256": "a0d26fa6608a0f8c079916f1352c7f0deeaf86cdef56c344ae1a1dde99f3ffeb",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_1",
+      "original_feature_sha256": "3cbd5c160f2784d2a6f46e38068e1665b175d1cd99dd51d3d420d93d01adde83",
+      "feature_sha256": "3cbd5c160f2784d2a6f46e38068e1665b175d1cd99dd51d3d420d93d01adde83",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_2",
+      "original_feature_sha256": "445fc307e5387d44787cb33a878519f4ffb62cc060347251986748b3837744bd",
+      "feature_sha256": "445fc307e5387d44787cb33a878519f4ffb62cc060347251986748b3837744bd",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_3",
+      "original_feature_sha256": "f04ec29b6cbc398be175fcd151c2f99f1be96ba1d45e8e6bb16fc6390aca51fd",
+      "feature_sha256": "f04ec29b6cbc398be175fcd151c2f99f1be96ba1d45e8e6bb16fc6390aca51fd",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_4",
+      "original_feature_sha256": "848b63c6fe2819cdb68be50ef14b3001e822c1cf090c1e7e424f81037edcf47d",
+      "feature_sha256": "848b63c6fe2819cdb68be50ef14b3001e822c1cf090c1e7e424f81037edcf47d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_20_5",
+      "original_feature_sha256": "89049acb952cb4ba4015fe5a11ae1720b0a56266c8e7da146e43bec05ccbf0f4",
+      "feature_sha256": "89049acb952cb4ba4015fe5a11ae1720b0a56266c8e7da146e43bec05ccbf0f4",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_1",
+      "original_feature_sha256": "0b0dde9205f29fc77e92e8758c8a79787e5c63a32b550ad48ed6b7441fa1e9a1",
+      "feature_sha256": "0b0dde9205f29fc77e92e8758c8a79787e5c63a32b550ad48ed6b7441fa1e9a1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_2",
+      "original_feature_sha256": "d2ed78476352489f353da5864d1a0c23ec6fd011d7756b9f47a27bcd221aa835",
+      "feature_sha256": "d2ed78476352489f353da5864d1a0c23ec6fd011d7756b9f47a27bcd221aa835",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_3",
+      "original_feature_sha256": "c33f9d0302e992c4bdb0251a9e4c6b5eb47a56b635d6616da8f0d16c5e615cda",
+      "feature_sha256": "c33f9d0302e992c4bdb0251a9e4c6b5eb47a56b635d6616da8f0d16c5e615cda",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_4",
+      "original_feature_sha256": "e1a3a879292e95d82e423a783271a99f27b235b3bbffeb273be2d4ba08547ecf",
+      "feature_sha256": "e1a3a879292e95d82e423a783271a99f27b235b3bbffeb273be2d4ba08547ecf",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_21_5",
+      "original_feature_sha256": "42f2576cda30f6dfaf503fc08060fb35910e5c1be4c31d4c41b8b1ffa235ab3a",
+      "feature_sha256": "42f2576cda30f6dfaf503fc08060fb35910e5c1be4c31d4c41b8b1ffa235ab3a",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_1",
+      "original_feature_sha256": "a8e1b0cce2bb36c0e7855b243d58213f8770e4f75f513ad391fdc367de016234",
+      "feature_sha256": "a8e1b0cce2bb36c0e7855b243d58213f8770e4f75f513ad391fdc367de016234",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_2",
+      "original_feature_sha256": "7d67683e58fa4d206dccf7c93315cf7e1d62bbd683f0049d53a9c1dfeb3cdec5",
+      "feature_sha256": "7d67683e58fa4d206dccf7c93315cf7e1d62bbd683f0049d53a9c1dfeb3cdec5",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_3",
+      "original_feature_sha256": "efd79369acb2265bbbc9e4e1c154f4487b2e2a6de08302bba71a9a81e8f5ad73",
+      "feature_sha256": "efd79369acb2265bbbc9e4e1c154f4487b2e2a6de08302bba71a9a81e8f5ad73",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_4",
+      "original_feature_sha256": "a9a7a74d0ac8be97cfbfc02bdcbe7fd65e717040aee85c6070c44054c028375d",
+      "feature_sha256": "a9a7a74d0ac8be97cfbfc02bdcbe7fd65e717040aee85c6070c44054c028375d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_22_5",
+      "original_feature_sha256": "43ee422900116ef24c22f5cace8bde54795df2c46579e9cee031c0e5e265464c",
+      "feature_sha256": "43ee422900116ef24c22f5cace8bde54795df2c46579e9cee031c0e5e265464c",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_1",
+      "original_feature_sha256": "60889f43827fd7f520745b28af74925d07c431ecbed6324917804bb09b62e601",
+      "feature_sha256": "60889f43827fd7f520745b28af74925d07c431ecbed6324917804bb09b62e601",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_2",
+      "original_feature_sha256": "3f3efd17c8200eed34116e5bc787f144674346a1d68daa423d41a0570ffb2518",
+      "feature_sha256": "3f3efd17c8200eed34116e5bc787f144674346a1d68daa423d41a0570ffb2518",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_3",
+      "original_feature_sha256": "ada0fdb0df7b129ca36f607a9188aca924de9d1c126dfe144c0ae2cd4be635d4",
+      "feature_sha256": "ada0fdb0df7b129ca36f607a9188aca924de9d1c126dfe144c0ae2cd4be635d4",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_4",
+      "original_feature_sha256": "4ad1c8b8460fba4a1ee36f15ef70349f630d3cc825f08db80be5c103b132d657",
+      "feature_sha256": "4ad1c8b8460fba4a1ee36f15ef70349f630d3cc825f08db80be5c103b132d657",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_23_5",
+      "original_feature_sha256": "968ffd340b918a0b853de5f07100c50c3f3de885c3db9ccd8bbac25686ccb46d",
+      "feature_sha256": "968ffd340b918a0b853de5f07100c50c3f3de885c3db9ccd8bbac25686ccb46d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_1",
+      "original_feature_sha256": "97cec9cc57cc0d8a2bf814ed47c3a6f38a51bedfd03fd4e7dd5d593ef033d732",
+      "feature_sha256": "97cec9cc57cc0d8a2bf814ed47c3a6f38a51bedfd03fd4e7dd5d593ef033d732",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_2",
+      "original_feature_sha256": "99c9955172230803124044924aa12f3ab95417e734378cfdcbe5e160f6a78cda",
+      "feature_sha256": "99c9955172230803124044924aa12f3ab95417e734378cfdcbe5e160f6a78cda",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_3",
+      "original_feature_sha256": "4570f92c349b34eed8f6d7c3cc094b8cdee5bf35c36f50ef153b1cd522bc70f0",
+      "feature_sha256": "4570f92c349b34eed8f6d7c3cc094b8cdee5bf35c36f50ef153b1cd522bc70f0",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_4",
+      "original_feature_sha256": "291a68f57b24c140cc4072a8a2ae9e4e104fc4afe555824af585162890ad47d1",
+      "feature_sha256": "291a68f57b24c140cc4072a8a2ae9e4e104fc4afe555824af585162890ad47d1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_24_5",
+      "original_feature_sha256": "b397a7d54722a370002419fb32961c04e3bf4e064cb80c665baccfff39f490c1",
+      "feature_sha256": "b397a7d54722a370002419fb32961c04e3bf4e064cb80c665baccfff39f490c1",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_1",
+      "original_feature_sha256": "2e0787e6c3f5febb0864c9c2bd591faafb2471373863c75f6b00839c3f54c41d",
+      "feature_sha256": "2e0787e6c3f5febb0864c9c2bd591faafb2471373863c75f6b00839c3f54c41d",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_2",
+      "original_feature_sha256": "7cfa6a892ae649b84b91ac707c30a8e4d52f58e1401f68758e66883acd6eaa50",
+      "feature_sha256": "7cfa6a892ae649b84b91ac707c30a8e4d52f58e1401f68758e66883acd6eaa50",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_3",
+      "original_feature_sha256": "da02e52e71afcbee1db77e4aa0164d36d2e77a3e271db6f0746da5260d337b04",
+      "feature_sha256": "da02e52e71afcbee1db77e4aa0164d36d2e77a3e271db6f0746da5260d337b04",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_4",
+      "original_feature_sha256": "518ccb31bb36c63f7949b6960b0c97f5d35bab733f90a7ecbb95847940d87056",
+      "feature_sha256": "518ccb31bb36c63f7949b6960b0c97f5d35bab733f90a7ecbb95847940d87056",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_25_5",
+      "original_feature_sha256": "6949069b69ccb24d2e7ebda465321ecfa8bcfd32ceeac8260244cb2059567def",
+      "feature_sha256": "6949069b69ccb24d2e7ebda465321ecfa8bcfd32ceeac8260244cb2059567def",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    }
+  ],
+  "timing_definition": {
+    "mean_metadata_to_result_seconds": "server metadata registration to complete answer; excludes edge encoding and return trip",
+    "mean_server_inference_seconds": "native language-model call including serial GPU queue wait",
+    "mean_edge_encode_seconds": "native vision preprocessing, encoding and feature copy"
+  }
+}

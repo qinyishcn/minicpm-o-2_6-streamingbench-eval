@@ -1,0 +1,22 @@
+{
+  "python": "3.12.13",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "aiortc_import_path": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aiortc-main-clean/src/aiortc/__init__.py",
+  "aiortc_module_version": "1.14.0",
+  "packages": {
+    "aioice": "0.10.2",
+    "av": "16.1.0",
+    "cryptography": "46.0.7",
+    "google-crc32c": "1.8.0",
+    "pyee": "13.0.1",
+    "pylibsrtp": "1.0.0",
+    "pyopenssl": "25.3.0",
+    "numpy": "1.26.4",
+    "Pillow": "12.2.0",
+    "PyYAML": "6.0.3",
+    "dpkt": "1.9.8",
+    "nvidia-cuda-runtime-cu12": "12.1.105",
+    "nvidia-cublas-cu12": "12.1.3.1"
+  },
+  "gpu": "NVIDIA GeForce RTX 3070, 610.60, 8192 MiB"
+}

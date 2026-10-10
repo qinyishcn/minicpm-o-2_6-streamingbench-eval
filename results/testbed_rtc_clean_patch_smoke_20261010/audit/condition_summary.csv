@@ -1,0 +1,3 @@
+﻿mode,profile,questions,answers_received,correct,accuracy_percent,invalid_responses,missing_answers,feature_packets,missing_feature_packets,feature_bytes,zeroed_feature_bytes,mean_edge_encode_seconds,mean_server_inference_seconds,mean_metadata_to_result_seconds,missing_feature_percent,zeroed_feature_percent
+native4,no_emulation,5,5,4,80.0,0,0,50975,0,55050240,0,1.4952539610003441,1.1769030458000997,3.641801638799916,0.0,0.0
+native4,lossy,5,5,4,80.0,0,0,50975,5064,55050240,5469120,1.4509116558001551,1.0849817023998185,3.936082073399666,9.934281510544384,9.934779575892858
