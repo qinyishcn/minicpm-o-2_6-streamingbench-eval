@@ -1,0 +1,9 @@
+﻿mode,profile,wrong_to_correct,correct_to_wrong,net_correct_change,accuracy_delta_percentage_points
+single,no_emulation,0,0,0,0.0
+single,lossy,0,0,0,0.0
+single,5qi_7,1,1,0,0.0
+single,congested,3,27,-24,-19.2
+native4,no_emulation,0,0,0,0.0
+native4,lossy,2,1,1,0.8
+native4,5qi_7,4,7,-3,-2.4
+native4,congested,3,39,-36,-28.8

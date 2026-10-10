@@ -1,0 +1,41 @@
+{
+  "status": "failed",
+  "started_at": 1791626885.2150288,
+  "cwd": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed",
+  "pythonpath": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aiortc-main-clean/src:/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed:/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/netemu/src",
+  "profiles": [
+    "lossy",
+    "5qi_7",
+    "congested"
+  ],
+  "modes": [
+    "single",
+    "native4"
+  ],
+  "runs_per_condition": 25,
+  "questions_per_condition": 125,
+  "scope": "selected native question-frame accelerated RTC; original 20-second run gap",
+  "baseline": "Reused complete no_emulation RTC results from minicpm_rtc_baseline_20261010",
+  "profiles_file_sha256": "ebab71b26c4387ce7eee435234075ba1d92f9b3222f8ccf927e56f9ee2234853",
+  "completed": [
+    {
+      "mode": "single",
+      "profile": "lossy",
+      "started_at": 1791626915.3753662,
+      "finished_at": 1791628047.9564893
+    },
+    {
+      "mode": "single",
+      "profile": "5qi_7",
+      "started_at": 1791628047.957736,
+      "finished_at": 1791629132.755041
+    }
+  ],
+  "active": {
+    "mode": "single",
+    "profile": "congested",
+    "started_at": 1791629132.756329
+  },
+  "error": "CalledProcessError: Command '['/home/qinyi/6G-Testbed/venv/bin/python', '-u', '-m', 'minicpm_split.rtc_batch', '--root', '/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/results/minicpm_rtc_profiles_20261010', '--mode', 'single', '--profiles', 'congested', '--runs', '25', '--capture-root', '/home/qinyi/minicpm_rtc_captures/20261010/full_profiles']' returned non-zero exit status 1.",
+  "failed_at": 1791631065.0682578
+}

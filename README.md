@@ -1,5 +1,58 @@
 # MiniCPM-o 2.6 / StreamingBench 实测
 
+<!-- testbed-rtc-20261010 -->
+2026-10-10：完成 **单帧 / 连续四帧 × 四种原版 Testbed 网络条件**，每条件125题。本轮新增750题位测试，另复用250题无扰动基线。共保存956条服务器答案，缺失44条计错。
+
+| 原版 profile | 单帧准确率 | 连续四帧准确率 |
+|---|---:|---:|
+| no_emulation | 78.4% | 80.8% |
+| lossy | 78.4% | 81.6% |
+| 5qi_7 | 78.4% | 78.4% |
+| congested | 59.2% | 52.0% |
+
+主表沿用原版服务器端任务计分；客户端接收数和视频完成率另见报告。
+
+![原版网络配置：任务准确率与实际特征缺失](results/testbed_rtc_profiles_20261010/network_profile_comparison.png)
+
+[完整网络报告与数值](results/testbed_rtc_profiles_20261010/report_zh.md) · [1000题逐题记录](results/testbed_rtc_profiles_20261010/paired_predictions.csv) · [原版源码补丁与复现](docs/testbed_rtc.md)
+
+使用真实loopback网卡、UDP/RTP/SRTP和原版netemu；956条已保存特征字节重建核验通过。配置随机丢包率与实际模型特征缺失率不同，详见报告中的网络计数与缺失位置。**当前按提问点加速传输指定帧的中间特征，不代表持续原生FPS流量或原视频时间轴回放。**
+
+以下为先前 Windows Vulkan / 离线特征擦除结果，与上述 Linux RTC 结果分开比较。
+
+2026-10-10 补测：新增 55%、60%、65%、70%、75%、80%、85%、90%、95%、99% 十个特征丢包率，单帧与连续四帧各 125 题，共新增 **2500 次真实推理**。连同既有结果，共 **23 个丢包率、46 个完整条件、5750 次回答**。
+
+**两种输入最大的相邻点绝对下降都出现在 90%→95% 丢包：单帧 64.8%→57.6%（下降 7.2 个百分点），四帧 74.4%→60.8%（下降 13.6 个百分点）。** 单帧从 80% 到 95% 已有连续下降；曲线不严格单调。
+
+![任务成功率：50%–100% 丢包](results/feature_packet_loss_highrange_curve/task_success_50_100.png)
+
+[最新完整报告与 0%–100% 图](results/feature_packet_loss_highrange_curve/report_zh.md) · [各点汇总](results/feature_packet_loss_highrange_curve/condition_summary.csv) · [相邻点变化](results/feature_packet_loss_highrange_curve/adjacent_changes.csv) · [复现说明](docs/feature_packet_loss.md)
+
+| 设定丢包率 | 单帧准确率 | 连续四帧准确率 |
+|---:|---:|---:|
+| 0% | 78.4% | 80.0% |
+| 50% | 77.6% | 76.8% |
+| 55% | 77.6% | 77.6% |
+| 60% | 76.8% | 77.6% |
+| 65% | 75.2% | 78.4% |
+| 70% | 76.8% | 78.4% |
+| 75% | 78.4% | 80.0% |
+| 80% | 74.4% | 74.4% |
+| 85% | 69.6% | 76.0% |
+| 90% | 64.8% | 74.4% |
+| 95% | 57.6% | 60.8% |
+| 99% | 61.6% | 60.0% |
+| 100% | 58.4% | 58.4% |
+
+同一批 25 个视频、125 道问题，同一模型、运行时、提示词与固定随机种子。新增运行的逐题原始特征 SHA-256 和帧元数据与既有运行完全一致。全部 5750 条回答已独立重评分、重建缺包掩码并核验服务器特征哈希。6 个无效响应按错误计分，每条件分母固定为 125。
+
+IP MTU 1500 字节预算，每包 1432 字节 F32 特征，单帧 1923 包、四帧 7689 包，缺包对应特征置零。**本轮为离线特征擦除、可靠本地 TCP 传输，不是 Testbed 的真实 RTC/network profile 实测。** 每题仅一组固定随机掩码，未进行多种子统计显著性检验。
+
+纯文本对照为 56.0%，全部视觉特征置零为 58.4%；高丢包下的残余总分不能直接解释为视觉容错。所有实测点均保留，连线不是拟合，未强制单调或隐藏全零对照。
+
+[初次七点报告](results/feature_packet_loss/report_zh.md) · [20%–50% 历史补测报告](results/feature_packet_loss_curve/report_zh.md) · [全零与纯文本对照](results/zero_feature_controls/report_zh.md)
+
+---
 评测日期：2026-10-09。已完成两种输入方式各 125 道题，共 250 次实际模型回答。
 
 | 输入方式 | 答对/总题数 | 准确率 | 平均单题请求耗时 |
@@ -14,6 +67,8 @@
 [125 题逐题对照](results/native_comparison/paired_predictions.csv) ·
 [汇总 JSON](results/native_comparison/comparison.json) ·
 [500 帧顺序解码核验](results/q4_k_m_four_native/frame_audit.json)
+
+新增[全零特征与纯文本对照](results/zero_feature_controls/report_zh.md)：全零单帧在新进程中精确复现 58.4%，完全无视觉输入的纯文本也达到 56.0%。这些语言基线必须与丢包准确率一同解读。
 
 评测目标：用户指定 ZIP 中数值编号 1–25 的视频，每个视频 5 道题，共 125 道。
 

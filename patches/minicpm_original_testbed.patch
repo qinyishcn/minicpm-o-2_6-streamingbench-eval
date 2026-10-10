@@ -1,0 +1,2737 @@
+diff --git a/aiortc-main-clean/src/aiortc/codecs/__init__.py b/aiortc-main-clean/src/aiortc/codecs/__init__.py
+index 66707de..6503619 100644
+--- a/aiortc-main-clean/src/aiortc/codecs/__init__.py
++++ b/aiortc-main-clean/src/aiortc/codecs/__init__.py
+@@ -109,6 +109,7 @@ def init_codecs() -> None:
+                 "profile-level-id": profile_level_id,
+             },
+         )
++    add_video_codec("video/tokenIdMiniCPM")
+ 
+ 
+ def depayload(codec: RTCRtpCodecParameters, payload: bytes) -> bytes:
+@@ -116,7 +117,7 @@ def depayload(codec: RTCRtpCodecParameters, payload: bytes) -> bytes:
+         return vp8_depayload(payload)
+     elif codec.name == "H264":
+         return h264_depayload(payload)
+-    elif codec.name == "tokenId" or codec.name == "tokenIdTransparent" or codec.name == "tokenIdLLM":
++    elif codec.name in ["tokenId", "tokenIdTransparent", "tokenIdLLM", "tokenIdMiniCPM"]:
+         return tokenId_depayload(payload)
+     else:
+         return payload
+@@ -175,6 +176,9 @@ def get_decoder(codec: RTCRtpCodecParameters) -> Decoder:
+         return TokenIdDecoder(decMode="transparent")
+     elif mimeType == "video/tokenidllm":
+         return AsyncTokenIdDecoder()
++    elif mimeType == "video/tokenidminicpm":
++        from minicpm_split.rtc_codec import MiniCPMDecoder
++        return MiniCPMDecoder()
+     else:
+         raise ValueError(f"No decoder found for MIME type `{mimeType}`")
+ 
+@@ -196,6 +200,9 @@ def get_encoder(codec: RTCRtpCodecParameters) -> Encoder:
+         return Vp8Encoder()
+     elif mimeType == "video/tokenid" or mimeType == "video/tokenidtransparent" or mimeType == "video/tokenidllm":
+         return TokenIdEncoder()
++    elif mimeType == "video/tokenidminicpm":
++        from minicpm_split.rtc_codec import MiniCPMEncoder
++        return MiniCPMEncoder()
+     else:
+         raise ValueError(f"No encoder found for MIME type `{mimeType}`")
+ 
+diff --git a/aiortc-main-clean/src/aiortc/jitterbuffer.py b/aiortc-main-clean/src/aiortc/jitterbuffer.py
+index 529af82..3eef7ec 100644
+--- a/aiortc-main-clean/src/aiortc/jitterbuffer.py
++++ b/aiortc-main-clean/src/aiortc/jitterbuffer.py
+@@ -22,6 +22,7 @@ class JitterBuffer:
+         self._packets: list[Optional[RtpPacket]] = [None for i in range(capacity)]
+         self._prefetch = prefetch
+         self._is_video = is_video
++        self._minicpm_timestamp: Optional[int] = None
+ 
+     @property
+     def capacity(self) -> int:
+@@ -29,6 +30,13 @@ class JitterBuffer:
+ 
+     # def add(self, packet: RtpPacket) -> tuple[bool, Optional[JitterFrame]]:
+     def add(self, packet: RtpPacket, codecName) -> tuple[bool, Optional[JitterFrame]]:
++        if codecName == "tokenIdMiniCPM" and self.capacity < 16384:
++            # Four F32 MiniCPM frames need about 10200 RTP fragments. Keep the
++            # original circular buffer and loss-tolerant token reassembly.
++            if self._origin is not None:
++                raise ValueError("Cannot switch to MiniCPM with buffered media")
++            self._capacity = 16384
++            self._packets = [None for _ in range(self._capacity)]
+         pli_flag = False
+         if self._origin is None:
+             self._origin = packet.sequence_number
+@@ -59,8 +67,38 @@ class JitterBuffer:
+         pos = packet.sequence_number % self._capacity
+         self._packets[pos] = packet
+ 
++        if codecName == "tokenIdMiniCPM":
++            if self._minicpm_timestamp is None:
++                self._minicpm_timestamp = packet.timestamp
++            if packet.timestamp == self._minicpm_timestamp:
++                # Scanning the complete frame on every fragment is quadratic.
++                return pli_flag, None
++            frame = self._remove_frame(packet.sequence_number, codecName)
++            if frame is not None:
++                self._minicpm_timestamp = packet.timestamp
++            return pli_flag, frame
+         return pli_flag, self._remove_frame(packet.sequence_number, codecName)
+ 
++    def flush_minicpm(self) -> Optional[JitterFrame]:
++        """Deliver final partial features at the explicit media drain deadline."""
++        if self._minicpm_timestamp is None or self._origin is None:
++            return None
++        packets = []
++        remove = 0
++        for count in range(self.capacity):
++            packet = self._packets[(self._origin + count) % self.capacity]
++            if packet is not None:
++                if packet.timestamp != self._minicpm_timestamp:
++                    break
++                packets.append(packet)
++                remove = count + 1
++        timestamp = self._minicpm_timestamp
++        self._minicpm_timestamp = None
++        if not packets:
++            return None
++        self.remove(remove)
++        return JitterFrame(b"".join(packet._data for packet in packets), timestamp)
++
+     def _remove_frame(self, sequence_number: int, codecName) -> Optional[JitterFrame]:
+         frame = None
+         frames = 0
+diff --git a/aiortc-main-clean/src/aiortc/rtcrtpreceiver.py b/aiortc-main-clean/src/aiortc/rtcrtpreceiver.py
+index 04c1302..7001bde 100644
+--- a/aiortc-main-clean/src/aiortc/rtcrtpreceiver.py
++++ b/aiortc-main-clean/src/aiortc/rtcrtpreceiver.py
+@@ -272,6 +272,7 @@ class RTCRtpReceiver:
+         self.__decoder_queue: queue.Queue = queue.Queue()
+         self.__decoder_thread: Optional[threading.Thread] = None
+         self.__kind = kind
++        self.__minicpm_codec: Optional[RTCRtpCodecParameters] = None
+         if kind == "audio":
+             self.__jitter_buffer = JitterBuffer(capacity=16, prefetch=4)
+             self.__nack_generator = None
+@@ -529,6 +530,8 @@ class RTCRtpReceiver:
+             return
+ 
+         # try to re-assemble encoded frame
++        if codec.name == "tokenIdMiniCPM":
++            self.__minicpm_codec = codec
+         # pli_flag, encoded_frame = self.__jitter_buffer.add(packet)
+         pli_flag, encoded_frame = self.__jitter_buffer.add(packet, codec.name)
+         # check if the PLI should be sent
+@@ -542,6 +545,14 @@ class RTCRtpReceiver:
+             )
+             self.__decoder_queue.put((codec, encoded_frame))
+ 
++    def flush_minicpm(self) -> None:
++        """Drain final partial MiniCPM media through the existing decoder thread."""
++        if self.__minicpm_codec is not None and self.__decoder_thread:
++            frame = self.__jitter_buffer.flush_minicpm()
++            if frame is not None:
++                frame.timestamp = self.__timestamp_mapper.map(frame.timestamp)
++                self.__decoder_queue.put((self.__minicpm_codec, frame))
++
+     async def _run_rtcp(self) -> None:
+         self.__log_debug("- RTCP started")
+         self.__rtcp_started.set()
+diff --git a/aitestbed/analysis/metrics.py b/aitestbed/analysis/metrics.py
+index caf5d83..91b50b4 100644
+--- a/aitestbed/analysis/metrics.py
++++ b/aitestbed/analysis/metrics.py
+@@ -482,6 +482,11 @@ class MetricsCalculator:
+     def extract_answer(text):
+         if not text:
+             return None
++        if not isinstance(text, str):
++            return None
++        match = re.fullmatch(r'\s*\(?([A-D])\)?[.)]?\s*', text, re.IGNORECASE)
++        if match:
++            return match.group(1).upper()
+         try:
+             data = json.loads(text)
+             if isinstance(data, dict) and 'answer' in data:
+@@ -570,17 +575,16 @@ class MetricsCalculator:
+ 
+                 elif task_class == "real":
+                     print(f"question: {question}")
+-                    model_answer = MetricsCalculator.extract_answer(question.get(model,""))
++                    model_answer = MetricsCalculator.extract_answer(question.get(model_key,""))
+                     correct_answer = question["answer"]
+                     print(f"correct_answer: {correct_answer}, model answer: {model_answer}")
+                     task_type = question["task_type"]
+-                    if model_answer:
+-                        total += 1
+-                        stats[task_type]["total"] += 1
+-                        stats["total"]["total"] += 1
+-                        if model_answer == correct_answer:
+-                            stats[task_type]["correct"] += 1
+-                            stats["total"]["correct"] += 1
++                    total += 1
++                    stats[task_type]["total"] += 1
++                    stats["total"]["total"] += 1
++                    if model_answer == correct_answer:
++                        stats[task_type]["correct"] += 1
++                        stats["total"]["correct"] += 1
+ 
+ 
+         # Calculate accuracy ratios
+diff --git a/aitestbed/clients/realtime_webrtc_vlm_client.py b/aitestbed/clients/realtime_webrtc_vlm_client.py
+index f714924..011864e 100644
+--- a/aitestbed/clients/realtime_webrtc_vlm_client.py
++++ b/aitestbed/clients/realtime_webrtc_vlm_client.py
+@@ -406,7 +406,13 @@ class RealtimeWebRTCVLMClient:
+ 
+         self.network_profile = network_profile # for result saving
+         self._bye_close_event = asyncio.Event()
+-        TokenIdEncoder.preload_bridge()
++        if self.model == "minicpm":
++            from minicpm_split.rtc_codec import MiniCPMEncoder
++            MiniCPMEncoder.preload_bridge()
++            self.post_video_wait_timeout = 60.0
++            self.minicpm_results = []
++        else:
++            TokenIdEncoder.preload_bridge()
+         print("vlm model preloaded")
+ 
+     @property
+@@ -461,9 +467,10 @@ class RealtimeWebRTCVLMClient:
+ 
+         transceiver = self.pc.addTransceiver("video", direction="sendonly")
+         capabilities = RTCRtpSender.getCapabilities("video").codecs
+-        preferences = [c for c in capabilities if c.mimeType == "video/tokenIdLLM"]
++        preferred_codec = "video/tokenIdMiniCPM" if self.model == "minicpm" else "video/tokenIdLLM"
++        preferences = [c for c in capabilities if c.mimeType == preferred_codec]
+         others = [c for c in capabilities if c.mimeType != "video/tokenIdLLM"]
+-        transceiver.setCodecPreferences(preferences + others)
++        transceiver.setCodecPreferences(preferences if self.model == "minicpm" else preferences + others)
+         self.video_sender = transceiver.sender
+ 
+         # Signaling
+@@ -546,6 +553,25 @@ class RealtimeWebRTCVLMClient:
+         return "\n".join(new_lines) + "\n"
+ 
+     def _on_data_channel_message(self, message):
++        if self.model == "minicpm":
++            try:
++                control = json.loads(message)
++            except (ValueError, TypeError):
++                control = {}
++            if control.get("type") == "MINICPM_FEATURES_READY":
++                from minicpm_split.rtc_codec import MiniCPMEncoder
++                MiniCPMEncoder.acknowledgements[control["message_id"]].set()
++                return
++            if control.get("type") == "MINICPM_RESULT":
++                record = control["record"]
++                self.minicpm_results.append(record)
++                if self.current_turn_metrics:
++                    self.current_turn_metrics.token_count += record.get("result", {}).get("generated_tokens", 0)
++                message = record["raw_response"]
++            elif control.get("type") == "VIDEO_ANALYSIS_COMPLETE":
++                if self.video_track:
++                    self.video_track.finish_event.set()
++                message = json.dumps(control)
+         try:
+             header_size = 4
+             if isinstance(message, bytes):
+@@ -653,10 +679,13 @@ class RealtimeWebRTCVLMClient:
+         self._video_send_complete_time = None
+         self._server_analysis_complete = False  
+ 
+-        self.video_track = realtimeVideoStreamTrack(
+-            video_path,
+-            self.target_fps
+-        )
++        if self.model == "minicpm":
++            from minicpm_split.rtc_codec import MiniCPMEncoder
++            from minicpm_split.rtc_track import MiniCPMQuestionTrack
++            MiniCPMEncoder.configure_channel(asyncio.get_running_loop(), self.data_channel)
++            self.video_track = MiniCPMQuestionTrack(video_path)
++        else:
++            self.video_track = realtimeVideoStreamTrack(video_path, self.target_fps)
+ 
+         self.video_sender.replaceTrack(self.video_track)
+         logger.info("[Client] Video track replaced")
+@@ -722,6 +751,9 @@ class RealtimeWebRTCVLMClient:
+             else:
+                 self.current_turn_metrics.t_inference_done = time.time()
+ 
++        if self.model == "minicpm" and len(self.minicpm_results) != 5:
++            self.current_turn_metrics.success = False
++            self.current_turn_metrics.error_message = f"Expected 5 model answers, received {len(self.minicpm_results)}"
+         self.session_metrics.turns.append(self.current_turn_metrics)
+         self.session_metrics.total_turns += 1
+         self.session_metrics.total_video_frames_sent += self.current_turn_metrics.video_frames_sent
+diff --git a/aitestbed/scenarios/realtime_video.py b/aitestbed/scenarios/realtime_video.py
+index 749f8c3..c00086b 100644
+--- a/aitestbed/scenarios/realtime_video.py
++++ b/aitestbed/scenarios/realtime_video.py
+@@ -219,7 +219,7 @@ class RealtimeVideoUnderstandingScenario(BaseScenario):
+             except Exception as e:
+                 logger.warning(f"Failed to save session report: {e}")
+ 
+-            result.success = True
++            result.success = result.success and all(record.success for record in result.log_records)
+ 
+         except Exception as e:
+             logger.error(f"Scenario error: {type(e).__name__}: {e}")
+diff --git a/aitestbed/server/realtime_vlm_server.py b/aitestbed/server/realtime_vlm_server.py
+index 155bb2f..bc33481 100644
+--- a/aitestbed/server/realtime_vlm_server.py
++++ b/aitestbed/server/realtime_vlm_server.py
+@@ -191,7 +191,8 @@ class TcpSignalingServer:
+ # Main Server
+ # ======================
+ class VlmServer:
+-    def __init__(self, host: str, port: int, persistent: bool, preload_bridge: bool):
++    def __init__(self, host: str, port: int, persistent: bool, preload_bridge: bool,
++                 model_name: str = "liquid", config_path: str = "configs/scenarios.yaml"):
+         self.host = host
+         self.port = port
+         self.persistent_mode = persistent
+@@ -202,9 +203,11 @@ class VlmServer:
+         self.is_shutting_down = False
+         self.session_count = 0
+         self.scenario_name = "realtime_video_understanding"
++        self.model_name = model_name
++        self.scenario_config_path = config_path
+ 
+     def load_task_config(self):
+-        config_path = "configs/scenarios.yaml"
++        config_path = self.scenario_config_path
+         self.config_path = Path(config_path)
+         with open(self.config_path) as f:
+             self.scenarios_config = yaml.safe_load(f)
+@@ -277,7 +280,7 @@ class VlmServer:
+             logger.info("vlm model preloaded")
+         task_class = self.load_task_config()
+         AsyncTokenIdDecoder.task_class = task_class
+-        AsyncTokenIdDecoder.reset_decoder_state(model_name="liquid")
++        AsyncTokenIdDecoder.reset_decoder_state(model_name=self.model_name)
+ 
+         self.signaling = TcpSignalingServer(self.host, self.port, persistent=self.persistent_mode)
+         logger.info(f"[Answer] Initialized Signaling Server on {self.host}:{self.port}")
+@@ -354,6 +357,8 @@ class Session:
+ 
+ 
+     async def on_video_analysis_complete(self):
++        if self.server_ref.model_name == "minicpm" and not AsyncTokenIdDecoder.session_finalized:
++            return
+         if self.video_state["analysis_complete"]:
+             logger.info("[Server] Video analysis already complete, skipping")
+             return
+@@ -423,7 +428,17 @@ class Session:
+             def on_message(message):
+                 try:
+                     msg_data = json.loads(message)
+-                    if msg_data.get("type") == "video_info":
++                    if self.server_ref.model_name == "minicpm" and msg_data.get("type") == "minicpm_features":
++                        AsyncTokenIdDecoder.register_features(msg_data)
++                        channel.send(json.dumps({"type": "MINICPM_FEATURES_READY",
++                                                 "message_id": msg_data["message_id"]}))
++                    elif self.server_ref.model_name == "minicpm" and msg_data.get("type") == "minicpm_media_finished":
++                        async def finalize_minicpm():
++                            await AsyncTokenIdDecoder.finish_session(self.pc.getReceivers())
++                            self.server_ref.save_results()
++                            await self.on_video_analysis_complete()
++                        track_task(asyncio.create_task(finalize_minicpm()))
++                    elif msg_data.get("type") == "video_info":
+                         video_path = msg_data.get("path")
+                         video_name = msg_data.get("name")
+                         bench_config_path = msg_data.get("bench_config")
+@@ -518,6 +533,10 @@ class Session:
+                 logger.info("[Answer] Received offer, processing...")
+                 await self.pc.setRemoteDescription(obj)
+                 await self.pc.setLocalDescription(await self.pc.createAnswer())
++                if self.server_ref.model_name == "minicpm":
++                    from minicpm_split.rtc_codec import configure_receive_buffers
++                    buffers = configure_receive_buffers(self.pc)
++                    logger.info(f"[MiniCPM] Per-socket UDP receive buffers: {buffers}")
+                 logger.info("[Answer] Sending answer...")
+                 await self.signaling.send(self.pc.localDescription)
+                 break
+@@ -627,18 +646,26 @@ class Session:
+ # Entry point
+ # ======================
+ async def main():
++    global AsyncTokenIdDecoder
+     parser = argparse.ArgumentParser(description="RTP Data Transport")
+     parser.add_argument("--signaling-host", default="127.0.0.1")
+     parser.add_argument("--signaling-port", type=int, default=1234)
+     parser.add_argument("--persistent", action="store_true", default=True, help="for TCP signaling server")
+     parser.add_argument("--preload-bridge", action="store_true", default=True, help="preload vlm model")
++    parser.add_argument("--model", choices=["liquid", "minicpm"], default="liquid")
++    parser.add_argument("--config", default="configs/scenarios.yaml")
+     args = parser.parse_args()
++    if args.model == "minicpm":
++        from minicpm_split.rtc_codec import MiniCPMDecoder
++        AsyncTokenIdDecoder = MiniCPMDecoder
+ 
+     server = VlmServer(
+         host = args.signaling_host,
+         port = args.signaling_port,
+         persistent=args.persistent,
+-        preload_bridge=args.preload_bridge
++        preload_bridge=args.preload_bridge,
++        model_name=args.model,
++        config_path=args.config,
+     )
+ 
+     try:
+diff --git a/aitestbed/minicpm_split/__init__.py b/aitestbed/minicpm_split/__init__.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/__init__.py
+@@ -0,0 +1 @@
++"""MiniCPM-o visual-encoder / language-decoder split inference."""
+diff --git a/aitestbed/minicpm_split/activation.py b/aitestbed/minicpm_split/activation.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/activation.py
+@@ -0,0 +1,44 @@
++"""Validate an entire activation request before calling native model code."""
++import numpy as np
++
++
++def validate_layout(metadata, payload, width, vocab_size, context_size, max_tokens):
++    if metadata.get('protocol') != 1:
++        raise ValueError('Unsupported activation protocol')
++    segments = metadata.get('chunks')
++    if not isinstance(segments, list) or not 1 <= len(segments) <= 128:
++        raise ValueError('Invalid number of split segments')
++    if type(max_tokens) is not int or not 1 <= max_tokens <= 128:
++        raise ValueError('Invalid generation limit')
++    total, cursor, images = 0, 0, 0
++    for segment in segments:
++        if segment.get('kind') == 'embedding':
++            shape = segment.get('shape')
++            if not isinstance(shape, list) or len(shape) != 2:
++                raise ValueError('Invalid visual embedding shape')
++            n, columns = shape
++            if (type(n) is not int or not 0 < n <= context_size or columns != width or
++                    segment.get('dtype') != '<f4' or segment.get('n_pos') != n):
++                raise ValueError('Unsupported visual embedding layout')
++            size = n * width * 4
++            if (segment.get('offset') != cursor or segment.get('bytes') != size or
++                    cursor + size > len(payload)):
++                raise ValueError('Invalid visual embedding byte range or ordering')
++            if not np.isfinite(np.frombuffer(payload, dtype='<f4', count=n*width, offset=cursor)).all():
++                raise ValueError('Non-finite visual features')
++            cursor += size
++            total += n
++            images += 1
++        elif segment.get('kind') == 'tokens':
++            tokens = segment.get('ids')
++            if (not isinstance(tokens, list) or not tokens or
++                    not all(type(token) is int and 0 <= token < vocab_size for token in tokens)):
++                raise ValueError('Invalid or empty text token segment')
++            total += len(tokens)
++        else:
++            raise ValueError('Unexpected split segment type')
++    if cursor != len(payload) or not images:
++        raise ValueError('Missing visual features or unreferenced payload bytes')
++    if total + max_tokens > context_size:
++        raise ValueError('Split request exceeds context limit')
++    return total
+diff --git a/aitestbed/minicpm_split/assets.py b/aitestbed/minicpm_split/assets.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/assets.py
+@@ -0,0 +1,61 @@
++"""Extract tokenizer/hyperparameter metadata without distributing LLM tensors."""
++import argparse
++import struct
++from pathlib import Path
++
++_WIDTH = {0: 1, 1: 1, 2: 2, 3: 2, 4: 4, 5: 4, 6: 4, 7: 1, 10: 8, 11: 8, 12: 8}
++
++
++def _number(stream, fmt):
++    size = struct.calcsize(fmt)
++    data = stream.read(size)
++    if len(data) != size:
++        raise ValueError('Truncated GGUF metadata')
++    return struct.unpack(fmt, data)[0]
++
++
++def _skip_value(stream, kind):
++    if kind in _WIDTH:
++        stream.seek(_WIDTH[kind], 1)
++    elif kind == 8:
++        stream.seek(_number(stream, '<Q'), 1)
++    elif kind == 9:
++        element, count = _number(stream, '<I'), _number(stream, '<Q')
++        if element in _WIDTH:
++            stream.seek(_WIDTH[element] * count, 1)
++        else:
++            for _ in range(count):
++                _skip_value(stream, element)
++    else:
++        raise ValueError(f'Unsupported GGUF metadata type {kind}')
++
++
++def extract_tokenizer_gguf(source, destination):
++    source, destination = Path(source), Path(destination)
++    if source.resolve() == destination.resolve():
++        raise ValueError('Tokenizer destination must differ from source weights')
++    with source.open('rb') as stream:
++        magic, version, _, entries = struct.unpack('<4sIQQ', stream.read(24))
++        if magic != b'GGUF' or version not in (2, 3):
++            raise ValueError('Unsupported GGUF header')
++        for _ in range(entries):
++            _skip_value(stream, 8)
++            _skip_value(stream, _number(stream, '<I'))
++        end = stream.tell()
++        if end > source.stat().st_size:
++            raise ValueError('GGUF metadata exceeds source size')
++        stream.seek(24)
++        metadata = stream.read(end - 24)
++    content = struct.pack('<4sIQQ', magic, version, 0, entries) + metadata
++    content += b'\0' * (-len(content) % 32)
++    destination.parent.mkdir(parents=True, exist_ok=True)
++    destination.write_bytes(content)
++    return len(content)
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser()
++    parser.add_argument('model')
++    parser.add_argument('output')
++    args = parser.parse_args()
++    print('Tokenizer-only GGUF bytes:', extract_tokenizer_gguf(args.model, args.output))
+diff --git a/aitestbed/minicpm_split/client.py b/aitestbed/minicpm_split/client.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/client.py
+@@ -0,0 +1,166 @@
++"""Real edge encoder and fixed-manifest evaluation over an activation-only link."""
++import argparse
++import hashlib
++import json
++import os
++import re
++import socket
++import statistics
++import time
++from pathlib import Path
++
++from .native import EdgeVision, MODEL_SHA, PROJECTOR_SHA, TOKENIZER_SHA, RUNTIME_SHA
++from .protocol import encode_message, receive_message
++
++PROMPT = '''You are an advanced video question-answering AI assistant. You have been provided with some frames from the video and a multiple-choice question related to the video. Your task is to carefully analyze the video and provide the best answer to question, choosing from the four options provided. Respond with only the letter (A, B, C, or D) of the correct option.
++
++Question: {}
++
++Options:
++{}
++{}
++{}
++{}\n\nThe best option is:'''
++
++
++def request(host,port,metadata,payload=b''):
++    packet = encode_message(metadata,payload)
++    begin = time.perf_counter()
++    with socket.create_connection((host,port),timeout=120) as connection:
++        connection.sendall(packet)
++        response,extra,response_bytes = receive_message(connection)
++    if extra or not response.get('ok'):
++        raise RuntimeError(response.get('error','Unexpected server response'))
++    if payload and response.get('feature_sha256')!=hashlib.sha256(payload).hexdigest():
++        raise RuntimeError('Server received different visual activations')
++    return response,len(packet),response_bytes,time.perf_counter()-begin
++
++
++class MiniCPMSplitClient:
++    """Edge-only provider using a separate language server, with measured bytes."""
++    provider = 'minicpm-split'
++
++    def __init__(self, runtime, tokenizer, projector, host='127.0.0.1', port=18087, cpu_vision=False):
++        self.host, self.port = host, port
++        self.health, _, _, _ = request(host, port, {'op': 'health'})
++        if self.health['vision_weights_loaded'] or self.health['pid'] == os.getpid():
++            raise RuntimeError('Expected a separate language-only server process')
++        self.edge = EdgeVision(runtime, tokenizer, projector, not cpu_vision)
++
++    def infer(self, images, prompt, question_id, frames):
++        timestamp, begin = time.time(), time.perf_counter()
++        metadata, payload = self.edge.encode(images, prompt)
++        metadata.update(question_id=question_id, frames=frames, max_tokens=16)
++        response, sent, received, duration = request(self.host, self.port, metadata, payload)
++        return dict(response, feature_bytes=len(payload), request_bytes=sent, response_bytes=received,
++                    edge_encode_seconds=metadata['edge_encode_seconds'],
++                    request_to_response_seconds=duration, total_seconds=time.perf_counter()-begin,
++                    timestamp=timestamp,
++                    embedding_shapes=[s['shape'] for s in metadata['chunks'] if s['kind']=='embedding'])
++
++    def close(self):
++        self.edge.close()
++
++
++def load_frames(folder, row, mode):
++    frames = json.loads((folder/'frames.json').read_text(encoding='utf-8'))
++    if len(frames) != 4 or mode not in ('single', 'native4'):
++        raise ValueError('Expected a cache of four consecutive native frames')
++    indices = [frame['frame_index'] for frame in frames]
++    if indices != list(range(indices[0], indices[0]+4)):
++        raise ValueError('Cached frames are not consecutive native frames')
++    timestamps = [frame['actual_seconds'] for frame in frames]
++    if any(a >= b for a,b in zip(timestamps, timestamps[1:])):
++        raise ValueError('Frame PTS are not in chronological order')
++    for frame in frames:
++        if (frame['query_seconds'] != row['timestamp_seconds'] or
++                frame['actual_seconds'] > row['timestamp_seconds']+1e-9):
++            raise ValueError('Incorrect query time or future video frame')
++        if Path(frame['file']).name != frame['file']:
++            raise ValueError('Frame filename must stay inside the question cache')
++        if hashlib.sha256((folder/frame['file']).read_bytes()).hexdigest() != frame['sha256']:
++            raise ValueError('Cached frame integrity mismatch')
++    return frames[-1:] if mode == 'single' else frames
++
++
++def main():
++    parser=argparse.ArgumentParser()
++    parser.add_argument('--runtime',required=True)
++    parser.add_argument('--projector',required=True)
++    parser.add_argument('--tokenizer',default='models/minicpm-o-tokenizer-only.gguf')
++    parser.add_argument('--questions',required=True)
++    parser.add_argument('--frames',required=True)
++    parser.add_argument('--mode',choices=['single','native4'],required=True)
++    parser.add_argument('--output',required=True)
++    parser.add_argument('--host',default='127.0.0.1')
++    parser.add_argument('--port',type=int,default=18087)
++    parser.add_argument('--limit',type=int,default=125)
++    parser.add_argument('--cpu-vision',action='store_true')
++    args=parser.parse_args()
++    if not 1<=args.limit<=125:
++        parser.error('--limit must be between 1 and 125')
++    run_evaluation(args)
++
++
++def run_evaluation(args, on_result=None):
++    if not 1 <= args.limit <= 125:
++        raise ValueError('Question limit must be between 1 and 125')
++    rows=json.loads(Path(args.questions).read_text(encoding='utf-8'))
++    if (len(rows)!=125 or len({r['question_id'] for r in rows})!=125 or
++            {r['video_id'] for r in rows}!=set(range(1,26)) or
++            any(r['answer'] not in 'ABCD' or len(r['options'])!=4 for r in rows)):
++        raise ValueError('Expected the fixed 25-video, 125-question labeled manifest')
++    output=Path(args.output)
++    output.mkdir(parents=True,exist_ok=True)
++    path=output/'predictions.jsonl'
++    if path.exists():
++        raise FileExistsError('Use a new output directory for a fresh split inference run')
++    client=MiniCPMSplitClient(args.runtime,args.tokenizer,args.projector,args.host,args.port,args.cpu_vision)
++    config={'mode':args.mode,'transport':'TCP binary activation envelope v1','wire_dtype':'<f4',
++            'images_transmitted':False,'split_after':'visual encoder + resampler/projector',
++            'edge_language_weight_tensors':0,'server_vision_weight_tensors':0,
++            'edge_pid':os.getpid(),'server_pid':client.health['pid'],'runtime':'llama.cpp b11516',
++            'llm_quantization':'Q4_K_M','visual_weights':'F16','context':4096,'max_tokens':16,
++            'temperature':0,'expected_questions':125,'prompt_template':PROMPT,
++            'vision_device':'CPU' if args.cpu_vision else 'Vulkan',
++            'questions_sha256':hashlib.sha256(Path(args.questions).read_bytes()).hexdigest(),
++            'frame_selection':'latest source PTS <= query, previous 3 native frame indices',
++            'frame_preprocessing':'reused verified JPEG cache, 588x336, no temporal resampling',
++            'server_host':args.host,'server_port':args.port}
++    config.update(model_sha256=MODEL_SHA, projector_sha256=PROJECTOR_SHA,
++                  tokenizer_sha256=TOKENIZER_SHA, runtime_dll_sha256=RUNTIME_SHA)
++    (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
++    predictions=[]
++    try:
++        for row in rows[:args.limit]:
++            folder=Path(args.frames)/row['question_id'].replace(' ','_')
++            frames=load_frames(folder,row,args.mode)
++            response=client.infer([folder/f['file'] for f in frames],
++                                  PROMPT.format(row['question'],*row['options']),row['question_id'],frames)
++            raw=response['result']['text']
++            match=re.fullmatch(r'\s*\(?([ABCD])\)?[.)]?\s*',raw)
++            answer=match.group(1) if match else None
++            result=dict(response,video_id=row['video_id'],label=row['answer'],
++                        raw_response=raw,prediction=answer,correct=answer==row['answer'],frames=frames)
++            with path.open('a',encoding='utf-8') as stream:stream.write(json.dumps(result)+'\n')
++            predictions.append(result)
++            if on_result:
++                on_result(result)
++            print(f"{len(predictions)}/{args.limit} {args.mode} {row['question_id']} {answer}/{row['answer']} features={result['feature_bytes']}B seconds={result['total_seconds']:.2f}",flush=True)
++    finally:
++        client.close()
++    summary={'status':'complete' if len(predictions)==125 else 'partial','evaluated':len(predictions),
++             'correct':sum(r['correct'] for r in predictions),
++             'accuracy_percent':100*sum(r['correct'] for r in predictions)/len(predictions),
++             'invalid_responses':sum(r['prediction'] is None for r in predictions),
++             'mean_feature_bytes':statistics.mean(r['feature_bytes'] for r in predictions),
++             'mean_total_seconds':statistics.mean(r['total_seconds'] for r in predictions),
++             'mean_edge_encode_seconds':statistics.mean(r['edge_encode_seconds'] for r in predictions),
++             'mean_server_inference_seconds':statistics.mean(r['server_inference_seconds'] for r in predictions),
++             'mean_request_to_response_seconds':statistics.mean(r['request_to_response_seconds'] for r in predictions)}
++    (output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
++    print(json.dumps(summary,indent=2),flush=True)
++    return summary
++
++
++if __name__=='__main__':main()
+diff --git a/aitestbed/minicpm_split/native.py b/aitestbed/minicpm_split/native.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/native.py
+@@ -0,0 +1,341 @@
++"""Pinned llama.cpp b11516 C ABI; edge vision and server decoder are separate."""
++import contextlib
++import ctypes as C
++import hashlib
++import os
++import struct
++import time
++from pathlib import Path
++
++import numpy as np
++from PIL import Image
++
++from .activation import validate_layout
++
++P, I, U, F, B, Z = C.c_void_p, C.c_int32, C.c_uint32, C.c_float, C.c_bool, C.c_size_t
++MODEL_SHA = '4f635fc0c0bb88d50ccd9cf1f1e5892b5cb085ff88fe0d8e1148fd9a8a836bc2'
++PROJECTOR_SHA = 'efa4f7d96aa0f838f2023fc8d28e519179b16f1106777fa9280b32628191aa3e'
++TOKENIZER_SHA = 'ee2af5fc10ab7468d746c3e7e677f16e9bf56f1f3f5625f53836401d025b1ba9'
++RUNTIME_SHA = {
++    'llama.dll': '98e8747e58bf38d6888b753c0e1d7b21c5f16a2978fc8b5e0752f82d1bf4227f',
++    'mtmd.dll': '7773002ee46f8eb65fa6e73237372143cddb1a6db6886a858d447b0b0932f3a1',
++    'ggml-vulkan.dll': '639e8c7e192d4d5bec10826f68224737a7eb0a671a8da090eff315d93aa598d3',
++}
++LINUX_RUNTIME_SHA = {
++    'libllama.so': 'f9c2c3f83e4f186f54db3225e69903c553c2b6c179a4aaa8c828df70770feb51',
++    'libmtmd.so': '85eaa1337ad799c2fe0a1361a5a86e1088d7ed20e7f72c899f6fb5542492bd8d',
++    'libggml-cuda.so': '8b64796ac0177282bc4abad219ad45536af6a5869b602f9c666405648331f850',
++}
++
++
++class ModelParams(C.Structure):
++    _fields_ = [(n, P) for n in ['devices', 'tensor_buft_overrides']] + [
++        (n, I) for n in ['n_gpu_layers', 'split_mode', 'load_mode', 'lazy_mode', 'main_gpu']
++    ] + [(n, P) for n in ['tensor_split', 'progress_callback', 'progress_callback_user_data', 'kv_overrides']] + [
++        (n, B) for n in ['vocab_only', 'check_tensors', 'use_extra_bufts', 'no_host', 'no_alloc', 'load_mtp']
++    ]
++
++
++class ContextParams(C.Structure):
++    _fields_ = [(n, U) for n in ['n_ctx', 'n_batch', 'n_ubatch', 'n_seq_max', 'n_rs_seq', 'n_outputs_max', 'n_outputs_max_per_seq']] + [
++        (n, I) for n in ['n_threads', 'n_threads_batch', 'ctx_type', 'rope_scaling_type', 'pooling_type', 'attention_type', 'flash_attn_type']
++    ] + [(n, F) for n in ['rope_freq_base', 'rope_freq_scale', 'yarn_ext_factor', 'yarn_attn_factor', 'yarn_beta_fast', 'yarn_beta_slow']] + [
++        ('yarn_orig_ctx', U), ('defrag_thold', F), ('cb_eval', P), ('cb_eval_user_data', P),
++        ('type_k', I), ('type_v', I), ('moe_cache_size', Z), ('abort_callback', P), ('abort_callback_data', P)
++    ] + [(n, B) for n in ['embeddings', 'offload_kqv', 'no_perf', 'op_offload', 'swa_full', 'kv_unified']] + [
++        ('samplers', P), ('n_samplers', Z), ('ctx_other', P)
++    ]
++
++
++class VisionParams(C.Structure):
++    _fields_ = [('use_gpu', B), ('device', P), ('print_timings', B), ('n_threads', C.c_int),
++                ('image_marker', C.c_char_p), ('media_marker', C.c_char_p), ('flash_attn_type', I),
++                ('warmup', B), ('image_min_tokens', C.c_int), ('image_max_tokens', C.c_int),
++                ('cb_eval', P), ('cb_eval_user_data', P), ('batch_max_tokens', I),
++                ('progress_callback', P), ('progress_callback_user_data', P)]
++
++
++class InputText(C.Structure):
++    _fields_ = [('text', C.c_char_p), ('text_len', Z), ('add_special', B), ('parse_special', B)]
++
++
++class Embedding(C.Structure):
++    _fields_ = [('data', C.POINTER(F)), ('n_rows', Z), ('n_embd', Z)]
++
++
++def file_sha256(path):
++    digest = hashlib.sha256()
++    with open(path, 'rb') as stream:
++        for block in iter(lambda: stream.read(8*1024*1024), b''):
++            digest.update(block)
++    return digest.hexdigest()
++
++
++class NativeAPI:
++    def __init__(self, runtime, vision=False):
++        self.runtime = Path(runtime).resolve()
++        if (C.sizeof(P), C.sizeof(ModelParams), C.sizeof(ContextParams), C.sizeof(VisionParams)) != (8,80,168,96):
++            raise RuntimeError('Unexpected native ABI layout; b11516 x64 is required')
++        if os.name == 'nt':
++            for filename in ['llama.dll','ggml-vulkan.dll'] + (['mtmd.dll'] if vision else []):
++                if file_sha256(self.runtime/filename) != RUNTIME_SHA[filename]:
++                    raise ValueError(f'Native ABI identity mismatch: {filename}; use b11516 Vulkan x64')
++            self._dll_directory = os.add_dll_directory(str(self.runtime))
++        else:
++            for filename in ['libllama.so','libggml-cuda.so'] + (['libmtmd.so'] if vision else []):
++                if file_sha256(self.runtime/filename) != LINUX_RUNTIME_SHA[filename]:
++                    raise ValueError(f'Native ABI identity mismatch: {filename}; use b11516 CUDA 12.8 x64')
++        name = lambda x: str(self.runtime/(x+'.dll' if os.name == 'nt' else 'lib'+x+'.so'))
++        self.ggml = C.CDLL(name('ggml'))
++        load = self.bind(self.ggml, 'ggml_backend_load_all_from_path', None, C.c_char_p)
++        load(os.fsencode(self.runtime))
++        self.llama = C.CDLL(name('llama'))
++        self.bind(self.llama, 'llama_backend_init', None)()
++        signatures = {
++            'llama_model_default_params': (ModelParams, []),
++            'llama_context_default_params': (ContextParams, []),
++            'llama_model_load_from_file': (P, [C.c_char_p, ModelParams]),
++            'llama_model_free': (None, [P]), 'llama_model_get_vocab': (P, [P]),
++            'llama_model_n_embd_inp': (I, [P]), 'llama_vocab_n_tokens': (I, [P]),
++            'llama_model_meta_val_str': (I, [P, C.c_char_p, P, Z]),
++            'llama_init_from_model': (P, [P, ContextParams]), 'llama_free': (None, [P]),
++            'llama_get_memory': (P, [P]), 'llama_memory_clear': (None, [P, B]),
++            'llama_batch_ext_init': (P, [P]), 'llama_batch_ext_free': (None, [P]),
++            'llama_batch_ext_clear': (None, [P]),
++            'llama_batch_ext_add_token': (I, [P, I, I]),
++            'llama_batch_ext_add_embd': (I, [P, I, Embedding]),
++            'llama_batch_ext_set_pos': (B, [P, I, C.POINTER(I)]),
++            'llama_batch_ext_set_output_logits': (B, [P, I, B]),
++            'llama_process': (I, [P, I, P]),
++            'llama_sampler_init_greedy': (P, []), 'llama_sampler_free': (None, [P]),
++            'llama_sampler_sample': (I, [P, P, I]), 'llama_vocab_is_eog': (B, [P, I]),
++            'llama_token_to_piece': (I, [P, I, P, I, I, B]),
++            'llama_get_logits_ith': (C.POINTER(F), [P, I]),
++        }
++        for name, (result, arguments) in signatures.items():
++            self.bind(self.llama, name, result, *arguments)
++        if vision:
++            self.mtmd = C.CDLL(name_for_library(self.runtime, 'mtmd'))
++            signatures = {
++                'mtmd_context_params_default': (VisionParams, []),
++                'mtmd_init_from_file': (P, [C.c_char_p, P, VisionParams]), 'mtmd_free': (None, [P]),
++                'mtmd_default_marker': (C.c_char_p, []),
++                'mtmd_bitmap_init': (P, [U, U, P]), 'mtmd_bitmap_free': (None, [P]),
++                'mtmd_input_chunks_init': (P, []), 'mtmd_input_chunks_free': (None, [P]),
++                'mtmd_input_chunks_size': (Z, [P]), 'mtmd_input_chunks_get': (P, [P, Z]),
++                'mtmd_input_chunk_get_type': (I, [P]), 'mtmd_input_chunk_get_n_tokens': (Z, [P]),
++                'mtmd_input_chunk_get_n_pos': (I, [P]),
++                'mtmd_input_chunk_get_tokens_text': (C.POINTER(I), [P, C.POINTER(Z)]),
++                'mtmd_tokenize': (I, [P, P, C.POINTER(InputText), C.POINTER(P), Z]),
++                'mtmd_encode_chunk': (I, [P, P]), 'mtmd_get_output_embd': (C.POINTER(F), [P]),
++                'mtmd_helper_eval_chunks': (I, [P, P, P, I, I, I, B, C.POINTER(I)]),
++            }
++            for name, (result, arguments) in signatures.items():
++                self.bind(self.mtmd, name, result, *arguments)
++
++    @staticmethod
++    def bind(library, name, result, *arguments):
++        function = getattr(library, name)
++        function.restype, function.argtypes = result, arguments
++        return function
++
++
++def name_for_library(runtime, name):
++    return str(runtime/(name+'.dll' if os.name == 'nt' else 'lib'+name+'.so'))
++
++
++class EdgeVision:
++    """Loads only visual tensors; the small text asset contains zero tensors."""
++    def __init__(self, runtime, tokenizer, projector, use_gpu=True):
++        if file_sha256(tokenizer) != TOKENIZER_SHA:
++            raise ValueError('Tokenizer-only asset identity mismatch; regenerate from pinned language GGUF')
++        if struct.unpack('<Q', Path(tokenizer).read_bytes()[8:16])[0] != 0:
++            raise ValueError('Edge tokenizer GGUF must contain zero tensors')
++        if file_sha256(projector) != PROJECTOR_SHA:
++            raise ValueError('Visual projector identity mismatch')
++        self.api = NativeAPI(runtime, vision=True)
++        ll = self.api.llama
++        params = ll.llama_model_default_params()
++        params.vocab_only, params.n_gpu_layers = True, 0
++        self.model = ll.llama_model_load_from_file(os.fsencode(tokenizer), params)
++        if not self.model:
++            raise RuntimeError('Cannot load tokenizer-only metadata')
++        # vocab_only skips runtime hparams, so n_embd_inp() is zero here.
++        # Read the preserved GGUF metadata instead of inferring a tensor shape.
++        buffer = C.create_string_buffer(64)
++        size = ll.llama_model_meta_val_str(self.model, b'qwen2.embedding_length', buffer, len(buffer))
++        if size<=0:
++            raise ValueError('Tokenizer metadata lacks embedding dimension')
++        self.width = int(buffer.value)
++        if self.width!=3584:
++            raise ValueError('Unexpected MiniCPM-o 2.6 embedding dimension')
++        params = self.api.mtmd.mtmd_context_params_default()
++        params.use_gpu, params.warmup, params.n_threads = use_gpu, False, 4
++        params.flash_attn_type, params.batch_max_tokens = 1, 256
++        self.vision = self.api.mtmd.mtmd_init_from_file(os.fsencode(projector), self.model, params)
++        if not self.vision:
++            raise RuntimeError('Cannot initialize MiniCPM vision encoder')
++        self.marker = self.api.mtmd.mtmd_default_marker().decode()
++
++    @contextlib.contextmanager
++    def chunks(self, images, prompt):
++        mt = self.api.mtmd
++        bitmaps = []
++        chunks = mt.mtmd_input_chunks_init()
++        try:
++            for path in images:
++                with Image.open(path) as image:
++                    image = image.convert('RGB')
++                    pixels = C.create_string_buffer(image.tobytes())
++                    bitmap = mt.mtmd_bitmap_init(image.width, image.height, pixels)
++                    if not bitmap:
++                        raise RuntimeError('Cannot create image bitmap')
++                    bitmaps.append(bitmap)
++            # Match the no-tools Qwen2 template used by the previous llama-server run.
++            content = self.marker * len(images) + prompt
++            formatted = ('<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.'
++                         '<|im_end|>\n<|im_start|>user\n' + content +
++                         '<|im_end|>\n<|im_start|>assistant\n').encode()
++            text = InputText(formatted, len(formatted), True, True)
++            array = (P*len(bitmaps))(*bitmaps)
++            status = mt.mtmd_tokenize(self.vision, chunks, C.byref(text), array, len(bitmaps))
++            if status:
++                raise RuntimeError(f'MiniCPM tokenization failed: {status}')
++            yield chunks
++        finally:
++            mt.mtmd_input_chunks_free(chunks)
++            for bitmap in bitmaps:
++                mt.mtmd_bitmap_free(bitmap)
++
++    def encode(self, images, prompt):
++        begin = time.perf_counter()
++        mt = self.api.mtmd
++        segments, payload = [], bytearray()
++        with self.chunks(images, prompt) as chunks:
++            for index in range(mt.mtmd_input_chunks_size(chunks)):
++                chunk = mt.mtmd_input_chunks_get(chunks, index)
++                kind = mt.mtmd_input_chunk_get_type(chunk)
++                if kind == 0:
++                    size = Z()
++                    tokens = mt.mtmd_input_chunk_get_tokens_text(chunk, C.byref(size))
++                    segments.append({'kind': 'tokens', 'ids': list(tokens[:size.value])})
++                elif kind == 1:
++                    count = mt.mtmd_input_chunk_get_n_tokens(chunk)
++                    if mt.mtmd_encode_chunk(self.vision, chunk):
++                        raise RuntimeError('MiniCPM visual encode failed')
++                    data = C.string_at(mt.mtmd_get_output_embd(self.vision), count*self.width*4)
++                    segments.append({'kind': 'embedding', 'shape': [count, self.width], 'dtype': '<f4',
++                                     'offset': len(payload), 'bytes': len(data),
++                                     'n_pos': mt.mtmd_input_chunk_get_n_pos(chunk)})
++                    payload.extend(data)
++                else:
++                    raise ValueError('Only visual input is supported in this split')
++        return {'protocol': 1, 'model_sha256': MODEL_SHA, 'projector_sha256': PROJECTOR_SHA,
++                'chunks': segments, 'edge_encode_seconds': time.perf_counter()-begin}, bytes(payload)
++
++    def close(self):
++        self.api.mtmd.mtmd_free(self.vision)
++        self.api.llama.llama_model_free(self.model)
++
++
++class LanguageDecoder:
++    """Language-only server: no mtmd library or visual weights are loaded."""
++    def __init__(self, runtime, model, context=4096):
++        if file_sha256(model) != MODEL_SHA:
++            raise ValueError('Language model identity mismatch')
++        self.api = NativeAPI(runtime)
++        ll = self.api.llama
++        params = ll.llama_model_default_params()
++        params.n_gpu_layers = -1
++        self.model = ll.llama_model_load_from_file(os.fsencode(model), params)
++        if not self.model:
++            raise RuntimeError('Cannot load language model')
++        self.width = ll.llama_model_n_embd_inp(self.model)
++        self.vocab = ll.llama_model_get_vocab(self.model)
++        params = ll.llama_context_default_params()
++        params.n_ctx, params.n_batch, params.n_ubatch, params.n_seq_max = context, 512, 128, 1
++        params.n_threads, params.n_threads_batch, params.flash_attn_type = 4, 4, 1
++        self.context_size = context
++        self.context = ll.llama_init_from_model(self.model, params)
++        if not self.context:
++            raise RuntimeError('Cannot initialize language context')
++        self.batch = ll.llama_batch_ext_init(self.context)
++
++    def reset(self):
++        ll = self.api.llama
++        ll.llama_memory_clear(ll.llama_get_memory(self.context), True)
++
++    def _decode(self, values, position, embedding=False, output=False):
++        ll = self.api.llama
++        ll.llama_batch_ext_clear(self.batch)
++        if embedding:
++            values = np.ascontiguousarray(values, dtype=np.float32)
++        for index, value in enumerate(values):
++            if embedding:
++                item = Embedding(value.ctypes.data_as(C.POINTER(F)), 1, self.width)
++                idx = ll.llama_batch_ext_add_embd(self.batch, 0, item)
++            else:
++                idx = ll.llama_batch_ext_add_token(self.batch, 0, int(value))
++            if idx < 0:
++                raise RuntimeError(f'Native batch rejected input: {idx}')
++            pos = I(position+index)
++            if not ll.llama_batch_ext_set_pos(self.batch, idx, C.byref(pos)):
++                raise RuntimeError('Native batch rejected position')
++            if output and index == len(values)-1:
++                ll.llama_batch_ext_set_output_logits(self.batch, idx, True)
++        status = ll.llama_process(self.context, 1, self.batch)
++        if status:
++            raise RuntimeError(f'Language decode failed: {status}')
++        return position+len(values)
++
++    def generate(self, metadata, payload, max_tokens=16):
++        if metadata.get('model_sha256') != MODEL_SHA or metadata.get('projector_sha256') != PROJECTOR_SHA:
++            raise ValueError('Split model identities do not match server')
++        validate_layout(metadata, payload, self.width, self.api.llama.llama_vocab_n_tokens(self.vocab),
++                        self.context_size, max_tokens)
++        segments = metadata['chunks']
++        self.reset()
++        position = 0
++        for i, segment in enumerate(segments):
++            embedding = segment['kind']=='embedding'
++            if embedding:
++                n, width = segment['shape']
++                values = np.frombuffer(payload, dtype='<f4', count=n*width, offset=segment['offset']).reshape(n,width)
++            else:
++                values = segment['ids']
++            for start in range(0,len(values),512):
++                output = i==len(segments)-1 and start+512>=len(values)
++                position = self._decode(values[start:start+512],position,embedding,output)
++        return self.finish(position,max_tokens)
++
++    def finish(self, position, max_tokens=16):
++        ll = self.api.llama
++        sampler = ll.llama_sampler_init_greedy()
++        tokens, pieces = [], bytearray()
++        first_logits = np.ctypeslib.as_array(ll.llama_get_logits_ith(self.context,-1),
++                                            shape=(ll.llama_vocab_n_tokens(self.vocab),)).copy()
++        try:
++            for _ in range(max_tokens):
++                token = ll.llama_sampler_sample(sampler,self.context,-1)
++                if ll.llama_vocab_is_eog(self.vocab,token):
++                    break
++                tokens.append(token)
++                buffer = C.create_string_buffer(512)
++                size = ll.llama_token_to_piece(self.vocab,token,buffer,512,0,False)
++                if size<0:
++                    raise RuntimeError('Token piece exceeds buffer')
++                pieces.extend(buffer.raw[:size])
++                position = self._decode([token],position,output=True)
++        finally:
++            ll.llama_sampler_free(sampler)
++        top = np.argsort(first_logits)[-8:][::-1]
++        return {'text': pieces.decode('utf-8'), 'token_ids': tokens,
++                'first_logits_sha256': hashlib.sha256(first_logits.tobytes()).hexdigest(),
++                'first_logits_top8': [{'token': int(t), 'logit': float(first_logits[t])} for t in top],
++                'prompt_tokens': position-len(tokens), 'generated_tokens': len(tokens)}
++
++    def close(self):
++        ll = self.api.llama
++        ll.llama_batch_ext_free(self.batch)
++        ll.llama_free(self.context)
++        ll.llama_model_free(self.model)
+diff --git a/aitestbed/minicpm_split/protocol.py b/aitestbed/minicpm_split/protocol.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/protocol.py
+@@ -0,0 +1,54 @@
++"""Bounded binary framing for model activations; never carries image pixels."""
++import hashlib
++import json
++import struct
++
++MAGIC = b'MCPMSP01'
++HEADER = struct.Struct('!8sIQ32s')
++MAX_METADATA = 2 * 1024 * 1024
++MAX_PAYLOAD = 128 * 1024 * 1024
++
++
++def encode_message(metadata, payload=b''):
++    encoded = json.dumps(metadata, separators=(',', ':'), allow_nan=False).encode('utf-8')
++    if len(encoded) > MAX_METADATA or len(payload) > MAX_PAYLOAD:
++        raise ValueError('Split message exceeds size limit')
++    digest = hashlib.sha256(encoded + payload).digest()
++    return HEADER.pack(MAGIC, len(encoded), len(payload), digest) + encoded + payload
++
++
++def decode_message(packet):
++    if len(packet) < HEADER.size:
++        raise ValueError('Truncated split envelope')
++    magic, meta_size, data_size, digest = HEADER.unpack_from(packet)
++    if magic != MAGIC or meta_size > MAX_METADATA or data_size > MAX_PAYLOAD:
++        raise ValueError('Invalid split envelope')
++    if len(packet) != HEADER.size + meta_size + data_size:
++        raise ValueError('Split envelope length mismatch')
++    body = packet[HEADER.size:]
++    if hashlib.sha256(body).digest() != digest:
++        raise ValueError('Split envelope integrity mismatch')
++    metadata = json.loads(body[:meta_size])
++    if not isinstance(metadata, dict):
++        raise ValueError('Split metadata must be an object')
++    return metadata, bytes(body[meta_size:])
++
++
++def _receive_exact(connection, count):
++    result = bytearray()
++    while len(result) < count:
++        block = connection.recv(min(count - len(result), 1024 * 1024))
++        if not block:
++            raise ValueError('Connection ended before split message completed')
++        result.extend(block)
++    return bytes(result)
++
++
++def receive_message(connection):
++    header = _receive_exact(connection, HEADER.size)
++    magic, meta_size, data_size, _ = HEADER.unpack(header)
++    if magic != MAGIC or meta_size > MAX_METADATA or data_size > MAX_PAYLOAD:
++        raise ValueError('Invalid split envelope')
++    packet = header + _receive_exact(connection, meta_size + data_size)
++    metadata, payload = decode_message(packet)
++    return metadata, payload, len(packet)
+diff --git a/aitestbed/minicpm_split/reference.py b/aitestbed/minicpm_split/reference.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/reference.py
+@@ -0,0 +1,46 @@
++"""Unsplit reference using upstream mtmd_helper_eval_chunks directly."""
++import argparse
++import ctypes as C
++import json
++from pathlib import Path
++
++from .client import PROMPT
++from .native import EdgeVision,LanguageDecoder,I
++
++
++def main():
++    parser=argparse.ArgumentParser()
++    parser.add_argument('--runtime',required=True)
++    parser.add_argument('--model',required=True)
++    parser.add_argument('--projector',required=True)
++    parser.add_argument('--tokenizer',default='models/minicpm-o-tokenizer-only.gguf')
++    parser.add_argument('--questions',required=True)
++    parser.add_argument('--frames',required=True)
++    parser.add_argument('--output',required=True)
++    parser.add_argument('--limit',type=int,default=3)
++    args=parser.parse_args()
++    decoder=LanguageDecoder(args.runtime,args.model)
++    edge=EdgeVision(args.runtime,args.tokenizer,args.projector)
++    rows=json.loads(Path(args.questions).read_text(encoding='utf-8'))
++    results=[]
++    try:
++        for mode in ['single','native4']:
++            for row in rows[:args.limit]:
++                folder=Path(args.frames)/row['question_id'].replace(' ','_')
++                frames=json.loads((folder/'frames.json').read_text(encoding='utf-8'))
++                if mode=='single':frames=frames[-1:]
++                decoder.reset()
++                with edge.chunks([folder/f['file'] for f in frames],PROMPT.format(row['question'],*row['options'])) as chunks:
++                    position=I()
++                    status=edge.api.mtmd.mtmd_helper_eval_chunks(edge.vision,decoder.context,chunks,0,0,512,True,C.byref(position))
++                    if status:raise RuntimeError(f'Unsplit upstream reference failed: {status}')
++                    result=decoder.finish(position.value)
++                results.append(dict(mode=mode,question_id=row['question_id'],**result))
++                print('UNSPLIT',mode,row['question_id'],result['text'],flush=True)
++    finally:
++        edge.close();decoder.close()
++    output=Path(args.output);output.parent.mkdir(parents=True,exist_ok=True)
++    output.write_text(json.dumps(results,indent=2),encoding='utf-8')
++
++
++if __name__=='__main__':main()
+diff --git a/aitestbed/minicpm_split/rtp_features.py b/aitestbed/minicpm_split/rtp_features.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/rtp_features.py
+@@ -0,0 +1,57 @@
++"""MiniCPM feature fragments for the Testbed's RTP codec, with zero concealment."""
++import struct
++
++HEADER=struct.Struct('!IIII')  # message id, byte offset, full length, fragment length
++FEATURE_PAYLOAD=1080  # retain Liquid's 1100-byte RTP payload cap, less 16+4 headers
++MAX_FEATURE_BYTES=12*1024**2
++
++
++def fragment_features(payload,message_id):
++    if not payload or len(payload)%4 or len(payload)>MAX_FEATURE_BYTES:
++        raise ValueError('Expected a bounded nonempty float32 feature buffer')
++    if not 0<=message_id<=0xffffffff:
++        raise ValueError('Invalid feature message id')
++    return [HEADER.pack(message_id,offset,len(payload),len(payload[offset:offset+FEATURE_PAYLOAD]))+
++            payload[offset:offset+FEATURE_PAYLOAD] for offset in range(0,len(payload),FEATURE_PAYLOAD)]
++
++
++class FeatureAssembler:
++    def __init__(self,length,message_id):
++        if not 0<length<=MAX_FEATURE_BYTES or length%4:
++            raise ValueError('Invalid expected feature size')
++        self.length,self.message_id=length,message_id
++        self.buffer=bytearray(length)
++        self.seen=set()
++        self.duplicates=0
++
++    def add(self,data):
++        position=0
++        while position<len(data):
++            if len(data)-position<HEADER.size:
++                raise ValueError('Truncated feature fragment header')
++            message_id,offset,total,size=HEADER.unpack_from(data,position)
++            position+=HEADER.size
++            expected_size=min(FEATURE_PAYLOAD,self.length-offset)
++            if (message_id!=self.message_id or total!=self.length or offset>=self.length or
++                    offset%FEATURE_PAYLOAD or size!=expected_size or size%4 or size<4 or
++                    len(data)-position<size):
++                raise ValueError('Invalid feature fragment layout or message identity')
++            fragment=data[position:position+size]
++            index=offset//FEATURE_PAYLOAD
++            if index in self.seen:
++                if self.buffer[offset:offset+size]!=fragment:
++                    raise ValueError('Conflicting duplicate feature fragment')
++                self.duplicates+=1
++            else:
++                self.buffer[offset:offset+size]=fragment
++                self.seen.add(index)
++            position+=size
++
++    def finish(self):
++        count=(self.length+FEATURE_PAYLOAD-1)//FEATURE_PAYLOAD
++        missing=[i for i in range(count) if i not in self.seen]
++        zeroed=sum(min(FEATURE_PAYLOAD,self.length-i*FEATURE_PAYLOAD) for i in missing)
++        return bytes(self.buffer),{'total_packets':count,'received_packets':len(self.seen),
++            'missing_packets':len(missing),'missing_packet_indices':missing,
++            'zeroed_bytes':zeroed,'zeroed_feature_fraction':zeroed/self.length,
++            'duplicate_packets':self.duplicates,'feature_payload_per_packet':FEATURE_PAYLOAD}
+diff --git a/aitestbed/minicpm_split/rtc_codec.py b/aitestbed/minicpm_split/rtc_codec.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/rtc_codec.py
+@@ -0,0 +1,248 @@
++"""Opt-in model codec inside the original Testbed aiortc media path."""
++import asyncio
++import hashlib
++import json
++import os
++import socket
++import threading
++import time
++from pathlib import Path
++
++from aiortc.codecs.base import Encoder, Decoder
++from aiortc.codecs.tokenId import VpxPayloadDescriptor
++from aiortc.mediastreams import VIDEO_TIME_BASE, convert_timebase
++import aiortc.shared as shared
++
++from .client import PROMPT, load_frames
++from .native import EdgeVision, LanguageDecoder
++from .rtp_features import FeatureAssembler, fragment_features, HEADER
++
++
++def settings():
++    path=os.environ.get('MINICPM_RTC_CONFIG')
++    if not path:
++        raise RuntimeError('Set MINICPM_RTC_CONFIG to the pinned local model configuration')
++    return json.loads(Path(path).read_text(encoding='utf-8'))
++
++
++def configure_receive_buffers(pc,requested=32*1024**2):
++    """Bounded per-socket capacity for F32 bursts; leave netem/global sysctls intact.
++
++    Linux's ordinary SO_RCVBUF is capped at 212992 here. The original server is
++    run with sudo for this experiment so SO_RCVBUFFORCE can apply to its own
++    sockets, without increasing the limit for other processes.
++    """
++    transports=[receiver.transport.transport for receiver in pc.getReceivers()]
++    if pc.sctp:
++        transports.append(pc.sctp.transport.transport)
++    seen,records=set(),[]
++    for ice in transports:
++        for protocol in ice.iceGatherer._connection._protocols:
++            sock=protocol.transport.get_extra_info('socket')
++            if sock.fileno() in seen:
++                continue
++            seen.add(sock.fileno())
++            try:
++                sock.setsockopt(socket.SOL_SOCKET,33,requested)  # Linux SO_RCVBUFFORCE
++            except PermissionError:
++                sock.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,requested)
++            actual=sock.getsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF)
++            if actual<2*requested:
++                raise RuntimeError('MiniCPM UDP receive capacity is insufficient; run this local server with sudo')
++            records.append({'socket':sock.getsockname(),'requested_bytes':requested,'actual_bytes':actual})
++    return records
++
++
++class MiniCPMEncoder(Encoder):
++    bridge=None
++    jobs={}
++    acknowledgements={}
++    records={}
++    loop=None
++    channel=None
++
++    @classmethod
++    def preload_bridge(cls):
++        if cls.bridge is None:
++            cls.config=settings()
++            cls.bridge=EdgeVision(cls.config['runtime'],cls.config['tokenizer'],cls.config['projector'])
++        return True
++
++    @classmethod
++    def cleanup_bridge(cls):
++        if cls.bridge is not None:
++            cls.bridge.close()
++            cls.bridge=None
++
++    @classmethod
++    def configure_channel(cls,loop,channel):
++        cls.loop,cls.channel=loop,channel
++        cls.jobs,cls.acknowledgements,cls.records={},{},{}
++
++    @classmethod
++    def send_control(cls,message):
++        cls.loop.call_soon_threadsafe(cls.channel.send,json.dumps(message))
++
++    def encode(self,frame,force_keyframe=False):
++        cls=type(self)
++        job=cls.jobs[int(frame.pts)]
++        row,folder,message_id=job['question'],Path(job['folder']),job['message_id']
++        frames=load_frames(folder,row,cls.config['mode'])
++        metadata,payload=cls.bridge.encode([folder/f['file'] for f in frames],
++                                          PROMPT.format(row['question'],*row['options']))
++        metadata.update(question_id=row['question_id'],frames=frames,mode=cls.config['mode'],
++                        max_tokens=16,feature_bytes=len(payload),
++                        original_feature_sha256=hashlib.sha256(payload).hexdigest())
++        ready=threading.Event()
++        cls.acknowledgements[message_id]=ready
++        cls.send_control({'type':'minicpm_features','message_id':message_id,'metadata':metadata})
++        if not ready.wait(cls.config.get('control_timeout_seconds',60)):
++            raise TimeoutError('Feature metadata was not acknowledged over the original data channel')
++        fragments=fragment_features(payload,message_id)
++        payloads=[bytes(VpxPayloadDescriptor(partition_start=int(index==0),partition_id=0,
++                                            picture_id=message_id%32768))+data
++                  for index,data in enumerate(fragments)]
++        cls.records[message_id]={'question_id':row['question_id'],'feature_bytes':len(payload),
++            'rtp_payload_bytes':sum(map(len,payloads)),'rtp_packets':len(payloads),
++            'edge_encode_seconds':metadata['edge_encode_seconds'],
++            'original_feature_sha256':metadata['original_feature_sha256'],'frames':frames}
++        return payloads,convert_timebase(frame.pts,frame.time_base,VIDEO_TIME_BASE)
++
++    def pack(self,packet):
++        raise ValueError('MiniCPM requires genuine edge vision encoding')
++
++    @property
++    def target_bitrate(self):
++        return 500000
++
++    @target_bitrate.setter
++    def target_bitrate(self,value):
++        # Retain F32 features: no implicit bitrate-dependent feature quantizer.
++        pass
++
++
++class MiniCPMDecoder(Decoder):
++    bridge=None
++    data_channel=None
++    bench_config=[]
++    model_name='minicpm'
++    task_class='real'
++    question_states={}
++    result_output_path=None
++    current_video_path=None
++    current_video_name=None
++    session_finalized=False
++    entries={}
++    _dec_tasks=set()
++    _lock=threading.Lock()
++    _gpu_lock=threading.Lock()
++
++    @classmethod
++    def preload_bridge(cls):
++        if cls.bridge is None:
++            cls.config=settings()
++            cls.bridge=LanguageDecoder(cls.config['runtime'],cls.config['model'])
++        return True
++
++    @classmethod
++    def cleanup_bridge(cls):
++        if cls.bridge is not None:
++            cls.bridge.close()
++            cls.bridge=None
++
++    @classmethod
++    def reset_decoder_state(cls,model_name=None):
++        for task in list(cls._dec_tasks):
++            if not task.done():
++                task.cancel()
++        cls._dec_tasks=set()
++        cls.entries={}
++        cls.bench_config=[]
++        cls.question_states={}
++        cls.data_channel=None
++        cls.result_output_path=None
++        cls.current_video_path=cls.current_video_name=None
++        cls.session_finalized=False
++        if model_name:
++            cls.model_name=model_name
++
++    @classmethod
++    def register_features(cls,message):
++        message_id=message['message_id']
++        metadata=message['metadata']
++        questions={q['question_id']:q for entry in cls.bench_config for q in entry['questions']}
++        if metadata['question_id'] not in questions or metadata['mode']!=cls.config['mode']:
++            raise ValueError('Feature metadata does not belong to this benchmark session')
++        with cls._lock:
++            if message_id in cls.entries:
++                raise ValueError('Duplicate feature message identity')
++            cls.entries[message_id]={'metadata':metadata,
++                'assembler':FeatureAssembler(metadata['feature_bytes'],message_id),
++                'registered_at':time.perf_counter(),'started':False,'question':questions[metadata['question_id']]}
++
++    def decode(self,encoded_frame):
++        cls=type(self)
++        if not encoded_frame.data:
++            return []
++        message_id=HEADER.unpack_from(encoded_frame.data)[0]
++        with cls._lock:
++            entry=cls.entries[message_id]
++            if entry['started']:
++                return []
++            entry['assembler'].add(encoded_frame.data)
++        shared.loop.call_soon_threadsafe(cls.schedule_inference,message_id)
++        return []
++
++    @classmethod
++    def schedule_inference(cls,message_id):
++        with cls._lock:
++            entry=cls.entries[message_id]
++            if entry['started']:
++                return
++            entry['started']=True
++            payload,loss=entry['assembler'].finish()
++        task=asyncio.create_task(cls.infer(entry,payload,loss))
++        cls._dec_tasks.add(task)
++        task.add_done_callback(cls._dec_tasks.discard)
++
++    @classmethod
++    def generate(cls,metadata,payload):
++        begin=time.perf_counter()
++        with cls._gpu_lock:
++            result=cls.bridge.generate(metadata,payload,max_tokens=16)
++        return result,time.perf_counter()-begin
++
++    @classmethod
++    async def infer(cls,entry,payload,loss):
++        metadata=entry['metadata']
++        record={'question_id':metadata['question_id'],'mode':metadata['mode'],'frames':metadata['frames'],
++            'feature_bytes':len(payload),'feature_sha256':hashlib.sha256(payload).hexdigest(),
++            'original_feature_sha256':metadata['original_feature_sha256'],'loss':loss,
++            'edge_encode_seconds':metadata['edge_encode_seconds'],'server_pid':os.getpid(),
++            'transport':'original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel'}
++        try:
++            result,duration=await asyncio.to_thread(cls.generate,metadata,payload)
++            record.update(raw_response=result['text'],result=result,server_inference_seconds=duration)
++        except Exception as exc:
++            record.update(raw_response='',error=type(exc).__name__+': '+str(exc))
++        record['metadata_to_result_seconds']=time.perf_counter()-entry['registered_at']
++        entry['question'][cls.model_name]=record['raw_response']
++        entry['question']['minicpm_details']=record
++        entry['result']=record
++        cls.data_channel.send(json.dumps({'type':'MINICPM_RESULT','record':record}))
++
++    @classmethod
++    async def finish_session(cls,receivers):
++        # Preserve original RTP reassembly, including an explicit final-frame
++        # drain. The selected profiles' finite queues are allowed to empty.
++        await asyncio.sleep(cls.config.get('media_drain_seconds',5.0))
++        for receiver in receivers:
++            receiver.flush_minicpm()
++        deadline=time.monotonic()+2
++        while any(not entry['started'] for entry in cls.entries.values()) and time.monotonic()<deadline:
++            await asyncio.sleep(.05)
++        for message_id in cls.entries:
++            cls.schedule_inference(message_id)  # entire-message loss -> all zero
++        if cls._dec_tasks:
++            await asyncio.gather(*list(cls._dec_tasks))
++        cls.session_finalized=True
+diff --git a/aitestbed/minicpm_split/rtc_track.py b/aitestbed/minicpm_split/rtc_track.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/rtc_track.py
+@@ -0,0 +1,101 @@
++"""Requested native question frames in the original Testbed video-track slot."""
++import asyncio
++import json
++import time
++from fractions import Fraction
++from pathlib import Path
++from types import SimpleNamespace
++
++import av
++import numpy as np
++from PIL import Image
++from aiortc import VideoStreamTrack, MediaStreamError
++
++from .client import load_frames
++from .rtc_codec import MiniCPMEncoder
++
++
++class MiniCPMQuestionTrack(VideoStreamTrack):
++    def __init__(self,video_path):
++        super().__init__()
++        self.config=MiniCPMEncoder.config
++        video_id=int(Path(video_path).parent.name.rsplit('_',1)[1])
++        manifest=json.loads(Path(self.config['questions']).read_text(encoding='utf-8'))
++        self.jobs=[(index+1,row) for index,row in enumerate(manifest) if row['video_id']==video_id]
++        self.jobs.sort(key=lambda job:job[1]['timestamp_seconds'])
++        if len(self.jobs)!=5:
++            raise ValueError('Each selected video must have exactly five fixed questions')
++        first=self._frames(self.jobs[0][1])[1][-1]
++        self.stream=SimpleNamespace(width=first['size'][0],height=first['size'][1])
++        self.fps=first['source_fps']
++        self.frame_count=0
++        self._index=0
++        self._complete=False
++        self._first_frame_time=self._last_frame_time=None
++        self._previous=None
++        self._chunks=[]
++        self.finish_event=asyncio.Event()
++
++    def _frames(self,row):
++        folder=Path(self.config['frames'])/row['question_id'].replace(' ','_')
++        return folder,load_frames(folder,row,self.config['mode'])
++
++    async def recv(self):
++        if self._previous is not None:
++            # recv() is called again only after the previous frame's RTP
++            # payloads have been sent by the unmodified aiortc sender.
++            from clients.realtime_webrtc_vlm_client import VLMVideoChunk
++            record=MiniCPMEncoder.records[self._previous]
++            self._last_frame_time=time.time()
++            last=record['frames'][-1]
++            self._chunks.append(VLMVideoChunk(frame_index=last['frame_index'],timestamp=self._last_frame_time,
++                pts=round(last['actual_seconds']*90000),bytes_sent=record['rtp_payload_bytes'],
++                width=self.stream.width,height=self.stream.height))
++            self._previous=None
++        if self._index>=len(self.jobs):
++            self._complete=True
++            MiniCPMEncoder.send_control({'type':'minicpm_media_finished'})
++            # Keep RTP/RTCP alive until server drains the final partial frame.
++            await self.finish_event.wait()
++            raise MediaStreamError('All requested question-frame features sent')
++        message_id,row=self.jobs[self._index]
++        self._index+=1
++        folder,frames=self._frames(row)
++        pts=round(frames[-1]['actual_seconds']*90000)
++        if pts in MiniCPMEncoder.jobs:
++            raise ValueError('Duplicate query frame timestamp')
++        MiniCPMEncoder.jobs[pts]={'question':row,'folder':str(folder),'message_id':message_id}
++        with Image.open(folder/frames[-1]['file']) as image:
++            frame=av.VideoFrame.from_ndarray(np.asarray(image.convert('RGB')).copy(),format='rgb24')
++        frame.pts,frame.time_base=pts,Fraction(1,90000)
++        self.frame_count+=len(frames)
++        self._previous=message_id
++        if self._first_frame_time is None:
++            self._first_frame_time=time.time()
++        return frame
++
++    @property
++    def total_bytes(self):
++        return sum(MiniCPMEncoder.records[mid]['rtp_payload_bytes'] for mid,_ in self.jobs
++                   if mid in MiniCPMEncoder.records)
++
++    @property
++    def chunks(self):
++        return self._chunks
++
++    @property
++    def first_frame_time(self):
++        return self._first_frame_time
++
++    @property
++    def last_frame_time(self):
++        return self._last_frame_time
++
++    @property
++    def video_send_complete(self):
++        return self._complete
++
++    def stop(self):
++        self._complete=True
++        self.finish_event.set()
++        super().stop()
+diff --git a/aitestbed/minicpm_split/prepare_rtc.py b/aitestbed/minicpm_split/prepare_rtc.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/prepare_rtc.py
+@@ -0,0 +1,58 @@
++"""Prepare original Testbed sample directories from the verified 125 questions."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import yaml
++
++
++def main():
++    parser=argparse.ArgumentParser()
++    parser.add_argument('--assets',required=True)
++    parser.add_argument('--runtime',required=True)
++    parser.add_argument('--output',default='results/minicpm_rtc')
++    args=parser.parse_args()
++    assets=Path(args.assets).resolve()
++    output=Path(args.output).resolve()
++    questions=assets/'results/q4_k_m_single_native/questions_manifest.json'
++    rows=json.loads(questions.read_text(encoding='utf-8'))
++    if len(rows)!=125 or sorted({r['video_id'] for r in rows})!=list(range(1,26)):
++        raise ValueError('Expected the verified first 25 videos and 125 questions')
++    configs=output/'configs'
++    configs.mkdir(parents=True,exist_ok=True)
++    for mode in ['single','native4']:
++        dataset=output/'dataset'/mode
++        for video_id in range(1,26):
++            folder=dataset/f'sample_{video_id}'
++            folder.mkdir(parents=True,exist_ok=True)
++            target=assets/f'data/videos/{video_id:03d}.mp4'
++            link=folder/f'{video_id:03d}.mp4'
++            if not link.exists():
++                link.symlink_to(target)
++            subset=[r for r in rows if r['video_id']==video_id]
++            if len(subset)!=5:
++                raise ValueError('Expected five questions per video')
++            path=folder/'questions.json'
++            if not path.exists():
++                path.write_text(json.dumps([{'video_id':video_id,'questions':subset}],indent=2),encoding='utf-8')
++        model_config={'runtime':str(Path(args.runtime).resolve()),
++            'model':str(assets/'models/Model-7.6B-Q4_K_M.gguf'),
++            'projector':str(assets/'models/mmproj-model-f16.gguf'),
++            'tokenizer':str(Path('models/minicpm-o-tokenizer-only.gguf').resolve()),
++            'questions':str(questions),'frames':str(assets/'data/native_frames'),'mode':mode,
++            'media_drain_seconds':5.0,'control_timeout_seconds':60,
++            'questions_sha256':hashlib.sha256(questions.read_bytes()).hexdigest()}
++        (configs/f'{mode}_model.json').write_text(json.dumps(model_config,indent=2),encoding='utf-8')
++        scenario={'scenarios':{'realtime_video_understanding':{
++            'type':'realtime_video_understanding','provider':'vlm-local','model':'minicpm',
++            'description':'Original Testbed RTC with native question-frame MiniCPM features',
++            'target_fps':None,'stream':True,'signaling_host':'127.0.0.1','signaling_port':18124,
++            'task_config':{'task_class':'real','po_thd':0,'video_paths':str(dataset),'results_dir':str(dataset)},
++            'prompts':['Use the verified benchmark multiple-choice question.']}},
++            'defaults':{'retry_count':0}}
++        (configs/f'{mode}_scenarios.yaml').write_text(yaml.safe_dump(scenario,sort_keys=False),encoding='utf-8')
++    print(json.dumps({'configs':str(configs),'questions':125,'videos':25,'frames':'native cached indices; no temporal resampling'}))
++
++
++if __name__=='__main__':
++    main()
+diff --git a/aitestbed/minicpm_split/rtc_batch.py b/aitestbed/minicpm_split/rtc_batch.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/rtc_batch.py
+@@ -0,0 +1,96 @@
++"""Supervise the original Testbed CLI; all media/network logic stays there."""
++import argparse
++import hashlib
++import json
++import os
++import signal
++import subprocess
++import sys
++import time
++from pathlib import Path
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--root', required=True, help='Fresh prepare_rtc output directory')
++    parser.add_argument('--mode', required=True, choices=['single', 'native4'])
++    parser.add_argument('--profiles', nargs='+', required=True)
++    parser.add_argument('--profiles-file', default='configs/profiles.yaml')
++    parser.add_argument('--capture-root', required=True)
++    parser.add_argument('--runs', type=int, default=25)
++    parser.add_argument('--run-timeout', type=float)
++    parser.add_argument('--resume', action='store_true')
++    args = parser.parse_args()
++    if not 1 <= args.runs <= 25 or len(set(args.profiles)) != len(args.profiles):
++        parser.error('Expected 1..25 videos and unique profile names')
++    root = Path(args.root).resolve()
++    config_path = root / 'configs' / f'{args.mode}_scenarios.yaml'
++    model_path = Path(os.environ['MINICPM_RTC_CONFIG'])
++    model_config = json.loads(model_path.read_text(encoding='utf-8'))
++    if model_config['mode'] != args.mode:
++        raise ValueError('Client model configuration does not match --mode')
++    profiles_path = Path(args.profiles_file)
++    for profile in args.profiles:
++        output = root / args.mode / profile
++        output.mkdir(parents=True, exist_ok=True)
++        if (output / 'traffic.db').exists() and not args.resume:
++            raise ValueError('Existing traffic.db: use --resume or a fresh --root')
++        command = [sys.executable, '-u', 'orchestrator.py', '--scenario',
++                   'realtime_video_understanding', '--config', str(config_path),
++                   '--profiles', str(profiles_path), '--profile', profile,
++                   '--interface', 'lo', '--egress-only', '--runs', str(args.runs),
++                   '--db', str(output / 'traffic.db'), '--report',
++                   str(output / 'testbed_report.json'), '--capture-pcap',
++                   '--capture-filter', 'udp or tcp port 18124', '--capture-dir',
++                   str(Path(args.capture_root) / args.mode / profile), '--stop-on-error']
++        if args.run_timeout is not None:
++            command += ['--run-timeout', str(args.run_timeout)]
++        if args.resume:
++            command.append('--resume')
++        identity = {'command': command, 'started_at': time.time(),
++                    'model_config': model_config,
++                    'scenario_config_sha256': hashlib.sha256(config_path.read_bytes()).hexdigest(),
++                    'profiles_file_sha256': hashlib.sha256(profiles_path.read_bytes()).hexdigest(),
++                    'scope': 'original orchestrator; selected native question-frame adapter',
++                    'expected_questions': args.runs * 5}
++        with (output / 'invocations.jsonl').open('a', encoding='utf-8') as stream:
++            stream.write(json.dumps(identity) + '\n')
++        print(json.dumps({'mode': args.mode, 'profile': profile, 'status': 'starting',
++                          'expected_questions': args.runs * 5}), flush=True)
++        with (output / 'orchestrator.log').open('a') as log, (output / 'network_observations.jsonl').open('a') as observations:
++            process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
++            try:
++                while True:
++                    state = subprocess.run(['sudo', '-n', 'tc', '-s', '-j', 'qdisc', 'show', 'dev', 'lo'],
++                                           capture_output=True, text=True, check=True)
++                    observations.write(json.dumps({'time': time.time(),
++                        'qdisc': json.loads(state.stdout), 'snmp': Path('/proc/net/snmp').read_text()}) + '\n')
++                    observations.flush()
++                    if process.poll() is not None:
++                        break
++                    time.sleep(2)
++            finally:
++                if process.poll() is None:
++                    process.send_signal(signal.SIGINT)
++                    try:
++                        process.wait(timeout=30)
++                    except subprocess.TimeoutExpired:
++                        process.kill()
++                        process.wait()
++            if process.returncode:
++                raise RuntimeError(f'Original orchestrator failed: {args.mode}/{profile}/{process.returncode}')
++        results = []
++        for video_id in range(1, args.runs + 1):
++            path = root / 'dataset' / args.mode / f'sample_{video_id}' / f'questions_results_{profile}.json'
++            rows = json.loads(path.read_text(encoding='utf-8'))[0]['questions']
++            if len(rows) != 5 or any('minicpm_details' not in r for r in rows):
++                raise ValueError(f'Incomplete original benchmark result: {path}')
++            results.extend(rows)
++        if len({r['question_id'] for r in results}) != args.runs * 5:
++            raise ValueError('Duplicate or missing question identities')
++        print(json.dumps({'mode': args.mode, 'profile': profile, 'status': 'answers_saved',
++                          'questions': len(results), 'independent_audit': 'pending'}), flush=True)
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/aitestbed/minicpm_split/rtc_report.py b/aitestbed/minicpm_split/rtc_report.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/rtc_report.py
+@@ -0,0 +1,218 @@
++"""Independently score original RTC results and audit feature erasure layout."""
++import argparse
++import csv
++import hashlib
++import json
++import math
++import re
++import statistics
++from pathlib import Path
++
++
++def score_rows(rows, expected):
++    seen, correct, invalid = set(), 0, 0
++    for row in rows:
++        qid = row['question_id']
++        if qid in seen or qid not in expected:
++            raise ValueError(f'Duplicate or unexpected question: {qid}')
++        if row['answer'] != expected[qid]['answer']:
++            raise ValueError(f'Ground-truth label changed: {qid}')
++        seen.add(qid)
++        raw = row['minicpm_details']['raw_response']
++        match = re.fullmatch(r'\s*\(?([ABCD])\)?[.)]?\s*', raw) if isinstance(raw, str) else None
++        prediction = match.group(1) if match else None
++        correct += prediction == expected[qid]['answer']
++        invalid += prediction is None
++    return {'questions': len(expected), 'answers_received': len(seen), 'correct': correct,
++            'accuracy_percent': 100 * correct / len(expected) if expected else None,
++            'invalid_responses': invalid, 'missing_answers': len(expected) - len(seen)}
++
++
++def validate_loss(detail):
++    length, loss = detail['feature_bytes'], detail['loss']
++    if not 0 < length <= 12 * 1024**2 or length % 4:
++        raise ValueError('Invalid F32 feature length')
++    size = loss['feature_payload_per_packet']
++    if size != 1080:
++        raise ValueError('Expected original Liquid RTP payload budget: 1080 feature bytes')
++    count = (length + size - 1) // size
++    missing = loss['missing_packet_indices']
++    if (loss['total_packets'] != count or len(missing) != len(set(missing))
++            or len(missing) != loss['missing_packets']
++            or loss['received_packets'] + len(missing) != count
++            or any(type(index) is not int or not 0 <= index < count for index in missing)):
++        raise ValueError('Inconsistent missing feature-fragment identities')
++    zeroed = sum(min(size, length - index * size) for index in missing)
++    if (loss['zeroed_bytes'] != zeroed
++            or not math.isclose(loss['zeroed_feature_fraction'], zeroed / length, abs_tol=1e-12)
++            or loss['duplicate_packets'] < 0):
++        raise ValueError('Inconsistent zero-filled byte count')
++    for key in ['feature_sha256', 'original_feature_sha256']:
++        if len(bytes.fromhex(detail[key])) != 32:
++            raise ValueError('Invalid feature SHA-256')
++    if not missing and detail['feature_sha256'] != detail['original_feature_sha256']:
++        raise ValueError('No-loss feature hash mismatch')
++    if len(missing) == count and detail['feature_sha256'] != hashlib.sha256(bytes(length)).hexdigest():
++        raise ValueError('Entire-message loss must produce an exactly all-zero feature buffer')
++
++
++def mean_field(rows, key):
++    values = [row['minicpm_details'][key] for row in rows if key in row['minicpm_details']]
++    if any(not math.isfinite(value) or value < 0 for value in values):
++        raise ValueError(f'Invalid timing: {key}')
++    return statistics.mean(values) if values else None
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--root', required=True)
++    parser.add_argument('--modes', nargs='+', choices=['single', 'native4'], default=['single', 'native4'])
++    parser.add_argument('--profiles', nargs='+', required=True)
++    parser.add_argument('--questions', help='Override saved manifest path for portable rescoring')
++    parser.add_argument('--video-limit', type=int, default=25)
++    parser.add_argument('--output', required=True)
++    parser.add_argument('--verify-images', action='store_true')
++    parser.add_argument('--reencode', action='store_true', help='Needs native GPU runtime and original frame cache')
++    args = parser.parse_args()
++    if (not 1 <= args.video_limit <= 25 or len(set(args.modes)) != len(args.modes)
++            or len(set(args.profiles)) != len(args.profiles) or 'no_emulation' not in args.profiles):
++        parser.error('Expected unique modes/profiles including no_emulation; 1..25 videos')
++    root, output = Path(args.root), Path(args.output)
++    output.mkdir(parents=True, exist_ok=True)
++    summaries, question_checks, configs = [], [], {}
++    for mode in args.modes:
++        config = json.loads((root / 'configs' / f'{mode}_model.json').read_text(encoding='utf-8'))
++        configs[mode] = config
++        manifest = Path(args.questions or config['questions']).read_bytes()
++        if hashlib.sha256(manifest).hexdigest() != config['questions_sha256']:
++            raise ValueError('Question manifest SHA-256 mismatch')
++        all_questions = json.loads(manifest)
++        if len(all_questions) != 125 or len({r['question_id'] for r in all_questions}) != 125:
++            raise ValueError('Expected the fixed 125-question manifest')
++        expected = {r['question_id']: r for r in all_questions if r['video_id'] <= args.video_limit}
++        if len(expected) != args.video_limit * 5:
++            raise ValueError('Expected exactly five fixed questions per selected video')
++        sources = {}
++        for profile in args.profiles:
++            rows = []
++            for video_id in range(1, args.video_limit + 1):
++                path = root / 'dataset' / mode / f'sample_{video_id}' / f'questions_results_{profile}.json'
++                rows.extend(json.loads(path.read_text(encoding='utf-8'))[0]['questions'])
++            score = score_rows(rows, expected)
++            if score['missing_answers']:
++                raise ValueError(f'Incomplete {mode}/{profile}: {score}')
++            sources[profile] = {r['question_id']: r for r in rows}
++            summaries.append({'mode': mode, 'profile': profile, **score,
++                'feature_packets': sum(r['minicpm_details']['loss']['total_packets'] for r in rows),
++                'missing_feature_packets': sum(r['minicpm_details']['loss']['missing_packets'] for r in rows),
++                'feature_bytes': sum(r['minicpm_details']['feature_bytes'] for r in rows),
++                'zeroed_feature_bytes': sum(r['minicpm_details']['loss']['zeroed_bytes'] for r in rows),
++                'mean_edge_encode_seconds': mean_field(rows, 'edge_encode_seconds'),
++                'mean_server_inference_seconds': mean_field(rows, 'server_inference_seconds'),
++                'mean_metadata_to_result_seconds': mean_field(rows, 'metadata_to_result_seconds')})
++        vision = None
++        if args.reencode:
++            from .native import EdgeVision
++            vision = EdgeVision(config['runtime'], config['tokenizer'], config['projector'])
++        try:
++            for qid, question in expected.items():
++                baseline = sources['no_emulation'][qid]['minicpm_details']
++                payload = None
++                if args.verify_images or args.reencode:
++                    from .client import PROMPT, load_frames
++                    folder = Path(config['frames']) / qid.replace(' ', '_')
++                    frames = load_frames(folder, question, mode)
++                    if frames != baseline['frames']:
++                        raise ValueError(f'Native frame-cache metadata mismatch: {qid}')
++                    if vision:
++                        _, payload = vision.encode([folder / f['file'] for f in frames],
++                                                   PROMPT.format(question['question'], *question['options']))
++                for profile in args.profiles:
++                    row = sources[profile][qid]
++                    detail = row['minicpm_details']
++                    for key in ['question', 'options', 'timestamp_seconds', 'video_id']:
++                        if row[key] != question[key]:
++                            raise ValueError(f'Benchmark input changed: {qid}/{key}')
++                    if detail['question_id'] != qid or detail['mode'] != mode:
++                        raise ValueError('Feature record identity mismatch')
++                    validate_loss(detail)
++                    frames = detail['frames']
++                    if (len(frames) != (1 if mode == 'single' else 4)
++                            or frames != baseline['frames']
++                            or detail['original_feature_sha256'] != baseline['original_feature_sha256']):
++                        raise ValueError(f'Visual input changed across profiles: {qid}')
++                    indices = [frame['frame_index'] for frame in frames]
++                    if indices != list(range(indices[0], indices[0] + len(frames))):
++                        raise ValueError('Expected consecutive native video frame indices')
++                    if any(frame['actual_seconds'] > question['timestamp_seconds'] + 1e-6 for frame in frames):
++                        raise ValueError('Future frame in question input')
++                    if detail['raw_response'] != row['minicpm']:
++                        raise ValueError('Raw model response differs from benchmark result')
++                    if 'result' in detail and detail['result']['text'] != detail['raw_response']:
++                        raise ValueError('Native language result differs from saved response')
++                    if payload is not None:
++                        if hashlib.sha256(payload).hexdigest() != detail['original_feature_sha256']:
++                            raise ValueError(f'Re-encoded original features differ: {qid}')
++                        damaged = bytearray(payload)
++                        size = detail['loss']['feature_payload_per_packet']
++                        for index in detail['loss']['missing_packet_indices']:
++                            begin, end = index * size, min((index + 1) * size, len(damaged))
++                            damaged[begin:end] = bytes(end - begin)
++                        if hashlib.sha256(damaged).hexdigest() != detail['feature_sha256']:
++                            raise ValueError(f'Actual received zero-filled features differ: {qid}/{profile}')
++                    question_checks.append({'mode': mode, 'profile': profile, 'question_id': qid,
++                        'original_feature_sha256': detail['original_feature_sha256'],
++                        'feature_sha256': detail['feature_sha256'],
++                        'missing_packets': detail['loss']['missing_packets'],
++                        'zero_fill_hash_reconstructed': payload is not None})
++        finally:
++            if vision:
++                vision.close()
++    for row in summaries:
++        row['missing_feature_percent'] = 100 * row['missing_feature_packets'] / row['feature_packets']
++        row['zeroed_feature_percent'] = 100 * row['zeroed_feature_bytes'] / row['feature_bytes']
++    diagnostic = args.video_limit != 25
++    audit = {'status': 'passed', 'scope': 'diagnostic subset' if diagnostic else 'fixed 125-question conditions',
++             'videos_per_condition': args.video_limit, 'conditions': len(summaries),
++             'answers': sum(r['answers_received'] for r in summaries),
++             'reencoded_feature_audit': args.reencode, 'frame_cache_verified': args.verify_images or args.reencode,
++             'source_configs': configs, 'summary': summaries, 'question_checks': question_checks,
++             'timing_definition': {'mean_metadata_to_result_seconds':
++                 'server metadata registration to complete answer; excludes edge encoding and return trip',
++                 'mean_server_inference_seconds': 'native language-model call including serial GPU queue wait',
++                 'mean_edge_encode_seconds': 'native vision preprocessing, encoding and feature copy'}}
++    (output / 'audit.json').write_text(json.dumps(audit, indent=2), encoding='utf-8')
++    with (output / 'condition_summary.csv').open('w', newline='', encoding='utf-8-sig') as stream:
++        writer = csv.DictWriter(stream, fieldnames=list(summaries[0]))
++        writer.writeheader()
++        writer.writerows(summaries)
++    lines = ['# MiniCPM：原版 Testbed RTC 结果核验', '',
++        f'范围：每条件 {args.video_limit} 个视频、{args.video_limit * 5} 道题，共 {audit["answers"]} 次回答。',
++        '**这是小样本诊断，不能作为完整 125 题性能结果。**' if diagnostic else
++        '每条件均覆盖固定 125 题；无效或缺失答案计错，准确率分母不随成功响应数量改变。', '',
++        '| 输入 | 原版 profile | 答对/题数 | 准确率 | 实际特征包缺失 | 特征置零比例 |',
++        '|---|---|---:|---:|---:|---:|']
++    for r in summaries:
++        lines.append(f'| {r["mode"]} | {r["profile"]} | {r["correct"]}/{r["questions"]} | '
++                     f'{r["accuracy_percent"]:.1f}% | {r["missing_feature_percent"]:.3f}% | '
++                     f'{r["zeroed_feature_percent"]:.3f}% |')
++    lines += ['', '特征经原版 aiortc 的 UDP/RTP/SRTP 发送；TCP 用于信令，可靠 DataChannel 用于控制与答案。'
++        '缺包按原 F32 位置置零。没有修改原网络 profile 的带宽、时延、丢包概率或队列容量。',
++        '实际特征缺失包括网络与队列丢包以及重组/截止时限造成的不可用，不能当作配置随机丢包率。'
++        '每包特征载荷 1080 字节，与此前离线 1432 字节预算不同。',
++        '当前适配器仅按问题顺序传输指定的原生单帧/四帧特征；视频帧索引保持原生连续。'
++        '本报告不证明持续原生 FPS 视频编码、传输或推理吞吐率。',
++        f'GPU 重新编码及受损特征字节哈希重建：{args.reencode}；原始帧缓存核验：'
++        f'{args.verify_images or args.reencode}。CPU 审计仅核对保存的哈希与缺包布局，'
++        '部分丢包的字节级重建需要 --reencode。',
++        'metadata_to_result_seconds 从服务器收到元数据计时至完整答案生成，不含端侧编码和答案回传；'
++        '不是端到端延迟。服务器推理计时包含串行 GPU 队列等待。'
++        '完整答案一次性返回，未测得逐 token TTFT。',
++        '此处原生运行时为 Linux CUDA，与此前 Windows Vulkan 离线实验的数值精度可能不同。'
++        '各 profile 应与同一 Linux/RTC no_emulation 条件比较。', '']
++    (output / 'report_zh.md').write_text('\n'.join(lines), encoding='utf-8')
++    print(json.dumps({'audit': 'passed', 'answers': audit['answers'], 'summary': summaries}, indent=2))
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/aitestbed/minicpm_split/packet_loss.py b/aitestbed/minicpm_split/packet_loss.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/minicpm_split/packet_loss.py
+@@ -0,0 +1,164 @@
++"""Offline MTU-sized feature erasure, followed by real language-model inference."""
++import argparse
++import hashlib
++import json
++import math
++import random
++import re
++import statistics
++import time
++from pathlib import Path
++
++from .client import PROMPT, load_frames, request
++from .native import EdgeVision, MODEL_SHA, PROJECTOR_SHA, TOKENIZER_SHA, RUNTIME_SHA
++
++# IP MTU excludes the Ethernet header. Budget a minimal IPv4/UDP/RTP packet,
++# a 16-byte feature-fragment header and the 10-byte SRTP AES-CM auth tag.
++# This is an offline size model, not a claim to encrypt or send SRTP packets.
++OVERHEAD = {'ipv4':20, 'udp':8, 'rtp':12, 'feature_fragment_header':16, 'srtp_auth_tag':10}
++
++
++def packet_ranges(length, mtu=1500):
++    available = (mtu-sum(OVERHEAD.values()))//4*4
++    if length < 0 or length % 4 or available < 4:
++        raise ValueError('Feature buffer and packet budget must hold whole float32 elements')
++    return [(offset,min(available,length-offset)) for offset in range(0,length,available)]
++
++
++def zero_packets(payload, loss_rate, seed, mtu=1500):
++    if not math.isfinite(loss_rate) or not 0<=loss_rate<=1:
++        raise ValueError('Loss rate must be between zero and one')
++    ranges = packet_ranges(len(payload),mtu)
++    rng, damaged, lost, zeroed = random.Random(seed), bytearray(payload), [], 0
++    for index,(offset,size) in enumerate(ranges):
++        if rng.random() < loss_rate:
++            damaged[offset:offset+size] = bytes(size)
++            lost.append(index)
++            zeroed += size
++    return bytes(damaged), {'mtu':mtu, 'feature_payload_per_full_packet':ranges[0][1] if ranges else 0,
++        'header_budget':OVERHEAD, 'nominal_loss_rate':loss_rate, 'seed':seed,
++        'total_packets':len(ranges), 'lost_packets':len(lost), 'lost_packet_indices':lost,
++        'observed_packet_loss_rate':len(lost)/len(ranges) if ranges else 0,
++        'zeroed_bytes':zeroed, 'zeroed_float32_elements':zeroed//4,
++        'zeroed_feature_fraction':zeroed/len(payload) if payload else 0}
++
++
++def summarize(predictions):
++    correct = sum(r['correct'] for r in predictions)
++    packets = sum(r['loss']['total_packets'] for r in predictions)
++    lost = sum(r['loss']['lost_packets'] for r in predictions)
++    return {'status':'complete' if len(predictions)==125 else 'partial', 'evaluated':len(predictions),
++            'correct':correct, 'accuracy_percent':100*correct/125,
++            'completed_question_accuracy_percent':100*correct/len(predictions) if predictions else 0,
++            'missing_questions':125-len(predictions),
++            'invalid_responses':sum(r['prediction'] is None for r in predictions),
++            'total_packets':packets, 'lost_packets':lost,
++            'observed_packet_loss_rate':lost/packets if packets else 0,
++            'zeroed_feature_fraction':sum(r['loss']['zeroed_bytes'] for r in predictions)/
++                sum(r['feature_bytes'] for r in predictions) if predictions else 0,
++            'mean_request_to_response_seconds':statistics.mean(r['request_to_response_seconds'] for r in predictions)
++                if predictions else None}
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--runtime', required=True)
++    parser.add_argument('--projector', required=True)
++    parser.add_argument('--tokenizer', default='models/minicpm-o-tokenizer-only.gguf')
++    parser.add_argument('--questions', required=True)
++    parser.add_argument('--frames', required=True)
++    parser.add_argument('--output', required=True)
++    parser.add_argument('--host', default='127.0.0.1')
++    parser.add_argument('--port', type=int, default=18087)
++    parser.add_argument('--mtu', type=int, default=1500)
++    parser.add_argument('--seed', type=int, default=20261009)
++    parser.add_argument('--loss-rates', type=float, nargs='+', default=[0,.001,.01,.05,.1,.2])
++    parser.add_argument('--limit', type=int, default=125)
++    args = parser.parse_args()
++    if not 1<=args.limit<=125 or len(set(args.loss_rates))!=len(args.loss_rates):
++        parser.error('Expected 1..125 questions and unique loss rates')
++    for rate in args.loss_rates:
++        zero_packets(bytes(4),rate,1,args.mtu)
++    manifest = Path(args.questions).read_bytes()
++    rows = json.loads(manifest)
++    if len(rows)!=125 or len({r['question_id'] for r in rows})!=125:
++        raise ValueError('Expected the verified 125-question manifest')
++    output = Path(args.output)
++    output.mkdir(parents=True,exist_ok=True)
++    config = {'experiment':'offline Bernoulli feature packet erasure; erased bytes -> positive float32 zero',
++              'mtu':args.mtu,'header_budget':OVERHEAD,'feature_payload_per_full_packet':packet_ranges(10000,args.mtu)[0][1],
++              'loss_rates':args.loss_rates,'seed':args.seed,'random_seeds':1,
++              'mask_pairing':'same per-question uniforms at all rates; higher-rate masks contain lower-rate masks',
++              'question_seed_derivation':'first 8 bytes of SHA256(seed|mode|question_id), big endian',
++              'expected_questions_per_condition':125,'modes':['single','native4'],
++              'questions_sha256':hashlib.sha256(manifest).hexdigest(),
++              'model_sha256':MODEL_SHA,'projector_sha256':PROJECTOR_SHA,'tokenizer_sha256':TOKENIZER_SHA,
++              'runtime':'llama.cpp b11516 Windows Vulkan x64','runtime_dll_sha256':RUNTIME_SHA,
++              'language_quantization':'Q4_K_M','vision_weights':'F16','wire_dtype':'<f4',
++              'context':4096,'max_tokens':16,'temperature':0,'prompt_template':PROMPT,
++              'network_emulation':False,'actual_transport':'local TCP; erasure happens before sending',
++              'images_transmitted':False,'feature_concealment':'zero only; no retransmission/FEC/temporal reuse',
++              'scope':'first 25 videos, 5 questions each; latest past native frame or previous 3 plus current',
++              'preprocessing':'verified 588x336 JPEG cache, no temporal resampling'}
++    config_path = output/'config.json'
++    if config_path.exists() and json.loads(config_path.read_text())!=config:
++        raise ValueError('Existing experiment configuration differs; use a new output directory')
++    config_path.write_text(json.dumps(config,indent=2),encoding='utf-8')
++    health,_,_,_ = request(args.host,args.port,{'op':'health'})
++    if health['vision_weights_loaded']:
++        raise ValueError('Expected a language-only server')
++    conditions = {}
++    for mode in config['modes']:
++        for rate in args.loss_rates:
++            folder = output/mode/f'loss_{rate:g}'
++            folder.mkdir(parents=True,exist_ok=True)
++            path = folder/'predictions.jsonl'
++            existing = [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()] if path.exists() else []
++            by_id = {r['question_id']:r for r in existing}
++            if len(by_id)!=len(existing) or not set(by_id)<=set(r['question_id'] for r in rows):
++                raise ValueError('Duplicate or unknown existing prediction')
++            conditions[mode,rate] = folder,existing,by_id
++    edge = EdgeVision(args.runtime,args.tokenizer,args.projector)
++    try:
++        for mode in config['modes']:
++            for index,row in enumerate(rows[:args.limit],1):
++                todo = [rate for rate in args.loss_rates if row['question_id'] not in conditions[mode,rate][2]]
++                if not todo:
++                    continue
++                folder = Path(args.frames)/row['question_id'].replace(' ','_')
++                frames = load_frames(folder,row,mode)
++                metadata, original = edge.encode([folder/f['file'] for f in frames],
++                                                  PROMPT.format(row['question'],*row['options']))
++                metadata.update(question_id=row['question_id'],frames=frames,max_tokens=16)
++                seed = int.from_bytes(hashlib.sha256(f'{args.seed}|{mode}|{row["question_id"]}'.encode()).digest()[:8],'big')
++                for rate in todo:
++                    damaged,loss = zero_packets(original,rate,seed,args.mtu)
++                    response,sent,received,duration = request(args.host,args.port,metadata,damaged)
++                    raw = response['result']['text']
++                    match = re.fullmatch(r'\s*\(?([ABCD])\)?[.)]?\s*',raw)
++                    answer = match.group(1) if match else None
++                    result = dict(response,mode=mode,question_id=row['question_id'],video_id=row['video_id'],
++                        label=row['answer'],prediction=answer,raw_response=raw,correct=answer==row['answer'],
++                        loss=loss,feature_bytes=len(original),request_bytes=sent,response_bytes=received,
++                        original_feature_sha256=hashlib.sha256(original).hexdigest(),
++                        damaged_feature_sha256=hashlib.sha256(damaged).hexdigest(),
++                        edge_encode_seconds=metadata['edge_encode_seconds'],request_to_response_seconds=duration,
++                        frames=frames,timestamp=time.time(),server_pid=health['pid'])
++                    target,predictions,by_id = conditions[mode,rate]
++                    with (target/'predictions.jsonl').open('a',encoding='utf-8') as stream:
++                        stream.write(json.dumps(result)+'\n')
++                    predictions.append(result)
++                    by_id[row['question_id']] = result
++                    (target/'summary.json').write_text(json.dumps(summarize(predictions),indent=2),encoding='utf-8')
++                    print(f'{mode} {index}/125 loss={rate:g} {answer}/{row["answer"]} '
++                          f'lost={loss["lost_packets"]}/{loss["total_packets"]} time={duration:.3f}',flush=True)
++    finally:
++        edge.close()
++    summary = [{'mode':mode,'nominal_loss_rate':rate,**summarize(values[1])}
++               for (mode,rate),values in conditions.items()]
++    (output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
++    print(json.dumps(summary,indent=2),flush=True)
++
++
++if __name__=='__main__':
++    main()
+diff --git a/aitestbed/tests/test_minicpm_codec_registration.py b/aitestbed/tests/test_minicpm_codec_registration.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_codec_registration.py
+@@ -0,0 +1,69 @@
++import asyncio
++import unittest
++from aiortc.codecs import CODECS, get_encoder, get_decoder
++from aiortc.rtp import RtpPacket, HeaderExtensionsMap
++from aiortc.rtcrtpparameters import RTCRtpParameters, RTCRtpHeaderExtensionParameters
++from aiortc.codecs.tokenId import VpxPayloadDescriptor
++from minicpm_split.rtp_features import fragment_features
++from pylibsrtp import Policy, Session
++from aiortc.rtcrtpsender import RTCRtpSender, RTP_HISTORY_SIZE
++
++
++class MiniCPMCodecRegistrationTests(unittest.TestCase):
++    def test_original_fork_does_not_retransmit_without_negotiated_rtx(self):
++        # The shipped Testbed fork differs from generic upstream aiortc here.
++        # Preserve and verify its actual branch, including an available packet.
++        sender = object.__new__(RTCRtpSender)
++        packet = RtpPacket(payload_type=109, sequence_number=42, timestamp=123)
++        packet.ssrc, packet.payload = 7, b'feature'
++        sender._RTCRtpSender__rtp_history = {42 % RTP_HISTORY_SIZE: packet}
++        sender._RTCRtpSender__rtx_payload_type = None
++        sent = []
++
++        class Transport:
++            async def _send_rtp(self, data):
++                sent.append(data)
++
++        sender._RTCRtpSender__transport = Transport()
++        sender._RTCRtpSender__log_debug = lambda *args: None
++        sender._RTCRtpSender__rtp_header_extensions_map = HeaderExtensionsMap()
++        asyncio.run(sender._retransmit(42))
++        self.assertEqual(sent, [])
++        # A positive control makes sure this checks the real retransmit path.
++        sender._RTCRtpSender__rtx_payload_type = 110
++        sender._RTCRtpSender__rtx_sequence_number = 100
++        sender._rtx_ssrc = 8
++        asyncio.run(sender._retransmit(42))
++        self.assertEqual(len(sent), 1)
++        retransmission = RtpPacket.parse(sent[0])
++        self.assertEqual(retransmission.payload_type, 110)
++        self.assertEqual(retransmission.payload[:2], bytes([0, 42]))
++
++    def test_minicpm_codec_is_opt_in_beside_liquid(self):
++        choices={codec.mimeType:codec for codec in CODECS['video']}
++        self.assertIn('video/tokenIdLLM',choices)
++        self.assertIn('video/tokenIdMiniCPM',choices)
++        codec=choices['video/tokenIdMiniCPM']
++        self.assertEqual(type(get_encoder(codec)).__name__,'MiniCPMEncoder')
++        self.assertEqual(type(get_decoder(codec)).__name__,'MiniCPMDecoder')
++
++    def test_real_srtp_protect_accepts_the_largest_feature_packet(self):
++        extensions=HeaderExtensionsMap()
++        extensions.configure(RTCRtpParameters(headerExtensions=[
++            RTCRtpHeaderExtensionParameters(id=1,uri='urn:ietf:params:rtp-hdrext:sdes:mid'),
++            RTCRtpHeaderExtensionParameters(id=3,uri='http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time')]))
++        packet=RtpPacket(payload_type=109,sequence_number=1,timestamp=123)
++        packet.ssrc=7
++        packet.extensions.mid='0'
++        packet.extensions.abs_send_time=12345
++        packet.payload=bytes(VpxPayloadDescriptor(1,0,picture_id=200))+fragment_features(bytes(8000),200)[0]
++        plain=packet.serialize(extensions)
++        tx=Session(Policy(key=bytes(range(30)),ssrc_type=Policy.SSRC_ANY_OUTBOUND))
++        rx=Session(Policy(key=bytes(range(30)),ssrc_type=Policy.SSRC_ANY_INBOUND))
++        protected=tx.protect(plain)
++        self.assertEqual(rx.unprotect(protected),plain)
++        self.assertLessEqual(len(protected)+20+8,1500)
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_jitter.py b/aitestbed/tests/test_minicpm_jitter.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_jitter.py
+@@ -0,0 +1,40 @@
++import unittest
++from aiortc.jitterbuffer import JitterBuffer
++from aiortc.rtp import RtpPacket
++
++
++def packet(sequence,timestamp,data=b'x'):
++    result=RtpPacket(payload_type=105,sequence_number=sequence%65536,timestamp=timestamp)
++    result._data=data
++    return result
++
++
++class MiniCPMJitterTests(unittest.TestCase):
++    def test_large_feature_frame_survives_original_jitter_path(self):
++        buffer=JitterBuffer(capacity=512,is_video=True)
++        for index in range(12000):
++            _,frame=buffer.add(packet(65000+index,100,b'a'),'tokenIdMiniCPM')
++            self.assertIsNone(frame)
++        _,frame=buffer.add(packet(65000+12000,200,b'b'),'tokenIdMiniCPM')
++        self.assertEqual(frame.data,b'a'*12000)
++        self.assertEqual(frame.timestamp,100)
++
++    def test_final_partial_frame_flushes_without_terminal_packet(self):
++        buffer=JitterBuffer(capacity=512,is_video=True)
++        buffer.add(packet(7,100,b'a'),'tokenIdMiniCPM')
++        buffer.add(packet(9,100,b'c'),'tokenIdMiniCPM')
++        frame=buffer.flush_minicpm()
++        self.assertEqual(frame.data,b'ac')
++        self.assertEqual(frame.timestamp,100)
++        self.assertIsNone(buffer.flush_minicpm())
++
++    def test_liquid_token_frame_still_uses_original_loss_tolerant_path(self):
++        buffer=JitterBuffer(capacity=512,is_video=True)
++        buffer.add(packet(7,100,b'a'),'tokenIdLLM')
++        buffer.add(packet(9,100,b'c'),'tokenIdLLM')
++        _,frame=buffer.add(packet(10,200,b'd'),'tokenIdLLM')
++        self.assertEqual(frame.data,b'ac')
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_native_track.py b/aitestbed/tests/test_minicpm_native_track.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_native_track.py
+@@ -0,0 +1,37 @@
++import hashlib
++import json
++import tempfile
++import unittest
++from pathlib import Path
++from PIL import Image
++from minicpm_split.rtc_codec import MiniCPMEncoder
++from minicpm_split.rtc_track import MiniCPMQuestionTrack
++
++
++class NativeTrackTests(unittest.TestCase):
++    def test_questions_follow_source_time_even_when_question_numbers_do_not(self):
++        with tempfile.TemporaryDirectory() as folder:
++            root=Path(folder)
++            rows=[]
++            for index,query in enumerate([4,8,6,10,12]):
++                row={'video_id':1,'question_id':f'q{index}','timestamp_seconds':query}
++                rows.append(row)
++                cache=root/'frames'/row['question_id']
++                cache.mkdir(parents=True)
++                frames=[]
++                for j,source_index in enumerate(range(query*30-3,query*30+1)):
++                    file=cache/f'{j:03d}.jpg'
++                    Image.new('RGB',(2,2),(100,50,0)).save(file)
++                    frames.append({'file':file.name,'size':[2,2],'frame_index':source_index,
++                        'actual_seconds':source_index/30,'query_seconds':query,'source_fps':30,
++                        'sha256':hashlib.sha256(file.read_bytes()).hexdigest()})
++                (cache/'frames.json').write_text(json.dumps(frames))
++            (root/'questions.json').write_text(json.dumps(rows))
++            MiniCPMEncoder.config={'questions':str(root/'questions.json'),'frames':str(root/'frames'),'mode':'native4'}
++            track=MiniCPMQuestionTrack(root/'sample_1/001.mp4')
++            self.assertEqual([r['timestamp_seconds'] for _,r in track.jobs],[4,6,8,10,12])
++            track.stop()
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_packet_loss.py b/aitestbed/tests/test_minicpm_packet_loss.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_packet_loss.py
+@@ -0,0 +1,46 @@
++import struct
++import unittest
++
++from minicpm_split.packet_loss import packet_ranges, zero_packets
++
++
++class PacketLossTests(unittest.TestCase):
++    def test_mtu_budget_and_float_alignment(self):
++        ranges = packet_ranges(10000, 1500)
++        self.assertEqual(ranges[0], (0, 1432))
++        self.assertEqual(sum(size for _,size in ranges), 10000)
++        self.assertTrue(all(size % 4 == 0 and size+66<=1500 for _,size in ranges))
++        self.assertEqual([offset for offset,_ in ranges], list(range(0,10000,1432)))
++
++    def test_zero_and_total_loss_preserve_shape_and_exact_bytes(self):
++        payload = struct.pack('<800f', *range(800))
++        unchanged, stats = zero_packets(payload, 0, 42)
++        self.assertEqual(unchanged, payload)
++        self.assertEqual(stats['lost_packets'], 0)
++        empty, stats = zero_packets(payload, 1, 42)
++        self.assertEqual(empty, bytes(len(payload)))
++        self.assertEqual(stats['zeroed_bytes'], len(payload))
++        self.assertEqual(stats['lost_packets'], stats['total_packets'])
++
++    def test_repeatable_nested_masks_and_complete_packet_zeroing(self):
++        payload = struct.pack('<20000f', *([1.25]*20000))
++        low, a = zero_packets(payload, .2, 17)
++        high, b = zero_packets(payload, .7, 17)
++        self.assertEqual(zero_packets(payload,.2,17),(low,a))
++        self.assertTrue(set(a['lost_packet_indices'])<=set(b['lost_packet_indices']))
++        for index,(offset,size) in enumerate(packet_ranges(len(payload),1500)):
++            self.assertEqual(low[offset:offset+size], bytes(size) if index in a['lost_packet_indices']
++                             else payload[offset:offset+size])
++        self.assertEqual(len(high),len(payload))
++
++    def test_invalid_packet_parameters_fail(self):
++        for size, mtu in [(3,1500),(100,66),(100,69)]:
++            with self.assertRaises(ValueError):
++                packet_ranges(size,mtu)
++        for rate in [-.1,1.1,float('nan')]:
++            with self.assertRaises(ValueError):
++                zero_packets(bytes(100),rate,1)
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_rtc_report.py b/aitestbed/tests/test_minicpm_rtc_report.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_rtc_report.py
+@@ -0,0 +1,62 @@
++import hashlib
++import unittest
++
++from minicpm_split.rtc_report import score_rows, validate_loss
++
++
++class RTCReportTests(unittest.TestCase):
++    def test_invalid_and_missing_answers_are_wrong_with_fixed_denominator(self):
++        expected = {f'q{i}': {'answer': answer} for i, answer in enumerate(['A', 'B', 'C'])}
++        rows = [{'question_id': 'q0', 'answer': 'A', 'minicpm_details': {'raw_response': 'A'}},
++                {'question_id': 'q1', 'answer': 'B', 'minicpm_details': {'raw_response': 'unknown'}}]
++        score = score_rows(rows, expected)
++        self.assertEqual(score['correct'], 1)
++        self.assertEqual(score['questions'], 3)
++        self.assertEqual(score['answers_received'], 2)
++        self.assertEqual(score['invalid_responses'], 1)
++        self.assertEqual(score['missing_answers'], 1)
++        self.assertAlmostEqual(score['accuracy_percent'], 100 / 3)
++
++    def test_duplicate_unknown_and_modified_labels_are_rejected(self):
++        row = {'question_id': 'q', 'answer': 'A', 'minicpm_details': {'raw_response': 'A'}}
++        expected = {'q': {'answer': 'A'}}
++        for rows, labels in [([row, row], expected), ([row], {}),
++                             ([row], {'q': {'answer': 'B'}})]:
++            with self.assertRaises(ValueError):
++                score_rows(rows, labels)
++
++    def test_tail_fragment_zero_budget_and_entire_message_zero_hash(self):
++        zero_hash = hashlib.sha256(bytes(1084)).hexdigest()
++        detail = {'feature_bytes': 1084, 'feature_sha256': zero_hash,
++                  'original_feature_sha256': 'a' * 64, 'loss': {
++            'feature_payload_per_packet': 1080, 'total_packets': 2,
++            'received_packets': 1, 'missing_packets': 1,
++            'missing_packet_indices': [1], 'zeroed_bytes': 4,
++            'zeroed_feature_fraction': 4 / 1084, 'duplicate_packets': 0}}
++        validate_loss(detail)
++        detail['loss'].update(received_packets=0, missing_packets=2,
++            missing_packet_indices=[0, 1], zeroed_bytes=1084, zeroed_feature_fraction=1)
++        validate_loss(detail)
++        detail['feature_sha256'] = 'b' * 64
++        with self.assertRaises(ValueError):
++            validate_loss(detail)
++
++    def test_invalid_missing_offsets_and_false_no_loss_hash_are_rejected(self):
++        detail = {'feature_bytes': 1084, 'feature_sha256': 'a' * 64,
++                  'original_feature_sha256': 'b' * 64, 'loss': {
++            'feature_payload_per_packet': 1080, 'total_packets': 2,
++            'received_packets': 2, 'missing_packets': 0,
++            'missing_packet_indices': [], 'zeroed_bytes': 0,
++            'zeroed_feature_fraction': 0, 'duplicate_packets': 0}}
++        with self.assertRaises(ValueError):
++            validate_loss(detail)
++        detail['feature_sha256'] = detail['original_feature_sha256']
++        validate_loss(detail)
++        detail['loss'].update(received_packets=1, missing_packets=1,
++                              missing_packet_indices=[2], zeroed_bytes=4)
++        with self.assertRaises(ValueError):
++            validate_loss(detail)
++
++
++if __name__ == '__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_rtp_features.py b/aitestbed/tests/test_minicpm_rtp_features.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_rtp_features.py
+@@ -0,0 +1,55 @@
++import struct
++import unittest
++
++from minicpm_split.rtp_features import FeatureAssembler, fragment_features, FEATURE_PAYLOAD
++
++
++class RTPFeatureTests(unittest.TestCase):
++    def test_large_offsets_and_mtu_budget(self):
++        payload=struct.pack('<20000f',*([1.25]*20000))
++        fragments=fragment_features(payload,17)
++        self.assertTrue(any(struct.unpack_from('!IIII',p)[1]>65535 for p in fragments))
++        self.assertTrue(all(len(p)+4+20+8+12+16+16<=1500 for p in fragments))
++        assembler=FeatureAssembler(len(payload),17)
++        assembler.add(b''.join(reversed(fragments)))
++        actual,stats=assembler.finish()
++        self.assertEqual(actual,payload)
++        self.assertEqual(stats['missing_packets'],0)
++
++    def test_missing_packet_zeros_only_its_float_positions(self):
++        payload=struct.pack('<2000f',*([2.5]*2000))
++        fragments=fragment_features(payload,9)
++        assembler=FeatureAssembler(len(payload),9)
++        assembler.add(b''.join(p for i,p in enumerate(fragments) if i!=1))
++        actual,stats=assembler.finish()
++        expected=bytearray(payload)
++        expected[FEATURE_PAYLOAD:2*FEATURE_PAYLOAD]=bytes(FEATURE_PAYLOAD)
++        self.assertEqual(actual,bytes(expected))
++        self.assertEqual(stats['missing_packet_indices'],[1])
++        self.assertEqual(stats['zeroed_bytes'],FEATURE_PAYLOAD)
++
++    def test_duplicate_and_total_loss_do_not_reuse_another_question(self):
++        payload=struct.pack('<800f',*([3.0]*800))
++        fragments=fragment_features(payload,3)
++        assembler=FeatureAssembler(len(payload),3)
++        assembler.add(fragments[0]+fragments[0])
++        self.assertEqual(assembler.finish()[1]['duplicate_packets'],1)
++        other=FeatureAssembler(len(payload),4)
++        self.assertEqual(other.finish()[0],bytes(len(payload)))
++        with self.assertRaises(ValueError):
++            other.add(fragments[0])
++
++    def test_truncated_misaligned_and_conflicting_fragments_rejected(self):
++        fragments=fragment_features(bytes(4000),5)
++        for damaged in [fragments[0][:-1],struct.pack('!IIII',5,1,4000,4)+bytes(4),
++                        struct.pack('!IIII',5,0,4000,FEATURE_PAYLOAD+4)+bytes(FEATURE_PAYLOAD+4)]:
++            with self.assertRaises(ValueError):
++                FeatureAssembler(4000,5).add(damaged)
++        assembler=FeatureAssembler(4000,5)
++        assembler.add(fragments[0])
++        with self.assertRaises(ValueError):
++            assembler.add(fragments[0][:-1]+b'\x01')
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_minicpm_split.py b/aitestbed/tests/test_minicpm_split.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_minicpm_split.py
+@@ -0,0 +1,110 @@
++import copy
++import socket
++import struct
++import tempfile
++import unittest
++from pathlib import Path
++
++from minicpm_split.protocol import encode_message, receive_message, decode_message
++from minicpm_split.assets import extract_tokenizer_gguf
++from minicpm_split.activation import validate_layout
++
++
++class SplitProtocolTests(unittest.TestCase):
++    def test_tensor_bytes_survive_framing(self):
++        metadata = {'chunks': [{'kind': 'embedding', 'shape': [2, 3]}]}
++        features = struct.pack('<6f', 0.1, -2, 0, 4, 7, 8)
++        packet = encode_message(metadata, features)
++        actual, payload = decode_message(packet)
++        self.assertEqual(actual, metadata)
++        self.assertEqual(payload, features)
++
++    def test_corruption_and_truncation_are_rejected(self):
++        packet = encode_message({'question_id': 'test'}, b'features')
++        damaged = bytearray(packet)
++        damaged[-1] ^= 1
++        with self.assertRaises(ValueError):
++            decode_message(damaged)
++        with self.assertRaises(ValueError):
++            decode_message(packet[:-1])
++
++    def test_socket_receive_handles_fragmented_writes(self):
++        packet = encode_message({'test': True}, b'abc')
++        first, second = socket.socketpair()
++        with first, second:
++            first.sendall(packet[:7])
++            first.sendall(packet[7:])
++            self.assertEqual(receive_message(second), ({'test': True}, b'abc', len(packet)))
++
++    def test_metadata_only_asset_contains_no_weight_tensors(self):
++        key = b'general.architecture'
++        value = b'qwen2'
++        kv = struct.pack('<Q', len(key)) + key + struct.pack('<I', 8) + struct.pack('<Q', len(value)) + value
++        source = struct.pack('<4sIQQ', b'GGUF', 3, 123, 1) + kv + b'PRIVATE_WEIGHT_BYTES'
++        with tempfile.TemporaryDirectory() as folder:
++            original, result = Path(folder)/'full.gguf', Path(folder)/'tokenizer.gguf'
++            original.write_bytes(source)
++            extract_tokenizer_gguf(original, result)
++            output = result.read_bytes()
++        self.assertEqual(struct.unpack('<4sIQQ', output[:24]), (b'GGUF', 3, 0, 1))
++        self.assertEqual(output[24:24+len(kv)], kv)
++        self.assertNotIn(b'PRIVATE_WEIGHT_BYTES', output)
++
++
++class ActivationLayoutTests(unittest.TestCase):
++    def setUp(self):
++        self.payload = struct.pack('<6f', 1, 2, 3, 4, 5, 6)
++        self.metadata = {'protocol': 1, 'chunks': [
++            {'kind': 'tokens', 'ids': [1, 2]},
++            {'kind': 'embedding', 'shape': [2, 3], 'dtype': '<f4',
++             'offset': 0, 'bytes': 24, 'n_pos': 2},
++            {'kind': 'tokens', 'ids': [3]}]}
++
++    def validate(self, metadata=None, payload=None):
++        return validate_layout(metadata or self.metadata, self.payload if payload is None else payload,
++                               width=3, vocab_size=10, context_size=32, max_tokens=16)
++
++    def test_ordered_mixed_segments_and_context_count(self):
++        self.assertEqual(self.validate(), 5)
++
++    def test_overlap_holes_and_unreferenced_payload_are_rejected(self):
++        for offset in (4, -4):
++            metadata = copy.deepcopy(self.metadata)
++            metadata['chunks'][1]['offset'] = offset
++            with self.assertRaises(ValueError):
++                self.validate(metadata, self.payload+b'\0'*4)
++        metadata = copy.deepcopy(self.metadata)
++        metadata['chunks'].insert(2, copy.deepcopy(metadata['chunks'][1]))
++        with self.assertRaises(ValueError):
++            self.validate(metadata)
++        with self.assertRaises(ValueError):
++            self.validate(payload=self.payload+b'\0'*4)
++
++    def test_nonfinite_shape_position_and_token_errors_are_rejected(self):
++        with self.assertRaises(ValueError):
++            self.validate(payload=struct.pack('<6f', float('nan'), 2, 3, 4, 5, 6))
++        for key, value in [('shape', [2, 4]), ('n_pos', 3), ('dtype', '<f2')]:
++            metadata = copy.deepcopy(self.metadata)
++            metadata['chunks'][1][key] = value
++            with self.assertRaises(ValueError):
++                self.validate(metadata)
++        metadata = copy.deepcopy(self.metadata)
++        metadata['chunks'][0]['ids'] = [10]
++        with self.assertRaises(ValueError):
++            self.validate(metadata)
++
++    def test_protocol_context_and_trailing_empty_tokens_are_rejected(self):
++        metadata = copy.deepcopy(self.metadata)
++        metadata['protocol'] = 2
++        with self.assertRaises(ValueError):
++            self.validate(metadata)
++        metadata = copy.deepcopy(self.metadata)
++        metadata['chunks'][-1]['ids'] = []
++        with self.assertRaises(ValueError):
++            self.validate(metadata)
++        with self.assertRaises(ValueError):
++            validate_layout(self.metadata, self.payload, 3, 10, 20, 16)
++
++
++if __name__ == '__main__':
++    unittest.main()
+diff --git a/aitestbed/tests/test_realtime_accuracy.py b/aitestbed/tests/test_realtime_accuracy.py
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/tests/test_realtime_accuracy.py
+@@ -0,0 +1,29 @@
++import unittest
++
++from analysis.metrics import MetricsCalculator
++
++
++class RealtimeAccuracyTests(unittest.TestCase):
++    def test_bare_multiple_choice_and_legacy_json(self):
++        for text in ['A',' a ','(A)','A.','{"answer":"A"}']:
++            self.assertEqual(MetricsCalculator.extract_answer(text),'A')
++        for text in ['',None,'I cannot tell','A or B']:
++            self.assertIsNone(MetricsCalculator.extract_answer(text))
++
++    def test_invalid_and_missing_answers_remain_in_denominator(self):
++        questions=[{'task_type':'object','answer':'A','minicpm':'A'},
++                   {'task_type':'object','answer':'B','minicpm':'unknown'},
++                   {'task_type':'object','answer':'C'}]
++        stats=MetricsCalculator.calculate_task_accuracy([{'questions':questions}],'minicpm',0,'real')
++        self.assertEqual(stats['total']['total'],3)
++        self.assertEqual(stats['total']['correct'],1)
++        self.assertAlmostEqual(stats['total']['accuracy'],1/3)
++
++    def test_case_insensitive_model_key_is_used(self):
++        stats=MetricsCalculator.calculate_task_accuracy([{'questions':[
++            {'task_type':'object','answer':'B','MiniCPM':'B'}]}],'minicpm',0,'real')
++        self.assertEqual(stats['total']['correct'],1)
++
++
++if __name__=='__main__':
++    unittest.main()
+diff --git a/aitestbed/docs/minicpm_testbed_rtc.md b/aitestbed/docs/minicpm_testbed_rtc.md
+new file mode 100644
+--- /dev/null
++++ b/aitestbed/docs/minicpm_testbed_rtc.md
+@@ -0,0 +1,104 @@
++# MiniCPM-o 2.6 接入原版 Testbed RTC
++
++端侧加载 F16 视觉编码器和 resampler，服务器只加载 Q4_K_M 语言模型。
++两者在本机 WSL Ubuntu 中作为独立进程运行，共享 RTX 3070。
++中间数据为 F32 视觉 embedding；不是 JPEG 或模型最终答案。
++
++当前实际调用链：
++
++```text
++orchestrator.py -> scenarios/realtime_video.py
++  -> RealtimeWebRTCVLMClient -> RTCPeerConnection / original RTP sender
++  -> MiniCPMEncoder -> original UDP / DTLS / SRTP -> Linux lo HTB/netem
++  -> original RTP receiver / jitter / decoder queue -> MiniCPMDecoder
++  -> native language-model inference -> original reliable DataChannel
++  -> original benchmark JSON + TrafficLogger SQLite + capture/report
++```
++
++TCP/18124 用于原版信令；视觉特征经 UDP/RTP/SRTP。问题、形状/位置/文本
++token 元数据及答案使用原版可靠 DataChannel。模型使用独立的
++`video/tokenIdMiniCPM` codec，Liquid 默认 codec 保留。
++
++输入仍是固定视频 1–25、每视频 5 问，共 125 题。单帧取提问前最近原生帧；
++四帧为该帧及紧邻前三帧。复用已核验的 588×336 JPEG 缓存，有空间处理，
++没有时间抽样。当前 track 只按问题顺序发送这批特征，**不是持续原生 FPS 流量**。
++原视频时间轴/持续流量与按提问点加速回放的正式实验口径尚待选择。
++
++## 保留的原版行为与必要模型适配
++
++- 使用原版 orchestrator、scenario、TCP 信令、ICE/DTLS/SRTP、RTP 收发、
++  netemu profile、抓包和 SQLite 日志流程。`rtc_batch.py` 只调用原 CLI
++  并记录 tc/UDP 状态；25 个 run 对应数值顺序视频 1–25，保留原版 20 秒 run 间隔。
++- 原 SRTP 实测要求保留 Liquid 的 1100 字节 RTP 载荷上限；扣除模型分片头
++  及既有 payload 描述后，每包承载 1080 字节 F32 特征。
++  单帧 2549 包、四帧 10195 包，实测最大媒体 IP 包 1167 字节。
++  这与离线实验的 1432 字节预算不同，结果应分开解读。
++- 缺包对应的原特征位置置零，形状与顺序不变；不复用其他问题或前帧数据。
++  大特征使用 16384 包 jitter buffer，最后一帧通过显式结束控制和排空期限交给
++  原 decoder queue。局部晚到/重组舍弃也属于最终特征缺失。
++- 服务器请求每个自己的 UDP socket 的 32 MiB 接收容量，Linux 报告有效 64 MiB，
++  因此本地服务器使用 sudo；不修改全局 sysctl，也不调大 netem profile 队列。
++- SDP 不协商 RTX。当前 Testbed fork 的 `_retransmit` 只在有 RTX payload type
++  时发送重传；已通过无 RTX 及有 RTX 正控制验证。NACK/RTCP 机制保留，
++  不能仅凭通用 aiortc 文档推断本 fork 的实际重传行为。
++- 修正原评分路径对裸 A–D 的解析和缺失/无效答案分母处理，保留旧 JSON 答案兼容。
++  独立 MiniCPM 汇总按此前固定 A–D 格式评分；无效答案计错，分母固定。
++
++## 本机运行
++
++从 `aitestbed` 执行，使用已有原版 Testbed Linux 依赖环境和 b11516 CUDA 12.8
++运行时。`native.py` 在加载前核对模型、tokenizer 与原生库 SHA-256。
++已有 Linux Liquid checkout 不被改写；PYTHONPATH 显式指向本项目的 fork。
++
++```bash
++export PROJECT='/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed'
++export PYTHONPATH="$PROJECT/aiortc-main-clean/src:$PROJECT/aitestbed:$PROJECT/netemu/src"
++export LD_LIBRARY_PATH='/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516:/home/qinyi/6G-Testbed/venv/lib/python3.12/site-packages/nvidia/cuda_runtime/lib:/home/qinyi/6G-Testbed/venv/lib/python3.12/site-packages/nvidia/cublas/lib:/usr/lib/wsl/lib'
++cd "$PROJECT/aitestbed"
++PYTHON=/home/qinyi/6G-Testbed/venv/bin/python
++
++$PYTHON -m minicpm_split.prepare_rtc --assets '/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI' --runtime /home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516 --output results/new_minicpm_rtc
++export MINICPM_RTC_CONFIG="$PROJECT/aitestbed/results/new_minicpm_rtc/configs/native4_model.json"
++
++# 终端一：原版 server，选择 MiniCPM codec；单帧改为 single 配置。
++sudo -n env "PYTHONPATH=$PYTHONPATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" "MINICPM_RTC_CONFIG=$MINICPM_RTC_CONFIG" "$PYTHON" -m server.realtime_vlm_server --model minicpm --config results/new_minicpm_rtc/configs/native4_scenarios.yaml --signaling-port 18124
++
++# 终端二：原版 orchestrator 的 25 视频无扰动基线。
++$PYTHON -m minicpm_split.rtc_batch --root results/new_minicpm_rtc --mode native4 --profiles no_emulation --capture-root /home/qinyi/minicpm_rtc_captures/new_run --runs 25
++
++# 完成后独立重评分和原始/置零特征字节核验；需原生运行时及帧缓存。
++$PYTHON -m minicpm_split.rtc_report --root results/new_minicpm_rtc --modes native4 --profiles no_emulation --reencode --output results/new_minicpm_rtc/audit
++```
++
++仅重评分已保存的答案及缺包布局可省略 `--reencode`；使用 `--questions` 指定
++同哈希的可移植 manifest。部分丢包的实际特征字节重建需要 `--reencode`。
++单帧、四帧必须与各自服务器 mode 匹配；切换 mode 前停止本次服务器并重启。
++同一条件需要继续时可使用原版 `--resume`，不要覆盖先前证据或静默重试。
++
++后续受扰动批次将使用原版 `lossy`、`5qi_7`、`congested`，并在正式回放口径
++选定后启动；不得改小带宽/时延/队列扰动以获取预期曲线。
++
++## 2026-10-10 网络诊断（四帧，仅一个视频/5 问）
++
++| 原版 profile | 答对/5 | 配置随机丢包 | 实际不可用特征包 |
++|---|---:|---:|---:|
++| no_emulation | 4 | 0% | 0.000% |
++| lossy | 4 | 10% | 10.060% |
++| 5qi_7 | 4 | 0.1% | 87.058% |
++| congested | 2 | gemodel 3% 设定 | 98.389% |
++
++这是链路诊断，不能用五题准确率代替完整 125 题性能。20 条输入已逐题重新编码，
++按记录缺包索引置零，全部原始及实际受损特征哈希复现。无扰动前三问的首步完整
++logits 哈希与独立 Linux 未拆分 helper 一致。四组均有 UDP/RTP 抓包和 tc 丢包证据。
++
++`5qi_7` 的原版队列只有 1000 包，`congested` 为 1 Mbit/s、200 包队列；
++大 F32 突发可造成额外队列溢出。因此配置随机丢包率、tc 总丢包计数、
++抓到的 RTP 包数及模型最终可用特征包数必须分别报告，不能互相替代。
++
++当前保存的 `metadata_to_result_seconds` 从服务器元数据登记到完整答案生成，
++不包含端侧编码与答案回传，不能命名为端到端延迟。`server_inference_seconds`
++包含模型串行 GPU 队列等待。答案一次性回传，没有逐 token TTFT 测量。
++原版视频级日志保留，但五个独立问题的结果消息间隔不能解释为文本生成 stall。
++
++该 Linux CUDA 基线与此前 Windows Vulkan 离线实验分开比较。完整 profile
++准确率必须以同一 Linux/RTC 无扰动条件为基准，并保留失败、缺失及原始回答。
+diff --git a/aitestbed/orchestrator.py b/aitestbed/orchestrator.py
+--- a/aitestbed/orchestrator.py
++++ b/aitestbed/orchestrator.py
+@@ -307,7 +307,7 @@
+             disable_ingress=disable_ingress,
+         )
+ 
+-    def get_client(self, provider: str):
++    def get_client(self, provider: str, model: Optional[str] = None):
+         """Get or create an LLM client for the given provider."""
+         if provider not in self._clients:
+             if provider == "openai":
+@@ -323,7 +323,7 @@
+             elif provider == "azure_inference":
+                 self._clients[provider] = AzureInferenceClient()
+             elif provider == "vlm-local":
+-                self._clients[provider] = RealtimeWebRTCVLMClient()
++                self._clients[provider] = RealtimeWebRTCVLMClient(model=model or "liquid")
+             elif provider == "openai_token":
+                 self._clients[provider] = OpenAITokenClient()
+             else:
+@@ -436,7 +436,7 @@
+ 
+         # Get provider and client
+         provider = scenario_config.get("provider", "openai")
+-        client = self.get_client(provider)
++        client = self.get_client(provider, model=scenario_config.get("model"))
+ 
+         # Create scenario instance
+         scenario_config["scenario_id"] = scenario_name

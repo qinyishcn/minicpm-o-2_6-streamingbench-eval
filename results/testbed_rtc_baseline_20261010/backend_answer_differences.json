@@ -1,0 +1,9 @@
+[
+  {
+    "mode": "native4",
+    "question_id": "Real-Time Visual Understanding_sample_24_3",
+    "label": "D",
+    "windows_vulkan": "B",
+    "linux_cuda": "D"
+  }
+]

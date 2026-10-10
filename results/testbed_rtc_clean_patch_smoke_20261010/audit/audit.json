@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "scope": "diagnostic subset",
+  "videos_per_condition": 1,
+  "conditions": 2,
+  "answers": 10,
+  "reencoded_feature_audit": true,
+  "frame_cache_verified": true,
+  "source_configs": {
+    "native4": {
+      "runtime": "/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516",
+      "model": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/Model-7.6B-Q4_K_M.gguf",
+      "projector": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/mmproj-model-f16.gguf",
+      "tokenizer": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/tmp/minicpm_testbed_patch_validation_20261010_v2/aitestbed/models/minicpm-o-tokenizer-only.gguf",
+      "questions": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/results/q4_k_m_single_native/questions_manifest.json",
+      "frames": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/data/native_frames",
+      "mode": "native4",
+      "media_drain_seconds": 5.0,
+      "control_timeout_seconds": 60,
+      "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd"
+    }
+  },
+  "summary": [
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 4,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 0,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 0,
+      "mean_edge_encode_seconds": 1.4952539610003441,
+      "mean_server_inference_seconds": 1.1769030458000997,
+      "mean_metadata_to_result_seconds": 3.641801638799916,
+      "missing_feature_percent": 0.0,
+      "zeroed_feature_percent": 0.0
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 4,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 5064,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 5469120,
+      "mean_edge_encode_seconds": 1.4509116558001551,
+      "mean_server_inference_seconds": 1.0849817023998185,
+      "mean_metadata_to_result_seconds": 3.936082073399666,
+      "missing_feature_percent": 9.934281510544384,
+      "zeroed_feature_percent": 9.934779575892858
+    }
+  ],
+  "question_checks": [
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "7a104a84d3bd04453312139775e93c9bf041ccdc195932bbcea3cf1e300bd41d",
+      "missing_packets": 1034,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "201388b77a5dfb814b64d743ccae71bf3e012ebc79e4d095f279d242807f8ec0",
+      "missing_packets": 998,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "91af31642ca1e463dc47cfa7b0601893a612b2f7cbaffd4ccdf26609b0eaf248",
+      "missing_packets": 1012,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "f79f51342f364976db2bba992cc5c204f9faac6ec870b6cedf81ad306cc903b6",
+      "missing_packets": 994,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": true
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "99c2dffc1bc03d32c85a8d8c6031dbef81cf06a30f80713eeaaccde525727e9d",
+      "missing_packets": 1026,
+      "zero_fill_hash_reconstructed": true
+    }
+  ],
+  "timing_definition": {
+    "mean_metadata_to_result_seconds": "server metadata registration to complete answer; excludes edge encoding and return trip",
+    "mean_server_inference_seconds": "native language-model call including serial GPU queue wait",
+    "mean_edge_encode_seconds": "native vision preprocessing, encoding and feature copy"
+  }
+}

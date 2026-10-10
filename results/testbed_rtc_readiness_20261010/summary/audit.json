@@ -1,0 +1,288 @@
+{
+  "status": "passed",
+  "scope": "diagnostic subset",
+  "videos_per_condition": 1,
+  "conditions": 4,
+  "answers": 20,
+  "reencoded_feature_audit": false,
+  "frame_cache_verified": false,
+  "source_configs": {
+    "native4": {
+      "runtime": "/home/qinyi/.cache/minicpm-native/b11516-cuda12.8/llama-b11516",
+      "model": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/Model-7.6B-Q4_K_M.gguf",
+      "projector": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/models/mmproj-model-f16.gguf",
+      "tokenizer": "/mnt/c/Users/qinyi/Documents/AItest 2/6G-Testbed/aitestbed/models/minicpm-o-tokenizer-only.gguf",
+      "questions": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/results/q4_k_m_single_native/questions_manifest.json",
+      "frames": "/mnt/c/Users/qinyi/Documents/ChatGPT/mobileAI/data/native_frames",
+      "mode": "native4",
+      "media_drain_seconds": 5.0,
+      "control_timeout_seconds": 60,
+      "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd"
+    }
+  },
+  "summary": [
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 4,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 0,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 0,
+      "mean_edge_encode_seconds": 1.4931244730000117,
+      "mean_server_inference_seconds": 1.168202529600012,
+      "mean_metadata_to_result_seconds": 3.6325708469999993,
+      "missing_feature_percent": 0.0,
+      "zeroed_feature_percent": 0.0
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 4,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 5128,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 5538240,
+      "mean_edge_encode_seconds": 1.4641966570000136,
+      "mean_server_inference_seconds": 1.1271146153999894,
+      "mean_metadata_to_result_seconds": 5.020049704800011,
+      "missing_feature_percent": 10.059833251593918,
+      "zeroed_feature_percent": 10.060337611607142
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 4,
+      "accuracy_percent": 80.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 44378,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 47927688,
+      "mean_edge_encode_seconds": 1.507689531000017,
+      "mean_server_inference_seconds": 1.1586103583999943,
+      "mean_metadata_to_result_seconds": 4.256355356599999,
+      "missing_feature_percent": 87.0583619421285,
+      "zeroed_feature_percent": 87.06172398158482
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "questions": 5,
+      "answers_received": 5,
+      "correct": 2,
+      "accuracy_percent": 40.0,
+      "invalid_responses": 0,
+      "missing_answers": 0,
+      "feature_packets": 50975,
+      "missing_feature_packets": 50154,
+      "feature_bytes": 55050240,
+      "zeroed_feature_bytes": 54163560,
+      "mean_edge_encode_seconds": 1.7137155802000053,
+      "mean_server_inference_seconds": 1.3796194159999913,
+      "mean_metadata_to_result_seconds": 13.595971623599997,
+      "missing_feature_percent": 98.38940657184895,
+      "zeroed_feature_percent": 98.38932582310268
+    }
+  ],
+  "question_checks": [
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "db1808eaa67416babe073948889865d8c0e12588a098e9e540c99c4e50d03237",
+      "missing_packets": 1017,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "cd6b266da92086769770d5fa18ae806e355c3b09e524a4dad0ae69318ccbdffe",
+      "missing_packets": 8778,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "question_id": "Real-Time Visual Understanding_sample_1_1",
+      "original_feature_sha256": "c1dcb66b400f0442625cf13220e53349ec59c27da6792998f52948c0db12b982",
+      "feature_sha256": "6133c873852ae34adc489704902b02e985243349650a3e7f3a89bda206b67eeb",
+      "missing_packets": 9999,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "268410d02c7fcf19c647f459be0551bd9889d98b29786bd4d6f4d1ce0374e1ed",
+      "missing_packets": 1027,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "70dcac8467c390ce63c0a1efc0f2c226afb2feb05c7ee592a445728d7bd2d4bf",
+      "missing_packets": 8928,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "question_id": "Real-Time Visual Understanding_sample_1_2",
+      "original_feature_sha256": "ea89c9c8fac72c7ba4a3d26dd6d890406a6791ade903f493f655cc64419e8d76",
+      "feature_sha256": "5c648ca678aceb2901f526ad67a3af46d7ec41a731f81107420f66d0d754f9c2",
+      "missing_packets": 10012,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "797b0ff82af27b897f60015d1e44b056f7ccc2592d1319686e609e736068d2f0",
+      "missing_packets": 1054,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "77ac4902d1233615f4a627870cc73978a0c5bc80bfcb5eaa9608c34ddfff108f",
+      "missing_packets": 8930,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "question_id": "Real-Time Visual Understanding_sample_1_3",
+      "original_feature_sha256": "28e40ec93bf98de43516a7696635b418c3dfe176b9d41547f75403bb4e99f680",
+      "feature_sha256": "f4a1fe05d86cee692b39cb2b8627c754d9dbfe65dc2bbe70c4d7d42ecba7a148",
+      "missing_packets": 10082,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "9e89d292770496c67b09f866a2f10b2a30285896163f3153979aac9ba63a6b0e",
+      "missing_packets": 1005,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "568b7ba3624679603125e7fb87c89f896db4d9c357c9dac4bc0f98b9712682e8",
+      "missing_packets": 8908,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "question_id": "Real-Time Visual Understanding_sample_1_4",
+      "original_feature_sha256": "f8a06486b08612f80d00d72396cf7f402ef3ff57c85b81ee8f5efa427a377aa2",
+      "feature_sha256": "8131d7666c9c4dfb6d62033ea5abd3d5f23eb06adae55850ecb06855da3e609c",
+      "missing_packets": 10062,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "no_emulation",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "missing_packets": 0,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "lossy",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "fe7f8ece67adbcc4acf81321c52bfe2cb37428f2ee3bbc693413c77b1954131f",
+      "missing_packets": 1025,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "5qi_7",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "f63898ea0cf36197224c92f34837cf0d6455953f7b755f6b05f1d6324618cccb",
+      "missing_packets": 8834,
+      "zero_fill_hash_reconstructed": false
+    },
+    {
+      "mode": "native4",
+      "profile": "congested",
+      "question_id": "Real-Time Visual Understanding_sample_1_5",
+      "original_feature_sha256": "e9850c087ceb6d77ad73ee46217394b77e2db5304eaab2cf161fdb0556e276f7",
+      "feature_sha256": "902152c7874d7f606655128ea29e8e956fa7b8eefdb2bdb5ee8e1eb1fe49004e",
+      "missing_packets": 9999,
+      "zero_fill_hash_reconstructed": false
+    }
+  ],
+  "timing_definition": {
+    "mean_metadata_to_result_seconds": "server metadata registration to complete answer; excludes edge encoding and return trip",
+    "mean_server_inference_seconds": "native language-model call including serial GPU queue wait",
+    "mean_edge_encode_seconds": "native vision preprocessing, encoding and feature copy"
+  }
+}

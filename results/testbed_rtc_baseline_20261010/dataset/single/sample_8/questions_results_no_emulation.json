@@ -1,0 +1,527 @@
+[
+    {
+        "video_id": 8,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_8_1",
+                "task_type": "Attribute Perception",
+                "question": "What is the color and number of the football player's jersey who is preparing for a penalty kick?",
+                "time_stamp": "00:00:05",
+                "answer": "D",
+                "options": [
+                    "A. Red, 10.",
+                    "B. Blue, 14.",
+                    "C. Black, 22.",
+                    "D. White, 26."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 8,
+                "question_number": 1,
+                "timestamp_seconds": 5,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_8_1",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 299,
+                            "actual_seconds": 4.988316666666667,
+                            "query_seconds": 5,
+                            "source_fps": 59.94005994005994,
+                            "source_fps_rational": "60000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "52deb1e5401978104e090063e4111840be34a08387784d58bc4b55abc84228b4"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "086e091fa0ae90e050228aef0bd9814a42cee9cf4757f974c3b7a4e8282d8589",
+                    "original_feature_sha256": "086e091fa0ae90e050228aef0bd9814a42cee9cf4757f974c3b7a4e8282d8589",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.3988558410001133,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "83f300f0b4cd96c694f91dddc131b86b2cac029ef0da933b857d43e51f033f2d",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 37.194278717041016
+                            },
+                            {
+                                "token": 32,
+                                "logit": 29.47943687438965
+                            },
+                            {
+                                "token": 34,
+                                "logit": 26.606952667236328
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.555009841918945
+                            },
+                            {
+                                "token": 785,
+                                "logit": 25.142663955688477
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 24.23978042602539
+                            },
+                            {
+                                "token": 40,
+                                "logit": 22.56057357788086
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 21.934206008911133
+                            }
+                        ],
+                        "prompt_tokens": 364,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4932792569998128,
+                    "metadata_to_result_seconds": 0.7771846280002137
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_8_2",
+                "task_type": "Attribute Perception",
+                "question": "What name and number are on the goalkeeper's jersey righ now?",
+                "time_stamp": "00:00:14",
+                "answer": "D",
+                "options": [
+                    "A. COSTA, 26.",
+                    "B. RONALDO, 7.",
+                    "C. MESSI, 10.",
+                    "D. DIOGO COSTA, 22."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 8,
+                "question_number": 2,
+                "timestamp_seconds": 14,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_8_2",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 839,
+                            "actual_seconds": 13.997316666666666,
+                            "query_seconds": 14,
+                            "source_fps": 59.94005994005994,
+                            "source_fps_rational": "60000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "63cf26a0df72c7aec1dddb546176945ea84f31b81e5f08e61dbb1af75e8f91b6"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "29bed6b12b5af5b92805432de4117f10e0b5ca2258b8b7c83b3b1a564b91cb3c",
+                    "original_feature_sha256": "29bed6b12b5af5b92805432de4117f10e0b5ca2258b8b7c83b3b1a564b91cb3c",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.2296172410001418,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "b34bccd838f93a58fbdab48dc989048f72fc791135df6d482023427404bc0fb6",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 41.74536895751953
+                            },
+                            {
+                                "token": 32,
+                                "logit": 29.1387996673584
+                            },
+                            {
+                                "token": 785,
+                                "logit": 28.58292007446289
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 26.095884323120117
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.35236358642578
+                            },
+                            {
+                                "token": 5341,
+                                "logit": 24.542898178100586
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 24.207462310791016
+                            },
+                            {
+                                "token": 40,
+                                "logit": 23.75838851928711
+                            }
+                        ],
+                        "prompt_tokens": 367,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4914745139999468,
+                    "metadata_to_result_seconds": 1.055313108000064
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_8_3",
+                "task_type": "Text-Rich Understanding",
+                "question": "What advertisement is visible around the perimeter of the field right now?",
+                "time_stamp": "00:01:25",
+                "answer": "C",
+                "options": [
+                    "A. \"Airbnb\".",
+                    "B. \"Expedia\".",
+                    "C. \"Booking.com\".",
+                    "D. \"TripAdvisor\"."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 8,
+                "question_number": 3,
+                "timestamp_seconds": 85,
+                "minicpm": "C",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_8_3",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 5094,
+                            "actual_seconds": 84.9849,
+                            "query_seconds": 85,
+                            "source_fps": 59.94005994005994,
+                            "source_fps_rational": "60000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "9eb6fe90d7951368641eb0d722314989a70e50f2bd2504c480531ef17593ebf3"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "f5c02cf90b613b8aef9c939076375eba6a3d8cbd1052136dfcaaf9c94a127b43",
+                    "original_feature_sha256": "f5c02cf90b613b8aef9c939076375eba6a3d8cbd1052136dfcaaf9c94a127b43",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.4962577539999984,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "C",
+                    "result": {
+                        "text": "C",
+                        "token_ids": [
+                            34
+                        ],
+                        "first_logits_sha256": "f9715bad3a351a128546e5a1f120fa67ce3f0452f39a467a9fc2f4a2d6726e40",
+                        "first_logits_top8": [
+                            {
+                                "token": 34,
+                                "logit": 39.0972785949707
+                            },
+                            {
+                                "token": 32,
+                                "logit": 26.082897186279297
+                            },
+                            {
+                                "token": 35,
+                                "logit": 25.58069610595703
+                            },
+                            {
+                                "token": 785,
+                                "logit": 24.34383773803711
+                            },
+                            {
+                                "token": 33,
+                                "logit": 23.02817726135254
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 22.4669132232666
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 21.669694900512695
+                            },
+                            {
+                                "token": 641,
+                                "logit": 20.361486434936523
+                            }
+                        ],
+                        "prompt_tokens": 349,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.45282131900012246,
+                    "metadata_to_result_seconds": 1.0160223000002588
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_8_4",
+                "task_type": "Attribute Perception",
+                "question": "What colors are present on the shirt of the fan holding the scarf?",
+                "time_stamp": "00:02:43",
+                "answer": "D",
+                "options": [
+                    "A. Red with white trimming.",
+                    "B. Green with red trimming.",
+                    "C. Yellow with red trimming.",
+                    "D. Red with green trimming."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 8,
+                "question_number": 4,
+                "timestamp_seconds": 163,
+                "minicpm": "A",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_8_4",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 9770,
+                            "actual_seconds": 162.99616666666665,
+                            "query_seconds": 163,
+                            "source_fps": 59.94005994005994,
+                            "source_fps_rational": "60000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "6be93bf3fd172269db55fc18aa640e81ca2a14b81fba0ec5476047117d9f6f01"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "406276501afdfb782ba11e0cf604690370f0f02f01280f80dee6342a90cdf81e",
+                    "original_feature_sha256": "406276501afdfb782ba11e0cf604690370f0f02f01280f80dee6342a90cdf81e",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.4929866829997991,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "A",
+                    "result": {
+                        "text": "A",
+                        "token_ids": [
+                            32
+                        ],
+                        "first_logits_sha256": "9f12648a4d4a9b07ef8f6bec5790875dbd9116f5776faf829d22162dfae29f05",
+                        "first_logits_top8": [
+                            {
+                                "token": 32,
+                                "logit": 32.954864501953125
+                            },
+                            {
+                                "token": 35,
+                                "logit": 28.25079345703125
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.48480987548828
+                            },
+                            {
+                                "token": 34,
+                                "logit": 25.019126892089844
+                            },
+                            {
+                                "token": 785,
+                                "logit": 19.268787384033203
+                            },
+                            {
+                                "token": 36,
+                                "logit": 18.44300651550293
+                            },
+                            {
+                                "token": 49,
+                                "logit": 18.33217430114746
+                            },
+                            {
+                                "token": 50,
+                                "logit": 17.97520637512207
+                            }
+                        ],
+                        "prompt_tokens": 354,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.2312817309998536,
+                    "metadata_to_result_seconds": 0.7771290610003234
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_8_5",
+                "task_type": "Event Understanding",
+                "question": "What is the outcome of Bernardo's penalty kick?",
+                "time_stamp": "00:04:16",
+                "answer": "D",
+                "options": [
+                    "A. The ball hits the post.",
+                    "B. The ball goes out of bounds.",
+                    "C. The goalkeeper saves the ball.",
+                    "D. The ball hits the back of the net."
+                ],
+                "frames_required": "multiple",
+                "temporal_clue_type": "Prior",
+                "video_id": 8,
+                "question_number": 5,
+                "timestamp_seconds": 256,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_8_5",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 15344,
+                            "actual_seconds": 255.98906666666667,
+                            "query_seconds": 256,
+                            "source_fps": 59.94005994005994,
+                            "source_fps_rational": "60000/1001",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "4a8b7a721768612a5eebdab41316a4b745e2a2b3cba676d994425932862b758f"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "aa134f3f3fc4bf78e9f1dfb9f1b2679b416abb27060691d5ed8d8e870dc07151",
+                    "original_feature_sha256": "aa134f3f3fc4bf78e9f1dfb9f1b2679b416abb27060691d5ed8d8e870dc07151",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.4743864849997408,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "aa57f0fe7263d622fe149a1dfc6dcffea52135eda06f57076a260538d761a9e8",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 33.77165222167969
+                            },
+                            {
+                                "token": 34,
+                                "logit": 29.952678680419922
+                            },
+                            {
+                                "token": 32,
+                                "logit": 29.323596954345703
+                            },
+                            {
+                                "token": 33,
+                                "logit": 24.168987274169922
+                            },
+                            {
+                                "token": 785,
+                                "logit": 22.852176666259766
+                            },
+                            {
+                                "token": 40,
+                                "logit": 21.438215255737305
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 20.593868255615234
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 19.964752197265625
+                            }
+                        ],
+                        "prompt_tokens": 359,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.49761199700014913,
+                    "metadata_to_result_seconds": 5.596151639999789
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,310 @@
+{
+  "scope": "one video, five questions, native4; four-profile diagnostics only, not full benchmark",
+  "audit": "passed",
+  "profile_summary": {
+    "no_emulation": {
+      "questions": 5,
+      "correct": 4,
+      "missing_feature_packets": 0,
+      "total_feature_packets": 50975,
+      "missing_feature_percent": 0.0,
+      "maximum_captured_rtp_ip_bytes": 1167,
+      "capture_message_groups": 5,
+      "captured_unique_rtp_sequences": 50975,
+      "qdisc_max_observed_drops": {
+        "noqueue": 0
+      },
+      "checks": [
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_1",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 0,
+          "total_packets": 10195,
+          "zeroed_bytes": 0,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 2.7552775799999836
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_2",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 0,
+          "total_packets": 10195,
+          "zeroed_bytes": 0,
+          "correct": true,
+          "raw_response": "C",
+          "label": "C",
+          "metadata_to_result_seconds": 3.446115031999966
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_3",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 0,
+          "total_packets": 10195,
+          "zeroed_bytes": 0,
+          "correct": false,
+          "raw_response": "C",
+          "label": "D",
+          "metadata_to_result_seconds": 2.496226054000033
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_4",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 0,
+          "total_packets": 10195,
+          "zeroed_bytes": 0,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 3.2642261789999907
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_5",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 0,
+          "total_packets": 10195,
+          "zeroed_bytes": 0,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 6.201009390000024
+        }
+      ]
+    },
+    "lossy": {
+      "questions": 5,
+      "correct": 4,
+      "missing_feature_packets": 5128,
+      "total_feature_packets": 50975,
+      "missing_feature_percent": 10.059833251593918,
+      "maximum_captured_rtp_ip_bytes": 1167,
+      "capture_message_groups": 5,
+      "captured_unique_rtp_sequences": 45847,
+      "qdisc_max_observed_drops": {
+        "netem": 5618,
+        "noqueue": 0
+      },
+      "checks": [
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_1",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 1017,
+          "total_packets": 10195,
+          "zeroed_bytes": 1098360,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 2.5352482989999885
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_2",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 1027,
+          "total_packets": 10195,
+          "zeroed_bytes": 1109160,
+          "correct": true,
+          "raw_response": "C",
+          "label": "C",
+          "metadata_to_result_seconds": 3.7860464359999924
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_3",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 1054,
+          "total_packets": 10195,
+          "zeroed_bytes": 1138320,
+          "correct": false,
+          "raw_response": "C",
+          "label": "D",
+          "metadata_to_result_seconds": 5.789046344000042
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_4",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 1005,
+          "total_packets": 10195,
+          "zeroed_bytes": 1085400,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 5.314922743000011
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_5",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 1025,
+          "total_packets": 10195,
+          "zeroed_bytes": 1107000,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 7.6749847020000175
+        }
+      ]
+    },
+    "5qi_7": {
+      "questions": 5,
+      "correct": 4,
+      "missing_feature_packets": 44378,
+      "total_feature_packets": 50975,
+      "missing_feature_percent": 87.0583619421285,
+      "maximum_captured_rtp_ip_bytes": 1167,
+      "capture_message_groups": 5,
+      "captured_unique_rtp_sequences": 7658,
+      "qdisc_max_observed_drops": {
+        "netem": 43355,
+        "noqueue": 0
+      },
+      "checks": [
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_1",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 8778,
+          "total_packets": 10195,
+          "zeroed_bytes": 9480240,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 2.89736461800004
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_2",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 8928,
+          "total_packets": 10195,
+          "zeroed_bytes": 9641688,
+          "correct": true,
+          "raw_response": "C",
+          "label": "C",
+          "metadata_to_result_seconds": 4.229654874999994
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_3",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 8930,
+          "total_packets": 10195,
+          "zeroed_bytes": 9644400,
+          "correct": false,
+          "raw_response": "C",
+          "label": "D",
+          "metadata_to_result_seconds": 3.382493194999995
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_4",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 8908,
+          "total_packets": 10195,
+          "zeroed_bytes": 9620640,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 4.529673023999976
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_5",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 8834,
+          "total_packets": 10195,
+          "zeroed_bytes": 9540720,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 6.2425910709999926
+        }
+      ]
+    },
+    "congested": {
+      "questions": 5,
+      "correct": 2,
+      "missing_feature_packets": 50154,
+      "total_feature_packets": 50975,
+      "missing_feature_percent": 98.38940657184895,
+      "maximum_captured_rtp_ip_bytes": 1167,
+      "capture_message_groups": 5,
+      "captured_unique_rtp_sequences": 986,
+      "qdisc_max_observed_drops": {
+        "htb": 50066,
+        "netem": 50066,
+        "noqueue": 0
+      },
+      "checks": [
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_1",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 9999,
+          "total_packets": 10195,
+          "zeroed_bytes": 10798368,
+          "correct": true,
+          "raw_response": "D",
+          "label": "D",
+          "metadata_to_result_seconds": 4.258537363000016
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_2",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 10012,
+          "total_packets": 10195,
+          "zeroed_bytes": 10812408,
+          "correct": true,
+          "raw_response": "C",
+          "label": "C",
+          "metadata_to_result_seconds": 8.713168691000021
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_3",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 10082,
+          "total_packets": 10195,
+          "zeroed_bytes": 10888008,
+          "correct": false,
+          "raw_response": "C",
+          "label": "D",
+          "metadata_to_result_seconds": 20.93914925499996
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_4",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 10062,
+          "total_packets": 10195,
+          "zeroed_bytes": 10866408,
+          "correct": false,
+          "raw_response": "A",
+          "label": "D",
+          "metadata_to_result_seconds": 18.440513613999997
+        },
+        {
+          "question_id": "Real-Time Visual Understanding_sample_1_5",
+          "original_hash_verified": true,
+          "zero_fill_hash_verified": true,
+          "missing_packets": 9999,
+          "total_packets": 10195,
+          "zeroed_bytes": 10798368,
+          "correct": false,
+          "raw_response": "C",
+          "label": "D",
+          "metadata_to_result_seconds": 15.628489194999986
+        }
+      ]
+    }
+  }
+}

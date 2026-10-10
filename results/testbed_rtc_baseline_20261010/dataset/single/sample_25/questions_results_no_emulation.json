@@ -1,0 +1,527 @@
+[
+    {
+        "video_id": 25,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_25_1",
+                "task_type": "Attribute Perception",
+                "question": "What color is the coat worn by the man standing in front of the blue background with the text __AMSAY in 10_?",
+                "time_stamp": "00:00:03",
+                "answer": "D",
+                "options": [
+                    "A. Black.",
+                    "B. Dark blue.",
+                    "C. Light grey.",
+                    "D. White."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Prior",
+                "video_id": 25,
+                "question_number": 1,
+                "timestamp_seconds": 3,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_25_1",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 72,
+                            "actual_seconds": 3.0,
+                            "query_seconds": 3,
+                            "source_fps": 24.0,
+                            "source_fps_rational": "24",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "3cb8d22b30f36a043f1493081dde9effb05edf4624b3fa158a3c4cf33291f31e"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "254b06c26e6fa1b000398a01616c0b9c5a23940a46b929f667c5d3728d1dae95",
+                    "original_feature_sha256": "254b06c26e6fa1b000398a01616c0b9c5a23940a46b929f667c5d3728d1dae95",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.5879574239997964,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "defac75ac4cc88332ea91570f8c5566dd7f7339bfa8fc6f1c0e5cb43f77f307b",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 35.059051513671875
+                            },
+                            {
+                                "token": 34,
+                                "logit": 25.839187622070312
+                            },
+                            {
+                                "token": 32,
+                                "logit": 24.679893493652344
+                            },
+                            {
+                                "token": 33,
+                                "logit": 22.941627502441406
+                            },
+                            {
+                                "token": 785,
+                                "logit": 22.03763771057129
+                            },
+                            {
+                                "token": 40,
+                                "logit": 19.695037841796875
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 19.531085968017578
+                            },
+                            {
+                                "token": 44,
+                                "logit": 19.235719680786133
+                            }
+                        ],
+                        "prompt_tokens": 358,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.5120117020001089,
+                    "metadata_to_result_seconds": 0.7975057129997367
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_25_2",
+                "task_type": "Attribute Perception",
+                "question": "What color shirt is the person wearing right now?",
+                "time_stamp": "00:02:10",
+                "answer": "D",
+                "options": [
+                    "A. Light blue.",
+                    "B. White.",
+                    "C. Green.",
+                    "D. Dark navy blue."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 25,
+                "question_number": 2,
+                "timestamp_seconds": 130,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_25_2",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 3120,
+                            "actual_seconds": 130.0,
+                            "query_seconds": 130,
+                            "source_fps": 24.0,
+                            "source_fps_rational": "24",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "2e2e94b551b1ea8c260290e1c8bcd035962365c899fa74b80d26921f54093407"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "91d5ca209f8593405784c6addc1c21676f23998e9e2c9693775f07464aecd458",
+                    "original_feature_sha256": "91d5ca209f8593405784c6addc1c21676f23998e9e2c9693775f07464aecd458",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.2327934089998962,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "5e5cf41f78164080720635393e7beae3fa14bbcd17f07100fd894a4dafb565c6",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 37.246070861816406
+                            },
+                            {
+                                "token": 32,
+                                "logit": 28.787460327148438
+                            },
+                            {
+                                "token": 785,
+                                "logit": 26.286760330200195
+                            },
+                            {
+                                "token": 34,
+                                "logit": 24.78691864013672
+                            },
+                            {
+                                "token": 33,
+                                "logit": 24.532161712646484
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 23.386962890625
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 23.373262405395508
+                            },
+                            {
+                                "token": 5341,
+                                "logit": 22.408716201782227
+                            }
+                        ],
+                        "prompt_tokens": 341,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4424319130002914,
+                    "metadata_to_result_seconds": 1.0129586779999045
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_25_3",
+                "task_type": "Object Perception",
+                "question": "What is the person holding with his left hand right now?",
+                "time_stamp": "00:02:44",
+                "answer": "D",
+                "options": [
+                    "A. A pot lid.",
+                    "B. A wooden spoon.",
+                    "C. A bowl of peas.",
+                    "D. A frying pan handle."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 25,
+                "question_number": 3,
+                "timestamp_seconds": 164,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_25_3",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 3936,
+                            "actual_seconds": 164.0,
+                            "query_seconds": 164,
+                            "source_fps": 24.0,
+                            "source_fps_rational": "24",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "1d7eecf4ea870f06d8927bb3ab44753e99af763ccadc7e27eb8a17846d2c945e"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "66f84c6ed7a9aeda8496307a3a0806268ff1f123609a3b0fac76de45c3746c59",
+                    "original_feature_sha256": "66f84c6ed7a9aeda8496307a3a0806268ff1f123609a3b0fac76de45c3746c59",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.5058009819999825,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "8c5b898b1836702df90cf8aad3c0521ce38ca901d6a595edf408a313ad83bed5",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 33.74910354614258
+                            },
+                            {
+                                "token": 32,
+                                "logit": 30.362628936767578
+                            },
+                            {
+                                "token": 33,
+                                "logit": 26.892013549804688
+                            },
+                            {
+                                "token": 34,
+                                "logit": 24.30388641357422
+                            },
+                            {
+                                "token": 785,
+                                "logit": 23.386703491210938
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 20.700950622558594
+                            },
+                            {
+                                "token": 67,
+                                "logit": 20.55121612548828
+                            },
+                            {
+                                "token": 40,
+                                "logit": 20.48528289794922
+                            }
+                        ],
+                        "prompt_tokens": 350,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4970987049996438,
+                    "metadata_to_result_seconds": 1.0315960410002845
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_25_4",
+                "task_type": "Object Perception",
+                "question": "What is the man adding to the pan with oil?",
+                "time_stamp": "00:05:29",
+                "answer": "D",
+                "options": [
+                    "A. Diced vegetables.",
+                    "B. Pasta.",
+                    "C. Herbs.",
+                    "D. Diced meat."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 25,
+                "question_number": 4,
+                "timestamp_seconds": 329,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_25_4",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 7896,
+                            "actual_seconds": 329.0,
+                            "query_seconds": 329,
+                            "source_fps": 24.0,
+                            "source_fps_rational": "24",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "7a2e2003c35a0b69e5bfc96897e1f2c80b47c3326b84a9830706b4785f92081a"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "27913b63a45369f78fd566f8201e42556506f9f54061c4d33c1ff30e79432d1a",
+                    "original_feature_sha256": "27913b63a45369f78fd566f8201e42556506f9f54061c4d33c1ff30e79432d1a",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.4639660699999695,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "de90fe4f39cc344bb6399a3bc178455cefa25b8e9880086af69ffaeba25f38ba",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 37.37255859375
+                            },
+                            {
+                                "token": 32,
+                                "logit": 30.204492568969727
+                            },
+                            {
+                                "token": 33,
+                                "logit": 26.19667625427246
+                            },
+                            {
+                                "token": 785,
+                                "logit": 25.431869506835938
+                            },
+                            {
+                                "token": 34,
+                                "logit": 23.919109344482422
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 23.486099243164062
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 23.433271408081055
+                            },
+                            {
+                                "token": 641,
+                                "logit": 22.253828048706055
+                            }
+                        ],
+                        "prompt_tokens": 344,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.20742683100024806,
+                    "metadata_to_result_seconds": 0.7696420219999709
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_25_5",
+                "task_type": "Object Perception",
+                "question": "What ingredients are being cooked in the frying pan?",
+                "time_stamp": "00:08:04",
+                "answer": "D",
+                "options": [
+                    "A. Chunks of beef, onion slices, and bits of pepper.",
+                    "B. Slices of chicken, garlic cloves, and bits of zucchini.",
+                    "C. Pieces of fish, broccoli florets, and bits of carrot.",
+                    "D. Chunks of ham, mushroom slices, and bits of pepper."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 25,
+                "question_number": 5,
+                "timestamp_seconds": 484,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_25_5",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 11616,
+                            "actual_seconds": 484.0,
+                            "query_seconds": 484,
+                            "source_fps": 24.0,
+                            "source_fps_rational": "24",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "fa02b3600d953ac3a18cbcb4b158cdcb0f1bed3f568fed55add1a8d0cb723744"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "631df8a6d3959f38d04b4f38ad4cdaa13c049efb2059573a7dc7c98ea43cb130",
+                    "original_feature_sha256": "631df8a6d3959f38d04b4f38ad4cdaa13c049efb2059573a7dc7c98ea43cb130",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.49832150100019135,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "c27eff8a64ad5140a434ba92bde43fb2087fef34620e500b3c7f3352914936b8",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 36.081336975097656
+                            },
+                            {
+                                "token": 32,
+                                "logit": 27.398880004882812
+                            },
+                            {
+                                "token": 33,
+                                "logit": 24.864042282104492
+                            },
+                            {
+                                "token": 34,
+                                "logit": 24.385204315185547
+                            },
+                            {
+                                "token": 785,
+                                "logit": 22.552989959716797
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 21.782453536987305
+                            },
+                            {
+                                "token": 40,
+                                "logit": 21.463815689086914
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 20.869125366210938
+                            }
+                        ],
+                        "prompt_tokens": 383,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.3808191819998683,
+                    "metadata_to_result_seconds": 5.470234032999997
+                }
+            }
+        ]
+    }
+]

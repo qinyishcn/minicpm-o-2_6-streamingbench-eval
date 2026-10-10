@@ -1,0 +1,101 @@
+{
+  "conditions": {
+    "zero_single_fresh": {
+      "questions": 125,
+      "correct": 73,
+      "accuracy": 0.584,
+      "predictions": {
+        "B": 29,
+        "A": 30,
+        "D": 30,
+        "C": 36
+      }
+    },
+    "text_only": {
+      "questions": 125,
+      "correct": 70,
+      "accuracy": 0.56,
+      "predictions": {
+        "D": 32,
+        "A": 28,
+        "B": 32,
+        "C": 33
+      }
+    },
+    "text_only_rotated_options": {
+      "questions": 125,
+      "correct": 70,
+      "accuracy": 0.56,
+      "predictions": {
+        "C": 38,
+        "B": 41,
+        "D": 29,
+        "A": 17
+      }
+    }
+  },
+  "checked_predictions": 375,
+  "cold_zero_answer_parity": 125,
+  "cold_zero_full_first_logits_parity": 125,
+  "previous_zero_feature_hashes_checked": 250,
+  "label_distribution": {
+    "D": 44,
+    "C": 31,
+    "A": 26,
+    "B": 24
+  },
+  "always_majority_label_accuracy": 0.352,
+  "single_vs_four_zero_answers_equal": 115,
+  "rotated_options_semantic_answers_changed": 34,
+  "task_breakdown": {
+    "Action Perception": {
+      "questions": 18,
+      "zero_single_correct": 15,
+      "text_only_correct": 14
+    },
+    "Attribute Perception": {
+      "questions": 24,
+      "zero_single_correct": 13,
+      "text_only_correct": 11
+    },
+    "Causal Reasoning": {
+      "questions": 5,
+      "zero_single_correct": 4,
+      "text_only_correct": 5
+    },
+    "Clips Summarize": {
+      "questions": 1,
+      "zero_single_correct": 1,
+      "text_only_correct": 1
+    },
+    "Event Understanding": {
+      "questions": 14,
+      "zero_single_correct": 8,
+      "text_only_correct": 6
+    },
+    "Object Perception": {
+      "questions": 47,
+      "zero_single_correct": 24,
+      "text_only_correct": 23
+    },
+    "Prospective Reasoning": {
+      "questions": 1,
+      "zero_single_correct": 0,
+      "text_only_correct": 0
+    },
+    "Spatial Understanding": {
+      "questions": 2,
+      "zero_single_correct": 1,
+      "text_only_correct": 1
+    },
+    "Text-Rich Understanding": {
+      "questions": 13,
+      "zero_single_correct": 7,
+      "text_only_correct": 9
+    }
+  },
+  "runtime": "same pinned Windows Vulkan b11516 as original packet experiment",
+  "weight_quantization": "Q4_K_M",
+  "generation": "greedy; fresh process; per-question KV clear; shuffled question order; labels consulted only after inference",
+  "visual_encoding_invoked": false
+}

@@ -1,0 +1,527 @@
+[
+    {
+        "video_id": 12,
+        "questions": [
+            {
+                "question_id": "Real-Time Visual Understanding_sample_12_1",
+                "task_type": "Attribute Perception",
+                "question": "What color shirt is the man wearing when he holds the white plate with a piece of raw steak?",
+                "time_stamp": "00:00:57",
+                "answer": "A",
+                "options": [
+                    "A. Dark gray.",
+                    "B. Green.",
+                    "C. Blue.",
+                    "D. White."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 12,
+                "question_number": 1,
+                "timestamp_seconds": 57,
+                "minicpm": "A",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_12_1",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 1425,
+                            "actual_seconds": 57.0,
+                            "query_seconds": 57,
+                            "source_fps": 25.0,
+                            "source_fps_rational": "25",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "7a5f5875812967da7978674092b8f230c366654ecd616a6b56167a9f5df31cc0"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "a553023e6e3879683f39362a5d2a2f20b852a7d0b69b962c136c6d5b10503418",
+                    "original_feature_sha256": "a553023e6e3879683f39362a5d2a2f20b852a7d0b69b962c136c6d5b10503418",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.48498615600010453,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "A",
+                    "result": {
+                        "text": "A",
+                        "token_ids": [
+                            32
+                        ],
+                        "first_logits_sha256": "36b5d206d95ba8f287c87c8cf1044e011a6bde08ec731bcb215b0f3844d95fbd",
+                        "first_logits_top8": [
+                            {
+                                "token": 32,
+                                "logit": 34.63032150268555
+                            },
+                            {
+                                "token": 35,
+                                "logit": 26.046043395996094
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.618680953979492
+                            },
+                            {
+                                "token": 34,
+                                "logit": 25.440959930419922
+                            },
+                            {
+                                "token": 785,
+                                "logit": 22.41808319091797
+                            },
+                            {
+                                "token": 40,
+                                "logit": 19.656431198120117
+                            },
+                            {
+                                "token": 2082,
+                                "logit": 19.48355484008789
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 19.313365936279297
+                            }
+                        ],
+                        "prompt_tokens": 349,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4937308590001521,
+                    "metadata_to_result_seconds": 0.7826818020002975
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_12_2",
+                "task_type": "Object Perception",
+                "question": "What object is the person holding and gesturing towards right now?",
+                "time_stamp": "00:01:25",
+                "answer": "D",
+                "options": [
+                    "A. A frying pan.",
+                    "B. A bowl of radishes.",
+                    "C. A jar of chili flakes.",
+                    "D. A plate with raw meat."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 12,
+                "question_number": 2,
+                "timestamp_seconds": 85,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_12_2",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 2125,
+                            "actual_seconds": 85.0,
+                            "query_seconds": 85,
+                            "source_fps": 25.0,
+                            "source_fps_rational": "25",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "c32ddb597350d70fe31aee945e622a6cb59ca6058b7961b653e736a5fd739b5e"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "081d3cd53bcafba787866ba7266125327f171ce8ff60b975fe8c0c18a6061a8c",
+                    "original_feature_sha256": "081d3cd53bcafba787866ba7266125327f171ce8ff60b975fe8c0c18a6061a8c",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.2331351929997254,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "21c96b0a3041ee0b98984fa3677836bc326a7002281b5cbf9826581f86db0cad",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 37.91763687133789
+                            },
+                            {
+                                "token": 32,
+                                "logit": 27.592832565307617
+                            },
+                            {
+                                "token": 33,
+                                "logit": 25.521595001220703
+                            },
+                            {
+                                "token": 785,
+                                "logit": 24.83026695251465
+                            },
+                            {
+                                "token": 34,
+                                "logit": 22.119083404541016
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 21.49565315246582
+                            },
+                            {
+                                "token": 40,
+                                "logit": 21.27193260192871
+                            },
+                            {
+                                "token": 5341,
+                                "logit": 21.25177764892578
+                            }
+                        ],
+                        "prompt_tokens": 355,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.5037201599998298,
+                    "metadata_to_result_seconds": 1.0677228659997127
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_12_3",
+                "task_type": "Object Perception",
+                "question": "What is the person holding in their hand?",
+                "time_stamp": "00:03:05",
+                "answer": "D",
+                "options": [
+                    "A. A spatula.",
+                    "B. A wooden spoon.",
+                    "C. A fork.",
+                    "D. Red tongs."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 12,
+                "question_number": 3,
+                "timestamp_seconds": 185,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_12_3",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 4625,
+                            "actual_seconds": 185.0,
+                            "query_seconds": 185,
+                            "source_fps": 25.0,
+                            "source_fps_rational": "25",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "5cda06609e3031039195651cf372fcc2475e5d7234444a1217472d99d4fd8a38"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "6db1943fdbd6deb27dcedc740df49a4ba2d547fc6b2dce475dca18ee30471232",
+                    "original_feature_sha256": "6db1943fdbd6deb27dcedc740df49a4ba2d547fc6b2dce475dca18ee30471232",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.5014014599996699,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "dc6374b0d368d57415e35ec0ceca3e1c7d5cf78176c5ec7e5f2988435755065d",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 36.383907318115234
+                            },
+                            {
+                                "token": 34,
+                                "logit": 30.41982078552246
+                            },
+                            {
+                                "token": 32,
+                                "logit": 28.38399314880371
+                            },
+                            {
+                                "token": 785,
+                                "logit": 25.457700729370117
+                            },
+                            {
+                                "token": 33,
+                                "logit": 24.35134506225586
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 22.935226440429688
+                            },
+                            {
+                                "token": 40,
+                                "logit": 22.739669799804688
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 22.127456665039062
+                            }
+                        ],
+                        "prompt_tokens": 344,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.47329852899974867,
+                    "metadata_to_result_seconds": 1.0448895499998798
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_12_4",
+                "task_type": "Object Perception",
+                "question": "What is the man holding in his right hand while preparing food on the cutting board?",
+                "time_stamp": "00:09:04",
+                "answer": "D",
+                "options": [
+                    "A. A jar of salt.",
+                    "B. Half a lemon.",
+                    "C. A red vegetable.",
+                    "D. A small white bowl."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 12,
+                "question_number": 4,
+                "timestamp_seconds": 544,
+                "minicpm": "D",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_12_4",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 13600,
+                            "actual_seconds": 544.0,
+                            "query_seconds": 544,
+                            "source_fps": 25.0,
+                            "source_fps_rational": "25",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "e4577bffd1dc2272790b63e3b16ac32a57035a37775daddb5e49e91a9849f2de"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "150d4f49bb695d044b4d28250c842200d4b8b6eb5843d4ad2eba8259af6b84e8",
+                    "original_feature_sha256": "150d4f49bb695d044b4d28250c842200d4b8b6eb5843d4ad2eba8259af6b84e8",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.506441083000027,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "D",
+                    "result": {
+                        "text": "D",
+                        "token_ids": [
+                            35
+                        ],
+                        "first_logits_sha256": "f5512f24b44032e8e276b41b084311cc3fa139abd4feac01213a07c480eaca9d",
+                        "first_logits_top8": [
+                            {
+                                "token": 35,
+                                "logit": 31.512813568115234
+                            },
+                            {
+                                "token": 33,
+                                "logit": 29.833555221557617
+                            },
+                            {
+                                "token": 34,
+                                "logit": 28.56916046142578
+                            },
+                            {
+                                "token": 32,
+                                "logit": 26.09757423400879
+                            },
+                            {
+                                "token": 785,
+                                "logit": 20.207374572753906
+                            },
+                            {
+                                "token": 65,
+                                "logit": 18.42331886291504
+                            },
+                            {
+                                "token": 67,
+                                "logit": 18.23709487915039
+                            },
+                            {
+                                "token": 36,
+                                "logit": 18.170665740966797
+                            }
+                        ],
+                        "prompt_tokens": 355,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.2421619919996374,
+                    "metadata_to_result_seconds": 0.7908748740001101
+                }
+            },
+            {
+                "question_id": "Real-Time Visual Understanding_sample_12_5",
+                "task_type": "Text-Rich Understanding",
+                "question": "What is the title of the cookbook prominently featured?",
+                "time_stamp": "00:11:04",
+                "answer": "A",
+                "options": [
+                    "A. \"Gordon Ramsay in 10: Delicious Recipes Made in a Flash\".",
+                    "B. \"Jamie Oliver's 30-Minute Meals\".",
+                    "C. \"Gordon Ramsay's Ultimate Cookery Course\".",
+                    "D. \"Nigella Express: Good Food Fast\"."
+                ],
+                "frames_required": "single",
+                "temporal_clue_type": "Concurrent",
+                "video_id": 12,
+                "question_number": 5,
+                "timestamp_seconds": 664,
+                "minicpm": "A",
+                "minicpm_details": {
+                    "question_id": "Real-Time Visual Understanding_sample_12_5",
+                    "mode": "single",
+                    "frames": [
+                        {
+                            "file": "003.jpg",
+                            "frame_index": 16600,
+                            "actual_seconds": 664.0,
+                            "query_seconds": 664,
+                            "source_fps": 25.0,
+                            "source_fps_rational": "25",
+                            "original_size": [
+                                1920,
+                                1080
+                            ],
+                            "size": [
+                                588,
+                                336
+                            ],
+                            "sha256": "9cf24227eee5643bef6dc7ec5a64f98fb3ddc6f22c9803924d29fbb361098a1d"
+                        }
+                    ],
+                    "feature_bytes": 2752512,
+                    "feature_sha256": "c5d2c4938c488f258b567d988206203230f8e123c420fe463f26ec3270df0f91",
+                    "original_feature_sha256": "c5d2c4938c488f258b567d988206203230f8e123c420fe463f26ec3270df0f91",
+                    "loss": {
+                        "total_packets": 2549,
+                        "received_packets": 2549,
+                        "missing_packets": 0,
+                        "missing_packet_indices": [],
+                        "zeroed_bytes": 0,
+                        "zeroed_feature_fraction": 0.0,
+                        "duplicate_packets": 0,
+                        "feature_payload_per_packet": 1080
+                    },
+                    "edge_encode_seconds": 0.4909402730004331,
+                    "server_pid": 4741,
+                    "transport": "original Testbed aiortc RTP/SRTP; metadata/results on reliable data channel",
+                    "raw_response": "A",
+                    "result": {
+                        "text": "A",
+                        "token_ids": [
+                            32
+                        ],
+                        "first_logits_sha256": "626ddcfe55ad17921676545ba15467b8e54b85d6a8bf4e26bad83e129171a1a7",
+                        "first_logits_top8": [
+                            {
+                                "token": 32,
+                                "logit": 36.994964599609375
+                            },
+                            {
+                                "token": 35,
+                                "logit": 26.57013702392578
+                            },
+                            {
+                                "token": 33,
+                                "logit": 23.685100555419922
+                            },
+                            {
+                                "token": 785,
+                                "logit": 23.09941864013672
+                            },
+                            {
+                                "token": 34,
+                                "logit": 22.702499389648438
+                            },
+                            {
+                                "token": 5341,
+                                "logit": 21.344066619873047
+                            },
+                            {
+                                "token": 28715,
+                                "logit": 20.73218536376953
+                            },
+                            {
+                                "token": 1249,
+                                "logit": 20.180213928222656
+                            }
+                        ],
+                        "prompt_tokens": 380,
+                        "generated_tokens": 1
+                    },
+                    "server_inference_seconds": 0.4932321729997966,
+                    "metadata_to_result_seconds": 5.611120990000018
+                }
+            }
+        ]
+    }
+]

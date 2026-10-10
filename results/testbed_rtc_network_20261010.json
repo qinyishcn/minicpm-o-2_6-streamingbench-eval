@@ -1,0 +1,402 @@
+{
+  "baseline/single/no_emulation": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_155636.pcap",
+        "bytes": 382415862,
+        "sha256": "708de8833a9d0df6b9e4f24c981d2fbc79617cbd9e6d18dad8ce69fe3f544c09"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 318625,
+    "captured_unique_rtp_sequences_per_message": 318625,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 485,
+    "qdisc_max_observed_drops": {
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 321712,
+      "NoPorts": 3,
+      "InErrors": 0,
+      "OutDatagrams": 322013,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "93be75c2c8b24eed0f71c27ecfacbfa60bef3e31a627c3aabb4c3e412343b497"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "baseline/native4/no_emulation": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_153653.pcap",
+        "bytes": 1526969514,
+        "sha256": "f8757f513c044ee11d5154e3b28d35a50c282b2c94c487593936789b8ababf1d"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 1274375,
+    "captured_unique_rtp_sequences_per_message": 1274375,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 562,
+    "qdisc_max_observed_drops": {
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 1278708,
+      "NoPorts": 7,
+      "InErrors": 0,
+      "OutDatagrams": 1279103,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 225280,
+      "sha256": "57a2100179f6d364aef00fc05bee98e558e63a843e5e603597859adfd1fc4573"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "readiness/native4/no_emulation": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_151551.pcap",
+        "bytes": 61077481,
+        "sha256": "6a2c7b3c59aa38412b91b7d28ad05dd0846a56381a090f3f0f450122551aecc2"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 50975,
+    "captured_unique_rtp_sequences_per_message": 50975,
+    "rtp_message_groups": 5,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 39,
+    "qdisc_max_observed_drops": {
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 51157,
+      "NoPorts": 0,
+      "InErrors": 0,
+      "OutDatagrams": 51169,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 28672,
+      "sha256": "5e31d07ea87a0cc81bd170c6064734c65fce44c7a9f52ceec1fd6f8f231617dc"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "readiness/native4/lossy": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_151627.pcap",
+        "bytes": 55438076,
+        "sha256": "8ad3dfed8b435d3fe783f67f86f494cbdc3011b36ddd4304f2c99ccad381f746"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 45847,
+    "captured_unique_rtp_sequences_per_message": 45847,
+    "rtp_message_groups": 5,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 47,
+    "qdisc_max_observed_drops": {
+      "netem": 5618,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 50280,
+      "NoPorts": 0,
+      "InErrors": 0,
+      "OutDatagrams": 55910,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 28672,
+      "sha256": "616487cd5f96d5e092104e0378a3c8adba6b549782d3f537aa2cc1ce3aa58573"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "readiness/native4/5qi_7": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_151714.pcap",
+        "bytes": 9557673,
+        "sha256": "862ea28c9252f48934f977e228f6c20c4136937109b71540887ce616fa166793"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 7658,
+    "captured_unique_rtp_sequences_per_message": 7658,
+    "rtp_message_groups": 5,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 41,
+    "qdisc_max_observed_drops": {
+      "netem": 43355,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 8372,
+      "NoPorts": 2,
+      "InErrors": 0,
+      "OutDatagrams": 8389,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 43355,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 28672,
+      "sha256": "b58b541888157a1234ff0c835dd0f0bb0fcdeea67a2900efa7bd2293e8306b25"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "readiness/native4/congested": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_151754.pcap",
+        "bytes": 1647212,
+        "sha256": "0aa5e6f36278d65f7b921ed61cee9ff95eae224fefb1cc169c6b32cf14ec416a"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "captured_rtp_packets_before_deduplication": 988,
+    "captured_unique_rtp_sequences_per_message": 986,
+    "rtp_message_groups": 5,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 77,
+    "qdisc_max_observed_drops": {
+      "htb": 50066,
+      "netem": 50066,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 1814,
+      "NoPorts": 7,
+      "InErrors": 0,
+      "OutDatagrams": 5271,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 46665,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 28672,
+      "sha256": "685612495426ca78b796f3a1ee17ecb0994c31c0b48bec656f7cafd82e8c94a4"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "original_testbed_repository": "https://github.com/jianbing119/6G-Testbed",
+  "original_testbed_commit": "8581bf4974ccb35a6cc14791caebe7fcae4a0502",
+  "patch_sha256": "4fc1443c49a41c7cb002c147fcea12a9a95a2d2a69df05d8e3bb36b8fd7d8728",
+  "clean_checkout_validation": "git archive exact base, git apply --check, git apply; 27 MiniCPM plus 3 original scoring regression tests passed in WSL Linux; actual original clean orchestrator/server completed 5 questions on no_emulation and 5 on lossy, re-encoded all 10 decoder input hashes",
+  "python": "3.12.13",
+  "gpu": "NVIDIA RTX 3070 8GB",
+  "backend": "llama.cpp b11516 CUDA 12.8",
+  "model": "MiniCPM-o 2.6 Q4_K_M language / F16 vision and resampler",
+  "model_sha256": "4f635fc0c0bb88d50ccd9cf1f1e5892b5cb085ff88fe0d8e1148fd9a8a836bc2",
+  "vision_sha256": "efa4f7d96aa0f838f2023fc8d28e519179b16f1106777fa9280b32628191aa3e",
+  "questions_sha256": "3b1350a5213c47e3cfeca29e39c86e18e15de464e2165078871958424eee01cd",
+  "scope": "250 full no-emulation RTC answers; 20 four-profile diagnostic answers; 250 independent unsplit reference answers; selected question-frame accelerated track",
+  "full_nonzero_profile_benchmark": "pending replay timing choice",
+  "linux_runtime_sha256": {
+    "libllama.so": "f9c2c3f83e4f186f54db3225e69903c553c2b6c179a4aaa8c828df70770feb51",
+    "libmtmd.so": "85eaa1337ad799c2fe0a1361a5a86e1088d7ed20e7f72c899f6fb5542492bd8d",
+    "libggml-cuda.so": "8b64796ac0177282bc4abad219ad45536af6a5869b602f9c666405648331f850"
+  }
+}

@@ -1,0 +1,40 @@
+test_minicpm_codec_is_opt_in_beside_liquid (test_minicpm_codec_registration.MiniCPMCodecRegistrationTests.test_minicpm_codec_is_opt_in_beside_liquid) ... ok
+test_original_fork_does_not_retransmit_without_negotiated_rtx (test_minicpm_codec_registration.MiniCPMCodecRegistrationTests.test_original_fork_does_not_retransmit_without_negotiated_rtx) ... ok
+test_real_srtp_protect_accepts_the_largest_feature_packet (test_minicpm_codec_registration.MiniCPMCodecRegistrationTests.test_real_srtp_protect_accepts_the_largest_feature_packet) ... ok
+test_final_partial_frame_flushes_without_terminal_packet (test_minicpm_jitter.MiniCPMJitterTests.test_final_partial_frame_flushes_without_terminal_packet) ... ok
+test_large_feature_frame_survives_original_jitter_path (test_minicpm_jitter.MiniCPMJitterTests.test_large_feature_frame_survives_original_jitter_path) ... ok
+test_liquid_token_frame_still_uses_original_loss_tolerant_path (test_minicpm_jitter.MiniCPMJitterTests.test_liquid_token_frame_still_uses_original_loss_tolerant_path) ... ok
+test_questions_follow_source_time_even_when_question_numbers_do_not (test_minicpm_native_track.NativeTrackTests.test_questions_follow_source_time_even_when_question_numbers_do_not) ... ok
+test_invalid_packet_parameters_fail (test_minicpm_packet_loss.PacketLossTests.test_invalid_packet_parameters_fail) ... ok
+test_mtu_budget_and_float_alignment (test_minicpm_packet_loss.PacketLossTests.test_mtu_budget_and_float_alignment) ... ok
+test_repeatable_nested_masks_and_complete_packet_zeroing (test_minicpm_packet_loss.PacketLossTests.test_repeatable_nested_masks_and_complete_packet_zeroing) ... ok
+test_zero_and_total_loss_preserve_shape_and_exact_bytes (test_minicpm_packet_loss.PacketLossTests.test_zero_and_total_loss_preserve_shape_and_exact_bytes) ... ok
+test_duplicate_unknown_and_modified_labels_are_rejected (test_minicpm_rtc_report.RTCReportTests.test_duplicate_unknown_and_modified_labels_are_rejected) ... ok
+test_invalid_and_missing_answers_are_wrong_with_fixed_denominator (test_minicpm_rtc_report.RTCReportTests.test_invalid_and_missing_answers_are_wrong_with_fixed_denominator) ... ok
+test_invalid_missing_offsets_and_false_no_loss_hash_are_rejected (test_minicpm_rtc_report.RTCReportTests.test_invalid_missing_offsets_and_false_no_loss_hash_are_rejected) ... ok
+test_tail_fragment_zero_budget_and_entire_message_zero_hash (test_minicpm_rtc_report.RTCReportTests.test_tail_fragment_zero_budget_and_entire_message_zero_hash) ... ok
+test_duplicate_and_total_loss_do_not_reuse_another_question (test_minicpm_rtp_features.RTPFeatureTests.test_duplicate_and_total_loss_do_not_reuse_another_question) ... ok
+test_large_offsets_and_mtu_budget (test_minicpm_rtp_features.RTPFeatureTests.test_large_offsets_and_mtu_budget) ... ok
+test_missing_packet_zeros_only_its_float_positions (test_minicpm_rtp_features.RTPFeatureTests.test_missing_packet_zeros_only_its_float_positions) ... ok
+test_truncated_misaligned_and_conflicting_fragments_rejected (test_minicpm_rtp_features.RTPFeatureTests.test_truncated_misaligned_and_conflicting_fragments_rejected) ... ok
+test_nonfinite_shape_position_and_token_errors_are_rejected (test_minicpm_split.ActivationLayoutTests.test_nonfinite_shape_position_and_token_errors_are_rejected) ... ok
+test_ordered_mixed_segments_and_context_count (test_minicpm_split.ActivationLayoutTests.test_ordered_mixed_segments_and_context_count) ... ok
+test_overlap_holes_and_unreferenced_payload_are_rejected (test_minicpm_split.ActivationLayoutTests.test_overlap_holes_and_unreferenced_payload_are_rejected) ... ok
+test_protocol_context_and_trailing_empty_tokens_are_rejected (test_minicpm_split.ActivationLayoutTests.test_protocol_context_and_trailing_empty_tokens_are_rejected) ... ok
+test_corruption_and_truncation_are_rejected (test_minicpm_split.SplitProtocolTests.test_corruption_and_truncation_are_rejected) ... ok
+test_metadata_only_asset_contains_no_weight_tensors (test_minicpm_split.SplitProtocolTests.test_metadata_only_asset_contains_no_weight_tensors) ... ok
+test_socket_receive_handles_fragmented_writes (test_minicpm_split.SplitProtocolTests.test_socket_receive_handles_fragmented_writes) ... ok
+test_tensor_bytes_survive_framing (test_minicpm_split.SplitProtocolTests.test_tensor_bytes_survive_framing) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.028s
+
+OK
+test_bare_multiple_choice_and_legacy_json (test_realtime_accuracy.RealtimeAccuracyTests.test_bare_multiple_choice_and_legacy_json) ... ok
+test_case_insensitive_model_key_is_used (test_realtime_accuracy.RealtimeAccuracyTests.test_case_insensitive_model_key_is_used) ... ok
+test_invalid_and_missing_answers_remain_in_denominator (test_realtime_accuracy.RealtimeAccuracyTests.test_invalid_and_missing_answers_remain_in_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

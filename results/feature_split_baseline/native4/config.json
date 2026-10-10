@@ -1,0 +1,20 @@
+{
+  "mode": "native4",
+  "transport": "TCP binary activation envelope v1",
+  "wire_dtype": "<f4",
+  "images_transmitted": false,
+  "split_after": "visual encoder + resampler/projector",
+  "edge_language_weight_tensors": 0,
+  "server_vision_weight_tensors": 0,
+  "edge_pid": 12212,
+  "server_pid": 6732,
+  "runtime": "llama.cpp b11516",
+  "llm_quantization": "Q4_K_M",
+  "visual_weights": "F16",
+  "context": 4096,
+  "max_tokens": 16,
+  "temperature": 0,
+  "expected_questions": 125,
+  "prompt_template": "You are an advanced video question-answering AI assistant. You have been provided with some frames from the video and a multiple-choice question related to the video. Your task is to carefully analyze the video and provide the best answer to question, choosing from the four options provided. Respond with only the letter (A, B, C, or D) of the correct option.\n\nQuestion: {}\n\nOptions:\n{}\n{}\n{}\n{}\n\nThe best option is:",
+  "vision_device": "Vulkan"
+}

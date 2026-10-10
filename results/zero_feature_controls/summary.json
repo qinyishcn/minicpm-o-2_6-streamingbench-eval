@@ -1,0 +1,35 @@
+{
+  "zero_single_fresh": {
+    "questions": 125,
+    "correct": 73,
+    "accuracy": 0.584,
+    "predictions": {
+      "B": 29,
+      "A": 30,
+      "D": 30,
+      "C": 36
+    }
+  },
+  "text_only": {
+    "questions": 125,
+    "correct": 70,
+    "accuracy": 0.56,
+    "predictions": {
+      "D": 32,
+      "A": 28,
+      "B": 32,
+      "C": 33
+    }
+  },
+  "text_only_rotated_options": {
+    "questions": 125,
+    "correct": 70,
+    "accuracy": 0.56,
+    "predictions": {
+      "C": 38,
+      "B": 41,
+      "D": 29,
+      "A": 17
+    }
+  }
+}

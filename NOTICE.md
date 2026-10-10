@@ -28,3 +28,10 @@ This evaluation is independent and does not imply endorsement by upstream author
 The reported accuracy and latency are measurements of Q4_K_M language weights,
 an F16 vision encoder/projector, and llama.cpp Vulkan on an RTX 3070 8 GB.
 They are not full-precision Transformers or full StreamingBench results.
+
+The `minicpm_split` Python wrapper uses the public C ABI of llama.cpp b11516.
+llama.cpp is MIT licensed: https://github.com/ggml-org/llama.cpp/blob/b11516/LICENSE.
+The feature-packet erasure experiment is an offline activation perturbation,
+not an actual WebRTC/SRTP or Testbed network-profile measurement.
+No code from the surrounding local Testbed or its modified aiortc is redistributed
+with this experiment.

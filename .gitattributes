@@ -1,0 +1,2 @@
+# A unified diff's single-space context lines are required artifact syntax.
+patches/*.patch -whitespace

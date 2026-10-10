@@ -1,0 +1,2204 @@
+{
+  "single/no_emulation": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_155636.pcap",
+        "bytes": 382415862,
+        "sha256": "708de8833a9d0df6b9e4f24c981d2fbc79617cbd9e6d18dad8ce69fe3f544c09"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 318625,
+    "captured_unique_rtp_sequences_per_message": 318625,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 485,
+    "qdisc_max_observed_drops": {
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 321712,
+      "NoPorts": 3,
+      "InErrors": 0,
+      "OutDatagrams": 322013,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.17,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.15,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.17,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.02,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.19,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.15,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.2,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.81,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.08,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.98,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.15,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.2,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.06,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.08,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.15,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.08,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.0,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.16,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.19,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.04,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "93be75c2c8b24eed0f71c27ecfacbfa60bef3e31a627c3aabb4c3e412343b497"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "native4/no_emulation": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_153653.pcap",
+        "bytes": 1526969514,
+        "sha256": "f8757f513c044ee11d5154e3b28d35a50c282b2c94c487593936789b8ababf1d"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 1274375,
+    "captured_unique_rtp_sequences_per_message": 1274375,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 562,
+    "qdisc_max_observed_drops": {
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 1278708,
+      "NoPorts": 7,
+      "InErrors": 0,
+      "OutDatagrams": 1279103,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.42,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.06,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.08,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.03,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.13,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.13,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.19,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.19,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 13.97,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.18,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.15,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.1,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.17,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.11,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 13.99,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.03,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.06,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.22,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.14,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 225280,
+      "sha256": "57a2100179f6d364aef00fc05bee98e558e63a843e5e603597859adfd1fc4573"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published."
+  },
+  "single/lossy": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_180841.pcap",
+        "bytes": 347343463,
+        "sha256": "db19aa29695ef29200d504dbbe10ac45725e01be1137d7c518a22cce818577fb"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 3,
+    "captured_rtp_packets_before_deduplication": 286621,
+    "captured_unique_rtp_sequences_per_message": 286621,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 564,
+    "qdisc_max_observed_drops": {
+      "netem": 35305,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 316353,
+      "NoPorts": 12,
+      "InErrors": 0,
+      "OutDatagrams": 351899,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.21,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.89,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.5,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 9.11,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.58,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 13.56,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.16,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.01,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.9,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.1,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.94,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 13.71,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 13.14,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.53,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 15.45,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.45,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 9.01,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 7.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 9.92,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 8.49,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.13,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 15.22,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "ec03229a3e8c70b6e7d2798d94bdc0ddea59ef9d32ee8ace0318195377d31afe"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 0
+  },
+  "single/5qi_7": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_182732.pcap",
+        "bytes": 152095085,
+        "sha256": "73cc881adf02d0fec54f05fe0623add493b20f89006f07f28ee52808c07f87cb"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 124698,
+    "captured_unique_rtp_sequences_per_message": 124698,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 540,
+    "qdisc_max_observed_drops": {
+      "netem": 193973,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 132037,
+      "NoPorts": 37,
+      "InErrors": 0,
+      "OutDatagrams": 132404,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 193973,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.13,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.91,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.93,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.74,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.17,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.0,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.98,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.3,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.34,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.95,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.92,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.98,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.21,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.72,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.85,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.95,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.83,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.97,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.02,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.3,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.19,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 10.99,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 11.07,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "53bba3807f0e2d28ab7ebf5c2efdb2f14889b76815a004945dbbef202cc1004a"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 0
+  },
+  "single/congested": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_184535.pcap",
+        "bytes": 25061183,
+        "sha256": "30ded0b25543c45b273fc672b1d94be15b1808d7fb5a488845ec84ff15c7f130"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 17786,
+    "captured_unique_rtp_sequences_per_message": 17777,
+    "rtp_message_groups": 90,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 961,
+    "qdisc_max_observed_drops": {
+      "htb": 212417,
+      "netem": 212417,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 35577,
+      "NoPorts": 526,
+      "InErrors": 0,
+      "OutDatagrams": 112698,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 196066,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 23.6,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 24.56,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 24.07,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 101.32,
+        "client_answers_received": 2
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 25.81,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 77.87,
+        "client_answers_received": 3
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 52.05,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 25.99,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 26.5,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 90.33,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 27.46,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 23.83,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 22.34,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 29.23,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 80.95,
+        "client_answers_received": 4
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 29.09,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 21.65,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 90.08,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 37.93,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 21.89,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 22.98,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 111.54,
+        "client_answers_received": 1
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 25.36,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 24.06,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 23.25,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "0f3c94c69950464447252cc5aec60766a606e06236041bbf29c5c2a80f61eb7c"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 35
+  },
+  "native4/lossy": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_191958.pcap",
+        "bytes": 1387104306,
+        "sha256": "6e7368642f45611c5d003b081979342a5a4239c93b1ab396324895a5314caf67"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 1147029,
+    "captured_unique_rtp_sequences_per_message": 1147029,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 651,
+    "qdisc_max_observed_drops": {
+      "netem": 139506,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 1256226,
+      "NoPorts": 9,
+      "InErrors": 0,
+      "OutDatagrams": 1395980,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 0,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 35.65,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.71,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.94,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 20.59,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 21.76,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 18.05,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.35,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 36.43,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 15.13,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 18.96,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 20.55,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.24,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 19.92,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.11,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 20.87,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 15.06,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 15.04,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.18,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 21.56,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 14.1,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.64,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.59,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 19.07,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 20.18,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.92,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "ab21ebaa186da9efc1cb197cb93c4e781bf4e8f9089ca92fbd5aec71ab69e08a"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 0
+  },
+  "native4/5qi_7": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_194143.pcap",
+        "bytes": 215821023,
+        "sha256": "a7a334e64c46655ae9af059df4feee7b00a244efe57eedc710ea1c03433c0118"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 171769,
+    "captured_unique_rtp_sequences_per_message": 171769,
+    "rtp_message_groups": 125,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 620,
+    "qdisc_max_observed_drops": {
+      "netem": 1103523,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 190039,
+      "NoPorts": 31,
+      "InErrors": 0,
+      "OutDatagrams": 190475,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 1103523,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.74,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.81,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.5,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.52,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 18.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.29,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.69,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.92,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.9,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.44,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.83,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.58,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 18.02,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.82,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.53,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.12,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.24,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 18.7,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.16,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 16.92,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.23,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.3,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.73,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.17,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 17.03,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "86637e106149ddfdf9ac168c622158e9a7072a8bf489fff2ccf5850766713ed6"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 0
+  },
+  "native4/congested": {
+    "capture_files": [
+      {
+        "name": "capture_20261010_200228.pcap",
+        "bytes": 28539415,
+        "sha256": "fc1057e6165e0bce930bbadaf87c7032eb80de267fb4d95b8be75753401275bc"
+      }
+    ],
+    "rtp_payload_type": 109,
+    "dns_packets_matching_rtp_prefix_excluded": 0,
+    "captured_rtp_packets_before_deduplication": 17223,
+    "captured_unique_rtp_sequences_per_message": 17213,
+    "rtp_message_groups": 87,
+    "maximum_captured_rtp_ip_bytes": 1167,
+    "network_snapshots": 1203,
+    "qdisc_max_observed_drops": {
+      "htb": 871039,
+      "netem": 871039,
+      "noqueue": 0
+    },
+    "udp_global_counter_deltas": {
+      "InDatagrams": 40790,
+      "NoPorts": 1603,
+      "InErrors": 0,
+      "OutDatagrams": 264001,
+      "RcvbufErrors": 0,
+      "SndbufErrors": 808608,
+      "InCsumErrors": 0,
+      "IgnoredMulti": 0,
+      "MemErrors": 0
+    },
+    "initial_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "final_qdisc": [
+      {
+        "kind": "noqueue",
+        "handle": "0:",
+        "root": true,
+        "refcnt": 2,
+        "options": {},
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "original_video_sessions": [
+      {
+        "video_id": 1,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 43.33,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 2,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 125.54,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 3,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 44.29,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 4,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 38.93,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 5,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 92.11,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 6,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 51.73,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 7,
+        "expected_videos": 25,
+        "events": [
+          "Exception in callback RTCDataChannel.send",
+          "aiortc.exceptions.InvalidStateError",
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 92.47,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 8,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 39.04,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 9,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 44.61,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 10,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 92.08,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 11,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 43.04,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 12,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 89.91,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 13,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 30.94,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 14,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 42.46,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 15,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 45.59,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 16,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 34.83,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 17,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 45.94,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 18,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 108.26,
+        "client_answers_received": 3
+      },
+      {
+        "video_id": 19,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 89.28,
+        "client_answers_received": 1
+      },
+      {
+        "video_id": 20,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 41.83,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 21,
+        "expected_videos": 25,
+        "events": [
+          "Timeout waiting for VIDEO_ANALYSIS_COMPLETE"
+        ],
+        "client_success": false,
+        "original_logged_latency_seconds": 91.4,
+        "client_answers_received": 0
+      },
+      {
+        "video_id": 22,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 37.77,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 23,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 52.46,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 24,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 46.2,
+        "client_answers_received": 5
+      },
+      {
+        "video_id": 25,
+        "expected_videos": 25,
+        "events": [],
+        "client_success": true,
+        "original_logged_latency_seconds": 37.92,
+        "client_answers_received": 5
+      }
+    ],
+    "sqlite_log": {
+      "bytes": 229376,
+      "sha256": "413dcc9724b795c3b1212a0bbd8ee898a412e68b9bf60d4b3f57a75151f35cd6"
+    },
+    "interpretation": "Captured RTP is not necessarily usable model input. UDP counters are namespace-wide. Parent/child qdisc drops are not additive. Original PCAP/SQLite retained locally; raw signaling is not published.",
+    "expected_feature_messages": 125,
+    "messages_without_any_captured_rtp": 38
+  }
+}
